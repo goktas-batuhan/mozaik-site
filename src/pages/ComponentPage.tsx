@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useParams } from 'react-router'
 import { cn } from '@/lib/utils'
@@ -9,7 +9,6 @@ import {
   inCategoryOrder,
   installCommand,
   loadDoc,
-  MOZAIK_REPO,
   namespacedCommand,
   REGISTRY_URL,
   type ComponentDoc,
@@ -160,34 +159,6 @@ export function ComponentPage() {
             Props
           </h2>
           {doc && <PropsTable props={doc.props} />}
-        </section>
-
-        <section aria-labelledby="source" className="space-y-3">
-          <h2 id="source" className="text-2xl font-semibold tracking-tight">
-            Source and license
-          </h2>
-          {entry.source === 'original' ? (
-            <p className="text-muted-foreground">
-              Original work, written for Mozaik. MIT licensed.{' '}
-              <a className="text-foreground underline underline-offset-4" href={`${MOZAIK_REPO}/tree/main/registry/${entry.category}/${name}`}>
-                View on GitHub
-              </a>
-            </p>
-          ) : (
-            <p className="text-muted-foreground">
-              Adapted from{' '}
-              <a className="inline-flex items-center gap-1 text-foreground underline underline-offset-4" href={entry.source.url}>
-                {entry.source.repo}
-                <ExternalLink className="size-3" aria-hidden />
-              </a>{' '}
-              ({entry.source.license}). Rebuilt on Mozaik tokens with reduced motion and keyboard support.
-              {entry.source.note ? ` ${entry.source.note}` : ''} Upstream notice in{' '}
-              <a className="text-foreground underline underline-offset-4" href={`${MOZAIK_REPO}/blob/main/CREDITS.md`}>
-                CREDITS.md
-              </a>
-              .
-            </p>
-          )}
         </section>
 
         <nav aria-label="Previous and next" className="grid gap-3 border-t pt-8 sm:grid-cols-2">
