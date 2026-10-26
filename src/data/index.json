@@ -407,6 +407,90 @@
     ]
   },
   {
+    "name": "cool-mode",
+    "title": "Cool Mode",
+    "description": "Sprays coloured particles or emoji from the cursor while a button is pressed, drawn on a click-through canvas.",
+    "category": "cursor",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "cursor",
+      "particles",
+      "canvas"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/cool-mode.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
+    "name": "cursor-image-trail",
+    "title": "Cursor Image Trail",
+    "description": "Drops a pool of images or cards along the pointer's path inside an area, larger and longer-lived the faster you move.",
+    "category": "cursor",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "cursor",
+      "images",
+      "trail"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/cursor-image-trail/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
+    "name": "smooth-cursor",
+    "title": "Smooth Cursor",
+    "description": "Replaces the system cursor inside an area with a spring-smoothed arrow that turns toward the direction of travel.",
+    "category": "cursor",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "cursor",
+      "spring",
+      "pointer"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/smooth-cursor.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
+    "name": "tilt-card",
+    "title": "Tilt Card",
+    "description": "A card that tilts toward the pointer in 3D on a spring, with an optional soft glare that follows the cursor.",
+    "category": "cursor",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "cursor",
+      "card",
+      "3d"
+    ],
+    "source": {
+      "repo": "starc007/ui-components",
+      "license": "MIT",
+      "url": "https://github.com/starc007/ui-components/blob/main/components/motion/tilt-card.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
     "name": "bento-grid",
     "title": "Bento Grid",
     "description": "Container-responsive bento grid with cards that lift on hover, move their artwork and follow the pointer with a soft glow.",
@@ -434,6 +518,72 @@
       "cta"
     ],
     "source": "original",
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
+    "name": "ai-tool-approval",
+    "title": "AI Tool Approval",
+    "description": "A card where the user approves or denies an agent's tool call, showing the command or fields, the reason, and a polite live announcement of the decision.",
+    "category": "blocks",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "ai",
+      "agent",
+      "approval",
+      "tool-call"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/ai-tool-approval.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
+    "name": "animated-beam",
+    "title": "Animated Beam",
+    "description": "A light that flows along a curved path between two elements, for integration diagrams. Holds a still path under reduced motion and pauses off screen.",
+    "category": "blocks",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "beam",
+      "diagram",
+      "integrations",
+      "svg"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/animated-beam.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
+    "name": "uptime-card",
+    "title": "Uptime Card",
+    "description": "A status card with a row of daily bars per service, an uptime percentage and a short list of recent incidents. Bars are readable by screen readers and inspectable with the keyboard.",
+    "category": "blocks",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "status",
+      "uptime",
+      "monitoring",
+      "incidents"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/uptime-card.tsx"
+    },
     "dependencies": [
       "motion"
     ]
@@ -502,6 +652,93 @@
       "status"
     ],
     "source": "original",
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
+    "name": "amount-pad",
+    "title": "Amount Pad",
+    "description": "A number pad for entering a token amount: animated digits, presets, a per-transfer cap, shake on refusal and physical keyboard input.",
+    "category": "onchain",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "amount",
+      "keypad",
+      "input",
+      "send"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/amount-pad.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
+    "name": "order-book",
+    "title": "Order Book",
+    "description": "A depth ladder with asks above and bids below, cumulative depth bars, a spread bar and a fill-cost readout on hover. Driven by snapshots passed as props.",
+    "category": "onchain",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "order book",
+      "depth",
+      "trading",
+      "dex"
+    ],
+    "source": {
+      "repo": "starc007/ui-components",
+      "license": "MIT",
+      "url": "https://github.com/starc007/ui-components/blob/main/components/charts/order-book.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
+    "name": "receipt-printer",
+    "title": "Receipt Printer",
+    "description": "A transaction receipt (hash, from, to, amount, fee, status) that feeds out of a printer slot one line at a time, with a serrated edge.",
+    "category": "onchain",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "receipt",
+      "transaction",
+      "print"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/receipt-printer.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
+    "name": "slide-to-confirm",
+    "title": "Slide to Confirm",
+    "description": "A slide-to-commit control for irreversible actions: drag the thumb to the end, or press Enter, Space or the right arrow. Shows busy and done states.",
+    "category": "onchain",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "confirm",
+      "slider",
+      "swap",
+      "send"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/slide-to-confirm.tsx"
+    },
     "dependencies": [
       "motion"
     ]
@@ -829,6 +1066,94 @@
       "repo": "ui-layouts/uilayouts",
       "license": "MIT",
       "url": "https://github.com/ui-layouts/uilayouts/blob/main/apps/ui-layout/registry/components/carousel/framer/framer-moveable-thumnbails.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
+    "name": "ai-reasoning",
+    "title": "AI Reasoning",
+    "description": "A collapsible reasoning trace. The summary shimmers only while the model is working, then settles, reports how long it took and folds away.",
+    "category": "feedback",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "ai",
+      "reasoning",
+      "collapsible",
+      "streaming"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/ai-reasoning/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
+    "name": "animated-subscribe-button",
+    "title": "Animated Subscribe Button",
+    "description": "A toggle button whose label slides away and the next one drops in. A real button with aria-pressed, in controlled or uncontrolled form.",
+    "category": "feedback",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "button",
+      "subscribe",
+      "toggle",
+      "follow"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/animated-subscribe-button.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
+    "name": "dynamic-island",
+    "title": "Dynamic Island",
+    "description": "A pill that springs open into richer views, in the style of the iPhone status island. The shell animates real size, so content is never distorted.",
+    "category": "feedback",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "island",
+      "status",
+      "notification",
+      "spring"
+    ],
+    "source": {
+      "repo": "starc007/ui-components",
+      "license": "MIT",
+      "url": "https://github.com/starc007/ui-components/blob/main/components/motion/dynamic-island.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
+    "name": "notification-stack",
+    "title": "Notification Stack",
+    "description": "A pile of notifications that fans out on hover or focus. Swipe, click or press Delete to dismiss; the remaining cards close the gap.",
+    "category": "feedback",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "notification",
+      "stack",
+      "swipe",
+      "dismiss"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/notification-stack.tsx"
     },
     "dependencies": [
       "motion"
