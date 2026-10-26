@@ -4,10 +4,15 @@ import { BentoCard, BentoGrid } from '@/components/mozaik/bento-grid'
 import { Marquee } from '@/components/mozaik/marquee'
 import { NumberTicker } from '@/components/mozaik/number-ticker'
 import { Spotlight } from '@/components/mozaik/spotlight'
-import { Terminal, TerminalLine, TerminalTyping } from '@/components/mozaik/terminal'
-import { CATEGORIES, components, installCommand, stats, withBase } from '@/site/data'
+import { CATEGORIES, components, stats, withBase } from '@/site/data'
 import { LazyDemo, Stage } from '@/site/preview'
 import { ButtonLink, SectionHeading } from '@/site/ui'
+
+const HOW = [
+  { title: 'Pick a component', text: 'Try it live in the gallery, check its props and the dependencies it lists.' },
+  { title: 'Copy the source', text: 'One click copies the whole file. Paste it into components/ in any React project with Tailwind CSS v4.' },
+  { title: 'Make it yours', text: 'No package to update, no wrapper to fight. Change the file however you like.' },
+]
 
 const FEATURED: { name: string; title: string; description: string; colSpan?: 1 | 2; rowSpan?: 1 | 2 }[] = [
   { name: 'price-ticker', title: 'Price ticker', description: 'Digits roll, the change flashes, screen readers hear it once.', colSpan: 2 },
@@ -91,24 +96,22 @@ export function HomeSections() {
 
       <section className="mx-auto grid max-w-7xl items-center gap-14 px-4 pt-32 sm:px-6 lg:grid-cols-2">
         <SectionHeading eyebrow="How it works" title="Copy the code, not a dependency.">
-          Mozaik is a shadcn registry. One command writes the component into your project, installs its npm packages and
-          wires the import aliases. From then on the file is yours to change.
+          Mozaik is not a package. Every component page has the full source with a copy button and the npm packages it
+          needs. Paste the file into your project and it is yours to change.
         </SectionHeading>
-        <Terminal title="~/my-app" className="w-full max-w-none">
-          <TerminalTyping>{installCommand('price-ticker').replace('/public/r', '/…/r')}</TerminalTyping>
-          <TerminalLine delay={2.6} className="text-success">
-            ✔ Checking registry.
-          </TerminalLine>
-          <TerminalLine delay={2.9} className="text-success">
-            ✔ Installing dependencies: motion
-          </TerminalLine>
-          <TerminalLine delay={3.2} className="text-success">
-            ✔ Created src/components/price-ticker.tsx
-          </TerminalLine>
-          <TerminalLine delay={3.6} className="text-muted-foreground">
-            Ready. Import it and pass your data in.
-          </TerminalLine>
-        </Terminal>
+        <ol className="w-full divide-y rounded-2xl border bg-card">
+          {HOW.map((h, i) => (
+            <li key={h.title} className="grid grid-cols-[2rem_minmax(0,1fr)] gap-x-3 p-6">
+              <span className="grid size-7 place-items-center rounded-full border font-mono text-xs text-muted-foreground">
+                {i + 1}
+              </span>
+              <div>
+                <p className="pt-0.5 font-medium">{h.title}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{h.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pt-32 sm:px-6">
@@ -152,7 +155,7 @@ export function HomeSections() {
         <div className="relative overflow-hidden rounded-3xl border bg-card px-6 py-16 text-center sm:px-16">
           <Layers className="mx-auto size-6 text-primary" aria-hidden />
           <h2 className="mx-auto mt-6 max-w-2xl text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-            A portfolio piece you can <span className="font-serif font-normal italic">actually install.</span>
+            A portfolio piece you can <span className="font-serif font-normal italic">actually use.</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
             Design tokens, motion, accessibility, testing and a distribution pipeline, all in one open-source project.

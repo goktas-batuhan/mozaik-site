@@ -93,9 +93,6 @@ export async function loadDoc(name: string) {
   return load ? (await load()).default : null
 }
 
-export const installCommand = (name: string) => `npx shadcn@latest add ${REGISTRY_URL}/${name}.json`
-export const namespacedCommand = (name: string) => `npx shadcn@latest add @mozaik/${name}`
-
 export const stats = {
   total: components.length,
   original: components.filter((c) => c.layer === 'A').length,

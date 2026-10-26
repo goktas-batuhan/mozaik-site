@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 const BASE = 'Mozaik'
 const DEFAULT_DESCRIPTION =
-  'Animated React components in one design language. Accessible, reduced-motion safe, installable with the shadcn CLI.'
+  'Animated React components in one design language. Accessible, reduced-motion safe, copy-paste source code.'
 
 /** Sayfa başlığı ve açıklamasını ayarlar. */
 export function useTitle(title?: string, description = DEFAULT_DESCRIPTION) {

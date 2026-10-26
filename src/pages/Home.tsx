@@ -4,9 +4,9 @@ import { Link } from 'react-router'
 import { ScrambleText } from '@/components/mozaik/scramble-text'
 import { ShaderBackground } from '@/components/mozaik/shader-background'
 import { cn } from '@/lib/utils'
-import { installCommand, MOZAIK_REPO, stats } from '@/site/data'
+import { MOZAIK_REPO, stats } from '@/site/data'
 import { useTitle } from '@/site/meta'
-import { ButtonLink, buttonStyles, Command, GithubIcon } from '@/site/ui'
+import { ButtonLink, buttonStyles, GithubIcon } from '@/site/ui'
 
 const HomeSections = lazy(() => import('./HomeSections').then((m) => ({ default: m.HomeSections })))
 
@@ -50,7 +50,7 @@ export function Home() {
                 <span className="rounded-full bg-primary px-2 py-0.5 font-mono text-[11px] text-primary-foreground uppercase">
                   {stats.total}
                 </span>
-                components, one install command
+                components, copy the code
                 <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />
               </Link>
             </div>
@@ -66,7 +66,7 @@ export function Home() {
             <div>
               <p className="mt-6 max-w-2xl text-lg text-pretty text-muted-foreground sm:text-xl">
                 Mozaik is a growing collection of animated React components built on one set of tokens. Each one respects
-                reduced motion, works with a keyboard and installs into your project as plain source code.
+                reduced motion, works with a keyboard and lands in your project as plain source code you copy.
               </p>
             </div>
 
@@ -79,10 +79,6 @@ export function Home() {
                 <GithubIcon className="size-4" />
                 Star on GitHub
               </a>
-            </div>
-
-            <div className="fade-up mt-10 w-full max-w-xl" style={{ animationDelay: '0.45s' }}>
-              <Command value={installCommand('rolling-text')} className="bg-background/70 text-left backdrop-blur" />
             </div>
           </div>
         </div>

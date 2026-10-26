@@ -7,10 +7,7 @@ import {
   CATEGORIES,
   categoryLabel,
   inCategoryOrder,
-  installCommand,
   loadDoc,
-  namespacedCommand,
-  REGISTRY_URL,
   type ComponentDoc,
 } from '@/site/data'
 import { useTitle } from '@/site/meta'
@@ -23,7 +20,6 @@ export function ComponentPage() {
   const entry = byName(name)
   const [doc, setDoc] = useState<ComponentDoc | null>(null)
   const [view, setView] = useState('preview')
-  const [install, setInstall] = useState('cli')
 
   useTitle(entry?.title, entry?.description)
 
@@ -90,57 +86,29 @@ export function ComponentPage() {
         </section>
 
         <section aria-labelledby="install" className="space-y-5">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <h2 id="install" className="text-2xl font-semibold tracking-tight">
-              Installation
-            </h2>
-            <Tabs
-              tabs={[
-                { id: 'cli', label: 'CLI' },
-                { id: 'manual', label: 'Manual' },
-              ]}
-              value={install}
-              onChange={setInstall}
-            />
-          </div>
-          {install === 'cli' ? (
-            <div className="space-y-6">
-              <Step n={1} title="Run the shadcn CLI in a project that has Tailwind CSS v4.">
-                <Command value={installCommand(name)} />
+          <h2 id="install" className="text-2xl font-semibold tracking-tight">
+            Installation
+          </h2>
+          <div className="space-y-6">
+            {deps.length > 0 && (
+              <Step n={1} title="Install the dependencies.">
+                <Command value={`npm install ${deps.join(' ')}`} />
               </Step>
-              <Step n={2} title="Prefer short names? Add the registry once to components.json.">
-                <CodeBlock
-                  html={registriesHtml}
-                  raw={registriesSnippet}
-                  title="components.json"
-                  maxHeight="12rem"
-                />
-                <Command value={namespacedCommand(name)} className="mt-3" />
-              </Step>
-            </div>
-          ) : (
-            <div className="space-y-6">
-              {deps.length > 0 && (
-                <Step n={1} title="Install the dependencies.">
-                  <Command value={`npm install ${deps.join(' ')}`} />
-                </Step>
+            )}
+            <Step n={deps.length > 0 ? 2 : 1} title="Make sure you have the cn helper at lib/utils.ts.">
+              <Command value="npm install clsx tailwind-merge" />
+            </Step>
+            <Step
+              n={deps.length > 0 ? 3 : 2}
+              title={`Copy the source into components/${file?.name ?? `${name}.tsx`}.`}
+            >
+              {file ? (
+                <CodeBlock html={file.html} raw={file.raw} title={`components/${file.name}`} maxHeight="16rem" />
+              ) : (
+                <div className="h-64 animate-pulse rounded-xl border bg-card motion-reduce:animate-none" />
               )}
-              <Step n={deps.length > 0 ? 2 : 1} title="Make sure you have the cn helper at lib/utils.ts.">
-                <Command value="npm install clsx tailwind-merge" />
-              </Step>
-              <Step
-                n={deps.length > 0 ? 3 : 2}
-                title={`Copy the source into components/${file?.name ?? `${name}.tsx`}.`}
-              >
-                <p className="text-sm text-muted-foreground">
-                  The full file is under the Code tab above, or straight from the registry:{' '}
-                  <a className="text-foreground underline underline-offset-4" href={`${REGISTRY_URL}/${name}.json`}>
-                    {name}.json
-                  </a>
-                </p>
-              </Step>
-            </div>
-          )}
+            </Step>
+          </div>
         </section>
 
         <section aria-labelledby="usage" className="space-y-5">
@@ -185,26 +153,6 @@ export function ComponentPage() {
     </div>
   )
 }
-
-const registriesSnippet = `{
-  "registries": {
-    "@mozaik": "${REGISTRY_URL}/{name}.json"
-  }
-}`
-
-// Küçük JSON, elle renklendirildi (shiki çıktısıyla aynı sınıf yapısı).
-const esc = (s: string) => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;')
-const registriesHtml = `<pre class="shiki"><code>${registriesSnippet
-  .split('\n')
-  .map(
-    (l) =>
-      `<span class="line">${esc(l).replace(
-        /("[^"]*")(:?)/g,
-        (_, str, colon) =>
-          `<span style="--shiki-light:${colon ? '#005cc5' : '#032f62'};--shiki-dark:${colon ? '#79c0ff' : '#a5d6ff'}">${str}</span>${colon}`,
-      )}</span>`,
-  )
-  .join('\n')}</code></pre>`
 
 function Step({ n, title, children }: { n: number; title: string; children: React.ReactNode }) {
   return (

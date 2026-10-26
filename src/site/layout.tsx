@@ -119,7 +119,7 @@ function Footer() {
         <div className="space-y-3">
           <Logo />
           <p className="max-w-sm text-sm text-muted-foreground">
-            {stats.total} React components in one design language. Install any of them with one command and own the code.
+            {stats.total} React components in one design language. Copy the code and make it yours.
           </p>
         </div>
         <div className="space-y-3 text-sm">
@@ -139,7 +139,7 @@ function Footer() {
           <ul className="space-y-2 text-muted-foreground">
             <li>
               <a href={MOZAIK_REPO} className="hover:text-foreground">
-                Component registry
+                Component source
               </a>
             </li>
             <li>

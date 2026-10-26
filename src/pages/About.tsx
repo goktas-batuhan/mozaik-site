@@ -11,7 +11,7 @@ const SKILLS = [
   { title: 'Design systems', text: 'One token layer for colour, radius and type, shared by every component and both themes.' },
   { title: 'Performance', text: 'Lazy previews, render loops that pause off screen, code highlighted at build time.' },
   { title: 'Testing and CI', text: 'Strict TypeScript, Vitest, Playwright smoke tests and a quality gate that labels each component.' },
-  { title: 'Distribution', text: 'A shadcn registry: one command installs a component as source into any React project.' },
+  { title: 'Distribution', text: 'Copy-paste source: every page ships the full file, its dependencies and a copy button.' },
 ]
 
 export function About() {
@@ -34,7 +34,7 @@ export function About() {
         <p className="max-w-2xl text-lg text-pretty text-muted-foreground">
           {profile.role}
           {profile.location ? ` based in ${profile.location}` : ''}. Mozaik is my open-source showcase: {stats.total} animated
-          React components, a registry that installs them, and this site that documents them. Everything here, from the
+          React components, the source to copy, and this site that documents them. Everything here, from the
           tokens to the test pipeline, was designed and built as one system.
         </p>
         <ul className="flex flex-wrap gap-2">
