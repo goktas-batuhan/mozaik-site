@@ -56,8 +56,10 @@ function Header() {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 border-b transition-colors',
-        scrolled || open ? 'border-border bg-background/90 backdrop-blur-sm' : 'border-transparent',
+        // Blur hep açık: scroll başlarken açılınca yeni katman kuruluyor ve ilk 5-6 kare düşüyordu.
+        // Tepede arkası boş olduğundan görünmez.
+        'sticky top-0 z-50 border-b backdrop-blur-sm transition-colors',
+        scrolled || open ? 'border-border bg-background/90' : 'border-transparent',
       )}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-6 px-4 sm:px-6">

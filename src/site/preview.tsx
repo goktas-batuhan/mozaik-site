@@ -1,5 +1,5 @@
 import { MotionConfig } from 'motion/react'
-import { RotateCcw } from 'lucide-react'
+import { LoaderCircle, RotateCcw } from 'lucide-react'
 import { Component, Suspense, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 import { getDemo } from './data'
@@ -19,8 +19,18 @@ class DemoBoundary extends Component<{ children: ReactNode }, { failed: boolean 
   }
 }
 
-/** Demo'yu görünüme yaklaşınca yükler ve render eder; ekrandan çıkınca bellekte kalır. */
-export function LazyDemo({ name, eager = false }: { name: string; eager?: boolean }) {
+const onIdle = (cb: () => void) =>
+  typeof requestIdleCallback === 'function' ? requestIdleCallback(cb) : window.setTimeout(cb, 200)
+const cancelIdle = (id: number) =>
+  typeof cancelIdleCallback === 'function' ? cancelIdleCallback(id) : clearTimeout(id)
+
+/**
+ * Demo'yu görünüme yaklaşınca yükler ve render eder; bir kez kurulunca sökmez. `preload` verilirse
+ * görünüme gelmeyi beklemeden ilk boşlukta da kurar: galeride hızlı scroll'da kartlar boş kalıyordu,
+ * çünkü 9 demonun kurulumu ve ilk çizimi kartın ekranda kaldığı süreden uzun. Ekran dışındakileri
+ * content-visibility çizdirmez; sökmek ise her dönüşte kurulumu (WebGL'de shader derlemesini) tekrarlatıyordu.
+ */
+export function LazyDemo({ name, eager = false, preload = false }: { name: string; eager?: boolean; preload?: boolean }) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(eager)
 
@@ -28,16 +38,17 @@ export function LazyDemo({ name, eager = false }: { name: string; eager?: boolea
     if (visible || !ref.current) return
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true)
-          io.disconnect()
-        }
+        if (entry.isIntersecting) setVisible(true)
       },
       { rootMargin: '200px' },
     )
     io.observe(ref.current)
-    return () => io.disconnect()
-  }, [visible])
+    const idle = preload ? onIdle(() => setVisible(true)) : undefined
+    return () => {
+      io.disconnect()
+      if (idle !== undefined) cancelIdle(idle)
+    }
+  }, [visible, preload])
 
   const Demo = getDemo(name)
 
@@ -93,7 +104,13 @@ export function Stage({ children, designWidth = 640, max = 1 }: { children: Reac
       <div
         ref={inner}
         className="absolute top-0 left-0 flex origin-top-left justify-center"
-        style={{ width: box.width, transform: `translateX(${box.x}px) scale(${box.scale})` }}
+        style={
+          box.height
+            ? { width: box.width, transform: `translateX(${box.x}px) scale(${box.scale})` }
+            : // Ölçülmeden önce (prerender HTML'i, hydration öncesi) CSS ile ortala; yoksa yükleniyor
+              // göstergesi sağ alta kayık görünüyordu.
+              { width: box.width, left: '50%', transformOrigin: 'center', transform: `translate(-50%, -50%) scale(${box.scale})` }
+        }
       >
         {children}
       </div>
@@ -101,8 +118,14 @@ export function Stage({ children, designWidth = 640, max = 1 }: { children: Reac
   )
 }
 
+/** Demo kurulana kadar: dönen halka ve kısa yazı. Reduced motion'da halka durur, yazı yeter. */
 function PreviewSkeleton() {
-  return <div aria-hidden className="h-24 w-48 animate-pulse rounded-lg bg-muted motion-reduce:animate-none" />
+  return (
+    <div aria-hidden className="flex h-24 w-48 flex-col items-center justify-center gap-2.5 text-muted-foreground">
+      <LoaderCircle className="size-7 animate-spin opacity-70 motion-reduce:animate-none" strokeWidth={1.75} />
+      <span className="text-sm">Loading preview</span>
+    </div>
+  )
 }
 
 const surface =
@@ -151,9 +174,9 @@ export function PreviewFrame({ name, className }: { name: string; className?: st
 /** Galeri kartındaki küçük önizleme; etkileşim serbest ama tıklama karta gider. */
 export function MiniPreview({ name, className }: { name: string; className?: string }) {
   return (
-    <div className={cn(surface, 'h-56 p-4', className)}>
+    <div className={cn(surface, 'h-56 p-4 [contain-intrinsic-size:auto_14rem] [content-visibility:auto]', className)}>
       <Stage designWidth={760} max={0.72}>
-        <LazyDemo name={name} />
+        <LazyDemo name={name} preload />
       </Stage>
     </div>
   )
