@@ -144,6 +144,10 @@ function readToken(el: Element, name: string, probe: CanvasRenderingContext2D | 
 // A fixed moment of the field, used for the still frame under reduced motion.
 const STILL_TIME = 14
 
+// The field drifts slowly and is soft, so a 30 fps cap and 1x pixel density look the same
+// and cost a fraction of the fragment work.
+const FRAME_MS = 1000 / 30
+
 const FALLBACK =
   'radial-gradient(60% 70% at 25% 20%, color-mix(in oklch, var(--primary) 40%, transparent), transparent 70%), radial-gradient(55% 60% at 80% 75%, color-mix(in oklch, var(--primary) 25%, transparent), transparent 70%)'
 
@@ -214,9 +218,8 @@ export function ShaderBackground({ children, speed = 1, intensity = 0.6, classNa
     }
 
     const resize = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2)
-      const width = Math.max(1, Math.round(canvas.clientWidth * dpr))
-      const height = Math.max(1, Math.round(canvas.clientHeight * dpr))
+      const width = Math.max(1, canvas.clientWidth)
+      const height = Math.max(1, canvas.clientHeight)
       if (canvas.width === width && canvas.height === height) return false
       canvas.width = width
       canvas.height = height
@@ -237,6 +240,10 @@ export function ShaderBackground({ children, speed = 1, intensity = 0.6, classNa
     }
 
     const tick = (now: number) => {
+      if (last && now - last < FRAME_MS - 1) {
+        frame = requestAnimationFrame(tick)
+        return
+      }
       const dt = last ? Math.min((now - last) / 1000, 0.1) : 0
       last = now
       time += dt * settings.current.speed

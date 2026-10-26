@@ -57,7 +57,7 @@ function Header() {
     <header
       className={cn(
         'sticky top-0 z-50 border-b transition-colors',
-        scrolled || open ? 'border-border bg-background/80 backdrop-blur-xl' : 'border-transparent',
+        scrolled || open ? 'border-border bg-background/90 backdrop-blur-sm' : 'border-transparent',
       )}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-6 px-4 sm:px-6">
