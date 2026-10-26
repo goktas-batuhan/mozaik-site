@@ -53,10 +53,6 @@ export function StatusBadge({ status }: { status: 'stable' | 'beta' }) {
   )
 }
 
-export function LayerBadge({ layer }: { layer: 'A' | 'B' }) {
-  return <Badge tone={layer === 'A' ? 'primary' : 'neutral'}>{layer === 'A' ? 'original' : 'adapted'}</Badge>
-}
-
 export function CopyButton({ value, label = 'Copy', className }: { value: string; label?: string; className?: string }) {
   const [copied, setCopied] = useState(false)
   const timer = useRef<number>(undefined)

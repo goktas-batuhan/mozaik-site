@@ -40,7 +40,7 @@ export function HomeSections() {
         <dl className="mx-auto grid max-w-7xl grid-cols-2 divide-border px-4 sm:px-6 md:grid-cols-4 md:divide-x">
           {[
             { value: stats.total, label: 'Components' },
-            { value: stats.original, label: 'Written from scratch' },
+            { value: CATEGORIES.length, label: 'Categories' },
             { value: stats.sources, label: 'MIT sources credited' },
             { value: Math.round((stats.stable / stats.total) * 100), label: 'Pass the quality gate', suffix: '%' },
           ].map((s) => (

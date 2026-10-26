@@ -12,7 +12,7 @@ import {
 } from '@/site/data'
 import { useTitle } from '@/site/meta'
 import { PreviewFrame } from '@/site/preview'
-import { Badge, CodeBlock, Command, LayerBadge, StatusBadge, Tabs } from '@/site/ui'
+import { Badge, CodeBlock, Command, StatusBadge, Tabs } from '@/site/ui'
 import { NotFound } from './NotFound'
 
 export function ComponentPage() {
@@ -59,7 +59,6 @@ export function ComponentPage() {
           <h1 className="text-4xl font-semibold tracking-tight">{entry.title}</h1>
           <p className="max-w-2xl text-lg text-pretty text-muted-foreground">{entry.description}</p>
           <div className="flex flex-wrap gap-1.5">
-            <LayerBadge layer={entry.layer} />
             <StatusBadge status={entry.status} />
             {entry.tags.map((t) => (
               <Badge key={t}>{t}</Badge>

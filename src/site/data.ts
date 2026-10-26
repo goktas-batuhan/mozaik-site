@@ -95,8 +95,6 @@ export async function loadDoc(name: string) {
 
 export const stats = {
   total: components.length,
-  original: components.filter((c) => c.layer === 'A').length,
-  adapted: components.filter((c) => c.layer === 'B').length,
   stable: components.filter((c) => c.status === 'stable').length,
   sources: new Set(components.flatMap((c) => (c.source === 'original' ? [] : [c.source.repo]))).size,
 }

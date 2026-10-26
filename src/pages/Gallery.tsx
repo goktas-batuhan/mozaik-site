@@ -5,19 +5,12 @@ import { cn } from '@/lib/utils'
 import { CATEGORIES, categoryLabel, inCategoryOrder, stats } from '@/site/data'
 import { useTitle } from '@/site/meta'
 import { MiniPreview } from '@/site/preview'
-import { LayerBadge, StatusBadge } from '@/site/ui'
-
-const LAYERS = [
-  { id: '', label: 'All' },
-  { id: 'A', label: 'Original' },
-  { id: 'B', label: 'Adapted' },
-]
+import { StatusBadge } from '@/site/ui'
 
 export function Gallery() {
   useTitle('Components')
   const [params, setParams] = useSearchParams()
   const category = params.get('category') ?? ''
-  const layer = params.get('layer') ?? ''
   const q = params.get('q') ?? ''
 
   const set = (key: string, value: string) => {
@@ -32,10 +25,9 @@ export function Gallery() {
     return inCategoryOrder.filter(
       (c) =>
         (!category || c.category === category) &&
-        (!layer || c.layer === layer) &&
         (!needle || [c.name, c.title, c.description, ...c.tags].some((s) => s.toLowerCase().includes(needle))),
     )
-  }, [category, layer, q])
+  }, [category, q])
 
   return (
     <div className="mx-auto max-w-7xl px-4 pt-14 sm:px-6">
@@ -43,8 +35,7 @@ export function Gallery() {
         <p className="font-mono text-xs tracking-widest text-primary uppercase">Gallery</p>
         <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Components</h1>
         <p className="text-lg text-muted-foreground">
-          {stats.total} components across {CATEGORIES.length} categories. {stats.original} are original, {stats.adapted}{' '}
-          are rebuilt from MIT-licensed projects and credited.
+          {stats.total} components across {CATEGORIES.length} categories.
         </p>
       </header>
 
@@ -81,22 +72,6 @@ export function Gallery() {
               </Chip>
             ))}
           </div>
-          <div role="group" aria-label="Layer" className="flex shrink-0 gap-1 self-start rounded-full border p-1">
-            {LAYERS.map((l) => (
-              <button
-                key={l.id}
-                type="button"
-                aria-pressed={layer === l.id}
-                onClick={() => set('layer', l.id)}
-                className={cn(
-                  'rounded-full px-3 py-1 text-xs font-medium transition-colors',
-                  layer === l.id ? 'bg-foreground text-background' : 'text-muted-foreground hover:text-foreground',
-                )}
-              >
-                {l.label}
-              </button>
-            ))}
-          </div>
         </div>
       </div>
 
@@ -128,7 +103,6 @@ export function Gallery() {
                   </div>
                   <p className="line-clamp-2 text-sm text-muted-foreground">{c.description}</p>
                   <div className="mt-auto flex gap-1.5 pt-3">
-                    <LayerBadge layer={c.layer} />
                     <StatusBadge status={c.status} />
                   </div>
                 </div>
