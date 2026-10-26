@@ -20,7 +20,6 @@ const DEFAULT = 'Animated React components in one design language. Accessible, r
 const pages = [
   { url: '/', title: 'Mozaik · Animated React components', description: DEFAULT },
   { url: '/components', title: 'Components · Mozaik', description: `${index.length} animated React components across text, backgrounds, cursor, layout, feedback, blocks and on-chain.` },
-  { url: '/credits', title: 'Credits · Mozaik', description: 'Sources and licenses of every adapted Mozaik component and the libraries behind this site.' },
   { url: '/about', title: 'About · Mozaik', description: 'The person behind Mozaik and what the project shows.' },
   ...index.map((c) => ({ url: `/components/${c.name}`, title: `${c.title} · Mozaik`, description: c.description })),
 ]

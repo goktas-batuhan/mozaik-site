@@ -9,7 +9,6 @@ import { buttonStyles, GithubIcon } from './ui'
 
 const NAV = [
   { to: '/components', label: 'Components' },
-  { to: '/credits', label: 'Credits' },
   { to: '/about', label: 'About' },
 ]
 
@@ -146,7 +145,11 @@ function Footer() {
                 This website
               </a>
             </li>
-            <li>MIT licensed</li>
+            <li>
+              <a href={`${MOZAIK_REPO}/blob/main/CREDITS.md`} className="hover:text-foreground">
+                Licenses and credits
+              </a>
+            </li>
           </ul>
         </div>
       </div>

@@ -181,7 +181,11 @@ export function ComponentPage() {
                 <ExternalLink className="size-3" aria-hidden />
               </a>{' '}
               ({entry.source.license}). Rebuilt on Mozaik tokens with reduced motion and keyboard support.
-              {entry.source.note ? ` ${entry.source.note}` : ''} See <Link className="text-foreground underline underline-offset-4" to="/credits">Credits</Link>.
+              {entry.source.note ? ` ${entry.source.note}` : ''} Upstream notice in{' '}
+              <a className="text-foreground underline underline-offset-4" href={`${MOZAIK_REPO}/blob/main/CREDITS.md`}>
+                CREDITS.md
+              </a>
+              .
             </p>
           )}
         </section>

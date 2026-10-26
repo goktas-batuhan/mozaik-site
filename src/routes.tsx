@@ -13,7 +13,6 @@ export const routes: RouteObject[] = [
         path: '/components/:name',
         lazy: () => import('./pages/ComponentPage').then((m) => ({ Component: m.ComponentPage })),
       },
-      { path: '/credits', lazy: () => import('./pages/Credits').then((m) => ({ Component: m.Credits })) },
       { path: '/about', lazy: () => import('./pages/About').then((m) => ({ Component: m.About })) },
       { path: '*', lazy: () => import('./pages/NotFound').then((m) => ({ Component: m.NotFound })) },
     ],

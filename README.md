@@ -15,7 +15,6 @@ Every component on this site was installed from the public Mozaik registry with 
 | `/` | Hero on a live WebGL shader, numbers, a bento of running components, the quality gate |
 | `/components` | Gallery with search, category and layer filters; previews load as they scroll into view |
 | `/components/:name` | Live preview with a reduced-motion switch and replay, source code, install steps, usage, props table, source and license |
-| `/credits` | Every adapted component grouped by upstream repo, license rules, the libraries behind the site |
 | `/about` | The author and what the project demonstrates |
 
 | Gallery | Component page |
@@ -27,9 +26,9 @@ Every component on this site was installed from the public Mozaik registry with 
 - **Install, don't copy.** `npm run sync` runs `shadcn add` for every registry item into `src/components/mozaik/`, writes each demo into `src/demos/` and highlights the source with Shiki at build time into `src/data/docs/`. Nothing is highlighted in the browser.
 - **Reduced motion you can try.** The preview switch wraps the demo in `<MotionConfig reducedMotion="always">`; every Mozaik component listens to it as well as to the OS setting.
 - **Fits any screen.** A small `Stage` component lays a demo out at its natural width and scales it to the space available, so fixed-width demos are never clipped on a phone.
-- **Prerendered and hydrated.** Each of the 52 routes is rendered to HTML at build time (`src/entry-server.tsx`, `scripts/prerender.mjs`, React 19 `prerender`) with its own title, description and font preloads, then hydrated in place. The home page below the fold hydrates selectively when its chunk arrives.
+- **Prerendered and hydrated.** Each of the 51 routes is rendered to HTML at build time (`src/entry-server.tsx`, `scripts/prerender.mjs`, React 19 `prerender`) with its own title, description and font preloads, then hydrated in place. The home page below the fold hydrates selectively when its chunk arrives.
 - **Light on the first load.** Main chunk about 67 KB gzip (the hero animates with CSS, not Motion). Routes other than the home page are lazy chunks, the home page below the fold is its own chunk, the WebGL hero compiles on first interaction (or after 6 s) so it never blocks the main thread during load, and demos and docs load per component.
-- **Tested.** Playwright visits all 52 routes and fails on any runtime error; axe checks the main pages against WCAG 2 A/AA.
+- **Tested.** Playwright visits all 51 routes and fails on any runtime error; axe checks the main pages against WCAG 2 A/AA.
 
 ## Numbers
 
@@ -73,4 +72,4 @@ React 19 · TypeScript · Tailwind CSS v4 · Motion · React Router · Vite · S
 
 ## License
 
-MIT. Component credits live in the [Mozaik repository](https://github.com/goktas-batuhan/mozaik/blob/main/CREDITS.md) and on the `/credits` page.
+MIT. Component credits live in the [Mozaik repository](https://github.com/goktas-batuhan/mozaik/blob/main/CREDITS.md) and on every component page.

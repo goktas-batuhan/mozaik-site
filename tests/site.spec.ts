@@ -10,7 +10,7 @@ const watch = (page: Page) => {
 }
 
 // Sonda / : prerender edilmiş dizin HTML'i istenir (GitHub Pages da böyle yönlendirir).
-for (const path of ['/', '/components/', '/credits/', '/about/']) {
+for (const path of ['/', '/components/', '/about/']) {
   test(`${path} renders and passes axe`, async ({ page }) => {
     const errors = watch(page)
     await page.goto(path)
