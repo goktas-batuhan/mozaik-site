@@ -1,0 +1,1 @@
+import{r as e}from"./jsx-runtime-BX5dh3L7.js";import{t}from"./react-DpvdKi1d.js";var n=e(t(),1);function r(e){let t=(0,n.useRef)(null);return t.current===null&&(t.current=e()),t.current}export{r as t};

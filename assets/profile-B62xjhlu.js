@@ -1,0 +1,1 @@
+var e={name:`Batuhan Göktaş`,role:`Frontend developer`,location:``,github:`https://github.com/goktas-batuhan`,linkedin:``,email:``,website:``};export{e as t};

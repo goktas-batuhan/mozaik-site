@@ -1,0 +1,91 @@
+var e=[{name:`spacing`,type:`number`,default:`10`,description:`Distance between hatch lines, in pixels.`},{name:`angle`,type:`number`,default:`45`,description:`Direction of the lines in degrees.`},{name:`strength`,type:`number`,default:`9`,description:`Line strength as a percentage of the foreground color.`},{name:`fade`,type:`boolean`,default:`true`,description:`Fades the hatch out towards the edges.`},{name:`className`,type:`string`,description:`Extra classes for the layer. Place it absolutely behind your content.`}],t=[{name:`diagonal-hatch.tsx`,lines:32,html:`<pre class="shiki shiki-themes github-light github-dark-default" style="--shiki-light:#24292e;--shiki-dark:#e6edf3;--shiki-light-bg:#fff;--shiki-dark-bg:#0d1117" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> { cn } </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">from</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> '@/lib/utils'</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> interface</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> DiagonalHatchProps</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Distance between hatch lines, in pixels. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  spacing</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> number</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Direction of the lines in degrees. 45 leans right, 135 leans left. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  angle</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> number</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Line strength as a percentage of the foreground color. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  strength</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> number</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Fades the hatch out towards the edges. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  fade</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> boolean</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> string</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">/** Fine diagonal hatching, like a sketch shaded with a ruler. Place it behind content. */</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> DiagonalHatch</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">({ </span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">spacing</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> 10</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">angle</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> 45</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">strength</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> 9</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">fade</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> true</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">className</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> }</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> DiagonalHatchProps</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> color</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> \`color-mix(in oklab, var(--foreground) \${</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">strength</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">}%, transparent)\`</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> mask</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> fade </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'radial-gradient(ellipse at center, black 25%, transparent 75%)'</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> :</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> undefined</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  return</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">      aria-hidden</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">      className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">cn</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'pointer-events-none absolute inset-0'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, className)</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">      style</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">{</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        backgroundImage: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">\`repeating-linear-gradient(\${</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">angle</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">}deg, \${</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">color</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">} 0, \${</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">color</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">} 1px, transparent 1px, transparent \${</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">spacing</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">}px)\`</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        maskImage: mask,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        WebkitMaskImage: mask,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      }</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  )</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">}</span></span></code></pre>`,raw:`import { cn } from '@/lib/utils'
+
+export interface DiagonalHatchProps {
+  /** Distance between hatch lines, in pixels. */
+  spacing?: number
+  /** Direction of the lines in degrees. 45 leans right, 135 leans left. */
+  angle?: number
+  /** Line strength as a percentage of the foreground color. */
+  strength?: number
+  /** Fades the hatch out towards the edges. */
+  fade?: boolean
+  className?: string
+}
+
+/** Fine diagonal hatching, like a sketch shaded with a ruler. Place it behind content. */
+export function DiagonalHatch({ spacing = 10, angle = 45, strength = 9, fade = true, className }: DiagonalHatchProps) {
+  const color = \`color-mix(in oklab, var(--foreground) \${strength}%, transparent)\`
+  const mask = fade ? 'radial-gradient(ellipse at center, black 25%, transparent 75%)' : undefined
+
+  return (
+    <div
+      aria-hidden
+      className={cn('pointer-events-none absolute inset-0', className)}
+      style={{
+        backgroundImage: \`repeating-linear-gradient(\${angle}deg, \${color} 0, \${color} 1px, transparent 1px, transparent \${spacing}px)\`,
+        maskImage: mask,
+        WebkitMaskImage: mask,
+      }}
+    />
+  )
+}
+`}],n=`<pre class="shiki shiki-themes github-light github-dark-default" style="--shiki-light:#24292e;--shiki-dark:#e6edf3;--shiki-light-bg:#fff;--shiki-dark-bg:#0d1117" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> { DiagonalHatch } </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">from</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> '@/components/diagonal-hatch'</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> default</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> DiagonalHatchDemo</span><span style="--shiki-light:#24292E;--shiki-dark:#FFA657">() </span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">{</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  return</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"relative isolate grid h-[420px] w-[820px] max-w-full place-items-center overflow-hidden rounded-2xl border bg-background"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      &#x3C;</span><span style="--shiki-light:#005CC5;--shiki-dark:#7EE787">DiagonalHatch</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"relative rounded-xl border bg-card px-8 py-6 text-center shadow-sm"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">h2</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"text-3xl font-semibold tracking-tight"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">>Shaded, not shouting&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">h2</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">p</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"mt-2 max-w-xs text-sm text-muted-foreground"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          A quiet texture that gives flat surfaces some grain.</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">p</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  )</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">}</span></span></code></pre>`,r=`import { DiagonalHatch } from '@/components/diagonal-hatch'
+
+export default function DiagonalHatchDemo() {
+  return (
+    <div className="relative isolate grid h-[420px] w-[820px] max-w-full place-items-center overflow-hidden rounded-2xl border bg-background">
+      <DiagonalHatch />
+      <div className="relative rounded-xl border bg-card px-8 py-6 text-center shadow-sm">
+        <h2 className="text-3xl font-semibold tracking-tight">Shaded, not shouting</h2>
+        <p className="mt-2 max-w-xs text-sm text-muted-foreground">
+          A quiet texture that gives flat surfaces some grain.
+        </p>
+      </div>
+    </div>
+  )
+}
+`,i={props:e,files:t,usage:n,usageRaw:r};export{i as default,t as files,e as props,n as usage,r as usageRaw};
