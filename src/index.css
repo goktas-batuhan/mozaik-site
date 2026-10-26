@@ -1,0 +1,171 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
+@import '@fontsource/instrument-serif/400.css';
+@import '@fontsource/instrument-serif/400-italic.css';
+
+@source './components/mozaik';
+@source './demos';
+
+/* Mozaik token'ları: shadcn değişken adları, kendi paletimiz. Koyu öncelikli. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.985 0.002 90);
+  --foreground: oklch(0.18 0.01 270);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.01 270);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.01 270);
+  --primary: oklch(0.62 0.2 38);
+  --primary-foreground: oklch(0.99 0.005 60);
+  --secondary: oklch(0.95 0.004 270);
+  --secondary-foreground: oklch(0.22 0.01 270);
+  --muted: oklch(0.955 0.003 270);
+  --muted-foreground: oklch(0.48 0.012 270);
+  --accent: oklch(0.95 0.004 270);
+  --accent-foreground: oklch(0.22 0.01 270);
+  --destructive: oklch(0.58 0.22 25);
+  --success: oklch(0.6 0.15 155);
+  --border: oklch(0.91 0.004 270);
+  --input: oklch(0.91 0.004 270);
+  --ring: oklch(0.62 0.2 38);
+}
+
+.dark {
+  --background: oklch(0.145 0.006 270);
+  --foreground: oklch(0.96 0.004 270);
+  --card: oklch(0.18 0.007 270);
+  --card-foreground: oklch(0.96 0.004 270);
+  --popover: oklch(0.18 0.007 270);
+  --popover-foreground: oklch(0.96 0.004 270);
+  --primary: oklch(0.72 0.18 42);
+  --primary-foreground: oklch(0.16 0.02 40);
+  --secondary: oklch(0.23 0.008 270);
+  --secondary-foreground: oklch(0.96 0.004 270);
+  --muted: oklch(0.22 0.007 270);
+  --muted-foreground: oklch(0.68 0.012 270);
+  --accent: oklch(0.25 0.009 270);
+  --accent-foreground: oklch(0.96 0.004 270);
+  --destructive: oklch(0.66 0.2 25);
+  --success: oklch(0.72 0.15 155);
+  --border: oklch(0.27 0.008 270);
+  --input: oklch(0.3 0.008 270);
+  --ring: oklch(0.72 0.18 42);
+}
+
+@theme inline {
+  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono Variable', ui-monospace, monospace;
+  --font-serif: 'Instrument Serif', ui-serif, Georgia, serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+/* --- Site --- */
+html {
+  color-scheme: light;
+  scroll-padding-top: 5rem;
+}
+html.dark {
+  color-scheme: dark;
+}
+body {
+  font-feature-settings: 'ss01', 'cv11';
+}
+::selection {
+  background: color-mix(in oklab, var(--primary) 35%, transparent);
+}
+
+/* Shiki çift tema: renkler CSS değişkeninden */
+.shiki,
+.shiki span {
+  color: var(--shiki-light);
+  background-color: transparent !important;
+}
+.dark .shiki,
+.dark .shiki span {
+  color: var(--shiki-dark);
+}
+.shiki {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  counter-reset: line;
+}
+.shiki code {
+  display: grid;
+}
+.shiki .line {
+  padding-inline: 1.25rem;
+}
+.shiki .line::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 2rem;
+  margin-right: 1rem;
+  text-align: right;
+  color: color-mix(in oklab, var(--muted-foreground) 55%, transparent);
+}
+
+/* Tıklanabilir odak halkası, site genelinde */
+:where(a, button, [role='tab'], input, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Hero girişi: motion paketini ana parçaya sokmadan CSS ile. */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+    filter: blur(6px);
+  }
+}
+.fade-up {
+  animation: fade-up 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    animation: none;
+  }
+}

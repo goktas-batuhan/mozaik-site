@@ -1,0 +1,20 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+.DS_Store
+.obsidian/
+.vercel/
+playwright-report/
+test-results/
+coverage/
+.claude/
+*.tsbuildinfo
+dist-ssr/
+
+# Yerel çalışma notları: public repoya girmez
+wiki/
+CLAUDE.md
