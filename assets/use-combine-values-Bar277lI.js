@@ -1,0 +1,1 @@
+import{c as e}from"./react-CZCrprmy.js";import{it as t,rt as n}from"./store-CEL6_6Ba.js";import{t as r}from"./use-motion-value-DlPF78Fz.js";function i(i,a){let o=r(a()),s=()=>o.set(a());return s(),e(()=>{let e=()=>t.preRender(s,!1,!0),r=i.map(t=>t.on(`change`,e));return s(),()=>{r.forEach(e=>e()),n(s)}}),o}export{i as t};
