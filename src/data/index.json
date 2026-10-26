@@ -93,6 +93,28 @@
     ]
   },
   {
+    "name": "morphing-text",
+    "title": "Morphing Text",
+    "description": "Melts one word into the next with a blur and an SVG threshold filter. Screen readers get the whole list once.",
+    "category": "text",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "words",
+      "blur",
+      "headline",
+      "loop"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/morphing-text.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
     "name": "number-ticker",
     "title": "Number Ticker",
     "description": "Counts a number up or down with a soft ease once it scrolls into view. Screen readers get the final value.",
@@ -129,6 +151,48 @@
       "repo": "educlopez/smoothui",
       "license": "MIT",
       "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/shine-text/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
+    "name": "split-flap-text",
+    "title": "Split Flap Text",
+    "description": "Departure-board lettering. Tiles flip through a drum of letters on a hinge, one beat apart. Screen readers get the lines once.",
+    "category": "text",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "board",
+      "airport",
+      "flip",
+      "loop"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/split-flap-text.tsx"
+    },
+    "dependencies": []
+  },
+  {
+    "name": "spoiler-text",
+    "title": "Spoiler Text",
+    "description": "Text hidden under a shimmering field of specks. Click or press Enter to blow them away and read it. Screen readers hear a spoiler button until it opens.",
+    "category": "text",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "spoiler",
+      "reveal",
+      "canvas",
+      "interactive"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/spoiler-text.tsx"
     },
     "dependencies": [
       "motion"
@@ -309,6 +373,28 @@
     "dependencies": []
   },
   {
+    "name": "halftone-background",
+    "title": "Halftone Background",
+    "description": "A halftone print on a canvas: a rotated screen of dots sized by the ink a lit sphere takes, with a light that circles it or follows the cursor.",
+    "category": "background",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "canvas",
+      "halftone",
+      "dots",
+      "cursor"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/halftone-background.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
     "name": "mesh-glow",
     "title": "Mesh Glow",
     "description": "Soft blurred glows over a fine grid with a calm vignette. Drifts slowly, or holds still.",
@@ -367,6 +453,28 @@
       "license": "MIT",
       "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/retro-grid.tsx",
       "note": "Rebuilt in CSS 3D (upstream is WebGL)."
+    },
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
+    "name": "topo-background",
+    "title": "Topo Background",
+    "description": "A drifting topographic map: contour lines traced through a noise terrain on a canvas, with a hill that rises under the cursor.",
+    "category": "background",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "canvas",
+      "contour",
+      "terrain",
+      "cursor"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/topo-background.tsx"
     },
     "dependencies": [
       "motion"
@@ -807,6 +915,28 @@
     ]
   },
   {
+    "name": "hold-action-button",
+    "title": "Hold Action Button",
+    "description": "A button that confirms only after being held down, with a fill that rewinds on early release. Works with pointer and Space / Enter, announces completion, and completes without animation under reduced motion.",
+    "category": "interactive",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "button",
+      "hold",
+      "confirm",
+      "progress"
+    ],
+    "source": {
+      "repo": "starc007/ui-components",
+      "license": "MIT",
+      "url": "https://github.com/starc007/ui-components/blob/main/components/motion/hold-action-button.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ]
+  },
+  {
     "name": "hover-swap-card",
     "title": "Hover Swap Card",
     "description": "A card that swaps its title and visual and lifts the media on hover or keyboard focus. Pure CSS transitions.",
@@ -824,6 +954,28 @@
       "url": "https://github.com/ui-layouts/uilayouts/blob/main/apps/ui-layout/registry/components/card/creative-hover-card.tsx"
     },
     "dependencies": []
+  },
+  {
+    "name": "lens",
+    "title": "Lens",
+    "description": "A round magnifying lens that follows the pointer over any content. Mouse and trackpad only: touch screens and reduced motion get the plain content. The magnified copy is hidden from assistive tech.",
+    "category": "interactive",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "magnifier",
+      "zoom",
+      "cursor",
+      "hover"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/lens.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ]
   },
   {
     "name": "shift-card",
@@ -1007,6 +1159,26 @@
     "dependencies": [
       "motion"
     ]
+  },
+  {
+    "name": "progressive-blur",
+    "title": "Progressive Blur",
+    "description": "A gradual blur over the edge of a scrolling area, built from stacked backdrop-filter layers. Decorative and static.",
+    "category": "layout",
+    "layer": "B",
+    "status": "stable",
+    "tags": [
+      "blur",
+      "scroll",
+      "edge",
+      "overlay"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/progressive-blur.tsx"
+    },
+    "dependencies": []
   },
   {
     "name": "smooth-accordion",
