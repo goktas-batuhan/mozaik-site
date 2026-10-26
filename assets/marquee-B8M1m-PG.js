@@ -181,7 +181,7 @@ export function Marquee({
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  [</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Ship it'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'The detail is in the easing.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">],</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  [</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Quiet motion'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Nothing moves without a reason.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">],</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  [</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Tokens first'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'One palette, every component.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">],</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  [</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Copy and own'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Installed straight into your repo.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">],</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  [</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Copy and own'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Pasted straight into your repo.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">],</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  [</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Accessible'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Reduced motion is a first-class state.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">],</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  [</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Tiny API'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Duration, delay, className. That is it.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">],</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">]</span></span>
@@ -216,7 +216,7 @@ const quotes = [
   ['Ship it', 'The detail is in the easing.'],
   ['Quiet motion', 'Nothing moves without a reason.'],
   ['Tokens first', 'One palette, every component.'],
-  ['Copy and own', 'Installed straight into your repo.'],
+  ['Copy and own', 'Pasted straight into your repo.'],
   ['Accessible', 'Reduced motion is a first-class state.'],
   ['Tiny API', 'Duration, delay, className. That is it.'],
 ]

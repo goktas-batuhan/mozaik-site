@@ -265,12 +265,12 @@ export function SmoothAccordion({
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  {</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    id: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'what'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    title: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'What is Mozaik?'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    content: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'A registry of small, hand-finished React components. Install one with a single shadcn command and own the source.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    content: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'A collection of small, hand-finished React components. Copy one into your project and own the source.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  },</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  {</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    id: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'install'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    title: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'How do I install a component?'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    content: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Run npx shadcn add with the component URL. The file lands in your project, ready to edit.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    title: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'How do I add a component?'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    content: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Copy the source from its page and install the npm packages it lists. The file is yours to edit.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  },</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  {</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    id: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'motion'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
@@ -296,12 +296,12 @@ const items = [
   {
     id: 'what',
     title: 'What is Mozaik?',
-    content: 'A registry of small, hand-finished React components. Install one with a single shadcn command and own the source.',
+    content: 'A collection of small, hand-finished React components. Copy one into your project and own the source.',
   },
   {
     id: 'install',
-    title: 'How do I install a component?',
-    content: 'Run npx shadcn add with the component URL. The file lands in your project, ready to edit.',
+    title: 'How do I add a component?',
+    content: 'Copy the source from its page and install the npm packages it lists. The file is yours to edit.',
   },
   {
     id: 'motion',
