@@ -1,0 +1,1 @@
+export{t as SplitFlapText}from"./split-flap-text-DcTKpCST.js";

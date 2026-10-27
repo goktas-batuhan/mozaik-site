@@ -1,0 +1,1 @@
+export{t as SpoilerText}from"./spoiler-text-C8C2vRaW.js";

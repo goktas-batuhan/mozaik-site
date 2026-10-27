@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BX5dh3L7.js";import{t}from"./word-rotate-CIRGL7HV.js";var n=e();function r(){return(0,n.jsxs)(`h2`,{className:`flex items-baseline gap-3 text-5xl font-semibold tracking-tight`,children:[(0,n.jsx)(`span`,{children:`Build something`}),(0,n.jsx)(t,{words:[`calm`,`sharp`,`useful`,`yours`],className:`text-primary`})]})}export{r as default};

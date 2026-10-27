@@ -1,0 +1,1 @@
+export{t as ShineText}from"./shine-text-BRfWx5DX.js";

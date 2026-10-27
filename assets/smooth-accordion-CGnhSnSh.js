@@ -1,0 +1,1 @@
+export{t as SmoothAccordion}from"./smooth-accordion-5PAXkjdO.js";

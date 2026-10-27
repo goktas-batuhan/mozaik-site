@@ -1,0 +1,1 @@
+export{t as DirectionAwareTabs}from"./direction-aware-tabs-DOglQrSw.js";

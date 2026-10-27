@@ -1,0 +1,1 @@
+export{t as RollingText}from"./rolling-text-D7ArXfzS.js";

@@ -1,0 +1,1 @@
+export{t as ReceiptPrinter}from"./receipt-printer-C2y_1PMh.js";

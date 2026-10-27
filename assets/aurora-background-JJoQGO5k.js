@@ -1,0 +1,1 @@
+export{t as AuroraBackground}from"./aurora-background-OMOavXt5.js";

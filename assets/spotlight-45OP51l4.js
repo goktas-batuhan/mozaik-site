@@ -1,0 +1,1 @@
+export{t as Spotlight}from"./spotlight-mgMbftZG.js";

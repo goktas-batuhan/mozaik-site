@@ -1,0 +1,1 @@
+export{t as AnimatedBeam}from"./animated-beam-C5zd-ryd.js";

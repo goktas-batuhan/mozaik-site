@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BX5dh3L7.js";import{t}from"./morphing-text-Lyf7kjXP.js";var n=e();function r(){return(0,n.jsx)(t,{words:[`Mozaik`,`Motion`,`Craft`,`Detail`],className:`text-6xl font-bold tracking-tight sm:text-8xl`})}export{r as default};

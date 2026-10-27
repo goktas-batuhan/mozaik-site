@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BX5dh3L7.js";import{t}from"./split-flap-text-DcTKpCST.js";var n=e();function r(){return(0,n.jsx)(t,{words:[`Now boarding`,`Gate 12`,`On time`,`Last call`],className:`text-4xl sm:text-6xl`})}export{r as default};

@@ -1,0 +1,1 @@
+export{t as ShimmerSkeleton}from"./shimmer-skeleton-DANJ95o2.js";

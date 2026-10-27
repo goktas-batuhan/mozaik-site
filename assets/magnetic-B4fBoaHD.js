@@ -1,0 +1,1 @@
+export{t as Magnetic}from"./magnetic-DJbVlSyc.js";

@@ -1,0 +1,1 @@
+export{t as NumberTicker}from"./number-ticker-DSRxvmC7.js";
