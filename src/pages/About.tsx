@@ -33,7 +33,7 @@ export function About() {
         </h1>
         <p className="max-w-2xl text-lg text-pretty text-muted-foreground">
           {profile.role}
-          {profile.location ? ` based in ${profile.location}` : ''}. Mozaik is my open-source showcase: {stats.total} animated
+          {profile.location ? ` based in ${profile.location}` : ''}. Mozaik is my open-source showcase: {stats.components} animated
           React components, the source to copy, and this site that documents them. Everything here, from the
           tokens to the test pipeline, was designed and built as one system.
         </p>

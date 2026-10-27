@@ -1,5 +1,6 @@
 import { motion, useReducedMotion, useReducedMotionConfig, type Variants } from 'motion/react'
 import { useId, type ElementType, type ReactNode } from 'react'
+import { WordRotate } from '@/components/mozaik/word-rotate'
 import { cn } from '@/lib/utils'
 
 /** OS setting, or forced on with <MotionConfig reducedMotion="always">. */
@@ -22,6 +23,8 @@ export interface HeroAction {
 export interface HeroSectionProps {
   /** The headline. Labels the section for assistive tech. */
   title: ReactNode
+  /** Words that take turns after the headline, e.g. ["faster", "together"]. Uses Word Rotate. */
+  rotatingWords?: string[]
   /** Supporting copy under the headline. */
   description?: ReactNode
   /** Small pill above the headline, e.g. "New · v1.0". */
@@ -76,6 +79,7 @@ function Action({ action, variant }: { action: HeroAction; variant: 'primary' | 
 /** Landing hero: eyebrow, headline, copy, two calls to action and an optional media slot, revealed in sequence. */
 export function HeroSection({
   title,
+  rotatingWords,
   description,
   eyebrow,
   primaryAction,
@@ -135,6 +139,12 @@ export function HeroSection({
               className="text-4xl font-semibold leading-[1.05] tracking-tight text-balance break-words text-foreground @xl:text-5xl @5xl:text-6xl"
             >
               {title}
+              {rotatingWords && rotatingWords.length > 0 && (
+                <>
+                  {' '}
+                  <WordRotate words={rotatingWords} disabled={disabled} className="text-primary" />
+                </>
+              )}
             </Title>
           </motion.div>
           {description != null && (

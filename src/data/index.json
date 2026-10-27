@@ -1,63 +1,18 @@
 [
   {
-    "name": "rolling-text",
-    "title": "Rolling Text",
-    "description": "Rolls every letter up and swaps it for a copy of itself, on hover, mount or scroll into view.",
-    "category": "text",
-    "layer": "A",
-    "status": "stable",
-    "tags": [
-      "hover",
-      "letters",
-      "link"
-    ],
-    "source": "original",
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "scramble-text",
-    "title": "Scramble Text",
-    "description": "Letters cycle through random glyphs and decode into the real text, on mount, hover or scroll into view.",
-    "category": "text",
-    "layer": "A",
-    "status": "stable",
-    "tags": [
-      "decode",
-      "letters",
-      "hover"
-    ],
-    "source": "original",
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "split-reveal",
-    "title": "Split Reveal",
-    "description": "Words or letters rise out of their own masks and sharpen from a blur, on mount or scroll into view.",
-    "category": "text",
-    "layer": "A",
-    "status": "stable",
-    "tags": [
-      "reveal",
-      "headline",
-      "scroll"
-    ],
-    "source": "original",
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
     "name": "blur-fade",
     "title": "Blur Fade",
     "description": "Fades content in out of a blur, from any direction, on mount or when it scrolls into view.",
-    "category": "text",
-    "layer": "B",
+    "group": "text",
+    "shelf": "reveal",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "in-view",
+      "css",
+      "motion"
+    ],
+    "keywords": [
       "fade",
       "blur",
       "entrance"
@@ -69,16 +24,25 @@
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "chromatic-text-reveal",
     "title": "Chromatic Text Reveal",
     "description": "A sentence whose last word is painted in by a moving, colored edge, then swapped for the next.",
-    "category": "text",
-    "layer": "B",
+    "group": "text",
+    "shelf": "reveal",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "in-view",
+      "css",
+      "motion"
+    ],
+    "keywords": [
       "reveal",
       "gradient",
       "words"
@@ -90,16 +54,82 @@
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "split-reveal",
+    "title": "Split Reveal",
+    "description": "Words or letters rise out of their own masks and sharpen from a blur, on mount or scroll into view.",
+    "group": "text",
+    "shelf": "reveal",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "in-view",
+      "css",
+      "motion",
+      "lucide"
+    ],
+    "keywords": [
+      "reveal",
+      "headline",
+      "scroll"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "typing-animation",
+    "title": "Typing Animation",
+    "description": "Types text out character by character, optionally deleting and cycling through words. Screen readers get the full text up front.",
+    "group": "text",
+    "shelf": "reveal",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "typewriter",
+      "cursor",
+      "headline"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/typing-animation.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "morphing-text",
     "title": "Morphing Text",
     "description": "Melts one word into the next with a blur and an SVG threshold filter. Screen readers get the whole list once.",
-    "category": "text",
-    "layer": "B",
+    "group": "text",
+    "shelf": "rotate-morph",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "loop",
+      "svg",
+      "motion"
+    ],
+    "keywords": [
       "words",
       "blur",
       "headline",
@@ -112,16 +142,56 @@
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "word-rotate",
+    "title": "Word Rotate",
+    "description": "Swaps one word for the next with a short slide and fade. Screen readers get the whole list once.",
+    "group": "text",
+    "shelf": "rotate-morph",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "words",
+      "headline",
+      "loop"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/word-rotate.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "number-ticker",
     "title": "Number Ticker",
     "description": "Counts a number up or down with a soft ease once it scrolls into view. Screen readers get the final value.",
-    "category": "text",
-    "layer": "B",
+    "group": "text",
+    "shelf": "counter",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "in-view",
+      "css",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
       "counter",
       "stats",
       "scroll"
@@ -133,16 +203,107 @@
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "rolling-text",
+    "title": "Rolling Text",
+    "description": "Rolls every letter up and swaps it for a copy of itself, on hover, mount or scroll into view.",
+    "group": "text",
+    "shelf": "counter",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "hover",
+      "letters",
+      "link"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "split-flap-text",
+    "title": "Split Flap Text",
+    "description": "Departure-board lettering. Tiles flip through a drum of letters on a hinge, one beat apart. Screen readers get the lines once.",
+    "group": "text",
+    "shelf": "counter",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "zero-deps"
+    ],
+    "keywords": [
+      "board",
+      "airport",
+      "flip",
+      "loop"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/split-flap-text.tsx"
+    },
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "scramble-text",
+    "title": "Scramble Text",
+    "description": "Letters cycle through random glyphs and decode into the real text, on mount, hover or scroll into view.",
+    "group": "text",
+    "shelf": "effect",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "motion",
+      "lucide"
+    ],
+    "keywords": [
+      "decode",
+      "letters",
+      "hover"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "shine-text",
     "title": "Shine Text",
     "description": "A band of light glides across the text on a loop, like polished metal catching a lamp.",
-    "category": "text",
-    "layer": "B",
+    "group": "text",
+    "shelf": "effect",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "loop",
+      "css",
+      "motion"
+    ],
+    "keywords": [
       "shine",
       "gradient",
       "loop"
@@ -154,36 +315,25 @@
     },
     "dependencies": [
       "motion"
-    ]
-  },
-  {
-    "name": "split-flap-text",
-    "title": "Split Flap Text",
-    "description": "Departure-board lettering. Tiles flip through a drum of letters on a hinge, one beat apart. Screen readers get the lines once.",
-    "category": "text",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "board",
-      "airport",
-      "flip",
-      "loop"
     ],
-    "source": {
-      "repo": "kokonut-labs/kokonutui",
-      "license": "MIT",
-      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/split-flap-text.tsx"
-    },
-    "dependencies": []
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "spoiler-text",
     "title": "Spoiler Text",
     "description": "Text hidden under a shimmering field of specks. Click or press Enter to blow them away and read it. Screen readers hear a spoiler button until it opens.",
-    "category": "text",
-    "layer": "B",
+    "group": "text",
+    "shelf": "effect",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "click",
+      "canvas",
+      "motion"
+    ],
+    "keywords": [
       "spoiler",
       "reveal",
       "canvas",
@@ -196,37 +346,25 @@
     },
     "dependencies": [
       "motion"
-    ]
-  },
-  {
-    "name": "typing-animation",
-    "title": "Typing Animation",
-    "description": "Types text out character by character, optionally deleting and cycling through words. Screen readers get the full text up front.",
-    "category": "text",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "typewriter",
-      "cursor",
-      "headline"
     ],
-    "source": {
-      "repo": "magicuidesign/magicui",
-      "license": "MIT",
-      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/typing-animation.tsx"
-    },
-    "dependencies": [
-      "motion"
-    ]
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "wave-text",
     "title": "Wave Text",
     "description": "A gentle wave rolls through the letters, each one a beat behind its neighbour.",
-    "category": "text",
-    "layer": "B",
+    "group": "text",
+    "shelf": "effect",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "loop",
+      "css",
+      "motion"
+    ],
+    "keywords": [
       "wave",
       "letters",
       "loop"
@@ -238,71 +376,27 @@
     },
     "dependencies": [
       "motion"
-    ]
-  },
-  {
-    "name": "word-rotate",
-    "title": "Word Rotate",
-    "description": "Swaps one word for the next with a short slide and fade. Screen readers get the whole list once.",
-    "category": "text",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "words",
-      "headline",
-      "loop"
     ],
-    "source": {
-      "repo": "magicuidesign/magicui",
-      "license": "MIT",
-      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/word-rotate.tsx"
-    },
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "aurora-background",
-    "title": "Aurora Background",
-    "description": "A slow, blurred aurora drifting behind your content. Tinted from the primary token, paused off screen, still under reduced motion.",
-    "category": "background",
-    "layer": "A",
-    "status": "stable",
-    "tags": [
-      "aurora",
-      "gradient",
-      "hero"
-    ],
-    "source": "original",
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "dot-grid",
-    "title": "Dot Grid",
-    "description": "A dot grid with a fine grain and soft edges. Dots near the cursor take the primary color and grow.",
-    "category": "background",
-    "layer": "A",
-    "status": "stable",
-    "tags": [
-      "grid",
-      "cursor",
-      "noise"
-    ],
-    "source": "original",
-    "dependencies": [
-      "motion"
-    ]
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "shader-background",
     "title": "Shader Background",
     "description": "A soft, flowing noise field drawn by a raw WebGL shader in your theme colors. Sleeps off screen, falls back to a CSS gradient.",
-    "category": "background",
-    "layer": "A",
+    "group": "backgrounds",
+    "shelf": "shader",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "loop",
+      "webgl",
+      "marketing",
+      "motion",
+      "lucide"
+    ],
+    "keywords": [
       "webgl",
       "shader",
       "gradient",
@@ -311,75 +405,25 @@
     "source": "original",
     "dependencies": [
       "motion"
-    ]
-  },
-  {
-    "name": "border-beam",
-    "title": "Border Beam",
-    "description": "A light that travels around the border of its parent card. Decorative, follows the parent's radius.",
-    "category": "background",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "border",
-      "card",
-      "glow"
     ],
-    "source": {
-      "repo": "magicuidesign/magicui",
-      "license": "MIT",
-      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/border-beam.tsx"
-    },
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "diagonal-hatch",
-    "title": "Diagonal Hatch",
-    "description": "Fine diagonal hatching that fades towards the edges, like a sketch shaded with a ruler.",
-    "category": "background",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "hatch",
-      "pattern",
-      "static"
-    ],
-    "source": {
-      "repo": "bidyut10/opensourceui",
-      "license": "MIT",
-      "url": "https://github.com/bidyut10/opensourceui/blob/main/components/background-pattern/diagonal-box-pattern.tsx"
-    },
-    "dependencies": []
-  },
-  {
-    "name": "graph-paper",
-    "title": "Graph Paper",
-    "description": "Engineering graph paper: fine squares with a stronger line every few cells, fading out towards the edges.",
-    "category": "background",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "grid",
-      "pattern",
-      "static"
-    ],
-    "source": {
-      "repo": "bidyut10/opensourceui",
-      "license": "MIT",
-      "url": "https://github.com/bidyut10/opensourceui/blob/main/components/background-pattern/graph-paper-pattern.tsx"
-    },
-    "dependencies": []
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "halftone-background",
     "title": "Halftone Background",
     "description": "A halftone print on a canvas: a rotated screen of dots sized by the ink a lit sphere takes, with a light that circles it or follows the cursor.",
-    "category": "background",
-    "layer": "B",
+    "group": "backgrounds",
+    "shelf": "canvas",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "hover",
+      "canvas",
+      "motion"
+    ],
+    "keywords": [
       "canvas",
       "halftone",
       "dots",
@@ -392,37 +436,26 @@
     },
     "dependencies": [
       "motion"
-    ]
-  },
-  {
-    "name": "mesh-glow",
-    "title": "Mesh Glow",
-    "description": "Soft blurred glows over a fine grid with a calm vignette. Drifts slowly, or holds still.",
-    "category": "background",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "gradient",
-      "glow",
-      "ambient"
     ],
-    "source": {
-      "repo": "bidyut10/opensourceui",
-      "license": "MIT",
-      "url": "https://github.com/bidyut10/opensourceui/blob/main/components/background-gradient/dark-midnight-mesh-background.tsx"
-    },
-    "dependencies": [
-      "motion"
-    ]
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "meteors",
     "title": "Meteors",
     "description": "Streaks of light that fall across the parent box. Decorative, deterministic, still under reduced motion.",
-    "category": "background",
-    "layer": "B",
+    "group": "backgrounds",
+    "shelf": "canvas",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "loop",
+      "css",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
       "sky",
       "particles",
       "hero"
@@ -434,38 +467,26 @@
     },
     "dependencies": [
       "motion"
-    ]
-  },
-  {
-    "name": "retro-grid",
-    "title": "Retro Grid",
-    "description": "A perspective grid that scrolls toward the viewer. Pure CSS 3D, no canvas. Decorative and still under reduced motion.",
-    "category": "background",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "grid",
-      "perspective",
-      "hero"
     ],
-    "source": {
-      "repo": "magicuidesign/magicui",
-      "license": "MIT",
-      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/retro-grid.tsx",
-      "note": "Rebuilt in CSS 3D (upstream is WebGL)."
-    },
-    "dependencies": [
-      "motion"
-    ]
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "topo-background",
     "title": "Topo Background",
     "description": "A drifting topographic map: contour lines traced through a noise terrain on a canvas, with a hill that rises under the cursor.",
-    "category": "background",
-    "layer": "B",
+    "group": "backgrounds",
+    "shelf": "canvas",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "loop",
+      "hover",
+      "canvas",
+      "motion"
+    ],
+    "keywords": [
       "canvas",
       "contour",
       "terrain",
@@ -478,71 +499,197 @@
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
-    "name": "magnetic",
-    "title": "Magnetic",
-    "description": "Pulls a button or icon toward the pointer on a spring when the cursor comes close.",
-    "category": "cursor",
-    "layer": "A",
+    "name": "diagonal-hatch",
+    "title": "Diagonal Hatch",
+    "description": "Fine diagonal hatching that fades towards the edges, like a sketch shaded with a ruler.",
+    "group": "backgrounds",
+    "shelf": "pattern",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "css",
+      "zero-deps"
+    ],
+    "keywords": [
+      "hatch",
+      "pattern",
+      "static"
+    ],
+    "source": {
+      "repo": "bidyut10/opensourceui",
+      "license": "MIT",
+      "url": "https://github.com/bidyut10/opensourceui/blob/main/components/background-pattern/diagonal-box-pattern.tsx"
+    },
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "dot-grid",
+    "title": "Dot Grid",
+    "description": "A dot grid with a fine grain and soft edges. Dots near the cursor take the primary color and grow.",
+    "group": "backgrounds",
+    "shelf": "pattern",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "svg",
+      "motion",
+      "lucide"
+    ],
+    "keywords": [
+      "grid",
       "cursor",
-      "button",
-      "spring"
+      "noise"
     ],
     "source": "original",
     "dependencies": [
       "motion"
-    ]
-  },
-  {
-    "name": "spotlight",
-    "title": "Spotlight",
-    "description": "A soft primary-tinted light that follows the pointer across a card, with an optional glow on the nearest edge.",
-    "category": "cursor",
-    "layer": "A",
-    "status": "stable",
-    "tags": [
-      "cursor",
-      "card",
-      "glow"
     ],
-    "source": "original",
-    "dependencies": [
-      "motion"
-    ]
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
-    "name": "cool-mode",
-    "title": "Cool Mode",
-    "description": "Sprays coloured particles or emoji from the cursor while a button is pressed, drawn on a click-through canvas.",
-    "category": "cursor",
-    "layer": "B",
+    "name": "graph-paper",
+    "title": "Graph Paper",
+    "description": "Engineering graph paper: fine squares with a stronger line every few cells, fading out towards the edges.",
+    "group": "backgrounds",
+    "shelf": "pattern",
+    "layer": "component",
     "status": "stable",
     "tags": [
-      "cursor",
-      "particles",
-      "canvas"
+      "css",
+      "zero-deps"
+    ],
+    "keywords": [
+      "grid",
+      "pattern",
+      "static"
+    ],
+    "source": {
+      "repo": "bidyut10/opensourceui",
+      "license": "MIT",
+      "url": "https://github.com/bidyut10/opensourceui/blob/main/components/background-pattern/graph-paper-pattern.tsx"
+    },
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "retro-grid",
+    "title": "Retro Grid",
+    "description": "A perspective grid that scrolls toward the viewer. Pure CSS 3D, no canvas. Decorative and still under reduced motion.",
+    "group": "backgrounds",
+    "shelf": "pattern",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "grid",
+      "perspective",
+      "hero"
     ],
     "source": {
       "repo": "magicuidesign/magicui",
       "license": "MIT",
-      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/cool-mode.tsx"
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/retro-grid.tsx",
+      "note": "Rebuilt in CSS 3D (upstream is WebGL)."
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "aurora-background",
+    "title": "Aurora Background",
+    "description": "A slow, blurred aurora drifting behind your content. Tinted from the primary token, paused off screen, still under reduced motion.",
+    "group": "backgrounds",
+    "shelf": "gradient",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "marketing",
+      "motion",
+      "lucide"
+    ],
+    "keywords": [
+      "aurora",
+      "gradient",
+      "hero"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "mesh-glow",
+    "title": "Mesh Glow",
+    "description": "Soft blurred glows over a fine grid with a calm vignette. Drifts slowly, or holds still.",
+    "group": "backgrounds",
+    "shelf": "gradient",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "gradient",
+      "glow",
+      "ambient"
+    ],
+    "source": {
+      "repo": "bidyut10/opensourceui",
+      "license": "MIT",
+      "url": "https://github.com/bidyut10/opensourceui/blob/main/components/background-gradient/dark-midnight-mesh-background.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "cursor-image-trail",
     "title": "Cursor Image Trail",
     "description": "Drops a pool of images or cards along the pointer's path inside an area, larger and longer-lived the faster you move.",
-    "category": "cursor",
-    "layer": "B",
+    "group": "cursor",
+    "shelf": "follow-trail",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "hover",
+      "css",
+      "motion",
+      "lucide"
+    ],
+    "keywords": [
       "cursor",
       "images",
       "trail"
@@ -554,16 +701,25 @@
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "smooth-cursor",
     "title": "Smooth Cursor",
     "description": "Replaces the system cursor inside an area with a spring-smoothed arrow that turns toward the direction of travel.",
-    "category": "cursor",
-    "layer": "B",
+    "group": "cursor",
+    "shelf": "follow-trail",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "hover",
+      "svg",
+      "motion"
+    ],
+    "keywords": [
       "cursor",
       "spring",
       "pointer"
@@ -575,16 +731,80 @@
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "spotlight",
+    "title": "Spotlight",
+    "description": "A soft primary-tinted light that follows the pointer across a card, with an optional glow on the nearest edge.",
+    "group": "cursor",
+    "shelf": "follow-trail",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "motion",
+      "lucide"
+    ],
+    "keywords": [
+      "cursor",
+      "card",
+      "glow"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "magnetic",
+    "title": "Magnetic",
+    "description": "Pulls a button or icon toward the pointer on a spring when the cursor comes close.",
+    "group": "cursor",
+    "shelf": "magnetic-tilt",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "motion",
+      "lucide"
+    ],
+    "keywords": [
+      "cursor",
+      "button",
+      "spring"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "tilt-card",
     "title": "Tilt Card",
     "description": "A card that tilts toward the pointer in 3D on a spring, with an optional soft glare that follows the cursor.",
-    "category": "cursor",
-    "layer": "B",
+    "group": "cursor",
+    "shelf": "magnetic-tilt",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "hover",
+      "css",
+      "motion",
+      "lucide"
+    ],
+    "keywords": [
       "cursor",
       "card",
       "3d"
@@ -596,311 +816,56 @@
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
-    "name": "bento-grid",
-    "title": "Bento Grid",
-    "description": "Container-responsive bento grid with cards that lift on hover, move their artwork and follow the pointer with a soft glow.",
-    "category": "blocks",
-    "layer": "A",
+    "name": "cool-mode",
+    "title": "Cool Mode",
+    "description": "Sprays coloured particles or emoji from the cursor while a button is pressed, drawn on a click-through canvas.",
+    "group": "cursor",
+    "shelf": "click-effects",
+    "layer": "component",
     "status": "stable",
     "tags": [
-      "grid",
-      "features",
-      "cards"
-    ],
-    "source": "original",
-    "dependencies": []
-  },
-  {
-    "name": "hero-section",
-    "title": "Hero Section",
-    "description": "Landing hero with an eyebrow pill, headline, copy, two calls to action and an optional media slot, revealed in a soft stagger.",
-    "category": "blocks",
-    "layer": "A",
-    "status": "stable",
-    "tags": [
-      "landing",
-      "hero",
-      "cta"
-    ],
-    "source": "original",
-    "dependencies": [
+      "click",
+      "canvas",
       "motion"
-    ]
-  },
-  {
-    "name": "ai-tool-approval",
-    "title": "AI Tool Approval",
-    "description": "A card where the user approves or denies an agent's tool call, showing the command or fields, the reason, and a polite live announcement of the decision.",
-    "category": "blocks",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "ai",
-      "agent",
-      "approval",
-      "tool-call"
     ],
-    "source": {
-      "repo": "kokonut-labs/kokonutui",
-      "license": "MIT",
-      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/ai-tool-approval.tsx"
-    },
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "animated-beam",
-    "title": "Animated Beam",
-    "description": "A light that flows along a curved path between two elements, for integration diagrams. Holds a still path under reduced motion and pauses off screen.",
-    "category": "blocks",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "beam",
-      "diagram",
-      "integrations",
-      "svg"
+    "keywords": [
+      "cursor",
+      "particles",
+      "canvas"
     ],
     "source": {
       "repo": "magicuidesign/magicui",
       "license": "MIT",
-      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/animated-beam.tsx"
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/cool-mode.tsx"
     },
     "dependencies": [
       "motion"
-    ]
-  },
-  {
-    "name": "uptime-card",
-    "title": "Uptime Card",
-    "description": "A status card with a row of daily bars per service, an uptime percentage and a short list of recent incidents. Bars are readable by screen readers and inspectable with the keyboard.",
-    "category": "blocks",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "status",
-      "uptime",
-      "monitoring",
-      "incidents"
     ],
-    "source": {
-      "repo": "kokonut-labs/kokonutui",
-      "license": "MIT",
-      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/uptime-card.tsx"
-    },
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "address-chip",
-    "title": "Address Chip",
-    "description": "A compact EVM address with a generated blockie-style avatar, copy button, ENS label and explorer link.",
-    "category": "onchain",
-    "layer": "A",
-    "status": "stable",
-    "tags": [
-      "address",
-      "wallet",
-      "copy"
-    ],
-    "source": "original",
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "price-ticker",
-    "title": "Price Ticker",
-    "description": "A price that rolls its digits on every update, flashes green or red, and shows a percent change badge.",
-    "category": "onchain",
-    "layer": "A",
-    "status": "stable",
-    "tags": [
-      "price",
-      "digits",
-      "live"
-    ],
-    "source": "original",
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "radar-badge",
-    "title": "Radar Badge",
-    "description": "A live-monitoring badge: a tiny radar sweep with spreading rings next to a label, in live, scanning, idle and alert states.",
-    "category": "onchain",
-    "layer": "A",
-    "status": "stable",
-    "tags": [
-      "status",
-      "live",
-      "badge"
-    ],
-    "source": "original",
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "tx-steps",
-    "title": "Transaction Steps",
-    "description": "Step-by-step transaction status (Approve, Sign, Broadcast, Confirmed) with a spinning active step, checkmarks and error state.",
-    "category": "onchain",
-    "layer": "A",
-    "status": "stable",
-    "tags": [
-      "stepper",
-      "transaction",
-      "status"
-    ],
-    "source": "original",
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "amount-pad",
-    "title": "Amount Pad",
-    "description": "A number pad for entering a token amount: animated digits, presets, a per-transfer cap, shake on refusal and physical keyboard input.",
-    "category": "onchain",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "amount",
-      "keypad",
-      "input",
-      "send"
-    ],
-    "source": {
-      "repo": "kokonut-labs/kokonutui",
-      "license": "MIT",
-      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/amount-pad.tsx"
-    },
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "order-book",
-    "title": "Order Book",
-    "description": "A depth ladder with asks above and bids below, cumulative depth bars, a spread bar and a fill-cost readout on hover. Driven by snapshots passed as props.",
-    "category": "onchain",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "order book",
-      "depth",
-      "trading",
-      "dex"
-    ],
-    "source": {
-      "repo": "starc007/ui-components",
-      "license": "MIT",
-      "url": "https://github.com/starc007/ui-components/blob/main/components/charts/order-book.tsx"
-    },
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "receipt-printer",
-    "title": "Receipt Printer",
-    "description": "A transaction receipt (hash, from, to, amount, fee, status) that feeds out of a printer slot one line at a time, with a serrated edge.",
-    "category": "onchain",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "receipt",
-      "transaction",
-      "print"
-    ],
-    "source": {
-      "repo": "kokonut-labs/kokonutui",
-      "license": "MIT",
-      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/receipt-printer.tsx"
-    },
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "slide-to-confirm",
-    "title": "Slide to Confirm",
-    "description": "A slide-to-commit control for irreversible actions: drag the thumb to the end, or press Enter, Space or the right arrow. Shows busy and done states.",
-    "category": "onchain",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "confirm",
-      "slider",
-      "swap",
-      "send"
-    ],
-    "source": {
-      "repo": "kokonut-labs/kokonutui",
-      "license": "MIT",
-      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/slide-to-confirm.tsx"
-    },
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "direction-aware-tabs",
-    "title": "Direction Aware Tabs",
-    "description": "Tabs whose panel slides in from the side you are moving towards, with a sliding pill and an animated panel height.",
-    "category": "interactive",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "tabs",
-      "slide",
-      "spring"
-    ],
-    "source": {
-      "repo": "nolly-studio/cult-ui",
-      "license": "MIT",
-      "url": "https://github.com/nolly-studio/cult-ui/blob/main/apps/www/registry/default/ui/direction-aware-tabs.tsx"
-    },
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "dock",
-    "title": "Dock",
-    "description": "A row of icons that swell as the pointer approaches, macOS style. Stays at rest on touch and under reduced motion.",
-    "category": "interactive",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "dock",
-      "hover",
-      "navigation"
-    ],
-    "source": {
-      "repo": "magicuidesign/magicui",
-      "license": "MIT",
-      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/dock.tsx"
-    },
-    "dependencies": [
-      "motion"
-    ]
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "family-button",
     "title": "Family Button",
     "description": "A square button that springs open into a panel and collapses back. The toggle rotates from plus to close.",
-    "category": "interactive",
-    "layer": "B",
+    "group": "buttons",
+    "shelf": "animated",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "click",
+      "svg",
+      "motion",
+      "lucide"
+    ],
+    "keywords": [
       "expand",
       "panel",
       "spring"
@@ -912,16 +877,85 @@
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "shimmer-button",
+    "title": "Shimmer Button",
+    "description": "A button with a light that circles its edge. Stops when disabled or under reduced motion.",
+    "group": "buttons",
+    "shelf": "animated",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "marketing",
+      "motion",
+      "lucide"
+    ],
+    "keywords": [
+      "button",
+      "shimmer",
+      "cta"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/shimmer-button.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "slide-text-button",
+    "title": "Slide Text Button",
+    "description": "A button whose label slides up and is replaced by a second label on hover or keyboard focus. Renders as a button or a link.",
+    "group": "buttons",
+    "shelf": "animated",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "zero-deps"
+    ],
+    "keywords": [
+      "button",
+      "hover",
+      "label"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/slide-text-button.tsx"
+    },
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "hold-action-button",
     "title": "Hold Action Button",
     "description": "A button that confirms only after being held down, with a fill that rewinds on early release. Works with pointer and Space / Enter, announces completion, and completes without animation under reduced motion.",
-    "category": "interactive",
-    "layer": "B",
+    "group": "buttons",
+    "shelf": "confirm",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "click",
+      "css",
+      "motion"
+    ],
+    "keywords": [
       "button",
       "hold",
       "confirm",
@@ -934,16 +968,57 @@
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "slide-to-confirm",
+    "title": "Slide to Confirm",
+    "description": "A slide-to-commit control for irreversible actions: drag the thumb to the end, or press Enter, Space or the right arrow. Shows busy and done states.",
+    "group": "buttons",
+    "shelf": "confirm",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "drag",
+      "svg",
+      "web3",
+      "motion"
+    ],
+    "keywords": [
+      "confirm",
+      "slider",
+      "swap",
+      "send"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/slide-to-confirm.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "hover-swap-card",
     "title": "Hover Swap Card",
     "description": "A card that swaps its title and visual and lifts the media on hover or keyboard focus. Pure CSS transitions.",
-    "category": "interactive",
-    "layer": "B",
+    "group": "cards",
+    "shelf": "hover-reveal",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "hover",
+      "css",
+      "zero-deps"
+    ],
+    "keywords": [
       "card",
       "hover",
       "swap"
@@ -953,16 +1028,174 @@
       "license": "MIT",
       "url": "https://github.com/ui-layouts/uilayouts/blob/main/apps/ui-layout/registry/components/card/creative-hover-card.tsx"
     },
-    "dependencies": []
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "shift-card",
+    "title": "Shift Card",
+    "description": "A card whose bottom panel grows over the middle content on hover, focus or click, swapping what the top shows.",
+    "group": "cards",
+    "shelf": "hover-reveal",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "card",
+      "hover",
+      "reveal"
+    ],
+    "source": {
+      "repo": "nolly-studio/cult-ui",
+      "license": "MIT",
+      "url": "https://github.com/nolly-studio/cult-ui/blob/main/apps/www/registry/default/ui/shift-card.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "border-beam",
+    "title": "Border Beam",
+    "description": "A light that travels around the border of its parent card. Decorative, follows the parent's radius.",
+    "group": "cards",
+    "shelf": "surface",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "border",
+      "card",
+      "glow"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/border-beam.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "texture-card",
+    "title": "Texture Card",
+    "description": "A card framed by nested hairline borders for a machined, tactile edge. Ships header, title, description, content, footer and separator parts.",
+    "group": "cards",
+    "shelf": "surface",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "css",
+      "zero-deps",
+      "lucide"
+    ],
+    "keywords": [
+      "card",
+      "border",
+      "surface"
+    ],
+    "source": {
+      "repo": "nolly-studio/cult-ui",
+      "license": "MIT",
+      "url": "https://github.com/nolly-studio/cult-ui/blob/main/apps/www/registry/default/ui/texture-card.tsx"
+    },
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "dock",
+    "title": "Dock",
+    "description": "A row of icons that swell as the pointer approaches, macOS style. Stays at rest on touch and under reduced motion.",
+    "group": "navigation",
+    "shelf": "dock-menus",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "motion",
+      "lucide"
+    ],
+    "keywords": [
+      "dock",
+      "hover",
+      "navigation"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/dock.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "direction-aware-tabs",
+    "title": "Direction Aware Tabs",
+    "description": "Tabs whose panel slides in from the side you are moving towards, with a sliding pill and an animated panel height.",
+    "group": "navigation",
+    "shelf": "tabs",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "tabs",
+      "slide",
+      "spring"
+    ],
+    "source": {
+      "repo": "nolly-studio/cult-ui",
+      "license": "MIT",
+      "url": "https://github.com/nolly-studio/cult-ui/blob/main/apps/www/registry/default/ui/direction-aware-tabs.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "lens",
     "title": "Lens",
     "description": "A round magnifying lens that follows the pointer over any content. Mouse and trackpad only: touch screens and reduced motion get the plain content. The magnified copy is hidden from assistive tech.",
-    "category": "interactive",
-    "layer": "B",
+    "group": "overlays",
+    "shelf": "lightbox-lens",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "hover",
+      "css",
+      "motion"
+    ],
+    "keywords": [
       "magnifier",
       "zoom",
       "cursor",
@@ -975,96 +1208,55 @@
     },
     "dependencies": [
       "motion"
-    ]
-  },
-  {
-    "name": "shift-card",
-    "title": "Shift Card",
-    "description": "A card whose bottom panel grows over the middle content on hover, focus or click, swapping what the top shows.",
-    "category": "interactive",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "card",
-      "hover",
-      "reveal"
     ],
-    "source": {
-      "repo": "nolly-studio/cult-ui",
-      "license": "MIT",
-      "url": "https://github.com/nolly-studio/cult-ui/blob/main/apps/www/registry/default/ui/shift-card.tsx"
-    },
-    "dependencies": [
-      "motion"
-    ]
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
-    "name": "shimmer-button",
-    "title": "Shimmer Button",
-    "description": "A button with a light that circles its edge. Stops when disabled or under reduced motion.",
-    "category": "interactive",
-    "layer": "B",
+    "name": "progressive-blur",
+    "title": "Progressive Blur",
+    "description": "A gradual blur over the edge of a scrolling area, built from stacked backdrop-filter layers. Decorative and static.",
+    "group": "overlays",
+    "shelf": "scrim-blur",
+    "layer": "component",
     "status": "stable",
     "tags": [
-      "button",
-      "shimmer",
-      "cta"
+      "scroll",
+      "css",
+      "zero-deps"
+    ],
+    "keywords": [
+      "blur",
+      "scroll",
+      "edge",
+      "overlay"
     ],
     "source": {
       "repo": "magicuidesign/magicui",
       "license": "MIT",
-      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/shimmer-button.tsx"
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/progressive-blur.tsx"
     },
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "slide-text-button",
-    "title": "Slide Text Button",
-    "description": "A button whose label slides up and is replaced by a second label on hover or keyboard focus. Renders as a button or a link.",
-    "category": "interactive",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "button",
-      "hover",
-      "label"
-    ],
-    "source": {
-      "repo": "kokonut-labs/kokonutui",
-      "license": "MIT",
-      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/slide-text-button.tsx"
-    },
-    "dependencies": []
-  },
-  {
-    "name": "texture-card",
-    "title": "Texture Card",
-    "description": "A card framed by nested hairline borders for a machined, tactile edge. Ships header, title, description, content, footer and separator parts.",
-    "category": "interactive",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "card",
-      "border",
-      "surface"
-    ],
-    "source": {
-      "repo": "nolly-studio/cult-ui",
-      "license": "MIT",
-      "url": "https://github.com/nolly-studio/cult-ui/blob/main/apps/www/registry/default/ui/texture-card.tsx"
-    },
-    "dependencies": []
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "animated-list",
     "title": "Animated List",
     "description": "Adds its children one at a time, newest on top, with a springy push. Shows everything at once under reduced motion.",
-    "category": "layout",
-    "layer": "B",
+    "group": "layout",
+    "shelf": "lists",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "loop",
+      "css",
+      "motion",
+      "lucide"
+    ],
+    "keywords": [
       "list",
       "feed",
       "notifications"
@@ -1076,16 +1268,25 @@
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "drag-carousel",
     "title": "Drag Carousel",
     "description": "A free-scrolling row of slides with elastic drag, plus arrow-key and button stepping.",
-    "category": "layout",
-    "layer": "B",
+    "group": "layout",
+    "shelf": "carousels",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "drag",
+      "svg",
+      "motion"
+    ],
+    "keywords": [
       "carousel",
       "drag",
       "slider"
@@ -1097,16 +1298,26 @@
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "image-accordion",
     "title": "Image Accordion",
     "description": "A row of image panels where one is wide and the rest are slim. The open panel follows hover, focus or click and reveals its title.",
-    "category": "layout",
-    "layer": "B",
+    "group": "layout",
+    "shelf": "carousels",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "hover",
+      "css",
+      "zero-deps",
+      "lucide"
+    ],
+    "keywords": [
       "accordion",
       "gallery",
       "hover"
@@ -1116,120 +1327,25 @@
       "license": "MIT",
       "url": "https://github.com/ui-layouts/uilayouts/blob/main/apps/ui-layout/registry/components/accordion/image-hover.tsx"
     },
-    "dependencies": []
-  },
-  {
-    "name": "marquee",
-    "title": "Marquee",
-    "description": "Endless horizontal or vertical loop of any content, with pause on hover and a still frame under reduced motion.",
-    "category": "layout",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "loop",
-      "logos",
-      "scroll"
-    ],
-    "source": {
-      "repo": "magicuidesign/magicui",
-      "license": "MIT",
-      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/marquee.tsx"
-    },
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "orbiting-circles",
-    "title": "Orbiting Circles",
-    "description": "Spreads its children around a ring and walks them around it. Items stay upright and rest under reduced motion.",
-    "category": "layout",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "orbit",
-      "icons",
-      "hero"
-    ],
-    "source": {
-      "repo": "magicuidesign/magicui",
-      "license": "MIT",
-      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/orbiting-circles.tsx"
-    },
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "progressive-blur",
-    "title": "Progressive Blur",
-    "description": "A gradual blur over the edge of a scrolling area, built from stacked backdrop-filter layers. Decorative and static.",
-    "category": "layout",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "blur",
-      "scroll",
-      "edge",
-      "overlay"
-    ],
-    "source": {
-      "repo": "magicuidesign/magicui",
-      "license": "MIT",
-      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/progressive-blur.tsx"
-    },
-    "dependencies": []
-  },
-  {
-    "name": "smooth-accordion",
-    "title": "Smooth Accordion",
-    "description": "A stack of disclosures with panels that grow to their content, single or multiple mode, and full keyboard navigation.",
-    "category": "layout",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "accordion",
-      "disclosure",
-      "faq"
-    ],
-    "source": {
-      "repo": "ui-layouts/uilayouts",
-      "license": "MIT",
-      "url": "https://github.com/ui-layouts/uilayouts/blob/main/apps/ui-layout/components/ui/accordion.tsx"
-    },
-    "dependencies": [
-      "motion"
-    ]
-  },
-  {
-    "name": "terminal",
-    "title": "Terminal",
-    "description": "A terminal window that plays its lines in sequence: typed commands and fading output. Shows everything at once under reduced motion.",
-    "category": "layout",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "terminal",
-      "cli",
-      "typing"
-    ],
-    "source": {
-      "repo": "magicuidesign/magicui",
-      "license": "MIT",
-      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/terminal.tsx"
-    },
-    "dependencies": [
-      "motion"
-    ]
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "thumbnail-carousel",
     "title": "Thumbnail Carousel",
     "description": "A swipeable slide with a thumbnail strip underneath. The active thumbnail widens and the strip glides to centre it.",
-    "category": "layout",
-    "layer": "B",
+    "group": "layout",
+    "shelf": "carousels",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "click",
+      "svg",
+      "motion"
+    ],
+    "keywords": [
       "carousel",
       "gallery",
       "thumbnails"
@@ -1241,38 +1357,359 @@
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
-    "name": "ai-reasoning",
-    "title": "AI Reasoning",
-    "description": "A collapsible reasoning trace. The summary shimmers only while the model is working, then settles, reports how long it took and folds away.",
-    "category": "feedback",
-    "layer": "B",
+    "name": "smooth-accordion",
+    "title": "Smooth Accordion",
+    "description": "A stack of disclosures with panels that grow to their content, single or multiple mode, and full keyboard navigation.",
+    "group": "layout",
+    "shelf": "accordions",
+    "layer": "component",
     "status": "stable",
     "tags": [
-      "ai",
-      "reasoning",
-      "collapsible",
-      "streaming"
+      "click",
+      "svg",
+      "motion"
+    ],
+    "keywords": [
+      "accordion",
+      "disclosure",
+      "faq"
+    ],
+    "source": {
+      "repo": "ui-layouts/uilayouts",
+      "license": "MIT",
+      "url": "https://github.com/ui-layouts/uilayouts/blob/main/apps/ui-layout/components/ui/accordion.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "marquee",
+    "title": "Marquee",
+    "description": "Endless horizontal or vertical loop of any content, with pause on hover and a still frame under reduced motion.",
+    "group": "layout",
+    "shelf": "marquee",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "loop",
+      "logos",
+      "scroll"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/marquee.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "orbiting-circles",
+    "title": "Orbiting Circles",
+    "description": "Spreads its children around a ring and walks them around it. Items stay upright and rest under reduced motion.",
+    "group": "layout",
+    "shelf": "marquee",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "svg",
+      "marketing",
+      "motion",
+      "lucide"
+    ],
+    "keywords": [
+      "orbit",
+      "icons",
+      "hero"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/orbiting-circles.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "animated-beam",
+    "title": "Animated Beam",
+    "description": "A light that flows along a curved path between two elements, for integration diagrams. Holds a still path under reduced motion and pauses off screen.",
+    "group": "layout",
+    "shelf": "grids",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "svg",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "beam",
+      "diagram",
+      "integrations",
+      "svg"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/animated-beam.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "bento-grid",
+    "title": "Bento Grid",
+    "description": "Container-responsive bento grid with cards that lift on hover, move their artwork and follow the pointer with a soft glow.",
+    "group": "layout",
+    "shelf": "grids",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "svg",
+      "marketing",
+      "zero-deps",
+      "lucide"
+    ],
+    "keywords": [
+      "grid",
+      "features",
+      "cards"
+    ],
+    "source": "original",
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "scroll-progress",
+    "title": "Scroll Progress",
+    "description": "A thin bar that fills as you scroll the page or any scroll container.",
+    "group": "scroll",
+    "shelf": "progress",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "scroll",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "scroll",
+      "progress",
+      "reading"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/scroll-progress.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "ring-spinner",
+    "title": "Ring Spinner",
+    "description": "A minimal indeterminate ring in three sizes that takes its color from the surrounding text.",
+    "group": "feedback",
+    "shelf": "loaders",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "spinner",
+      "loading",
+      "status"
     ],
     "source": {
       "repo": "educlopez/smoothui",
       "license": "MIT",
-      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/ai-reasoning/index.tsx"
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/spinner/index.tsx"
     },
     "dependencies": [
       "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "thinking-loader",
+    "title": "Thinking Loader",
+    "description": "A calm waiting indicator in three shapes (dots, bar, grid) that share one tempo and never fake progress.",
+    "group": "feedback",
+    "shelf": "loaders",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "ai",
+      "motion"
+    ],
+    "keywords": [
+      "loader",
+      "status",
+      "dots"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/ai-loader/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": [
+      {
+        "name": "dots",
+        "title": "Dots",
+        "description": "Three dots that brighten in turn.",
+        "props": {
+          "variant": "dots",
+          "label": "Thinking"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "bar",
+        "title": "Bar",
+        "description": "A short bar that slides across a track.",
+        "props": {
+          "variant": "bar",
+          "label": "Searching the web"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "grid",
+        "title": "Grid",
+        "description": "A three-by-three grid that pulses cell by cell.",
+        "props": {
+          "variant": "grid",
+          "label": "Reading 12 files"
+        },
+        "status": "stable"
+      }
     ]
+  },
+  {
+    "name": "shimmer-skeleton",
+    "title": "Shimmer Skeleton",
+    "description": "A placeholder block with a soft light sweeping across it. Wrap real content and it keeps the exact size.",
+    "group": "feedback",
+    "shelf": "skeletons",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "skeleton",
+      "loading",
+      "placeholder"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/content-skeleton/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "progress-ring",
+    "title": "Progress Ring",
+    "description": "A determinate ring that eases to its value and counts up in the middle.",
+    "group": "feedback",
+    "shelf": "progress",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "in-view",
+      "svg",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "progress",
+      "ring",
+      "svg"
+    ],
+    "source": {
+      "repo": "bidyut10/opensourceui",
+      "license": "MIT",
+      "url": "https://github.com/bidyut10/opensourceui/blob/main/components/others/progress-ring-card.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "animated-subscribe-button",
     "title": "Animated Subscribe Button",
     "description": "A toggle button whose label slides away and the next one drops in. A real button with aria-pressed, in controlled or uncontrolled form.",
-    "category": "feedback",
-    "layer": "B",
+    "group": "feedback",
+    "shelf": "notifications",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "click",
+      "css",
+      "motion"
+    ],
+    "keywords": [
       "button",
       "subscribe",
       "toggle",
@@ -1285,38 +1722,25 @@
     },
     "dependencies": [
       "motion"
-    ]
-  },
-  {
-    "name": "dynamic-island",
-    "title": "Dynamic Island",
-    "description": "A pill that springs open into richer views, in the style of the iPhone status island. The shell animates real size, so content is never distorted.",
-    "category": "feedback",
-    "layer": "B",
-    "status": "stable",
-    "tags": [
-      "island",
-      "status",
-      "notification",
-      "spring"
     ],
-    "source": {
-      "repo": "starc007/ui-components",
-      "license": "MIT",
-      "url": "https://github.com/starc007/ui-components/blob/main/components/motion/dynamic-island.tsx"
-    },
-    "dependencies": [
-      "motion"
-    ]
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
     "name": "notification-stack",
     "title": "Notification Stack",
     "description": "A pile of notifications that fans out on hover or focus. Swipe, click or press Delete to dismiss; the remaining cards close the gap.",
-    "category": "feedback",
-    "layer": "B",
+    "group": "feedback",
+    "shelf": "notifications",
+    "layer": "component",
     "status": "stable",
     "tags": [
+      "drag",
+      "svg",
+      "motion"
+    ],
+    "keywords": [
       "notification",
       "stack",
       "swipe",
@@ -1329,111 +1753,403 @@
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
-    "name": "progress-ring",
-    "title": "Progress Ring",
-    "description": "A determinate ring that eases to its value and counts up in the middle.",
-    "category": "feedback",
-    "layer": "B",
+    "name": "dynamic-island",
+    "title": "Dynamic Island",
+    "description": "A pill that springs open into richer views, in the style of the iPhone status island. The shell animates real size, so content is never distorted.",
+    "group": "feedback",
+    "shelf": "status",
+    "layer": "component",
     "status": "stable",
     "tags": [
-      "progress",
-      "ring",
-      "svg"
+      "click",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "island",
+      "status",
+      "notification",
+      "spring"
     ],
     "source": {
-      "repo": "bidyut10/opensourceui",
+      "repo": "starc007/ui-components",
       "license": "MIT",
-      "url": "https://github.com/bidyut10/opensourceui/blob/main/components/others/progress-ring-card.tsx"
+      "url": "https://github.com/starc007/ui-components/blob/main/components/motion/dynamic-island.tsx"
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
-    "name": "ring-spinner",
-    "title": "Ring Spinner",
-    "description": "A minimal indeterminate ring in three sizes that takes its color from the surrounding text.",
-    "category": "feedback",
-    "layer": "B",
+    "name": "radar-badge",
+    "title": "Radar Badge",
+    "description": "A live-monitoring badge: a tiny radar sweep with spreading rings next to a label, in live, scanning, idle and alert states.",
+    "group": "feedback",
+    "shelf": "status",
+    "layer": "component",
     "status": "stable",
     "tags": [
-      "spinner",
-      "loading",
-      "status"
+      "loop",
+      "css",
+      "web3",
+      "motion",
+      "lucide"
+    ],
+    "keywords": [
+      "status",
+      "live",
+      "badge"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "ai-reasoning",
+    "title": "AI Reasoning",
+    "description": "A collapsible reasoning trace. The summary shimmers only while the model is working, then settles, reports how long it took and folds away.",
+    "group": "ai",
+    "shelf": "reasoning",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "svg",
+      "ai",
+      "motion"
+    ],
+    "keywords": [
+      "ai",
+      "reasoning",
+      "collapsible",
+      "streaming"
     ],
     "source": {
       "repo": "educlopez/smoothui",
       "license": "MIT",
-      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/spinner/index.tsx"
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/ai-reasoning/index.tsx"
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
-    "name": "scroll-progress",
-    "title": "Scroll Progress",
-    "description": "A thin bar that fills as you scroll the page or any scroll container.",
-    "category": "feedback",
-    "layer": "B",
+    "name": "ai-tool-approval",
+    "title": "AI Tool Approval",
+    "description": "A card where the user approves or denies an agent's tool call, showing the command or fields, the reason, and a polite live announcement of the decision.",
+    "group": "ai",
+    "shelf": "agents-tools",
+    "layer": "component",
     "status": "stable",
     "tags": [
-      "scroll",
-      "progress",
-      "reading"
+      "click",
+      "svg",
+      "ai",
+      "motion"
+    ],
+    "keywords": [
+      "ai",
+      "agent",
+      "approval",
+      "tool-call"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/ai-tool-approval.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "uptime-card",
+    "title": "Uptime Card",
+    "description": "A status card with a row of daily bars per service, an uptime percentage and a short list of recent incidents. Bars are readable by screen readers and inspectable with the keyboard.",
+    "group": "data",
+    "shelf": "status-pages",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "status",
+      "uptime",
+      "monitoring",
+      "incidents"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/uptime-card.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "terminal",
+    "title": "Terminal",
+    "description": "A terminal window that plays its lines in sequence: typed commands and fading output. Shows everything at once under reduced motion.",
+    "group": "media",
+    "shelf": "mockups",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "in-view",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "terminal",
+      "cli",
+      "typing"
     ],
     "source": {
       "repo": "magicuidesign/magicui",
       "license": "MIT",
-      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/scroll-progress.tsx"
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/terminal.tsx"
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
-    "name": "shimmer-skeleton",
-    "title": "Shimmer Skeleton",
-    "description": "A placeholder block with a soft light sweeping across it. Wrap real content and it keeps the exact size.",
-    "category": "feedback",
-    "layer": "B",
+    "name": "order-book",
+    "title": "Order Book",
+    "description": "A depth ladder with asks above and bids below, cumulative depth bars, a spread bar and a fill-cost readout on hover. Driven by snapshots passed as props.",
+    "group": "onchain",
+    "shelf": "prices-charts",
+    "layer": "component",
     "status": "stable",
     "tags": [
-      "skeleton",
-      "loading",
-      "placeholder"
+      "loop",
+      "css",
+      "web3",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "order book",
+      "depth",
+      "trading",
+      "dex"
     ],
     "source": {
-      "repo": "educlopez/smoothui",
+      "repo": "starc007/ui-components",
       "license": "MIT",
-      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/content-skeleton/index.tsx"
+      "url": "https://github.com/starc007/ui-components/blob/main/components/charts/order-book.tsx"
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
   },
   {
-    "name": "thinking-loader",
-    "title": "Thinking Loader",
-    "description": "A calm waiting indicator in three shapes (dots, bar, grid) that share one tempo and never fake progress.",
-    "category": "feedback",
-    "layer": "B",
+    "name": "price-ticker",
+    "title": "Price Ticker",
+    "description": "A price that rolls its digits on every update, flashes green or red, and shows a percent change badge.",
+    "group": "onchain",
+    "shelf": "prices-charts",
+    "layer": "component",
     "status": "stable",
     "tags": [
-      "loader",
-      "status",
-      "dots"
+      "loop",
+      "svg",
+      "web3",
+      "motion"
+    ],
+    "keywords": [
+      "price",
+      "digits",
+      "live"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "address-chip",
+    "title": "Address Chip",
+    "description": "A compact EVM address with a generated blockie-style avatar, copy button, ENS label and explorer link.",
+    "group": "onchain",
+    "shelf": "wallet-address",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "svg",
+      "web3",
+      "motion",
+      "lucide"
+    ],
+    "keywords": [
+      "address",
+      "wallet",
+      "copy"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "receipt-printer",
+    "title": "Receipt Printer",
+    "description": "A transaction receipt (hash, from, to, amount, fee, status) that feeds out of a printer slot one line at a time, with a serrated edge.",
+    "group": "onchain",
+    "shelf": "transactions",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "in-view",
+      "css",
+      "web3",
+      "motion"
+    ],
+    "keywords": [
+      "receipt",
+      "transaction",
+      "print"
     ],
     "source": {
-      "repo": "educlopez/smoothui",
+      "repo": "kokonut-labs/kokonutui",
       "license": "MIT",
-      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/ai-loader/index.tsx"
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/receipt-printer.tsx"
     },
     "dependencies": [
       "motion"
-    ]
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "tx-steps",
+    "title": "Transaction Steps",
+    "description": "Step-by-step transaction status (Approve, Sign, Broadcast, Confirmed) with a spinning active step, checkmarks and error state.",
+    "group": "onchain",
+    "shelf": "transactions",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "in-view",
+      "svg",
+      "web3",
+      "motion",
+      "lucide"
+    ],
+    "keywords": [
+      "stepper",
+      "transaction",
+      "status"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "amount-pad",
+    "title": "Amount Pad",
+    "description": "A number pad for entering a token amount: animated digits, presets, a per-transfer cap, shake on refusal and physical keyboard input.",
+    "group": "onchain",
+    "shelf": "amount-confirm",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "svg",
+      "web3",
+      "motion"
+    ],
+    "keywords": [
+      "amount",
+      "keypad",
+      "input",
+      "send"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/amount-pad.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "hero-section",
+    "title": "Hero Section",
+    "description": "Landing hero with an eyebrow pill, headline, copy, two calls to action and an optional media slot, revealed in a soft stagger.",
+    "group": "marketing",
+    "shelf": "hero",
+    "layer": "block",
+    "status": "stable",
+    "tags": [
+      "in-view",
+      "css",
+      "marketing",
+      "motion",
+      "lucide"
+    ],
+    "keywords": [
+      "landing",
+      "hero",
+      "cta"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "word-rotate"
+    ],
+    "added": "2026-10-26",
+    "variants": []
   }
 ]

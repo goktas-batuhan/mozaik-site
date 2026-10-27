@@ -2,7 +2,8 @@ import { MotionConfig } from 'motion/react'
 import { LoaderCircle, RotateCcw } from 'lucide-react'
 import { Component, Suspense, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react'
 import { cn } from '@/lib/utils'
-import { getDemo } from './data'
+import { getDemo } from './catalog'
+import { withBase } from './data'
 import { buttonStyles } from './ui'
 
 class DemoBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
@@ -19,18 +20,8 @@ class DemoBoundary extends Component<{ children: ReactNode }, { failed: boolean 
   }
 }
 
-const onIdle = (cb: () => void) =>
-  typeof requestIdleCallback === 'function' ? requestIdleCallback(cb) : window.setTimeout(cb, 200)
-const cancelIdle = (id: number) =>
-  typeof cancelIdleCallback === 'function' ? cancelIdleCallback(id) : clearTimeout(id)
-
-/**
- * Demo'yu görünüme yaklaşınca yükler ve render eder; bir kez kurulunca sökmez. `preload` verilirse
- * görünüme gelmeyi beklemeden ilk boşlukta da kurar: galeride hızlı scroll'da kartlar boş kalıyordu,
- * çünkü 9 demonun kurulumu ve ilk çizimi kartın ekranda kaldığı süreden uzun. Ekran dışındakileri
- * content-visibility çizdirmez; sökmek ise her dönüşte kurulumu (WebGL'de shader derlemesini) tekrarlatıyordu.
- */
-export function LazyDemo({ name, eager = false, preload = false }: { name: string; eager?: boolean; preload?: boolean }) {
+/** Demo'yu görünüme yaklaşınca yükler ve render eder; bir kez kurulunca sökmez. */
+export function LazyDemo({ name, eager = false }: { name: string; eager?: boolean }) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(eager)
 
@@ -43,12 +34,8 @@ export function LazyDemo({ name, eager = false, preload = false }: { name: strin
       { rootMargin: '200px' },
     )
     io.observe(ref.current)
-    const idle = preload ? onIdle(() => setVisible(true)) : undefined
-    return () => {
-      io.disconnect()
-      if (idle !== undefined) cancelIdle(idle)
-    }
-  }, [visible, preload])
+    return () => io.disconnect()
+  }, [visible])
 
   const Demo = getDemo(name)
 
@@ -66,7 +53,6 @@ export function LazyDemo({ name, eager = false, preload = false }: { name: strin
     </div>
   )
 }
-
 
 /**
  * Demoyu en az `designWidth` genişliğinde yerleştirir, demonun gerçek genişliği alana sığacak
@@ -171,13 +157,123 @@ export function PreviewFrame({ name, className }: { name: string; className?: st
   )
 }
 
-/** Galeri kartındaki küçük önizleme; etkileşim serbest ama tıklama karta gider. */
-export function MiniPreview({ name, className }: { name: string; className?: string }) {
+// Aynı anda en fazla bu kadar canlı demo; yenisi açılınca en eskisi statik görsele döner.
+const LIVE_LIMIT = 6
+const live: { id: number; stop: () => void }[] = []
+let liveId = 0
+
+function claimLive(stop: () => void) {
+  const id = ++liveId
+  live.push({ id, stop })
+  while (live.length > LIVE_LIMIT) live.shift()!.stop()
+  return () => {
+    const i = live.findIndex((l) => l.id === id)
+    if (i >= 0) live.splice(i, 1)
+  }
+}
+
+const finePointer = () => typeof matchMedia === 'function' && matchMedia('(hover: hover) and (pointer: fine)').matches
+const reducedMotion = () => typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches
+
+/**
+ * Galeri kartındaki önizleme: varsayılan, derlemede çekilmiş statik görsel (açık/koyu WebP,
+ * `npm run thumbs`). Canlı demo yalnız üstüne gelince ya da kart odaklanınca kurulur, görünümden
+ * çıkınca sökülür; aynı anda en fazla 6 tane. Reduced motion'da hiç kurulmaz.
+ */
+export function CardPreview({
+  demo,
+  label,
+  priority = false,
+  className,
+}: {
+  demo: string
+  label: string
+  /** İlk sıradaki kartlar: görsel tembel yüklenmez (LCP). */
+  priority?: boolean
+  className?: string
+}) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [on, setOn] = useState(false)
+  const [broken, setBroken] = useState(false)
+  const file = demo.replace('~', '--')
+
+  useEffect(() => {
+    if (!on) return
+    const release = claimLive(() => setOn(false))
+    const io = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) setOn(false)
+    })
+    if (ref.current) io.observe(ref.current)
+    return () => {
+      release()
+      io.disconnect()
+    }
+  }, [on])
+
+  useEffect(() => {
+    const card = ref.current?.closest('article')
+    if (!card) return
+    const start = (e: Event) => {
+      if (reducedMotion()) return
+      if (e.type === 'pointerenter' && !finePointer()) return
+      setOn(true)
+    }
+    card.addEventListener('pointerenter', start)
+    card.addEventListener('focusin', start)
+    return () => {
+      card.removeEventListener('pointerenter', start)
+      card.removeEventListener('focusin', start)
+    }
+  }, [])
+
   return (
-    <div className={cn(surface, 'h-56 p-4 [contain-intrinsic-size:auto_14rem] [content-visibility:auto]', className)}>
-      <Stage designWidth={760} max={0.72}>
-        <LazyDemo name={name} preload />
-      </Stage>
+    <div ref={ref} className={cn(surface, 'h-56 [contain-intrinsic-size:auto_14rem] [content-visibility:auto]', className)}>
+      {!broken && (
+        <>
+          <img
+            src={withBase(`/thumbs/${file}-dark.webp`)}
+            alt=""
+            loading={priority ? 'eager' : 'lazy'}
+            fetchPriority={priority ? 'high' : 'auto'}
+            decoding="async"
+            width={600}
+            height={336}
+            onError={() => setBroken(true)}
+            className="absolute inset-0 hidden size-full object-cover dark:block"
+          />
+          <img
+            src={withBase(`/thumbs/${file}-light.webp`)}
+            alt=""
+            // Varsayılan tema koyu: açık görsel öne alınmaz.
+            loading="lazy"
+            decoding="async"
+            width={600}
+            height={336}
+            className="absolute inset-0 size-full object-cover dark:hidden"
+          />
+        </>
+      )}
+      {broken && !on && <span className="text-sm text-muted-foreground">{label}</span>}
+      {on && (
+        <div className="absolute inset-0 grid place-items-center bg-background p-4">
+          <Stage designWidth={760} max={0.72}>
+            <LazyDemo name={demo} eager />
+          </Stage>
+        </div>
+      )}
+    </div>
+  )
+}
+
+/** Statik görsel çekimi için: kartla aynı kutu, demo hemen kurulur (scripts/thumbs.mjs). */
+export function ThumbFrame({ demo }: { demo: string }) {
+  return (
+    <div data-thumb className={cn(surface, 'h-56 w-[400px] p-4')}>
+      <MotionConfig reducedMotion="never">
+        <Stage designWidth={760} max={0.72}>
+          <LazyDemo name={demo} eager />
+        </Stage>
+      </MotionConfig>
     </div>
   )
 }

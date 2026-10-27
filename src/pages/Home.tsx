@@ -48,7 +48,7 @@ export function Home() {
                 className="group inline-flex items-center gap-2 rounded-full border bg-background/60 py-1 pr-3 pl-1 text-sm text-muted-foreground backdrop-blur hover:text-foreground"
               >
                 <span className="rounded-full bg-primary px-2 py-0.5 font-mono text-[11px] text-primary-foreground uppercase">
-                  {stats.total}
+                  {stats.components}
                 </span>
                 components, copy the code
                 <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden />

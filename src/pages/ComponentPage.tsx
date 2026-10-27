@@ -1,23 +1,31 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { Link, NavLink, useParams } from 'react-router'
+import { Link, NavLink, useParams, useSearchParams } from 'react-router'
 import { cn } from '@/lib/utils'
 import {
   byName,
-  CATEGORIES,
-  categoryLabel,
-  inCategoryOrder,
+  components,
+  groupLabel,
+  itemPath,
   loadDoc,
+  sectionOf,
+  shelfLabel,
+  tree,
   type ComponentDoc,
-} from '@/site/data'
+} from '@/site/catalog'
 import { useTitle } from '@/site/meta'
 import { PreviewFrame } from '@/site/preview'
 import { Badge, CodeBlock, Command, StatusBadge, Tabs } from '@/site/ui'
 import { NotFound } from './NotFound'
 
 export function ComponentPage() {
-  const { name = '' } = useParams()
+  const { slug: name = '' } = useParams()
   const entry = byName(name)
+  const [search, setSearch] = useSearchParams()
+  // Prerender HTML'i varyantsız; ?v= hydrate'ten sonra okunur (React #418).
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
+  const variant = mounted ? entry?.variants.find((v) => v.name === search.get('v')) : undefined
   const [doc, setDoc] = useState<ComponentDoc | null>(null)
   const [view, setView] = useState('preview')
 
@@ -35,25 +43,31 @@ export function ComponentPage() {
 
   if (!entry) return <NotFound />
 
-  const i = inCategoryOrder.findIndex((c) => c.name === name)
-  const prev = inCategoryOrder[i - 1]
-  const next = inCategoryOrder[i + 1]
+  const section = sectionOf(entry.layer)
+  const i = components.findIndex((c) => c.name === name)
+  const prev = components[i - 1]
+  const next = components[i + 1]
+  const variantDoc = variant && doc?.variants?.find((v) => v.name === variant.name)
   const file = doc?.files[0]
   const deps = entry.dependencies
 
   return (
     <div className="mx-auto grid max-w-7xl gap-12 px-4 pt-10 sm:px-6 lg:grid-cols-[13rem_minmax(0,1fr)]">
-      <Sidebar current={name} />
+      <Sidebar current={name} group={entry.group} />
 
       <article className="min-w-0 space-y-14">
         <header className="space-y-4">
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Link to="/components" className="hover:text-foreground">
-              Components
+            <Link to={`/${section}`} className="hover:text-foreground">
+              {section === 'blocks' ? 'Blocks' : 'Components'}
             </Link>
             <span aria-hidden>/</span>
-            <Link to={`/components?category=${entry.category}`} className="hover:text-foreground">
-              {categoryLabel(entry.category)}
+            <Link to={`/${section}/${entry.group}`} className="hover:text-foreground">
+              {groupLabel(section, entry.group)}
+            </Link>
+            <span aria-hidden>/</span>
+            <Link to={`/${section}/${entry.group}/${entry.shelf}`} className="hover:text-foreground">
+              {shelfLabel(section, entry.group, entry.shelf)}
             </Link>
           </nav>
           <h1 className="text-4xl font-semibold tracking-tight">{entry.title}</h1>
@@ -76,13 +90,51 @@ export function ComponentPage() {
             onChange={setView}
           />
           {view === 'preview' ? (
-            <PreviewFrame name={name} />
+            <PreviewFrame key={variant?.name ?? ''} name={variant ? `${name}~${variant.name}` : name} />
           ) : file ? (
             <CodeBlock html={file.html} raw={file.raw} title={`components/${file.name}`} />
           ) : (
             <div className="h-96 animate-pulse rounded-2xl border bg-card motion-reduce:animate-none" />
           )}
         </section>
+
+        {entry.variants.length > 0 && (
+          <section aria-labelledby="variants" className="space-y-5">
+            <h2 id="variants" className="text-2xl font-semibold tracking-tight">
+              Variants
+            </h2>
+            <p className="text-muted-foreground">
+              The same component with a named set of props. Pick one to preview it above and see its props.
+            </p>
+            <div role="group" aria-label="Variants" className="flex flex-wrap gap-2">
+              {[{ name: '', title: 'Demo' }, ...entry.variants].map((v) => {
+                const on = (variant?.name ?? '') === v.name
+                return (
+                  <button
+                    key={v.name}
+                    type="button"
+                    aria-pressed={on}
+                    onClick={() => {
+                      const p = new URLSearchParams(search)
+                      if (v.name) p.set('v', v.name)
+                      else p.delete('v')
+                      setSearch(p, { replace: true, preventScrollReset: true })
+                      setView('preview')
+                    }}
+                    className={cn(
+                      'rounded-full border px-3.5 py-1.5 text-sm transition-colors',
+                      on ? 'border-foreground bg-foreground text-background' : 'text-muted-foreground hover:text-foreground',
+                    )}
+                  >
+                    {v.title}
+                  </button>
+                )
+              })}
+            </div>
+            {variant && <p className="text-sm text-muted-foreground">{variant.description}</p>}
+            {variantDoc && <CodeBlock html={variantDoc.html} raw={variantDoc.raw} title={`${variant.name}.tsx`} maxHeight="16rem" />}
+          </section>
+        )}
 
         <section aria-labelledby="install" className="space-y-5">
           <h2 id="install" className="text-2xl font-semibold tracking-tight">
@@ -130,7 +182,7 @@ export function ComponentPage() {
 
         <nav aria-label="Previous and next" className="grid gap-3 border-t pt-8 sm:grid-cols-2">
           {prev ? (
-            <Link to={`/components/${prev.name}`} className="group rounded-xl border p-4 hover:bg-card">
+            <Link to={itemPath(prev)} className="group rounded-xl border p-4 hover:bg-card">
               <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
                 <ArrowLeft className="size-3.5" aria-hidden /> Previous
               </span>
@@ -140,7 +192,7 @@ export function ComponentPage() {
             <span />
           )}
           {next && (
-            <Link to={`/components/${next.name}`} className="group rounded-xl border p-4 text-right hover:bg-card">
+            <Link to={itemPath(next)} className="group rounded-xl border p-4 text-right hover:bg-card">
               <span className="flex items-center justify-end gap-1.5 text-xs text-muted-foreground">
                 Next <ArrowRight className="size-3.5" aria-hidden />
               </span>
@@ -210,29 +262,49 @@ function PropsTable({ props }: { props: ComponentDoc['props'] }) {
   )
 }
 
-function Sidebar({ current }: { current: string }) {
+function Sidebar({ current, group }: { current: string; group: string }) {
+  // 1000 öğede hepsini listelemek ağır: gruplar listelenir, yalnız açık grubun öğeleri görünür.
+  const sections = [
+    { id: 'components' as const, label: 'Components', groups: tree('components') },
+    { id: 'blocks' as const, label: 'Blocks', groups: tree('blocks') },
+  ]
   return (
     <aside className="hidden lg:block">
       <nav aria-label="All components" className="sticky top-24 max-h-[calc(100svh-7rem)] space-y-6 overflow-y-auto pr-2 pb-10 text-sm [scrollbar-width:thin]">
-        {CATEGORIES.map((cat) => (
-          <div key={cat.id}>
-            <p className="mb-2 font-mono text-[11px] tracking-widest text-muted-foreground uppercase">{cat.label}</p>
+        {sections.map((sec) => (
+          <div key={sec.id}>
+            <p className="mb-2 font-mono text-[11px] tracking-widest text-muted-foreground uppercase">{sec.label}</p>
             <ul className="space-y-0.5">
-              {inCategoryOrder
-                .filter((c) => c.category === cat.id)
-                .map((c) => (
-                  <li key={c.name}>
-                    <NavLink
-                      to={`/components/${c.name}`}
-                      className={cn(
-                        '-ml-2 block rounded-md px-2 py-1 transition-colors',
-                        c.name === current ? 'bg-accent text-foreground' : 'text-muted-foreground hover:text-foreground',
-                      )}
-                    >
-                      {c.title}
-                    </NavLink>
-                  </li>
-                ))}
+              {sec.groups.map((g) => (
+                <li key={g.id}>
+                  <NavLink
+                    to={`/${sec.id}/${g.id}`}
+                    className="-ml-2 flex items-baseline justify-between rounded-md px-2 py-1 text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    {g.label}
+                    <span className="font-mono text-[11px] tabular-nums">{g.count}</span>
+                  </NavLink>
+                  {g.id === group && (
+                    <ul className="mt-0.5 mb-2 ml-1 space-y-0.5 border-l pl-2">
+                      {components
+                        .filter((c) => sectionOf(c.layer) === sec.id && c.group === g.id)
+                        .map((c) => (
+                          <li key={c.name}>
+                            <NavLink
+                              to={itemPath(c)}
+                              className={cn(
+                                'block rounded-md px-2 py-1 transition-colors',
+                                c.name === current ? 'bg-accent text-foreground' : 'text-muted-foreground hover:text-foreground',
+                              )}
+                            >
+                              {c.title}
+                            </NavLink>
+                          </li>
+                        ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
         ))}
@@ -240,4 +312,3 @@ function Sidebar({ current }: { current: string }) {
     </aside>
   )
 }
-

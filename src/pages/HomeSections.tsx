@@ -4,7 +4,8 @@ import { BentoCard, BentoGrid } from '@/components/mozaik/bento-grid'
 import { Marquee } from '@/components/mozaik/marquee'
 import { NumberTicker } from '@/components/mozaik/number-ticker'
 import { Spotlight } from '@/components/mozaik/spotlight'
-import { CATEGORIES, components, stats, withBase } from '@/site/data'
+import { components, itemPath, tree } from '@/site/catalog'
+import { stats, withBase } from '@/site/data'
 import { LazyDemo, Stage } from '@/site/preview'
 import { ButtonLink, SectionHeading } from '@/site/ui'
 
@@ -32,15 +33,15 @@ const GATE = [
 
 /** Ana sayfanın ilk ekran altı; ayrı parça olarak yüklenir. */
 export function HomeSections() {
-  const counts = Object.fromEntries(CATEGORIES.map((c) => [c.id, components.filter((x) => x.category === c.id).length]))
+  const groups = tree('components')
 
   return (
     <>
       <section aria-label="Numbers" className="border-b">
         <dl className="mx-auto grid max-w-7xl grid-cols-2 divide-border px-4 sm:px-6 md:grid-cols-4 md:divide-x">
           {[
-            { value: stats.total, label: 'Components' },
-            { value: CATEGORIES.length, label: 'Categories' },
+            { value: stats.components, label: 'Components' },
+            { value: stats.variants + stats.blocks, label: 'Variants and blocks' },
             { value: stats.sources, label: 'MIT sources credited' },
             { value: Math.round((stats.stable / stats.total) * 100), label: 'Pass the quality gate', suffix: '%' },
           ].map((s) => (
@@ -60,7 +61,7 @@ export function HomeSections() {
           {components.filter((_, i) => i % 2 === 0).map((c) => (
             <Link
               key={c.name}
-              to={`/components/${c.name}`}
+              to={itemPath(c)}
               className="rounded-full border px-4 py-1.5 font-mono text-sm whitespace-nowrap text-muted-foreground transition-colors hover:border-primary/40 hover:text-foreground"
             >
               {c.name}
@@ -115,7 +116,7 @@ export function HomeSections() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pt-32 sm:px-6">
-        <SectionHeading eyebrow="Quality gate" title={`${stats.stable} of ${stats.total} components pass every check.`}>
+        <SectionHeading eyebrow="Quality gate" title={`${stats.stable} of ${stats.total} items pass every check.`}>
           The gate runs on every push. A component that fails still ships, marked beta, so you always know what you are
           getting.
         </SectionHeading>
@@ -131,14 +132,14 @@ export function HomeSections() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pt-32 sm:px-6">
-        <SectionHeading eyebrow="Categories" title="Eight shelves, one design language." />
+        <SectionHeading eyebrow="Categories" title={`${groups.length} groups, one design language.`} />
         <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border bg-border sm:grid-cols-2 lg:grid-cols-4">
-          {CATEGORIES.map((c) => (
+          {groups.map((c) => (
             <li key={c.id} className="bg-background">
-              <Link to={`/components?category=${c.id}`} className="group flex h-full flex-col gap-3 p-6 transition-colors hover:bg-card">
+              <Link to={`/components/${c.id}`} className="group flex h-full flex-col gap-3 p-6 transition-colors hover:bg-card">
                 <span className="flex items-baseline justify-between">
                   <span className="font-medium">{c.label}</span>
-                  <span className="font-mono text-xs text-muted-foreground tabular-nums">{counts[c.id]}</span>
+                  <span className="font-mono text-xs text-muted-foreground tabular-nums">{c.count}</span>
                 </span>
                 <span className="text-sm text-muted-foreground">{c.blurb}</span>
                 <ArrowRight

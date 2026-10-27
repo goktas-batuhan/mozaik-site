@@ -10,7 +10,7 @@ const watch = (page: Page) => {
 }
 
 // Sonda / : prerender edilmiş dizin HTML'i istenir (GitHub Pages da böyle yönlendirir).
-for (const path of ['/', '/components/', '/about/']) {
+for (const path of ['/', '/components/', '/components/text/', '/components/text/reveal/', '/blocks/', '/about/']) {
   test(`${path} renders and passes axe`, async ({ page }) => {
     const errors = watch(page)
     await page.goto(path)
@@ -26,10 +26,11 @@ for (const path of ['/', '/components/', '/about/']) {
   })
 }
 
-for (const { name, title } of index) {
-  test(`/components/${name}`, async ({ page }) => {
+for (const { name, title, layer } of index) {
+  const url = `/${layer === 'block' ? 'blocks' : 'components'}/${name}/`
+  test(url, async ({ page }) => {
     const errors = watch(page)
-    await page.goto(`/components/${name}/`)
+    await page.goto(url)
     await expect(page.getByRole('heading', { level: 1, name: title })).toBeVisible()
     await page.waitForTimeout(500)
     await page.getByRole('switch', { name: 'Reduced motion' }).check({ force: true })
@@ -42,4 +43,30 @@ for (const { name, title } of index) {
 test('unknown route shows 404', async ({ page }) => {
   await page.goto('/nope')
   await expect(page.getByRole('heading', { name: 'This tile is missing.' })).toBeVisible()
+})
+
+test('variant opens from the query string', async ({ page }) => {
+  const errors = watch(page)
+  await page.goto('/components/thinking-loader/?v=bar')
+  await expect(page.getByRole('button', { name: 'Bar', pressed: true })).toBeVisible()
+  await expect(page.getByText('Searching the web').first()).toBeVisible()
+  expect(errors).toEqual([])
+})
+
+test('gallery shows static previews and no live demo until hover', async ({ page }) => {
+  await page.goto('/components/')
+  await expect(page.locator('article img').first()).toBeVisible()
+  await page.waitForTimeout(1000)
+  expect(await page.locator('article [data-demo-root], article canvas').count()).toBe(0)
+})
+
+test('search finds a component with Ctrl+K', async ({ page }) => {
+  await page.goto('/components/')
+  await page.waitForLoadState('networkidle')
+  await page.keyboard.press('Control+k')
+  const box = page.getByRole('combobox', { name: /search/i })
+  await box.fill('ticker')
+  await expect(page.getByRole('option').first()).toBeVisible()
+  await box.press('Enter')
+  await expect(page).toHaveURL(/\/components\/(number|price)-ticker/)
 })

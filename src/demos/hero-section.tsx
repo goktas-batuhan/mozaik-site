@@ -52,11 +52,8 @@ export default function HeroSectionDemo() {
       <HeroSection
         align="left"
         eyebrow="New · v1.0 is live"
-        title={
-          <>
-            Components that <span className="text-primary">fit together</span>
-          </>
-        }
+        title="Components that"
+        rotatingWords={['fit together', 'move as one', 'stay calm']}
         description="Mozaik is a growing set of React components in one design language. Add them with one command and own every line."
         primaryAction={{
           label: (

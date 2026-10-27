@@ -2,13 +2,15 @@ import { Menu, Moon, Sun, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, ScrollRestoration, useLocation } from 'react-router'
 import { cn } from '@/lib/utils'
-import { MOZAIK_REPO, stats } from './data'
+import { countLine, MOZAIK_REPO, stats } from './data'
 import { profile } from './profile'
+import { SearchButton } from './search'
 import { useTheme } from './theme'
 import { buttonStyles, GithubIcon } from './ui'
 
 const NAV = [
   { to: '/components', label: 'Components' },
+  { to: '/blocks', label: 'Blocks' },
   { to: '/about', label: 'About' },
 ]
 
@@ -83,6 +85,7 @@ function Header() {
           ))}
         </nav>
         <div className="ml-auto flex items-center gap-1">
+          <SearchButton />
           <a href={MOZAIK_REPO} className={buttonStyles.icon} aria-label="Mozaik on GitHub" target="_blank" rel="noreferrer">
             <GithubIcon className="size-4" />
           </a>
@@ -119,7 +122,7 @@ function Footer() {
         <div className="space-y-3">
           <Logo />
           <p className="max-w-sm text-sm text-muted-foreground">
-            {stats.total} React components in one design language. Copy the code and make it yours.
+            {countLine(stats)} in one design language. Copy the code and make it yours.
           </p>
         </div>
         <div className="space-y-3 text-sm">
