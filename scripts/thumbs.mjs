@@ -39,10 +39,28 @@ if (todo.length) {
     const browser = await chromium.launch({ args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader'] })
     const context = await browser.newContext({ viewport: { width: 400, height: 224 }, deviceScaleFactor: 1.5, reducedMotion: 'no-preference' })
     let done = 0
+    const skipped = []
     for (const key of todo) {
       const file = key.replace('~', '--')
+      try {
+        await shoot(key, file)
+      } catch (e) {
+        // Oturmayan demo bütün koşuyu kilitlemesin: her adım en çok 15 s, sonra öğe atlanır.
+        skipped.push(key)
+        console.log(`thumbs: atlandı ${key} (${String(e.message).split('\n')[0]})`)
+        continue
+      }
+      manifest[key] = state[key.split('~')[0]]?.hash
+      writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n')
+      if (++done % 10 === 0) console.log(`thumbs: ${done}/${todo.length}`)
+    }
+    await browser.close()
+    if (skipped.length) console.log(`thumbs: ${skipped.length} atlandı: ${skipped.join(', ')}`)
+
+    async function shoot(key, file) {
       for (const theme of ['dark', 'light']) {
         const page = await context.newPage()
+        page.setDefaultTimeout(15_000)
         // Tema sağlayıcısı kayıtlı temayı okur; sınıfı elle değiştirmek yetmiyor.
         await page.addInitScript((t) => localStorage.setItem('mozaik-theme', t), theme)
         await page.goto(`http://localhost:${port}/thumb/${encodeURIComponent(key)}?theme=${theme}`)
@@ -66,11 +84,7 @@ if (todo.length) {
         writeFileSync(path.join(out, `${file}-${theme}.webp`), Buffer.from(webp, 'base64'))
         await page.close()
       }
-      manifest[key] = state[key.split('~')[0]]?.hash
-      writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n')
-      if (++done % 10 === 0) console.log(`thumbs: ${done}/${todo.length}`)
     }
-    await browser.close()
   } finally {
     server.kill()
     if (process.platform === 'win32') spawn('taskkill', ['/pid', String(server.pid), '/f', '/t'], { shell: true })

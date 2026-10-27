@@ -30,13 +30,15 @@ const statePath = path.join(dataDir, 'sync-state.json')
 
 const exportName = (name) => name.replace(/(^|-)(\w)/g, (_, __, c) => c.toUpperCase())
 
-/** Varyantın kullanım satırı: prop seti JSX özniteliklerine çevrilir. */
-function variantUsage(name, props) {
+/** Varyantın kullanım satırı: prop seti JSX özniteliklerine çevrilir. Demo VariantPreview veriyorsa
+ * component içerik bekler (`content`); kullanımda yeri yorumla gösterilir. */
+function variantUsage(name, props, content) {
   const attrs = Object.entries(props).map(([k, v]) =>
     v === true ? k : typeof v === 'string' && !v.includes('"') ? `${k}="${v}"` : `${k}={${JSON.stringify(v)}}`,
   )
   const tag = exportName(name)
-  const line = `<${tag}${attrs.length ? ' ' + attrs.join(' ') : ''} />`
+  const open = `<${tag}${attrs.length ? ' ' + attrs.join(' ') : ''}`
+  const line = content ? `(\n    ${open}>\n      {/* your content, as in the demo */}\n    </${tag}>\n  )` : `${open} />`
   return `import { ${tag} } from '@/components/${name}'\n\nexport function Example() {\n  return ${line}\n}\n`
 }
 
@@ -106,7 +108,7 @@ try {
       })
       const usage = demo.replace(/@\/components\/mozaik\//g, '@/components/')
       const variants = (m.variants ?? []).map((v) => {
-        const raw = variantUsage(m.name, v.props)
+        const raw = variantUsage(m.name, v.props, /export function VariantPreview\b/.test(m.demo))
         return { name: v.name, html: highlight(raw), raw }
       })
       writeFileSync(

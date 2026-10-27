@@ -108,7 +108,9 @@ export function itemsIn(section: Section, group?: string, shelf?: string) {
   return itemsOf(section).filter((c) => (!group || c.group === group) && (!shelf || c.shelf === shelf))
 }
 
-const demoModules = import.meta.glob<{ default: ComponentType }>('../demos/*.tsx')
+const demoModules = import.meta.glob<{ default: ComponentType; VariantPreview?: ComponentType<Record<string, unknown>> }>(
+  '../demos/*.tsx',
+)
 const docModules = import.meta.glob<{ default: ComponentDoc }>('../data/docs/*.json')
 const componentModules = import.meta.glob<Record<string, ComponentType<Record<string, unknown>>>>('../components/mozaik/*.tsx')
 
@@ -124,9 +126,11 @@ export function getDemo(key: string) {
     const load = componentModules[`../components/mozaik/${name}.tsx`]
     if (!props || !load) return null
     const exportName = name.replace(/(^|-)(\w)/g, (_, __, c: string) => c.toUpperCase())
+    // İçeriği JSX olan component'te demo dosyası VariantPreview verir (prop setini alır, içeriği ekler).
+    const loadDemo = demoModules[`../demos/${name}.tsx`]
     demo = lazy(async () => {
-      const Component = (await load())[exportName]
-      return { default: () => <Component {...props} /> }
+      const Preview = (await loadDemo?.())?.VariantPreview ?? (await load())[exportName]
+      return { default: () => <Preview {...props} /> }
     })
   } else {
     const load = demoModules[`../demos/${name}.tsx`]

@@ -27,7 +27,34 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "slide-in",
+        "title": "Slide in",
+        "description": "Slides in from the left over a long distance while it fades.",
+        "props": {
+          "children": "Sliding in from the side",
+          "direction": "left",
+          "offset": 48,
+          "duration": 0.8,
+          "className": "text-4xl font-semibold tracking-tight"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "heavy-blur",
+        "title": "Heavy blur",
+        "description": "Resolves from a very strong blur with no movement.",
+        "props": {
+          "children": "Out of focus, then sharp",
+          "blur": 28,
+          "offset": 0,
+          "duration": 1.4,
+          "className": "text-4xl font-semibold tracking-tight"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "chromatic-text-reveal",
@@ -57,7 +84,25 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "play-once",
+        "title": "Play once",
+        "description": "Paints each word in a single time and stops on the last one.",
+        "props": {
+          "prefix": "Design that feels",
+          "words": [
+            "effortless",
+            "considered",
+            "alive"
+          ],
+          "loop": false,
+          "duration": 1.4,
+          "className": "text-5xl font-semibold tracking-tight"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "split-reveal",
@@ -84,7 +129,34 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "letters",
+        "title": "Letters",
+        "description": "Reveals the text one letter at a time instead of word by word.",
+        "props": {
+          "text": "Every letter lands on its own.",
+          "split": "chars",
+          "trigger": "mount",
+          "as": "h2",
+          "className": "text-5xl font-semibold tracking-tight"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "sharp-words",
+        "title": "Sharp words",
+        "description": "Words rise out of a mask with no blur at all.",
+        "props": {
+          "text": "Clean edges from the very first frame.",
+          "blur": 0,
+          "trigger": "mount",
+          "as": "h2",
+          "className": "text-5xl font-semibold tracking-tight"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "typing-animation",
@@ -114,7 +186,38 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "block-cursor",
+        "title": "Block cursor",
+        "description": "Types and deletes several phrases with a solid terminal block cursor.",
+        "props": {
+          "words": [
+            "npx shadcn add",
+            "npm run dev",
+            "git push"
+          ],
+          "loop": true,
+          "cursorStyle": "block",
+          "startOnView": false,
+          "className": "font-mono text-4xl font-semibold"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "quick-no-cursor",
+        "title": "Quick, no cursor",
+        "description": "Types one line very fast with the cursor hidden.",
+        "props": {
+          "children": "Typed in a blink, with no cursor in sight.",
+          "duration": 0.015,
+          "showCursor": false,
+          "startOnView": false,
+          "className": "text-2xl"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "morphing-text",
@@ -145,7 +248,24 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "slow-morph",
+        "title": "Slow morph",
+        "description": "Long, gentle morphs that linger between words.",
+        "props": {
+          "words": [
+            "Calm",
+            "Clear",
+            "Crafted"
+          ],
+          "interval": 2.5,
+          "duration": 1.8,
+          "className": "text-6xl font-bold tracking-tight sm:text-8xl"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "word-rotate",
@@ -175,7 +295,27 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "rapid",
+        "title": "Rapid",
+        "description": "Swaps words every second with a snappy transition.",
+        "props": {
+          "words": [
+            "fast",
+            "bold",
+            "quick",
+            "sharp",
+            "live"
+          ],
+          "interval": 1,
+          "duration": 0.2,
+          "as": "h2",
+          "className": "text-5xl font-semibold tracking-tight text-primary"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "number-ticker",
@@ -206,7 +346,34 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "countdown",
+        "title": "Countdown",
+        "description": "Counts down from the value to a lower start number.",
+        "props": {
+          "value": 100,
+          "startValue": 0,
+          "direction": "down",
+          "duration": 3,
+          "className": "text-6xl font-semibold tabular-nums"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "currency",
+        "title": "Currency",
+        "description": "A slow count to a two-decimal amount with German number formatting.",
+        "props": {
+          "value": 12489.5,
+          "decimalPlaces": 2,
+          "locale": "de-DE",
+          "duration": 3,
+          "className": "text-6xl font-semibold tabular-nums"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "rolling-text",
@@ -232,7 +399,20 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "on-mount",
+        "title": "On mount",
+        "description": "Rolls the letters once as soon as the text appears.",
+        "props": {
+          "text": "Rolling into view",
+          "trigger": "mount",
+          "as": "h2",
+          "className": "text-5xl font-semibold tracking-tight"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "split-flap-text",
@@ -261,7 +441,25 @@
     "dependencies": [],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "rapid-board",
+        "title": "Rapid board",
+        "description": "A departures board that flips quickly through city names.",
+        "props": {
+          "words": [
+            "Berlin",
+            "Tokyo",
+            "Lisbon",
+            "Oslo"
+          ],
+          "interval": 1.2,
+          "duration": 0.2,
+          "className": "text-4xl sm:text-6xl"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "scramble-text",
@@ -288,7 +486,33 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "hover-decode",
+        "title": "Hover decode",
+        "description": "Scrambles and decodes the text each time you hover it.",
+        "props": {
+          "text": "Hover to decode",
+          "trigger": "hover",
+          "as": "h2",
+          "className": "font-mono text-5xl font-semibold tracking-tight"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "binary",
+        "title": "Binary",
+        "description": "A slow decode through zeros and ones only.",
+        "props": {
+          "text": "SIGNAL ACQUIRED",
+          "characters": "01",
+          "duration": 2.4,
+          "as": "h2",
+          "className": "font-mono text-5xl font-semibold tracking-tight"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "shine-text",
@@ -379,7 +603,22 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "big-wave",
+        "title": "Big wave",
+        "description": "Tall, quick swells that travel across each letter.",
+        "props": {
+          "text": "Make some waves",
+          "amplitude": 18,
+          "duration": 1.1,
+          "stagger": 0.1,
+          "as": "h2",
+          "className": "text-6xl font-semibold tracking-tight"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "shader-background",
@@ -439,7 +678,31 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "coarse-newsprint",
+        "title": "Coarse newsprint",
+        "description": "Big, widely spaced dots at a shallow screen angle, like cheap newsprint.",
+        "props": {
+          "cell": 20,
+          "angle": 15,
+          "children": "Extra, extra"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "fine-still",
+        "title": "Fine and still",
+        "description": "A tight, fine screen with the light held in place.",
+        "props": {
+          "cell": 5,
+          "speed": 0,
+          "interactive": false,
+          "children": "Fine screen"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "meteors",
@@ -470,7 +733,34 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "shower",
+        "title": "Shower",
+        "description": "A dense, fast shower of short meteors.",
+        "props": {
+          "number": 60,
+          "minDuration": 1.2,
+          "maxDuration": 2.5,
+          "distance": 400,
+          "className": "relative h-64 w-[28rem] max-w-full overflow-hidden rounded-xl border"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "slanted",
+        "title": "Slanted",
+        "description": "A few slow meteors leaning right instead of left.",
+        "props": {
+          "number": 8,
+          "angle": -35,
+          "minDuration": 5,
+          "maxDuration": 9,
+          "className": "relative h-64 w-[28rem] max-w-full overflow-hidden rounded-xl border"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "topo-background",
@@ -502,7 +792,32 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "dense-contours",
+        "title": "Dense contours",
+        "description": "Closely packed contour lines on a different terrain.",
+        "props": {
+          "interval": 0.025,
+          "seed": 7,
+          "children": "Dense map"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "still-relief",
+        "title": "Still relief",
+        "description": "Widely spaced contours on frozen terrain that ignores the cursor.",
+        "props": {
+          "interval": 0.18,
+          "speed": 0,
+          "interactive": false,
+          "seed": 3,
+          "children": "Still relief"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "diagonal-hatch",
@@ -529,7 +844,32 @@
     "dependencies": [],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "left-lean",
+        "title": "Left lean",
+        "description": "Tight lines leaning left that run to the edges without fading.",
+        "props": {
+          "angle": 135,
+          "spacing": 6,
+          "strength": 18,
+          "fade": false,
+          "className": "relative h-64 w-[28rem] max-w-full overflow-hidden rounded-xl border bg-background"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "wide-bold",
+        "title": "Wide and bold",
+        "description": "Widely spaced, heavy lines.",
+        "props": {
+          "spacing": 28,
+          "strength": 30,
+          "className": "relative h-64 w-[28rem] max-w-full overflow-hidden rounded-xl border bg-background"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "dot-grid",
@@ -556,7 +896,36 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "dense-flat",
+        "title": "Dense and flat",
+        "description": "Tight, fine dots across the whole box, with no fade, glow or grain.",
+        "props": {
+          "gap": 12,
+          "dotSize": 1.5,
+          "fade": false,
+          "glow": false,
+          "noise": false,
+          "className": "relative h-64 w-[28rem] max-w-full overflow-hidden rounded-xl border",
+          "children": "Dense grid"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "big-glow",
+        "title": "Big glow",
+        "description": "Large, sparse dots with a wide cursor glow.",
+        "props": {
+          "gap": 40,
+          "dotSize": 4,
+          "glowRadius": 260,
+          "className": "relative h-64 w-[28rem] max-w-full overflow-hidden rounded-xl border",
+          "children": "Move over me"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "graph-paper",
@@ -583,7 +952,32 @@
     "dependencies": [],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "fine-plain",
+        "title": "Fine and plain",
+        "description": "Small squares with no major lines and no fade.",
+        "props": {
+          "size": 12,
+          "majorEvery": 0,
+          "fade": "none",
+          "className": "relative h-64 w-[28rem] max-w-full overflow-hidden rounded-xl border bg-background"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "blueprint-fade",
+        "title": "Large fading down",
+        "description": "Large squares with a strong line every four cells, fading out towards the bottom.",
+        "props": {
+          "size": 40,
+          "majorEvery": 4,
+          "fade": "vertical",
+          "className": "relative h-64 w-[28rem] max-w-full overflow-hidden rounded-xl border bg-background"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "retro-grid",
@@ -615,7 +1009,32 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "steep-slow",
+        "title": "Steep and slow",
+        "description": "A steeply tilted floor of large cells rolling slowly.",
+        "props": {
+          "angle": 80,
+          "cellSize": 100,
+          "duration": 40,
+          "className": "relative h-64 w-[28rem] max-w-full overflow-hidden rounded-xl border bg-background"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "flat-fast",
+        "title": "Flat and fast",
+        "description": "A shallow tilt of small cells rushing past.",
+        "props": {
+          "angle": 35,
+          "cellSize": 32,
+          "duration": 6,
+          "className": "relative h-64 w-[28rem] max-w-full overflow-hidden rounded-xl border bg-background"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "aurora-background",
@@ -643,7 +1062,30 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "vivid-fast",
+        "title": "Vivid and fast",
+        "description": "A bright aurora sweeping at three times the speed.",
+        "props": {
+          "intensity": 1,
+          "speed": 3,
+          "children": "Northern lights"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "faint-still",
+        "title": "Faint and still",
+        "description": "A barely-there aurora held perfectly still.",
+        "props": {
+          "intensity": 0.25,
+          "speed": 0,
+          "children": "Quiet sky"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "mesh-glow",
@@ -673,7 +1115,29 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "still-glow",
+        "title": "Still glow",
+        "description": "The glows held in place with no drift.",
+        "props": {
+          "animated": false,
+          "className": "relative h-64 w-[28rem] max-w-full overflow-hidden rounded-xl border bg-background"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "fast-faint",
+        "title": "Fast and faint",
+        "description": "Dim glows that drift in a quick six-second cycle.",
+        "props": {
+          "duration": 6,
+          "intensity": 0.4,
+          "className": "relative h-64 w-[28rem] max-w-full overflow-hidden rounded-xl border bg-background"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "cursor-image-trail",
@@ -704,7 +1168,32 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "dense-small",
+        "title": "Dense and small",
+        "description": "Small, unrotated tiles drop every few pixels and vanish quickly.",
+        "props": {
+          "distance": 40,
+          "itemSize": 56,
+          "duration": 0.4,
+          "rotate": 0
+        },
+        "status": "stable"
+      },
+      {
+        "name": "big-lazy",
+        "title": "Big and lazy",
+        "description": "Large, tilted tiles are spaced far apart and linger for over a second.",
+        "props": {
+          "distance": 160,
+          "itemSize": 160,
+          "duration": 1.2,
+          "rotate": 30
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "smooth-cursor",
@@ -734,7 +1223,28 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "floaty",
+        "title": "Floaty",
+        "description": "A loose spring makes the cursor drift behind the pointer.",
+        "props": {
+          "stiffness": 120,
+          "damping": 20
+        },
+        "status": "stable"
+      },
+      {
+        "name": "snappy",
+        "title": "Snappy",
+        "description": "A stiff, heavily damped spring keeps the cursor almost glued to the pointer.",
+        "props": {
+          "stiffness": 900,
+          "damping": 60
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "spotlight",
@@ -761,7 +1271,29 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "wide-glow",
+        "title": "Wide glow",
+        "description": "A huge, brighter glow that washes across the whole card.",
+        "props": {
+          "size": 800,
+          "intensity": 0.3
+        },
+        "status": "stable"
+      },
+      {
+        "name": "tight-beam",
+        "title": "Tight beam",
+        "description": "A small, bright spot with no border highlight.",
+        "props": {
+          "size": 160,
+          "intensity": 0.3,
+          "border": false
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "magnetic",
@@ -788,7 +1320,18 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "strong-pull",
+        "title": "Strong pull",
+        "description": "The element is drawn most of the way to the pointer from far away.",
+        "props": {
+          "strength": 0.8,
+          "radius": 160
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "tilt-card",
@@ -819,7 +1362,26 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "steep",
+        "title": "Steep",
+        "description": "The card leans up to 28 degrees toward the pointer.",
+        "props": {
+          "max": 28
+        },
+        "status": "stable"
+      },
+      {
+        "name": "no-glare",
+        "title": "No glare",
+        "description": "The card tilts without the highlight following the pointer.",
+        "props": {
+          "glare": false
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "cool-mode",
@@ -849,7 +1411,31 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "confetti",
+        "title": "Confetti",
+        "description": "A big burst of party-popper emoji flies out on each press.",
+        "props": {
+          "particle": "🎉",
+          "size": 24,
+          "count": 90,
+          "speed": 1.5
+        },
+        "status": "stable"
+      },
+      {
+        "name": "gentle",
+        "title": "Gentle",
+        "description": "Only a few small circles drift out slowly.",
+        "props": {
+          "size": 8,
+          "count": 12,
+          "speed": 0.5
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "family-button",
@@ -880,7 +1466,20 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "open-wide",
+        "title": "Open and wide",
+        "description": "Starts open with a wider, shorter panel so the actions sit in a roomier tray.",
+        "props": {
+          "label": "Quick actions",
+          "defaultOpen": true,
+          "width": 340,
+          "height": 180
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "shimmer-button",
@@ -912,7 +1511,28 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "wide-slow",
+        "title": "Wide and slow",
+        "description": "A thick band of light that takes eight seconds to circle the button.",
+        "props": {
+          "shimmerSize": 5,
+          "duration": 8
+        },
+        "status": "stable"
+      },
+      {
+        "name": "quick-glint",
+        "title": "Quick glint",
+        "description": "A thin, fast glint that loops every second.",
+        "props": {
+          "shimmerSize": 1,
+          "duration": 1
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "slide-text-button",
@@ -940,7 +1560,19 @@
     "dependencies": [],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "ghost",
+        "title": "Ghost",
+        "description": "A borderless button that slides its label up to reveal the hover text, with no filled background.",
+        "props": {
+          "text": "Read the docs",
+          "hoverText": "Start reading",
+          "variant": "ghost"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "hold-action-button",
@@ -971,7 +1603,32 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "quick-hold",
+        "title": "Quick hold",
+        "description": "Fills and confirms after only half a second of holding.",
+        "props": {
+          "children": "Hold to archive",
+          "duration": 0.5,
+          "holdingLabel": "Archiving...",
+          "completeLabel": "Archived"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "long-hold",
+        "title": "Long hold",
+        "description": "Needs a deliberate four-second press before the action fires.",
+        "props": {
+          "children": "Hold to delete everything",
+          "duration": 4,
+          "holdingLabel": "Keep holding...",
+          "completeLabel": "Deleted"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "slide-to-confirm",
@@ -1091,7 +1748,30 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "bold-fast",
+        "title": "Bold and fast",
+        "description": "A large, thick comet that laps the card edge in three seconds.",
+        "props": {
+          "size": 200,
+          "duration": 3,
+          "borderWidth": 3
+        },
+        "status": "stable"
+      },
+      {
+        "name": "slow-reverse",
+        "title": "Slow reverse",
+        "description": "A small light that drifts counter-clockwise, taking twelve seconds per lap.",
+        "props": {
+          "size": 50,
+          "duration": 12,
+          "reverse": true
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "texture-card",
@@ -1150,7 +1830,30 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "big-swell",
+        "title": "Big swell",
+        "description": "Small resting icons that swell to more than twice their size over a wide reach.",
+        "props": {
+          "iconSize": 32,
+          "iconMagnification": 88,
+          "iconDistance": 220
+        },
+        "status": "stable"
+      },
+      {
+        "name": "centered",
+        "title": "Centered growth",
+        "description": "Icons grow outward from the middle of the dock instead of rising from the bottom edge.",
+        "props": {
+          "direction": "middle",
+          "iconSize": 44,
+          "iconMagnification": 72
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "direction-aware-tabs",
@@ -1211,7 +1914,30 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "loupe",
+        "title": "Loupe",
+        "description": "A small lens at triple zoom for reading the finest print.",
+        "props": {
+          "zoomFactor": 3,
+          "lensSize": 120,
+          "className": "border border-border"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "wide-lens",
+        "title": "Wide lens",
+        "description": "A large, gentle lens that covers a third of the card at a mild zoom.",
+        "props": {
+          "zoomFactor": 1.35,
+          "lensSize": 260,
+          "className": "border border-border"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "progressive-blur",
@@ -1240,7 +1966,28 @@
     "dependencies": [],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "top-fade",
+        "title": "Top edge",
+        "description": "Blurs only the top edge, as under a sticky header.",
+        "props": {
+          "position": "top",
+          "height": "5rem"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "deep-bottom",
+        "title": "Deep bottom",
+        "description": "A tall bottom blur that fades about a third of the list into haze.",
+        "props": {
+          "position": "bottom",
+          "height": "9rem"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "animated-list",
@@ -1271,7 +2018,29 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "rapid",
+        "title": "Rapid feed",
+        "description": "Items arrive about three times faster and the feed keeps looping.",
+        "props": {
+          "interval": 0.4,
+          "loop": true
+        },
+        "status": "stable"
+      },
+      {
+        "name": "play-once",
+        "title": "Play once",
+        "description": "Items arrive after a short delay and the list stops on the last one instead of looping.",
+        "props": {
+          "interval": 1.1,
+          "delay": 0.8,
+          "loop": false
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "drag-carousel",
@@ -1301,7 +2070,32 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "peek-strip",
+        "title": "Peek strip",
+        "description": "Narrow, tightly packed slides with no buttons, so the row is moved by dragging alone.",
+        "props": {
+          "label": "Component categories",
+          "slideWidth": "9rem",
+          "gap": 8,
+          "controls": false,
+          "elasticity": 0.4
+        },
+        "status": "stable"
+      },
+      {
+        "name": "wide-slides",
+        "title": "Wide slides",
+        "description": "Large slides with generous gaps, so only one and a half fit in view.",
+        "props": {
+          "label": "Component categories",
+          "slideWidth": "26rem",
+          "gap": 24
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "image-accordion",
@@ -1330,7 +2124,18 @@
     "dependencies": [],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "click",
+        "title": "Click to open",
+        "description": "Panels open only on click or focus, so a passing pointer changes nothing.",
+        "props": {
+          "trigger": "click",
+          "height": 280
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "thumbnail-carousel",
@@ -1360,7 +2165,29 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "banner",
+        "title": "Banner",
+        "description": "A low, wide slide above the thumbnail strip, like a hero banner.",
+        "props": {
+          "height": 150,
+          "label": "Trail photos"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "tall",
+        "title": "Tall",
+        "description": "A tall slide that gives each photo a portrait-like frame.",
+        "props": {
+          "height": 460,
+          "label": "Trail photos",
+          "defaultIndex": 3
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "smooth-accordion",
@@ -1390,7 +2217,68 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "multiple",
+        "title": "Multiple open",
+        "description": "Several panels can stay open at once, two of them open first.",
+        "props": {
+          "items": [
+            {
+              "id": "what",
+              "title": "What is Mozaik?",
+              "content": "A collection of small, hand-finished React components. Copy one into your project and own the source."
+            },
+            {
+              "id": "install",
+              "title": "How do I add a component?",
+              "content": "Copy the source from its page and install the npm packages it lists. The file is yours to edit."
+            },
+            {
+              "id": "motion",
+              "title": "Does it respect reduced motion?",
+              "content": "Yes. Every animation turns into a calm, static frame when the user prefers reduced motion."
+            }
+          ],
+          "type": "multiple",
+          "defaultValue": [
+            "what",
+            "motion"
+          ]
+        },
+        "status": "stable"
+      },
+      {
+        "name": "always-open",
+        "title": "Always open",
+        "description": "One panel is always open, so the open header cannot be closed again.",
+        "props": {
+          "items": [
+            {
+              "id": "what",
+              "title": "What is Mozaik?",
+              "content": "A collection of small, hand-finished React components. Copy one into your project and own the source."
+            },
+            {
+              "id": "install",
+              "title": "How do I add a component?",
+              "content": "Copy the source from its page and install the npm packages it lists. The file is yours to edit."
+            },
+            {
+              "id": "motion",
+              "title": "Does it respect reduced motion?",
+              "content": "Yes. Every animation turns into a calm, static frame when the user prefers reduced motion."
+            }
+          ],
+          "type": "single",
+          "collapsible": false,
+          "defaultValue": [
+            "install"
+          ]
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "marquee",
@@ -1421,7 +2309,35 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "vertical",
+        "title": "Vertical",
+        "description": "The text loop scrolls upward inside a fixed-height box.",
+        "props": {
+          "vertical": true,
+          "repeat": 3,
+          "duration": 14,
+          "className": "h-48 w-64 max-w-full",
+          "children": "Copy it. Paste it. Own it."
+        },
+        "status": "stable"
+      },
+      {
+        "name": "reverse",
+        "title": "Reverse",
+        "description": "The text loop runs left to right and pauses on hover.",
+        "props": {
+          "reverse": true,
+          "pauseOnHover": true,
+          "repeat": 4,
+          "duration": 20,
+          "className": "w-[28rem] max-w-full",
+          "children": "Quiet motion. Tokens first. Reduced motion is a first-class state."
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "orbiting-circles",
@@ -1453,7 +2369,32 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "counter-clockwise",
+        "title": "Counter-clockwise",
+        "description": "One ring of icons that circles against the clock on a tight orbit.",
+        "props": {
+          "reverse": true,
+          "radius": 110,
+          "iconSize": 40,
+          "duration": 20
+        },
+        "status": "stable"
+      },
+      {
+        "name": "fast-swarm",
+        "title": "Fast swarm",
+        "description": "Small icons race around a wide orbit with no ring drawn, about three times faster.",
+        "props": {
+          "path": false,
+          "radius": 150,
+          "iconSize": 28,
+          "duration": 6
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "animated-beam",
@@ -1511,7 +2452,28 @@
     "dependencies": [],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "two-columns",
+        "title": "Two columns",
+        "description": "A wider two-column grid with tall rows, so each tile gets room for its artwork.",
+        "props": {
+          "columns": 2,
+          "rowHeight": "14rem"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "four-columns",
+        "title": "Four columns",
+        "description": "A dense four-column grid with short rows that packs the same tiles into a tighter mosaic.",
+        "props": {
+          "columns": 4,
+          "rowHeight": "8rem"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "scroll-progress",
@@ -1571,7 +2533,29 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "small",
+        "title": "Small",
+        "description": "A tiny ring with a fine stroke that fits inline next to text.",
+        "props": {
+          "size": "sm",
+          "label": "Syncing"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "large-slow",
+        "title": "Large, slow",
+        "description": "A large thick ring that turns slowly and calmly.",
+        "props": {
+          "size": "lg",
+          "duration": 1.8,
+          "label": "Loading"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "thinking-loader",
@@ -1663,7 +2647,29 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "avatar",
+        "title": "Avatar",
+        "description": "A round placeholder with a light sweep, sized for a profile picture.",
+        "props": {
+          "className": "size-16 rounded-full",
+          "label": "Loading avatar"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "card",
+        "title": "Card",
+        "description": "A large rounded block that stands in for an image or card.",
+        "props": {
+          "className": "h-40 w-72 max-w-full rounded-xl",
+          "duration": 2.4,
+          "label": "Loading card"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "progress-ring",
@@ -1694,7 +2700,33 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "thin-large",
+        "title": "Thin, large",
+        "description": "A large ring with a hairline stroke and the percentage in the middle.",
+        "props": {
+          "value": 72,
+          "size": 176,
+          "strokeWidth": 4,
+          "label": "Upload progress"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "compact",
+        "title": "Compact",
+        "description": "A small bold ring with no number, for dense layouts.",
+        "props": {
+          "value": 64,
+          "size": 56,
+          "strokeWidth": 7,
+          "showValue": false,
+          "label": "Storage used"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "animated-subscribe-button",
@@ -1787,7 +2819,27 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "incoming-call",
+        "title": "Incoming call",
+        "description": "The island sits open on a caller card with an avatar and a two-line label.",
+        "props": {
+          "view": "call"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "timer",
+        "title": "Timer",
+        "description": "The island sits open on a large tabular countdown with a caption below.",
+        "props": {
+          "view": "timer",
+          "duration": 0.5
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "radar-badge",
@@ -1815,7 +2867,27 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "scanning",
+        "title": "Scanning",
+        "description": "A fast sweep without rings, in the primary color.",
+        "props": {
+          "status": "scanning"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "alert",
+        "title": "Alert",
+        "description": "A red radar with a quick sweep and rings, for when something needs attention.",
+        "props": {
+          "status": "alert",
+          "label": "3 signals"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "ai-reasoning",
@@ -1847,7 +2919,29 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "streaming",
+        "title": "Streaming",
+        "description": "Open and shimmering while the model is still reasoning.",
+        "props": {
+          "isStreaming": true,
+          "defaultOpen": true
+        },
+        "status": "stable"
+      },
+      {
+        "name": "collapsed",
+        "title": "Collapsed",
+        "description": "A finished trace folded down to its one-line summary.",
+        "props": {
+          "isStreaming": false,
+          "defaultOpen": false,
+          "duration": 4.2
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "ai-tool-approval",
@@ -1879,7 +2973,52 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "approved",
+        "title": "Approved",
+        "description": "The settled state after the reader approves the command.",
+        "props": {
+          "tool": "bash",
+          "title": "Run a command",
+          "input": "npm test -- checkout",
+          "reason": "Check the checkout tests before changing the form.",
+          "decision": "approved"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "denied",
+        "title": "Denied",
+        "description": "The settled state after the reader denies a risky command.",
+        "props": {
+          "tool": "bash",
+          "title": "Run a command",
+          "input": "rm -rf .next && npm run build",
+          "reason": "Clear the stale build cache, then rebuild.",
+          "destructive": true,
+          "decision": "denied"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "field-list",
+        "title": "Field list",
+        "description": "A structured call whose input shows as labelled fields instead of a command.",
+        "props": {
+          "tool": "write_file",
+          "title": "Write a file",
+          "input": {
+            "path": "src/checkout/form.tsx",
+            "mode": "overwrite",
+            "lines": 84,
+            "backup": true
+          },
+          "reason": "Apply the validation fix to the checkout form."
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "uptime-card",
@@ -1911,7 +3050,189 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "two-weeks",
+        "title": "Two weeks",
+        "description": "Fourteen wide bars per service for a short, readable window.",
+        "props": {
+          "title": "Last 14 days",
+          "endDate": "2026-10-14",
+          "services": [
+            {
+              "name": "API",
+              "history": [
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "degraded",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up"
+              ],
+              "incidents": [
+                {
+                  "day": 6,
+                  "title": "Elevated error rates on writes",
+                  "minutes": 18
+                }
+              ]
+            },
+            {
+              "name": "Dashboard",
+              "history": [
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up"
+              ]
+            }
+          ]
+        },
+        "status": "stable"
+      },
+      {
+        "name": "ninety-days",
+        "title": "Ninety days",
+        "description": "A dense strip of ninety thin bars for a long history.",
+        "props": {
+          "title": "Last 90 days",
+          "endDate": "2026-10-14",
+          "services": [
+            {
+              "name": "API",
+              "history": [
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "degraded",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "down",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "degraded",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up"
+              ],
+              "incidents": [
+                {
+                  "day": 14,
+                  "title": "Slow responses in eu-west",
+                  "minutes": 23
+                },
+                {
+                  "day": 41,
+                  "title": "Database failover",
+                  "minutes": 52
+                },
+                {
+                  "day": 77,
+                  "title": "Elevated error rates on writes",
+                  "minutes": 18
+                }
+              ]
+            }
+          ]
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "terminal",
@@ -1941,7 +3262,20 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "parallel",
+        "title": "Parallel lines",
+        "description": "Lines run on their own delays instead of waiting for the one before, so the output lands almost at once.",
+        "props": {
+          "title": "~/mozaik-site",
+          "className": "h-80",
+          "sequence": false,
+          "startOnView": false
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "order-book",
@@ -1974,7 +3308,88 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "top-of-book",
+        "title": "Top of book",
+        "description": "Only the three nearest levels on each side, for a compact ticket.",
+        "props": {
+          "bids": [
+            {
+              "price": 3467.9,
+              "size": 2.1
+            },
+            {
+              "price": 3467.15,
+              "size": 8.4
+            },
+            {
+              "price": 3466.4,
+              "size": 6.6
+            },
+            {
+              "price": 3465.65,
+              "size": 4.8
+            },
+            {
+              "price": 3464.9,
+              "size": 3
+            },
+            {
+              "price": 3464.15,
+              "size": 1.2
+            },
+            {
+              "price": 3463.4,
+              "size": 7.5
+            },
+            {
+              "price": 3462.65,
+              "size": 5.7
+            }
+          ],
+          "asks": [
+            {
+              "price": 3468.9,
+              "size": 4.8
+            },
+            {
+              "price": 3469.65,
+              "size": 3
+            },
+            {
+              "price": 3470.4,
+              "size": 1.2
+            },
+            {
+              "price": 3471.15,
+              "size": 7.5
+            },
+            {
+              "price": 3471.9,
+              "size": 5.7
+            },
+            {
+              "price": 3472.65,
+              "size": 3.9
+            },
+            {
+              "price": 3473.4,
+              "size": 2.1
+            },
+            {
+              "price": 3474.15,
+              "size": 8.4
+            }
+          ],
+          "levels": 3,
+          "baseSymbol": "ETH",
+          "quoteSymbol": "USDC",
+          "lastPrice": 3468.4
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "price-ticker",
@@ -2001,7 +3416,34 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "falling",
+        "title": "Falling",
+        "description": "A price below its 24h open, so the change badge reads as a loss.",
+        "props": {
+          "value": 97615.3,
+          "previousValue": 98240.5,
+          "currency": "USD",
+          "label": "Bitcoin price",
+          "className": "text-5xl font-semibold tracking-tight"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "price-only",
+        "title": "Price only",
+        "description": "Just the rolling digits, with the change badge hidden.",
+        "props": {
+          "value": 3468.42,
+          "currency": "USD",
+          "showChange": false,
+          "label": "Ether price",
+          "className": "text-5xl font-semibold tracking-tight"
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "address-chip",
@@ -2029,7 +3471,19 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "bare",
+        "title": "Bare",
+        "description": "Only the shortened address as plain text, with no avatar and no copy button.",
+        "props": {
+          "address": "0x33cEb14560bd33b977Ada347Daa646D53418F12D",
+          "avatar": false,
+          "copyable": false
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "receipt-printer",
@@ -2060,7 +3514,47 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "manual-print",
+        "title": "Manual print",
+        "description": "The paper stays in the printer until the Print button is pressed.",
+        "props": {
+          "autoPrint": false,
+          "tx": {
+            "hash": "0x8f3a1c52d9e47b60a1f3c8d25e9b7a4c6d01f2e3b4a5968778695a4b3c2d1e0f",
+            "from": "0x71C7656EC7ab88b098defB751B7401B5f6d8976F",
+            "to": "0x2a9fB1c0E5d3a7C8b4F6e1D2c9A0b3E7f5d4C6B8",
+            "amount": "0.2500",
+            "symbol": "ETH",
+            "fee": "0.00042",
+            "status": "confirmed",
+            "network": "Ethereum",
+            "timestamp": "26 Oct 2026 · 08:42"
+          }
+        },
+        "status": "stable"
+      },
+      {
+        "name": "failed",
+        "title": "Failed",
+        "description": "A receipt for a transaction that failed on chain.",
+        "props": {
+          "tx": {
+            "hash": "0x8f3a1c52d9e47b60a1f3c8d25e9b7a4c6d01f2e3b4a5968778695a4b3c2d1e0f",
+            "from": "0x71C7656EC7ab88b098defB751B7401B5f6d8976F",
+            "to": "0x2a9fB1c0E5d3a7C8b4F6e1D2c9A0b3E7f5d4C6B8",
+            "amount": "0.2500",
+            "symbol": "ETH",
+            "fee": "0.00042",
+            "status": "failed",
+            "network": "Ethereum",
+            "timestamp": "26 Oct 2026 · 08:42"
+          }
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "tx-steps",
@@ -2088,7 +3582,73 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "vertical",
+        "title": "Vertical",
+        "description": "The steps stacked in a column with a connecting line, mid-swap.",
+        "props": {
+          "orientation": "vertical",
+          "label": "Swap progress",
+          "className": "mx-auto w-[min(90vw,24rem)]",
+          "steps": [
+            {
+              "label": "Approve",
+              "description": "Allow the router to spend USDC",
+              "status": "done"
+            },
+            {
+              "label": "Sign",
+              "description": "Confirm the swap in your wallet",
+              "status": "active"
+            },
+            {
+              "label": "Broadcast",
+              "description": "Sent to the network",
+              "status": "pending"
+            },
+            {
+              "label": "Confirmed",
+              "description": "Included in block 21,408,117",
+              "status": "pending"
+            }
+          ]
+        },
+        "status": "stable"
+      },
+      {
+        "name": "failed",
+        "title": "Failed step",
+        "description": "A row of steps where the wallet rejection stops the flow on an error state.",
+        "props": {
+          "label": "Swap progress",
+          "className": "w-[min(92vw,680px)]",
+          "steps": [
+            {
+              "label": "Approve",
+              "description": "Allow the router to spend USDC",
+              "status": "done"
+            },
+            {
+              "label": "Sign",
+              "description": "Rejected in wallet. Try again.",
+              "status": "error"
+            },
+            {
+              "label": "Broadcast",
+              "description": "Sent to the network",
+              "status": "pending"
+            },
+            {
+              "label": "Confirmed",
+              "description": "Included in block 21,408,117",
+              "status": "pending"
+            }
+          ]
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "amount-pad",
@@ -2120,7 +3680,45 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
-    "variants": []
+    "variants": [
+      {
+        "name": "dollar-prefix",
+        "title": "Dollar prefix",
+        "description": "A currency pad with the symbol in front of the amount and two decimals.",
+        "props": {
+          "symbol": "$",
+          "symbolPosition": "prefix",
+          "decimals": 2,
+          "max": 1000,
+          "balance": 482.5,
+          "presets": [
+            10,
+            50,
+            100
+          ],
+          "actionLabel": "Pay"
+        },
+        "status": "stable"
+      },
+      {
+        "name": "whole-units",
+        "title": "Whole units",
+        "description": "A whole-number pad with no decimal key, for tokens that are not divisible.",
+        "props": {
+          "symbol": "USDC",
+          "symbolPosition": "suffix",
+          "decimals": 0,
+          "max": 5000,
+          "balance": 1250,
+          "presets": [
+            100,
+            500,
+            1000
+          ]
+        },
+        "status": "stable"
+      }
+    ]
   },
   {
     "name": "hero-section",

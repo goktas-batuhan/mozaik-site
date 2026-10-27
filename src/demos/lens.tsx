@@ -1,4 +1,4 @@
-import { Lens } from '@/components/mozaik/lens'
+import { Lens, type LensProps } from '@/components/mozaik/lens'
 
 /** A self-contained card: token gradient, grid pattern and small text worth magnifying. */
 function Card() {
@@ -30,6 +30,14 @@ function Card() {
 export default function LensDemo() {
   return (
     <Lens className="border border-border">
+      <Card />
+    </Lens>
+  )
+}
+
+export function VariantPreview(props: Omit<LensProps, 'children'>) {
+  return (
+    <Lens {...props}>
       <Card />
     </Lens>
   )
