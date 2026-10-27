@@ -9,9 +9,11 @@ const dist = path.join(root, 'dist')
 const { render } = await import(pathToFileURL(path.join(root, 'dist-ssr/entry-server.js')).href)
 const index = JSON.parse(readFileSync(path.join(root, 'src/data/index.json'), 'utf8'))
 const taxonomy = JSON.parse(readFileSync(path.join(root, 'src/data/taxonomy.json'), 'utf8'))
-// İlk ekranın fontları: geç gelip metni yeniden çizmesinler (LCP).
+// İlk ekranın fontları: geç gelip metni yeniden çizmesinler (LCP). Ön yüklenen font High önceliktir;
+// CSS'ten bulunan VeryHigh font Lighthouse'un simülasyonunda ilk boyamayı bekletiyor sayılıyordu.
+// latin-ext altbilgideki "ş" için, mono sayaç ve etiketler için her sayfada iniyor zaten.
 const fonts = readdirSync(path.join(dist, 'assets')).filter((f) =>
-  /^(geist-latin-wght-normal|instrument-serif-latin-400-italic)-.*\.woff2$/.test(f),
+  /^(geist-(latin(-ext)?|mono-latin)-wght-normal|instrument-serif-latin-400-italic)-.*\.woff2$/.test(f),
 )
 const base = process.env.BASE_PATH ?? '/'
 const link = (f) => `<link rel="preload" as="font" type="font/woff2" crossorigin href="${base}assets/${f}" />`
@@ -25,6 +27,13 @@ const inlineCss = (html) =>
     const css = readFileSync(path.join(dist, href.slice(base.length)), 'utf8')
     return `<style>${css}</style>`
   })
+// Uygulama JS'i ilk boyamadan sonra istenir: hazır HTML ekrana JS'i beklemeden gelir, Lighthouse'un
+// mobil simülasyonu da ilk boyamadan önce biten her betiği LCP'ye katıyordu (galeri 84-88).
+const afterPaint = (html) =>
+  html.replace(/<script type="module" crossorigin src="([^"]+)"><\/script>/, (_, src) =>
+    // FCP girdisi gelince (sunum sonrası) yükle; boyamayan arka plan sekmesi için 3 s yedek.
+    `<script>{let d=0;const go=()=>{if(d++)return;const s=document.createElement('script');s.type='module';s.crossOrigin='';s.src='${src}';document.head.append(s)};try{new PerformanceObserver((l)=>{if(l.getEntriesByName('first-contentful-paint').length)setTimeout(go)}).observe({type:'paint',buffered:true});setTimeout(go,3000)}catch{go()}}</script>`,
+  )
 const template = inlineCss(readFileSync(path.join(dist, 'index.html'), 'utf8').replace('</title>', `</title>\n    ${preload}`))
 
 const DEFAULT = 'Animated React components in one design language. Accessible, reduced-motion safe, copied as plain source.'
@@ -66,7 +75,7 @@ for (const page of pages) {
     .replace('<div id="root"></div>', `<div id="root">${html}</div>`)
   const file = page.url === '/' ? path.join(dist, 'index.html') : path.join(dist, page.url, 'index.html')
   mkdirSync(path.dirname(file), { recursive: true })
-  writeFileSync(file, out)
+  writeFileSync(file, afterPaint(out))
 }
 
 // GitHub Pages bilinmeyen yolda 404.html döner: boş kabuk, istemci yönlendirici sayfayı çizer.
