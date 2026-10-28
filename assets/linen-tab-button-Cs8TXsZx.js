@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BX5dh3L7.js";import{t}from"./linen-tab-button-DDSVhNvn.js";var n=e();function r(){return(0,n.jsxs)(`div`,{className:`flex flex-wrap items-center justify-center gap-4`,children:[(0,n.jsx)(t,{}),(0,n.jsx)(t,{children:`Open notes`}),(0,n.jsx)(t,{disabled:!0,children:`Unavailable`})]})}export{r as default};

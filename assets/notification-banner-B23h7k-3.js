@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BX5dh3L7.js";import{t}from"./notification-banner-D1x3A8Gh.js";var n=e();function r(){return(0,n.jsxs)(`div`,{className:`flex flex-col items-center gap-6`,children:[(0,n.jsx)(t,{}),(0,n.jsx)(t,{message:`Wallet copied to clipboard`,actionLabel:``,showTriggerLabel:`Show copied notice`})]})}export{r as default};

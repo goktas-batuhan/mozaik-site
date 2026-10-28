@@ -1,0 +1,1 @@
+export{t as SlideToConfirm}from"./slide-to-confirm-rSjxXeY3.js";

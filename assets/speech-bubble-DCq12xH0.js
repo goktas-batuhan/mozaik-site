@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BX5dh3L7.js";import{t}from"./speech-bubble-DArfzF1a.js";var n=e();function r(){return(0,n.jsxs)(`div`,{className:`flex flex-col items-start gap-8 py-4`,children:[(0,n.jsx)(t,{children:`Your signal bot is live.`}),(0,n.jsx)(t,{showCursor:!1,children:`Whale alert: 4,200 ETH moved.`})]})}export{r as default};

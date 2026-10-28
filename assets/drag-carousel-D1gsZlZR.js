@@ -1,1 +1,0 @@
-export{t as DragCarousel}from"./drag-carousel-jsprBh2O.js";

@@ -1,0 +1,1 @@
+export{t as TipSelector}from"./tip-selector-BkV0fDGQ.js";

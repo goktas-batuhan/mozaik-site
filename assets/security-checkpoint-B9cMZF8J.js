@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BX5dh3L7.js";import{n as t}from"./security-checkpoint-C_0ywNti.js";var n=e();function r(){return(0,n.jsx)(`div`,{className:`w-[min(92vw,444px)]`,children:(0,n.jsx)(t,{})})}export{r as default};

@@ -1,0 +1,1 @@
+export{t as SpeechBubble,n as SpeechBubbleBody,r as SpeechBubbleCursor,i as SpeechBubbleRoot,a as SpeechBubbleTail,o as SpeechBubbleText}from"./speech-bubble-DArfzF1a.js";

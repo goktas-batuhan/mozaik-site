@@ -1,0 +1,1 @@
+export{t as FaviconSearch}from"./favicon-search-DsiM5Qvm.js";

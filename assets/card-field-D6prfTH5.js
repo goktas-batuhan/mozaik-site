@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BX5dh3L7.js";import{t}from"./card-field-BYx5t6nG.js";var n=e();function r(){return(0,n.jsx)(t,{amount:48,currency:`$`,testMode:!0})}export{r as default};

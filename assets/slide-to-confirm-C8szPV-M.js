@@ -1,1 +1,0 @@
-export{t as SlideToConfirm}from"./slide-to-confirm-AJ6ibgcu.js";

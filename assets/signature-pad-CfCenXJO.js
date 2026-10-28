@@ -1,0 +1,1 @@
+export{t as SignaturePad}from"./signature-pad-BO_ra5uF.js";

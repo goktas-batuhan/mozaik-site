@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BX5dh3L7.js";import{t}from"./profile-dropdown-DCbdtMz5.js";var n=e();function r(){return(0,n.jsx)(`div`,{className:`flex min-h-96 items-start justify-center`,children:(0,n.jsx)(t,{})})}export{r as default};

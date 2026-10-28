@@ -1,0 +1,1 @@
+export{t as NumberTicker}from"./number-ticker-BfzOJ4nc.js";
