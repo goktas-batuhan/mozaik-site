@@ -227,16 +227,184 @@
       "texture-card.tsx"
     ]
   },
+  "card-field": {
+    "hash": "22daf7df1ea03f58",
+    "files": [
+      "card-field.tsx"
+    ]
+  },
+  "float-input": {
+    "hash": "5378dbe20977f413",
+    "files": [
+      "float-input.tsx"
+    ]
+  },
+  "otp-boxed-input": {
+    "hash": "60c4f276f76c0f04",
+    "files": [
+      "otp-boxed-input.tsx"
+    ]
+  },
+  "detent-dial": {
+    "hash": "a4e19b5f554fdecc",
+    "files": [
+      "detent-dial.tsx"
+    ]
+  },
+  "liquid-slider": {
+    "hash": "4316d878197707e0",
+    "files": [
+      "liquid-slider.tsx"
+    ]
+  },
+  "scrubber": {
+    "hash": "7ff5e8877fd242d7",
+    "files": [
+      "scrubber.tsx"
+    ]
+  },
+  "duration-picker": {
+    "hash": "28f68a1f6b5c5555",
+    "files": [
+      "duration-picker.tsx"
+    ]
+  },
+  "week-strip-calendar": {
+    "hash": "43c0a28d8e4a0f28",
+    "files": [
+      "week-strip-calendar.tsx"
+    ]
+  },
+  "wheel-picker": {
+    "hash": "9a5e6a37fcbbe419",
+    "files": [
+      "wheel-picker.tsx"
+    ]
+  },
+  "dimple-switch": {
+    "hash": "c0959ca2154a3960",
+    "files": [
+      "dimple-switch.tsx"
+    ]
+  },
+  "segmented-toggle-button": {
+    "hash": "9efc65c19c5f644d",
+    "files": [
+      "segmented-toggle-button.tsx"
+    ]
+  },
+  "tip-selector": {
+    "hash": "ceeb6088a70e87f0",
+    "files": [
+      "tip-selector.tsx"
+    ]
+  },
+  "file-upload": {
+    "hash": "ef36bb339538bf6f",
+    "files": [
+      "file-upload.tsx"
+    ]
+  },
+  "signature-pad": {
+    "hash": "6484789437017a8d",
+    "files": [
+      "signature-pad.tsx"
+    ]
+  },
+  "collab-toolbar": {
+    "hash": "5687fcf40b2592e2",
+    "files": [
+      "collab-toolbar.tsx"
+    ]
+  },
   "dock": {
     "hash": "86068507e50b71c9",
     "files": [
       "dock.tsx"
     ]
   },
+  "fluid-hover-highlight": {
+    "hash": "b9090337b1b04d66",
+    "files": [
+      "fluid-hover-highlight.tsx"
+    ]
+  },
+  "kebab-actions-dropdown": {
+    "hash": "15ef86884d505e14",
+    "files": [
+      "kebab-actions-dropdown.tsx"
+    ]
+  },
+  "marking-menu": {
+    "hash": "2cedb16133c98139",
+    "files": [
+      "marking-menu.tsx"
+    ]
+  },
+  "morph-surface": {
+    "hash": "97ca5b27f1cf0366",
+    "files": [
+      "morph-surface.tsx"
+    ]
+  },
+  "profile-dropdown": {
+    "hash": "4bfdb882776346f6",
+    "files": [
+      "profile-dropdown.tsx"
+    ]
+  },
+  "breadcrumb": {
+    "hash": "2c3e059f3f042ba5",
+    "files": [
+      "breadcrumb.tsx"
+    ]
+  },
   "direction-aware-tabs": {
     "hash": "ed231bb626c5df23",
     "files": [
       "direction-aware-tabs.tsx"
+    ]
+  },
+  "linen-tab-button": {
+    "hash": "960bab4f4616524e",
+    "files": [
+      "linen-tab-button.tsx"
+    ]
+  },
+  "pagination": {
+    "hash": "565e28a63a6aa7c4",
+    "files": [
+      "pagination.tsx"
+    ]
+  },
+  "bounce-sidebar": {
+    "hash": "482dd9bcf9bcf0de",
+    "files": [
+      "bounce-sidebar.tsx"
+    ]
+  },
+  "sidebar": {
+    "hash": "ab12d223c23fecd8",
+    "files": [
+      "sidebar.tsx"
+    ]
+  },
+  "action-search-bar": {
+    "hash": "987d258a38eb5243",
+    "files": [
+      "action-search-bar.tsx"
+    ]
+  },
+  "favicon-search": {
+    "hash": "fb715d564d3b8ac1",
+    "files": [
+      "favicon-search.tsx"
+    ]
+  },
+  "search-input": {
+    "hash": "b2d9ccfe8ad9d468",
+    "files": [
+      "search-input.tsx"
     ]
   },
   "lens": {
@@ -335,10 +503,28 @@
       "progress-ring.tsx"
     ]
   },
+  "alert": {
+    "hash": "c152147639e6c62b",
+    "files": [
+      "alert.tsx"
+    ]
+  },
   "animated-subscribe-button": {
     "hash": "765963ef98933bf6",
     "files": [
       "animated-subscribe-button.tsx"
+    ]
+  },
+  "animated-toast-stack": {
+    "hash": "dc2d46ceb655d460",
+    "files": [
+      "animated-toast-stack.tsx"
+    ]
+  },
+  "notification-banner": {
+    "hash": "3ad56a89cedd5ee6",
+    "files": [
+      "notification-banner.tsx"
     ]
   },
   "notification-stack": {
@@ -347,16 +533,58 @@
       "notification-stack.tsx"
     ]
   },
+  "speech-bubble": {
+    "hash": "bbad6b66374a5edf",
+    "files": [
+      "speech-bubble.tsx"
+    ]
+  },
+  "announcement": {
+    "hash": "a3799adb8abc2183",
+    "files": [
+      "announcement.tsx"
+    ]
+  },
+  "count-badge": {
+    "hash": "274d504957400880",
+    "files": [
+      "count-badge.tsx"
+    ]
+  },
   "dynamic-island": {
     "hash": "7d5607d03b9f2de2",
     "files": [
       "dynamic-island.tsx"
     ]
   },
+  "empty-state": {
+    "hash": "3e86bbd35ae5f250",
+    "files": [
+      "empty-state.tsx"
+    ]
+  },
   "radar-badge": {
     "hash": "3f3314f7e8629e95",
     "files": [
       "radar-badge.tsx"
+    ]
+  },
+  "security-checkpoint": {
+    "hash": "5e1e825f733d32cb",
+    "files": [
+      "security-checkpoint.tsx"
+    ]
+  },
+  "status-dot": {
+    "hash": "caf9f5ef95c2ff1f",
+    "files": [
+      "status-dot.tsx"
+    ]
+  },
+  "unlock-face-id": {
+    "hash": "b2a95b592b07b4ce",
+    "files": [
+      "unlock-face-id.tsx"
     ]
   },
   "ai-reasoning": {
@@ -383,6 +611,12 @@
       "terminal.tsx"
     ]
   },
+  "candlestick-chart": {
+    "hash": "da46ebf2ab5eeeda",
+    "files": [
+      "candlestick-chart.tsx"
+    ]
+  },
   "order-book": {
     "hash": "31d4664a4af0add4",
     "files": [
@@ -395,16 +629,40 @@
       "price-ticker.tsx"
     ]
   },
+  "volume-profile": {
+    "hash": "688140cbd6d4a80e",
+    "files": [
+      "volume-profile.tsx"
+    ]
+  },
   "address-chip": {
     "hash": "5a701c32583725ee",
     "files": [
       "address-chip.tsx"
     ]
   },
+  "wallet-card": {
+    "hash": "8e6d06398f22a22a",
+    "files": [
+      "wallet-card.tsx"
+    ]
+  },
+  "currency-transfer": {
+    "hash": "2a242686b60ea3d1",
+    "files": [
+      "currency-transfer.tsx"
+    ]
+  },
   "receipt-printer": {
     "hash": "761572eb73e8679b",
     "files": [
       "receipt-printer.tsx"
+    ]
+  },
+  "swap-panel": {
+    "hash": "5801de7d4c91354b",
+    "files": [
+      "swap-panel.tsx"
     ]
   },
   "tx-steps": {
@@ -417,6 +675,12 @@
     "hash": "d6c0b1e0b02a270f",
     "files": [
       "amount-pad.tsx"
+    ]
+  },
+  "amount-stepper": {
+    "hash": "87375a39acf4545e",
+    "files": [
+      "amount-stepper.tsx"
     ]
   },
   "hero-section": {
