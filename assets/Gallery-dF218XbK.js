@@ -1,1 +1,0 @@
-export{t as Gallery}from"./Gallery-OD2sid6A.js";

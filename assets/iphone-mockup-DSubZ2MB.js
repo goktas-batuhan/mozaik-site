@@ -1,0 +1,1 @@
+export{t as IphoneMockup}from"./iphone-mockup-BDNMNLnl.js";

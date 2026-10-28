@@ -1,0 +1,1 @@
+export{t as ClipCornersButton}from"./clip-corners-button-QHvCRgVI.js";

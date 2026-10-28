@@ -1,0 +1,1 @@
+export{t as HolographicFoil}from"./holographic-foil-BL-yJ555.js";

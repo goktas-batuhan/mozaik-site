@@ -1,0 +1,1 @@
+export{t as TestimonialMarquee}from"./testimonial-marquee-shIZ1ilc.js";

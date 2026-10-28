@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BX5dh3L7.js";import{t}from"./orbit-loader-CBOWG0c9.js";var n=e();function r(){return(0,n.jsxs)(`div`,{className:`flex items-center gap-10`,children:[(0,n.jsx)(t,{size:28,dots:2,label:`Saving`}),(0,n.jsx)(t,{size:56}),(0,n.jsx)(t,{size:96,dots:4,duration:3,className:`text-muted-foreground`,label:`Syncing`})]})}export{r as default};

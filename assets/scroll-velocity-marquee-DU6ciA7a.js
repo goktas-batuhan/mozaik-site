@@ -1,0 +1,1 @@
+export{t as ScrollVelocityMarquee}from"./scroll-velocity-marquee-BLQG3s2e.js";

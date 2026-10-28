@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BX5dh3L7.js";import{t}from"./ai-typing-indicator-CeJNTyDH.js";var n=e();function r(){return(0,n.jsxs)(`div`,{className:`flex w-[min(92vw,320px)] flex-col items-start gap-3`,children:[(0,n.jsx)(t,{}),(0,n.jsx)(t,{name:`Ada`,dots:4,duration:1.2})]})}export{r as default};

@@ -1,1 +1,0 @@
-export{t as Marquee}from"./marquee-Be7-4-zR.js";

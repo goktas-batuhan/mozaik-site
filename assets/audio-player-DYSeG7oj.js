@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BX5dh3L7.js";import{t}from"./audio-player-CDvmjnRg.js";var n=e();function r(){return(0,n.jsx)(`div`,{className:`w-[min(94vw,420px)]`,children:(0,n.jsx)(t,{title:`Blue Hour`,artist:`Mozaik Ensemble`,duration:214,defaultCurrentTime:74})})}export{r as default};

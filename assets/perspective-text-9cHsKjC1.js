@@ -1,0 +1,2 @@
+import{t as e}from"./jsx-runtime-BX5dh3L7.js";import{t}from"./perspective-text-_VC5vuUo.js";var n=e();function r(){return(0,n.jsxs)(`div`,{className:`flex flex-col items-center gap-10 py-6 text-center`,children:[(0,n.jsx)(t,{text:`Depth is a design tool`,className:`text-6xl font-bold tracking-tight`}),(0,n.jsx)(t,{split:`lines`,text:`Each line sits on its own layer
+Move the cursor across them`,depth:28,className:`text-xl text-muted-foreground`})]})}export{r as default};

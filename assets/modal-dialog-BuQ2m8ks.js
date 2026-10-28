@@ -1,0 +1,1 @@
+export{t as ModalDialog}from"./modal-dialog-BUfUOcM-.js";

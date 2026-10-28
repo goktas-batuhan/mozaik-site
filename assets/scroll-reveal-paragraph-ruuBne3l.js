@@ -1,0 +1,1 @@
+export{t as ScrollRevealParagraph}from"./scroll-reveal-paragraph-CSEculd-.js";

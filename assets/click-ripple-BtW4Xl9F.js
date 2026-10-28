@@ -1,0 +1,1 @@
+export{t as ClickRipple}from"./click-ripple-DX87XetF.js";

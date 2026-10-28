@@ -1,0 +1,1 @@
+export{t as Marquee}from"./marquee-Cq8d-uK_.js";

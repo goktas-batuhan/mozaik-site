@@ -1,0 +1,1 @@
+export{t as PerspectiveText}from"./perspective-text-_VC5vuUo.js";

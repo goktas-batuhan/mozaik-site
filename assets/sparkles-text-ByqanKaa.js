@@ -1,0 +1,1 @@
+export{t as SparklesText}from"./sparkles-text-c1O3yxOh.js";

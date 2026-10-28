@@ -1,0 +1,1 @@
+export{t as SafariMockup}from"./safari-mockup-BtxWg-Nl.js";

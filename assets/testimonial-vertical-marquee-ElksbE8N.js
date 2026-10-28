@@ -1,0 +1,1 @@
+export{t as TestimonialVerticalMarquee}from"./testimonial-vertical-marquee-Bhs4j8yu.js";
