@@ -105,6 +105,40 @@
     ]
   },
   {
+    "name": "scroll-text-reveal",
+    "title": "Scroll Text Reveal",
+    "description": "A paragraph whose words light up one by one as it scrolls up the screen. Shows all the text under reduced motion.",
+    "group": "text",
+    "shelf": "reveal",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "scroll",
+      "css",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "scroll",
+      "reveal",
+      "words",
+      "paragraph",
+      "progress",
+      "highlight"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/text-reveal.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
     "name": "split-reveal",
     "title": "Split Reveal",
     "description": "Words or letters rise out of their own masks and sharpen from a blur, on mount or scroll into view.",
@@ -376,6 +410,36 @@
     ]
   },
   {
+    "name": "odometer",
+    "title": "Odometer",
+    "description": "A number on mechanical digit wheels that roll to their new faces whenever the value changes. Formats with Intl, so currency and grouping just work.",
+    "group": "text",
+    "shelf": "counter",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "css",
+      "dashboard",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "odometer",
+      "counter",
+      "digits",
+      "number",
+      "roll",
+      "stats"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
     "name": "rolling-text",
     "title": "Rolling Text",
     "description": "Rolls every letter up and swaps it for a copy of itself, on hover, mount or scroll into view.",
@@ -462,6 +526,71 @@
     ]
   },
   {
+    "name": "line-shadow-text",
+    "title": "Line Shadow Text",
+    "description": "Text with a hatched, diagonal-lined shadow that slowly slides behind it. The hatching holds still under reduced motion.",
+    "group": "text",
+    "shelf": "effect",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "shadow",
+      "hatch",
+      "lines",
+      "stripes",
+      "headline"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/line-shadow-text.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "perspective-text",
+    "title": "Perspective Text",
+    "description": "Words or lines stacked in depth on a plane that tilts towards the cursor. Sits at a calm fixed angle under reduced motion.",
+    "group": "text",
+    "shelf": "effect",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "3d",
+      "perspective",
+      "depth",
+      "tilt",
+      "parallax"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/perspective-text-3d/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
     "name": "scramble-text",
     "title": "Scramble Text",
     "description": "Letters cycle through random glyphs and decode into the real text, on mount, hover or scroll into view.",
@@ -542,6 +671,71 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "sparkles-text",
+    "title": "Sparkles Text",
+    "description": "Text with little four-point stars that twinkle in and out around it. The stars hold still under reduced motion.",
+    "group": "text",
+    "shelf": "effect",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "svg",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "sparkle",
+      "stars",
+      "twinkle",
+      "shine",
+      "headline"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/sparkles-text.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "spinning-text",
+    "title": "Spinning Text",
+    "description": "Letters set around a circle that turns forever, in either direction. Holds still under reduced motion.",
+    "group": "text",
+    "shelf": "effect",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "circle",
+      "ring",
+      "badge",
+      "rotate",
+      "circular"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/spinning-text.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
     "variants": []
   },
   {
@@ -647,6 +841,141 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "dot-field",
+    "title": "Dot Field",
+    "description": "A halftone of dots on a springy membrane. A swipe drags the dots and a click sends a ring through them.",
+    "group": "backgrounds",
+    "shelf": "canvas",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "hover",
+      "click",
+      "canvas",
+      "motion"
+    ],
+    "keywords": [
+      "dots",
+      "halftone",
+      "spring",
+      "ripple",
+      "membrane",
+      "cursor"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/dot-field.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "flickering-grid",
+    "title": "Flickering Grid",
+    "description": "A grid of small squares that blink between dim and bright on a canvas. Stills under reduced motion and rests off screen.",
+    "group": "backgrounds",
+    "shelf": "canvas",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "canvas",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "grid",
+      "flicker",
+      "squares",
+      "noise",
+      "tech"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/flickering-grid.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "flow-field",
+    "title": "Flow Field",
+    "description": "Wind drawn as streamlines on a canvas. The cursor is a disc the air flows around. Rests off screen and stills under reduced motion.",
+    "group": "backgrounds",
+    "shelf": "canvas",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "hover",
+      "canvas",
+      "motion"
+    ],
+    "keywords": [
+      "flow",
+      "wind",
+      "streamlines",
+      "noise",
+      "particles",
+      "cursor"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/flow-field.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "glyph-matrix",
+    "title": "Glyph Matrix",
+    "description": "A grid of monospace glyphs where a few cells at a time swap character and brightness. Fades towards the bottom and stills under reduced motion.",
+    "group": "backgrounds",
+    "shelf": "canvas",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "canvas",
+      "ai",
+      "motion"
+    ],
+    "keywords": [
+      "glyphs",
+      "matrix",
+      "terminal",
+      "code",
+      "characters"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/glyph-matrix.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
     "variants": []
   },
   {
@@ -761,6 +1090,40 @@
         "status": "stable"
       }
     ]
+  },
+  {
+    "name": "particles",
+    "title": "Particles",
+    "description": "Specks of light drifting across a canvas that lean towards the cursor. Rests off screen and stills under reduced motion.",
+    "group": "backgrounds",
+    "shelf": "canvas",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "hover",
+      "canvas",
+      "motion"
+    ],
+    "keywords": [
+      "particles",
+      "dust",
+      "stars",
+      "snow",
+      "drift",
+      "cursor"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/particles.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
   },
   {
     "name": "topo-background",
@@ -980,6 +1343,36 @@
     ]
   },
   {
+    "name": "hexagon-pattern",
+    "title": "Hexagon Pattern",
+    "description": "A honeycomb of hairline hexagons drawn as one repeating SVG pattern, with optional filled cells and an edge fade.",
+    "group": "backgrounds",
+    "shelf": "pattern",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "svg",
+      "marketing",
+      "zero-deps"
+    ],
+    "keywords": [
+      "hexagon",
+      "honeycomb",
+      "grid",
+      "pattern",
+      "tech"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/hexagon-pattern.tsx"
+    },
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
     "name": "retro-grid",
     "title": "Retro Grid",
     "description": "A perspective grid that scrolls toward the viewer. Pure CSS 3D, no canvas. Decorative and still under reduced motion.",
@@ -1088,6 +1481,39 @@
     ]
   },
   {
+    "name": "light-rays",
+    "title": "Light Rays",
+    "description": "Soft shafts of light that fade in, sway and fade out over two corner glows. Holds a still pose under reduced motion.",
+    "group": "backgrounds",
+    "shelf": "gradient",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "light",
+      "rays",
+      "beams",
+      "glow",
+      "hero"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/light-rays.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
     "name": "mesh-glow",
     "title": "Mesh Glow",
     "description": "Soft blurred glows over a fine grid with a calm vignette. Drifts slowly, or holds still.",
@@ -1138,6 +1564,40 @@
         "status": "stable"
       }
     ]
+  },
+  {
+    "name": "cursor-follow",
+    "title": "Cursor Follow",
+    "description": "Replaces the system cursor inside an area with a spring-smoothed bubble that grows into a text label over elements marked with data-cursor-text.",
+    "group": "cursor",
+    "shelf": "follow-trail",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "cursor",
+      "bubble",
+      "label",
+      "follow",
+      "tooltip",
+      "pointer"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/cursor-follow/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
   },
   {
     "name": "cursor-image-trail",
@@ -1194,6 +1654,39 @@
         "status": "stable"
       }
     ]
+  },
+  {
+    "name": "drawing-cursor",
+    "title": "Drawing Cursor",
+    "description": "The cursor leaves a smooth ink line on a click-through canvas that thins when you move fast and fades as it dries.",
+    "group": "cursor",
+    "shelf": "follow-trail",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "canvas",
+      "motion"
+    ],
+    "keywords": [
+      "ink",
+      "draw",
+      "trail",
+      "line",
+      "pen",
+      "cursor"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/drawing-cursor/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
   },
   {
     "name": "smooth-cursor",
@@ -1384,6 +1877,35 @@
     ]
   },
   {
+    "name": "click-ripple",
+    "title": "Click Ripple",
+    "description": "Sends rings of the primary color out from every click inside an area, on a click-through layer. Off on touch screens and under reduced motion.",
+    "group": "cursor",
+    "shelf": "click-effects",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "ripple",
+      "click",
+      "rings",
+      "pulse",
+      "feedback",
+      "cursor"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
     "name": "cool-mode",
     "title": "Cool Mode",
     "description": "Sprays coloured particles or emoji from the cursor while a button is pressed, drawn on a click-through canvas.",
@@ -1436,6 +1958,130 @@
         "status": "stable"
       }
     ]
+  },
+  {
+    "name": "bell-button",
+    "title": "Bell Button",
+    "description": "A notification toggle whose bell swings and rings when switched on, with an unread badge, and goes quiet with a slash when off.",
+    "group": "buttons",
+    "shelf": "animated",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "svg",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "button",
+      "bell",
+      "notification",
+      "ring",
+      "subscribe"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "clip-corners-button",
+    "title": "Clip Corners Button",
+    "description": "A tech-style button with shaved corners that cut deeper on hover and keyboard focus.",
+    "group": "buttons",
+    "shelf": "animated",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "ai",
+      "motion"
+    ],
+    "keywords": [
+      "button",
+      "clip-path",
+      "corners",
+      "sci-fi",
+      "cta"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "command-button",
+    "title": "Command Button",
+    "description": "A button that draws its keyboard shortcut as physical keycaps. The shortcut works page-wide: caps sink as keys go down and the button clicks on a match.",
+    "group": "buttons",
+    "shelf": "animated",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "css",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "button",
+      "shortcut",
+      "keyboard",
+      "keycap",
+      "command"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/command-button.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "dot-morph-button",
+    "title": "Dot Morph Button",
+    "description": "A pill button whose leading dot springs into a tall bar on hover and keyboard focus. Stays a dot on touch screens and under reduced motion.",
+    "group": "buttons",
+    "shelf": "animated",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "button",
+      "dot",
+      "morph",
+      "pill",
+      "cta"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/dot-morph-button/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
   },
   {
     "name": "family-button",
@@ -1575,6 +2221,36 @@
     ]
   },
   {
+    "name": "double-tap-button",
+    "title": "Double Tap Button",
+    "description": "A destructive action that needs two presses: the first arms it with a draining fuse, the second inside the window confirms. Waiting or blur disarms it.",
+    "group": "buttons",
+    "shelf": "confirm",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "css",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "button",
+      "confirm",
+      "destructive",
+      "delete",
+      "press again",
+      "safety"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
     "name": "hold-action-button",
     "title": "Hold Action Button",
     "description": "A button that confirms only after being held down, with a fill that rewinds on early release. Works with pointer and Space / Enter, announces completion, and completes without animation under reduced motion.",
@@ -1663,6 +2339,141 @@
     "variants": []
   },
   {
+    "name": "undo-button",
+    "title": "Undo Button",
+    "description": "A button that acts at once, then holds the real commit back for a short undo window with a draining bar and a Ctrl/Cmd+Z shortcut.",
+    "group": "buttons",
+    "shelf": "confirm",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "css",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "button",
+      "undo",
+      "archive",
+      "delete",
+      "confirm",
+      "countdown"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/undo-button.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "morph-toggle",
+    "title": "Morph Toggle",
+    "description": "A switch with a spring thumb that can morph from a rounded square to a circle, or carry an icon that turns as it flips.",
+    "group": "buttons",
+    "shelf": "toggle-switch",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "css",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "switch",
+      "toggle",
+      "checkbox",
+      "setting",
+      "icon"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/morph-toggle/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "theme-switch",
+    "title": "Theme Switch",
+    "description": "A sun and moon switch: a sliding mask bites the sun into a crescent while its rays fold away. Reports the theme and leaves applying it to you.",
+    "group": "buttons",
+    "shelf": "toggle-switch",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "svg",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "theme",
+      "dark mode",
+      "toggle",
+      "switch",
+      "sun",
+      "moon"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/switch-button.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "folder-reveal",
+    "title": "Folder Reveal",
+    "description": "A folder that fans its cards out when opened: the flap tips forward and the cards rise and spread, on hover, click or keyboard.",
+    "group": "cards",
+    "shelf": "hover-reveal",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "click",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "folder",
+      "files",
+      "fan",
+      "reveal",
+      "cards",
+      "stack"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/folder-reveal/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
     "name": "hover-swap-card",
     "title": "Hover Swap Card",
     "description": "A card that swaps its title and visual and lifts the media on hover or keyboard focus. Pure CSS transitions.",
@@ -1721,6 +2532,108 @@
     "variants": []
   },
   {
+    "name": "card-flip",
+    "title": "Card Flip",
+    "description": "A card that turns over on a spring to show its back, on click, Enter or Space, or optionally while a mouse hovers it.",
+    "group": "cards",
+    "shelf": "flip-stack",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "hover",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "card",
+      "flip",
+      "3d",
+      "rotate",
+      "back",
+      "reveal"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/card-flip.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "photo-stack",
+    "title": "Photo Stack",
+    "description": "A deck of offset cards. Click, press Enter or Space, or drag the top card to send it to the back and reveal the next.",
+    "group": "cards",
+    "shelf": "flip-stack",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "drag",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "stack",
+      "deck",
+      "photos",
+      "cycle",
+      "cards",
+      "team"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/photo-stack/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "time-machine-stack",
+    "title": "Time Machine Stack",
+    "description": "A stack that reaches back through time: older cards peek out above the front one, and Newer, Older or the arrow keys step through them.",
+    "group": "cards",
+    "shelf": "flip-stack",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "css",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "stack",
+      "history",
+      "timeline",
+      "cards",
+      "depth",
+      "changelog"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/time-machine-stack/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
     "name": "border-beam",
     "title": "Border Beam",
     "description": "A light that travels around the border of its parent card. Decorative, follows the parent's radius.",
@@ -1772,6 +2685,142 @@
         "status": "stable"
       }
     ]
+  },
+  {
+    "name": "emboss-surface",
+    "title": "Emboss Surface",
+    "description": "A surface carved by light: raised, pressed in or stamped, with the relief following a light angle you set or the pointer. Can carve just the text.",
+    "group": "cards",
+    "shelf": "surface",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "emboss",
+      "deboss",
+      "neumorphism",
+      "relief",
+      "shadow",
+      "stamp",
+      "surface"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/emboss-surface/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "glass-card",
+    "title": "Glass Card",
+    "description": "A frosted glass pane with blurred backdrop, a polished rim and a specular highlight that follows the pointer.",
+    "group": "cards",
+    "shelf": "surface",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "glass",
+      "frosted",
+      "blur",
+      "glassmorphism",
+      "card",
+      "specular"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/glass-card/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "glow-hover-card",
+    "title": "Glow Hover Cards",
+    "description": "A grid of cards lit by one shared glow: borders and fills light up under the pointer and carry across neighbouring cards.",
+    "group": "cards",
+    "shelf": "surface",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "glow",
+      "spotlight",
+      "grid",
+      "cards",
+      "features",
+      "border"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/glow-hover-card/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "holographic-foil",
+    "title": "Holographic Foil",
+    "description": "A card with a holographic foil layer: theme-colored bands shift and a glare slides across as the pointer moves.",
+    "group": "cards",
+    "shelf": "surface",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "holographic",
+      "foil",
+      "iridescent",
+      "rainbow",
+      "trading card",
+      "shine"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/holographic-foil/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
   },
   {
     "name": "texture-card",
@@ -2804,6 +3853,125 @@
     "variants": []
   },
   {
+    "name": "modal-dialog",
+    "title": "Modal Dialog",
+    "description": "A centered modal with focus trap, Escape, scroll lock and focus return, plus an alertdialog mode for confirmations. Fades without motion under reduced motion.",
+    "group": "overlays",
+    "shelf": "modal-drawer",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "css",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "modal",
+      "dialog",
+      "alert",
+      "confirm",
+      "popup"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "sheet-drawer",
+    "title": "Sheet Drawer",
+    "description": "A panel that slides in from the right, left or bottom over a dimmed page, with focus trap and Escape. The bottom sheet drags down to dismiss; no slide under reduced motion.",
+    "group": "overlays",
+    "shelf": "modal-drawer",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "drag",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "drawer",
+      "sheet",
+      "sidebar",
+      "panel",
+      "bottom sheet"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "morph-popover",
+    "title": "Morph Popover",
+    "description": "A button that morphs into a small feedback form, its label becoming the panel title. Escape or an outside click folds it back; it swaps without morphing under reduced motion.",
+    "group": "overlays",
+    "shelf": "popover-tooltip",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "css",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "popover",
+      "morph",
+      "feedback",
+      "form",
+      "button"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/morph-popover.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "tooltip",
+    "title": "Tooltip",
+    "description": "A short label for a control that shows on hover and keyboard focus, wired with aria-describedby. Escape hides it; it only fades under reduced motion.",
+    "group": "overlays",
+    "shelf": "popover-tooltip",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "tooltip",
+      "hint",
+      "label",
+      "tip",
+      "help"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
     "name": "lens",
     "title": "Lens",
     "description": "A round magnifying lens that follows the pointer over any content. Mouse and trackpad only: touch screens and reduced motion get the plain content. The magnified copy is hidden from assistive tech.",
@@ -2856,6 +4024,69 @@
         "status": "stable"
       }
     ]
+  },
+  {
+    "name": "lightbox-grid",
+    "title": "Lightbox Grid",
+    "description": "A grid of tiles that opens into a full-screen viewer with previous/next, arrow keys, Escape and a focus trap. Opens without scaling under reduced motion.",
+    "group": "overlays",
+    "shelf": "lightbox-lens",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "css",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "lightbox",
+      "gallery",
+      "viewer",
+      "grid",
+      "zoom",
+      "images"
+    ],
+    "source": {
+      "repo": "kokonut-labs/kokonutui",
+      "license": "MIT",
+      "url": "https://github.com/kokonut-labs/kokonutui/blob/main/components/kokonutui/lightbox-grid.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "blur-scrim",
+    "title": "Blur Scrim",
+    "description": "A blur-and-dim layer that covers its container instead of the page, with content centred on top. Click or Escape dismisses it; no fade under reduced motion.",
+    "group": "overlays",
+    "shelf": "scrim-blur",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "scrim",
+      "blur",
+      "backdrop",
+      "lock",
+      "overlay",
+      "paywall"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
   },
   {
     "name": "progressive-blur",
@@ -2959,6 +4190,103 @@
         "status": "stable"
       }
     ]
+  },
+  {
+    "name": "hover-image-list",
+    "title": "Hover Image List",
+    "description": "A text list that reveals a preview for the row you point at; the preview trails the cursor on desktop and sits beside the list on touch, with focus and reduced motion.",
+    "group": "layout",
+    "shelf": "lists",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "list",
+      "preview",
+      "index",
+      "projects",
+      "reveal"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/hover-image-list/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "pinned-list",
+    "title": "Pinned List",
+    "description": "A list where any row can be pinned. Pinned rows rise to the top and the others close the gap with a spring; rows jump under reduced motion.",
+    "group": "layout",
+    "shelf": "lists",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "list",
+      "pin",
+      "favorites",
+      "reorder"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/pinned-list/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "coverflow-carousel",
+    "title": "Coverflow Carousel",
+    "description": "A 3D coverflow where the centre slide faces front and its neighbours tilt away. Drag, buttons and arrow keys; flat and fading under reduced motion.",
+    "group": "layout",
+    "shelf": "carousels",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "drag",
+      "click",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "carousel",
+      "coverflow",
+      "3d",
+      "gallery",
+      "slider"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/coverflow-carousel/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
   },
   {
     "name": "drag-carousel",
@@ -3315,6 +4643,39 @@
     ]
   },
   {
+    "name": "scroll-velocity-marquee",
+    "title": "Scroll Velocity Marquee",
+    "description": "A marquee that crawls on its own and speeds up or reverses with how fast the page scrolls. Pauses off screen and stays still under reduced motion.",
+    "group": "layout",
+    "shelf": "marquee",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "scroll",
+      "loop",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "marquee",
+      "ticker",
+      "velocity",
+      "scroll",
+      "text"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/scroll-based-velocity.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
     "name": "animated-beam",
     "title": "Animated Beam",
     "description": "A light that flows along a curved path between two elements, for integration diagrams. Holds a still path under reduced motion and pauses off screen.",
@@ -3394,6 +4755,34 @@
     ]
   },
   {
+    "name": "shuffle-grid",
+    "title": "Shuffle Grid",
+    "description": "A grid whose tiles glide to new places when shuffled or reset. Tiles jump instead under reduced motion.",
+    "group": "layout",
+    "shelf": "grids",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "grid",
+      "shuffle",
+      "reorder",
+      "layout",
+      "tiles"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
     "name": "scroll-progress",
     "title": "Scroll Progress",
     "description": "A thin bar that fills as you scroll the page or any scroll container.",
@@ -3421,6 +4810,167 @@
     ],
     "registryDependencies": [],
     "added": "2026-10-26",
+    "variants": []
+  },
+  {
+    "name": "svg-draw-on-scroll",
+    "title": "SVG Draw on Scroll",
+    "description": "SVG strokes that draw themselves as the element scrolls through view, one path after another. Fully drawn under reduced motion.",
+    "group": "scroll",
+    "shelf": "progress",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "scroll",
+      "svg",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "draw",
+      "path",
+      "stroke",
+      "line",
+      "illustration"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/svg-draw-on-scroll/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "scroll-image-reveal",
+    "title": "Scroll Image Reveal",
+    "description": "A frame that opens with a wipe, curtain or circle as it scrolls into view, with counter-parallax inside. Open and still under reduced motion.",
+    "group": "scroll",
+    "shelf": "reveal",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "scroll",
+      "css",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "image",
+      "mask",
+      "clip",
+      "wipe",
+      "curtain",
+      "gallery"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/scroll-image-reveal/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "scroll-reveal-paragraph",
+    "title": "Scroll Reveal Paragraph",
+    "description": "A paragraph whose words go from faint to full strength one by one as it scrolls into view. Fully lit under reduced motion.",
+    "group": "scroll",
+    "shelf": "reveal",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "scroll",
+      "css",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "paragraph",
+      "words",
+      "reading",
+      "scrub",
+      "text"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/scroll-reveal-paragraph/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "parallax-layers",
+    "title": "Parallax Layers",
+    "description": "A stack of layers that drift at different speeds as the scene scrolls past. Layers stay put under reduced motion.",
+    "group": "scroll",
+    "shelf": "parallax-sticky",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "scroll",
+      "css",
+      "marketing",
+      "motion"
+    ],
+    "keywords": [
+      "parallax",
+      "depth",
+      "layers",
+      "hero",
+      "scene"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/parallax-layers/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "orbit-loader",
+    "title": "Orbit Loader",
+    "description": "Dots circling on nested rings at different speeds. Under reduced motion it holds one evenly spread frame.",
+    "group": "feedback",
+    "shelf": "loaders",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "loader",
+      "spinner",
+      "orbit",
+      "dots",
+      "loading"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
     "variants": []
   },
   {
@@ -3590,6 +5140,35 @@
     ]
   },
   {
+    "name": "skeleton-reveal",
+    "title": "Skeleton Reveal",
+    "description": "Wraps real content and swaps a placeholder for it with a cross-fade. The content is always laid out, so nothing shifts when it arrives.",
+    "group": "feedback",
+    "shelf": "skeletons",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "skeleton",
+      "loading",
+      "placeholder",
+      "fade",
+      "layout shift",
+      "suspense"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
     "name": "progress-ring",
     "title": "Progress Ring",
     "description": "A determinate ring that eases to its value and counts up in the middle.",
@@ -3645,6 +5224,66 @@
         "status": "stable"
       }
     ]
+  },
+  {
+    "name": "stacked-meter",
+    "title": "Stacked Meter",
+    "description": "A capacity bar split into labelled parts, like storage by file type, with a legend that highlights each part and shows the free space.",
+    "group": "feedback",
+    "shelf": "progress",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "click",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "meter",
+      "storage",
+      "usage",
+      "quota",
+      "stacked",
+      "bar",
+      "capacity"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "step-progress",
+    "title": "Step Progress",
+    "description": "One progress bar cut into a segment per step with labels underneath. Finished steps are full, the current one fills as far as you say.",
+    "group": "feedback",
+    "shelf": "progress",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "css",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "stepper",
+      "progress",
+      "wizard",
+      "checkout",
+      "onboarding",
+      "steps"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
   },
   {
     "name": "alert",
@@ -4131,6 +5770,161 @@
     "variants": []
   },
   {
+    "name": "ai-message",
+    "title": "AI Message",
+    "description": "A chat message bubble for a user or an assistant, with copy, retry and thumbs buttons that appear on hover and on keyboard focus.",
+    "group": "ai",
+    "shelf": "chat",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "ai",
+      "motion"
+    ],
+    "keywords": [
+      "chat",
+      "message",
+      "bubble",
+      "assistant",
+      "copy",
+      "feedback"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/ai-message/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "ai-prompt-input",
+    "title": "AI Prompt Input",
+    "description": "A chat prompt box that grows with the text. Enter sends, Shift+Enter adds a line, and the send button turns into a stop button while the model answers.",
+    "group": "ai",
+    "shelf": "chat",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "type",
+      "click",
+      "ai",
+      "zero-deps"
+    ],
+    "keywords": [
+      "prompt",
+      "chat",
+      "textarea",
+      "composer",
+      "send",
+      "stop"
+    ],
+    "source": "original",
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "ai-sources",
+    "title": "AI Sources",
+    "description": "A \"Used N sources\" toggle that opens into a numbered list of links, for showing where an answer came from.",
+    "group": "ai",
+    "shelf": "chat",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "css",
+      "ai",
+      "motion"
+    ],
+    "keywords": [
+      "sources",
+      "citations",
+      "references",
+      "links",
+      "answer",
+      "chat"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "ai-suggestions",
+    "title": "AI Suggestions",
+    "description": "Prompt suggestion chips for an empty chat or the follow-ups after an answer. They pop in from the middle outward.",
+    "group": "ai",
+    "shelf": "chat",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "css",
+      "ai",
+      "motion"
+    ],
+    "keywords": [
+      "suggestions",
+      "chips",
+      "prompts",
+      "follow-up",
+      "chat"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/ai-suggestions/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "ai-typing-indicator",
+    "title": "AI Typing Indicator",
+    "description": "Three bouncing dots in a chat bubble that show someone is typing. Level and calm under reduced motion.",
+    "group": "ai",
+    "shelf": "chat",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "ai",
+      "motion"
+    ],
+    "keywords": [
+      "typing",
+      "indicator",
+      "dots",
+      "chat",
+      "loading",
+      "bubble"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
     "name": "ai-reasoning",
     "title": "AI Reasoning",
     "description": "A collapsible reasoning trace. The summary shimmers only while the model is working, then settles, reports how long it took and folds away.",
@@ -4183,6 +5977,74 @@
         "status": "stable"
       }
     ]
+  },
+  {
+    "name": "ai-context-meter",
+    "title": "AI Context Meter",
+    "description": "A small ring and token count for the model's context window. The ring changes color near the limit, and a popover lists what fills it.",
+    "group": "ai",
+    "shelf": "agents-tools",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "svg",
+      "ai",
+      "motion"
+    ],
+    "keywords": [
+      "context",
+      "tokens",
+      "window",
+      "meter",
+      "usage",
+      "limit"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/ai-context-meter/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "ai-task-list",
+    "title": "AI Task List",
+    "description": "The plan an agent is working through: rows with pending, running, done and failed states, sub-steps, and a done/total count worked out from the rows.",
+    "group": "ai",
+    "shelf": "agents-tools",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "svg",
+      "ai",
+      "motion"
+    ],
+    "keywords": [
+      "tasks",
+      "plan",
+      "checklist",
+      "agent",
+      "steps",
+      "progress"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/ai-task-list/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
   },
   {
     "name": "ai-tool-approval",
@@ -4260,6 +6122,276 @@
         "status": "stable"
       }
     ]
+  },
+  {
+    "name": "ai-tool-call",
+    "title": "AI Tool Call",
+    "description": "One agent tool call as a single line with a status ring that turns from queued to running to done or failed. Opens to show arguments and result.",
+    "group": "ai",
+    "shelf": "agents-tools",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "svg",
+      "ai",
+      "motion"
+    ],
+    "keywords": [
+      "tool",
+      "call",
+      "agent",
+      "status",
+      "function",
+      "collapsible"
+    ],
+    "source": {
+      "repo": "educlopez/smoothui",
+      "license": "MIT",
+      "url": "https://github.com/educlopez/smoothui/blob/main/packages/smoothui/components/ai-tool-call/index.tsx"
+    },
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "ai-orb",
+    "title": "AI Orb",
+    "description": "A soft glowing orb for a voice assistant with four states: idle, listening, thinking and speaking. Still and calm under reduced motion.",
+    "group": "ai",
+    "shelf": "orbs-voice",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "ai",
+      "motion"
+    ],
+    "keywords": [
+      "orb",
+      "voice",
+      "assistant",
+      "listening",
+      "thinking",
+      "speaking"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "ai-voice-wave",
+    "title": "AI Voice Wave",
+    "description": "A row of bars for voice input or output. Feed it live levels or let it pulse on its own while active. Static and level-shaped under reduced motion.",
+    "group": "ai",
+    "shelf": "orbs-voice",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "ai",
+      "motion"
+    ],
+    "keywords": [
+      "voice",
+      "waveform",
+      "audio",
+      "bars",
+      "microphone",
+      "speech"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "bar-chart",
+    "title": "Bar Chart",
+    "description": "A vertical bar chart made of plain divs. The tallest bar is highlighted, values show on hover or all the time, and the full data is read aloud.",
+    "group": "data",
+    "shelf": "charts",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "bar",
+      "chart",
+      "histogram",
+      "columns",
+      "graph",
+      "dashboard"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "donut-chart",
+    "title": "Donut Chart",
+    "description": "A donut chart in plain SVG that draws in slice by slice. The legend gives every share as text, and the total sits in the hole.",
+    "group": "data",
+    "shelf": "charts",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "svg",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "donut",
+      "pie",
+      "chart",
+      "share",
+      "ring",
+      "breakdown"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "heatmap-calendar",
+    "title": "Heatmap Calendar",
+    "description": "A contribution-style grid of days in weekly columns, darker for busier days. Hover or focus a day to read it; the total is the caption.",
+    "group": "data",
+    "shelf": "charts",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "dashboard",
+      "zero-deps"
+    ],
+    "keywords": [
+      "heatmap",
+      "calendar",
+      "contributions",
+      "activity",
+      "grid",
+      "streak"
+    ],
+    "source": "original",
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "sparkline",
+    "title": "Sparkline",
+    "description": "A tiny line chart with no axes for rows, cards and tables. Plain SVG, optional area and end dot, with a spoken summary of the range.",
+    "group": "data",
+    "shelf": "charts",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "svg",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "sparkline",
+      "chart",
+      "trend",
+      "line",
+      "inline",
+      "mini"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "kpi-card",
+    "title": "KPI Card",
+    "description": "A metric card with a label, a big number, the change since last period and an optional sparkline. Good and bad changes are colored and also spoken.",
+    "group": "data",
+    "shelf": "stats-kpis",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "svg",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "kpi",
+      "metric",
+      "stat",
+      "number",
+      "delta",
+      "dashboard",
+      "card"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [
+      "sparkline"
+    ],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "data-table",
+    "title": "Data Table",
+    "description": "A sortable table with real table markup. Click a heading to sort ascending, descending, then back to the original order. Numbers sort as numbers.",
+    "group": "data",
+    "shelf": "tables",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "css",
+      "dashboard",
+      "zero-deps"
+    ],
+    "keywords": [
+      "table",
+      "data",
+      "sort",
+      "grid",
+      "rows",
+      "columns"
+    ],
+    "source": "original",
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
   },
   {
     "name": "uptime-card",
@@ -4476,6 +6608,155 @@
     ]
   },
   {
+    "name": "comparison-slider",
+    "title": "Comparison Slider",
+    "description": "A before/after reveal split by a draggable divider that is also a keyboard slider (arrows, page keys, home and end).",
+    "group": "media",
+    "shelf": "gallery-compare",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "drag",
+      "hover",
+      "css",
+      "zero-deps"
+    ],
+    "keywords": [
+      "before",
+      "after",
+      "compare",
+      "image",
+      "slider",
+      "diff"
+    ],
+    "source": {
+      "repo": "haydenbleasel/kibo",
+      "license": "MIT",
+      "url": "https://github.com/haydenbleasel/kibo/blob/main/packages/comparison/index.tsx"
+    },
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "android-mockup",
+    "title": "Android Mockup",
+    "description": "A phone frame with a punch-hole camera and a gesture bar, drawn with theme tokens. Anything you pass becomes the screen.",
+    "group": "media",
+    "shelf": "mockups",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "css",
+      "marketing",
+      "zero-deps"
+    ],
+    "keywords": [
+      "phone",
+      "android",
+      "device",
+      "frame",
+      "mobile"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/android.tsx"
+    },
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "iphone-mockup",
+    "title": "iPhone Mockup",
+    "description": "A phone frame with a dynamic island and side buttons, drawn with theme tokens. Anything you pass becomes the screen.",
+    "group": "media",
+    "shelf": "mockups",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "css",
+      "marketing",
+      "zero-deps"
+    ],
+    "keywords": [
+      "phone",
+      "device",
+      "frame",
+      "mobile",
+      "screenshot"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/iphone.tsx"
+    },
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "laptop-mockup",
+    "title": "Laptop Mockup",
+    "description": "A laptop with a 16:10 screen and a hinged base, drawn with theme tokens. Anything you pass becomes the screen.",
+    "group": "media",
+    "shelf": "mockups",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "css",
+      "marketing",
+      "zero-deps"
+    ],
+    "keywords": [
+      "laptop",
+      "macbook",
+      "device",
+      "frame",
+      "screen"
+    ],
+    "source": "original",
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "safari-mockup",
+    "title": "Safari Mockup",
+    "description": "A browser window with traffic lights, toolbar icons and an address pill, drawn with theme tokens around any content.",
+    "group": "media",
+    "shelf": "mockups",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "css",
+      "svg",
+      "marketing",
+      "zero-deps"
+    ],
+    "keywords": [
+      "browser",
+      "window",
+      "frame",
+      "screenshot",
+      "address bar"
+    ],
+    "source": {
+      "repo": "magicuidesign/magicui",
+      "license": "MIT",
+      "url": "https://github.com/magicuidesign/magicui/blob/main/apps/www/registry/magicui/safari.tsx"
+    },
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
     "name": "terminal",
     "title": "Terminal",
     "description": "A terminal window that plays its lines in sequence: typed commands and fading output. Shows everything at once under reduced motion.",
@@ -4519,6 +6800,91 @@
     ]
   },
   {
+    "name": "audio-equalizer",
+    "title": "Audio Equalizer",
+    "description": "Level bars that bounce while audio plays and settle into a calm wave when it stops or when motion is reduced.",
+    "group": "media",
+    "shelf": "video-audio",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "loop",
+      "css",
+      "motion"
+    ],
+    "keywords": [
+      "equalizer",
+      "audio",
+      "music",
+      "bars",
+      "now playing",
+      "visualizer"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "audio-player",
+    "title": "Audio Player",
+    "description": "A compact track card with cover, play and pause, a seek slider with times and a mute toggle. It runs its own clock, so it needs no audio file.",
+    "group": "media",
+    "shelf": "video-audio",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "drag",
+      "css",
+      "zero-deps"
+    ],
+    "keywords": [
+      "audio",
+      "music",
+      "player",
+      "podcast",
+      "track",
+      "seek"
+    ],
+    "source": "original",
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "video-player-ui",
+    "title": "Video Player UI",
+    "description": "Video controls on a 16:9 stage: a big play button, scrub bar, time readout, speed cycle and fullscreen. It runs its own clock and loads no media.",
+    "group": "media",
+    "shelf": "video-audio",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "drag",
+      "css",
+      "zero-deps"
+    ],
+    "keywords": [
+      "video",
+      "player",
+      "controls",
+      "scrub",
+      "speed",
+      "poster"
+    ],
+    "source": "original",
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
     "name": "candlestick-chart",
     "title": "Candlestick Chart",
     "description": "OHLC candles with volume bars, a last-price line and a keyboard-friendly crosshair readout, drawn in plain SVG.",
@@ -4547,6 +6913,63 @@
     "dependencies": [
       "motion"
     ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "depth-chart",
+    "title": "Depth Chart",
+    "description": "Cumulative buy and sell depth as two stepped areas meeting at the spread, with a keyboard-operable level readout, in plain SVG.",
+    "group": "onchain",
+    "shelf": "prices-charts",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "svg",
+      "web3",
+      "zero-deps"
+    ],
+    "keywords": [
+      "depth",
+      "order book",
+      "bids",
+      "asks",
+      "liquidity",
+      "spread",
+      "trading"
+    ],
+    "source": "original",
+    "dependencies": [],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "liquidity-heatmap",
+    "title": "Liquidity Heatmap",
+    "description": "Resting liquidity by price level over time as a grid of cells whose strength follows the size, with a current-price row and an arrow-key readout.",
+    "group": "onchain",
+    "shelf": "prices-charts",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "hover",
+      "css",
+      "web3",
+      "zero-deps"
+    ],
+    "keywords": [
+      "heatmap",
+      "liquidity",
+      "order book",
+      "depth",
+      "price levels",
+      "walls"
+    ],
+    "source": "original",
+    "dependencies": [],
     "registryDependencies": [],
     "added": "2026-10-28",
     "variants": []
@@ -4664,6 +7087,66 @@
         "status": "stable"
       }
     ]
+  },
+  {
+    "name": "prediction-market-bar",
+    "title": "Prediction Market Bar",
+    "description": "A binary market card: the question, the chance of Yes, a split odds bar and Yes and No share prices as buttons. Data in, no wallet.",
+    "group": "onchain",
+    "shelf": "prices-charts",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "click",
+      "web3",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "prediction",
+      "market",
+      "odds",
+      "polymarket",
+      "yes no",
+      "probability"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
+  },
+  {
+    "name": "price-target-fan",
+    "title": "Price Target Fan",
+    "description": "Recent price history followed by a cone from the low to the high target, with the average as a dashed line and the move against today's price.",
+    "group": "onchain",
+    "shelf": "prices-charts",
+    "layer": "component",
+    "status": "stable",
+    "tags": [
+      "svg",
+      "web3",
+      "dashboard",
+      "motion"
+    ],
+    "keywords": [
+      "price target",
+      "forecast",
+      "fan chart",
+      "analyst",
+      "range",
+      "projection"
+    ],
+    "source": "original",
+    "dependencies": [
+      "motion"
+    ],
+    "registryDependencies": [],
+    "added": "2026-10-28",
+    "variants": []
   },
   {
     "name": "price-ticker",

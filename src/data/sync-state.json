@@ -11,6 +11,12 @@
       "chromatic-text-reveal.tsx"
     ]
   },
+  "scroll-text-reveal": {
+    "hash": "e0fa5040f5ec6c8b",
+    "files": [
+      "scroll-text-reveal.tsx"
+    ]
+  },
   "split-reveal": {
     "hash": "a620ed520185356f",
     "files": [
@@ -41,6 +47,12 @@
       "number-ticker.tsx"
     ]
   },
+  "odometer": {
+    "hash": "7238f6667787cd59",
+    "files": [
+      "odometer.tsx"
+    ]
+  },
   "rolling-text": {
     "hash": "38454c6f66579071",
     "files": [
@@ -53,6 +65,18 @@
       "split-flap-text.tsx"
     ]
   },
+  "line-shadow-text": {
+    "hash": "ea4c0b8f68a66792",
+    "files": [
+      "line-shadow-text.tsx"
+    ]
+  },
+  "perspective-text": {
+    "hash": "91989abd54aee85d",
+    "files": [
+      "perspective-text.tsx"
+    ]
+  },
   "scramble-text": {
     "hash": "1d284190767e402f",
     "files": [
@@ -63,6 +87,18 @@
     "hash": "1435147b7cca9b27",
     "files": [
       "shine-text.tsx"
+    ]
+  },
+  "sparkles-text": {
+    "hash": "37de6a2080627bf9",
+    "files": [
+      "sparkles-text.tsx"
+    ]
+  },
+  "spinning-text": {
+    "hash": "b76c3c616ab4f524",
+    "files": [
+      "spinning-text.tsx"
     ]
   },
   "spoiler-text": {
@@ -83,6 +119,30 @@
       "shader-background.tsx"
     ]
   },
+  "dot-field": {
+    "hash": "93f3c3761e7f61ee",
+    "files": [
+      "dot-field.tsx"
+    ]
+  },
+  "flickering-grid": {
+    "hash": "fc882dfd0c67c25f",
+    "files": [
+      "flickering-grid.tsx"
+    ]
+  },
+  "flow-field": {
+    "hash": "4b01d59faedafb00",
+    "files": [
+      "flow-field.tsx"
+    ]
+  },
+  "glyph-matrix": {
+    "hash": "28b310718eaac505",
+    "files": [
+      "glyph-matrix.tsx"
+    ]
+  },
   "halftone-background": {
     "hash": "8f5a47dad539c70d",
     "files": [
@@ -93,6 +153,12 @@
     "hash": "3d2b8fe8c4a980d6",
     "files": [
       "meteors.tsx"
+    ]
+  },
+  "particles": {
+    "hash": "55b4a0937e39c2ba",
+    "files": [
+      "particles.tsx"
     ]
   },
   "topo-background": {
@@ -119,6 +185,12 @@
       "graph-paper.tsx"
     ]
   },
+  "hexagon-pattern": {
+    "hash": "318958aa31b2fea7",
+    "files": [
+      "hexagon-pattern.tsx"
+    ]
+  },
   "retro-grid": {
     "hash": "07b152ec78521546",
     "files": [
@@ -131,16 +203,34 @@
       "aurora-background.tsx"
     ]
   },
+  "light-rays": {
+    "hash": "e9a972ed455d8527",
+    "files": [
+      "light-rays.tsx"
+    ]
+  },
   "mesh-glow": {
     "hash": "3e4da3a297fc3e9a",
     "files": [
       "mesh-glow.tsx"
     ]
   },
+  "cursor-follow": {
+    "hash": "9ffab04cd08c2288",
+    "files": [
+      "cursor-follow.tsx"
+    ]
+  },
   "cursor-image-trail": {
     "hash": "6907b84b472b2f03",
     "files": [
       "cursor-image-trail.tsx"
+    ]
+  },
+  "drawing-cursor": {
+    "hash": "5982ede1f6c4a047",
+    "files": [
+      "drawing-cursor.tsx"
     ]
   },
   "smooth-cursor": {
@@ -167,10 +257,40 @@
       "tilt-card.tsx"
     ]
   },
+  "click-ripple": {
+    "hash": "ab4f9c9a0bcff917",
+    "files": [
+      "click-ripple.tsx"
+    ]
+  },
   "cool-mode": {
     "hash": "e363cb18bb70a5f3",
     "files": [
       "cool-mode.tsx"
+    ]
+  },
+  "bell-button": {
+    "hash": "323058d65946764f",
+    "files": [
+      "bell-button.tsx"
+    ]
+  },
+  "clip-corners-button": {
+    "hash": "573703ff70ca5018",
+    "files": [
+      "clip-corners-button.tsx"
+    ]
+  },
+  "command-button": {
+    "hash": "01ac649b8ace3503",
+    "files": [
+      "command-button.tsx"
+    ]
+  },
+  "dot-morph-button": {
+    "hash": "3d4aed360f7e914a",
+    "files": [
+      "dot-morph-button.tsx"
     ]
   },
   "family-button": {
@@ -191,6 +311,12 @@
       "slide-text-button.tsx"
     ]
   },
+  "double-tap-button": {
+    "hash": "c1b1b8abb56658e0",
+    "files": [
+      "double-tap-button.tsx"
+    ]
+  },
   "hold-action-button": {
     "hash": "e45ebfd1b02d9f92",
     "files": [
@@ -201,6 +327,30 @@
     "hash": "ea1879c866c1d986",
     "files": [
       "slide-to-confirm.tsx"
+    ]
+  },
+  "undo-button": {
+    "hash": "38dadc7d976a3d87",
+    "files": [
+      "undo-button.tsx"
+    ]
+  },
+  "morph-toggle": {
+    "hash": "8a55dde0f72cc650",
+    "files": [
+      "morph-toggle.tsx"
+    ]
+  },
+  "theme-switch": {
+    "hash": "2b946d41ae8f560e",
+    "files": [
+      "theme-switch.tsx"
+    ]
+  },
+  "folder-reveal": {
+    "hash": "ad6612c97627229b",
+    "files": [
+      "folder-reveal.tsx"
     ]
   },
   "hover-swap-card": {
@@ -215,10 +365,52 @@
       "shift-card.tsx"
     ]
   },
+  "card-flip": {
+    "hash": "09f9405dc73b2508",
+    "files": [
+      "card-flip.tsx"
+    ]
+  },
+  "photo-stack": {
+    "hash": "58a6fc016c1744c7",
+    "files": [
+      "photo-stack.tsx"
+    ]
+  },
+  "time-machine-stack": {
+    "hash": "0631902878400851",
+    "files": [
+      "time-machine-stack.tsx"
+    ]
+  },
   "border-beam": {
     "hash": "561371cb8593df20",
     "files": [
       "border-beam.tsx"
+    ]
+  },
+  "emboss-surface": {
+    "hash": "0dc784c681e3532c",
+    "files": [
+      "emboss-surface.tsx"
+    ]
+  },
+  "glass-card": {
+    "hash": "658c86bdfa16f1ea",
+    "files": [
+      "glass-card.tsx"
+    ]
+  },
+  "glow-hover-card": {
+    "hash": "7a40e96e8cba5399",
+    "files": [
+      "glow-hover-card.tsx"
+    ]
+  },
+  "holographic-foil": {
+    "hash": "36d2b50defcd53d3",
+    "files": [
+      "holographic-foil.tsx"
     ]
   },
   "texture-card": {
@@ -407,10 +599,46 @@
       "search-input.tsx"
     ]
   },
+  "modal-dialog": {
+    "hash": "045e6c72c60c2fbd",
+    "files": [
+      "modal-dialog.tsx"
+    ]
+  },
+  "sheet-drawer": {
+    "hash": "75b66bc402ce0575",
+    "files": [
+      "sheet-drawer.tsx"
+    ]
+  },
+  "morph-popover": {
+    "hash": "406624b54626e7df",
+    "files": [
+      "morph-popover.tsx"
+    ]
+  },
+  "tooltip": {
+    "hash": "aa7ddb216670a548",
+    "files": [
+      "tooltip.tsx"
+    ]
+  },
   "lens": {
     "hash": "6ab420d5409a8848",
     "files": [
       "lens.tsx"
+    ]
+  },
+  "lightbox-grid": {
+    "hash": "bb081c439507855b",
+    "files": [
+      "lightbox-grid.tsx"
+    ]
+  },
+  "blur-scrim": {
+    "hash": "21f1b0c717196feb",
+    "files": [
+      "blur-scrim.tsx"
     ]
   },
   "progressive-blur": {
@@ -423,6 +651,24 @@
     "hash": "99ada40c99992bf1",
     "files": [
       "animated-list.tsx"
+    ]
+  },
+  "hover-image-list": {
+    "hash": "39b36c53260e82e0",
+    "files": [
+      "hover-image-list.tsx"
+    ]
+  },
+  "pinned-list": {
+    "hash": "d4f9433ba4acc0c7",
+    "files": [
+      "pinned-list.tsx"
+    ]
+  },
+  "coverflow-carousel": {
+    "hash": "2041e83cbe49a1db",
+    "files": [
+      "coverflow-carousel.tsx"
     ]
   },
   "drag-carousel": {
@@ -461,6 +707,12 @@
       "orbiting-circles.tsx"
     ]
   },
+  "scroll-velocity-marquee": {
+    "hash": "f39555f547f9c7c4",
+    "files": [
+      "scroll-velocity-marquee.tsx"
+    ]
+  },
   "animated-beam": {
     "hash": "ac433ffdc8b7da04",
     "files": [
@@ -473,10 +725,46 @@
       "bento-grid.tsx"
     ]
   },
+  "shuffle-grid": {
+    "hash": "32bdfd1101c68a9e",
+    "files": [
+      "shuffle-grid.tsx"
+    ]
+  },
   "scroll-progress": {
     "hash": "6484fa668024cc9e",
     "files": [
       "scroll-progress.tsx"
+    ]
+  },
+  "svg-draw-on-scroll": {
+    "hash": "b1ccb35b385eccd5",
+    "files": [
+      "svg-draw-on-scroll.tsx"
+    ]
+  },
+  "scroll-image-reveal": {
+    "hash": "1d263174ad1af2ac",
+    "files": [
+      "scroll-image-reveal.tsx"
+    ]
+  },
+  "scroll-reveal-paragraph": {
+    "hash": "41e6007b7c4f8fd6",
+    "files": [
+      "scroll-reveal-paragraph.tsx"
+    ]
+  },
+  "parallax-layers": {
+    "hash": "c0122dc13deabd30",
+    "files": [
+      "parallax-layers.tsx"
+    ]
+  },
+  "orbit-loader": {
+    "hash": "d5b00c92e3074518",
+    "files": [
+      "orbit-loader.tsx"
     ]
   },
   "ring-spinner": {
@@ -497,10 +785,28 @@
       "shimmer-skeleton.tsx"
     ]
   },
+  "skeleton-reveal": {
+    "hash": "ce32390a48596524",
+    "files": [
+      "skeleton-reveal.tsx"
+    ]
+  },
   "progress-ring": {
     "hash": "211c277ae4ef6873",
     "files": [
       "progress-ring.tsx"
+    ]
+  },
+  "stacked-meter": {
+    "hash": "8d938f37e7ff0461",
+    "files": [
+      "stacked-meter.tsx"
+    ]
+  },
+  "step-progress": {
+    "hash": "ccafd112516f2175",
+    "files": [
+      "step-progress.tsx"
     ]
   },
   "alert": {
@@ -587,10 +893,52 @@
       "unlock-face-id.tsx"
     ]
   },
+  "ai-message": {
+    "hash": "32141006c498a9c6",
+    "files": [
+      "ai-message.tsx"
+    ]
+  },
+  "ai-prompt-input": {
+    "hash": "5d9a0fe71e2d3def",
+    "files": [
+      "ai-prompt-input.tsx"
+    ]
+  },
+  "ai-sources": {
+    "hash": "34fbd24a213383dd",
+    "files": [
+      "ai-sources.tsx"
+    ]
+  },
+  "ai-suggestions": {
+    "hash": "13df2bf7321b730f",
+    "files": [
+      "ai-suggestions.tsx"
+    ]
+  },
+  "ai-typing-indicator": {
+    "hash": "1a731a504d1c03e8",
+    "files": [
+      "ai-typing-indicator.tsx"
+    ]
+  },
   "ai-reasoning": {
     "hash": "05c7cd80bdf75e49",
     "files": [
       "ai-reasoning.tsx"
+    ]
+  },
+  "ai-context-meter": {
+    "hash": "a113dc4b55da4b2c",
+    "files": [
+      "ai-context-meter.tsx"
+    ]
+  },
+  "ai-task-list": {
+    "hash": "185b781b27898796",
+    "files": [
+      "ai-task-list.tsx"
     ]
   },
   "ai-tool-approval": {
@@ -599,10 +947,94 @@
       "ai-tool-approval.tsx"
     ]
   },
+  "ai-tool-call": {
+    "hash": "7579c480c3f07358",
+    "files": [
+      "ai-tool-call.tsx"
+    ]
+  },
+  "ai-orb": {
+    "hash": "3f2a4231167a59f0",
+    "files": [
+      "ai-orb.tsx"
+    ]
+  },
+  "ai-voice-wave": {
+    "hash": "0ee7eea30cec0286",
+    "files": [
+      "ai-voice-wave.tsx"
+    ]
+  },
+  "bar-chart": {
+    "hash": "ef572e4ce23c4a97",
+    "files": [
+      "bar-chart.tsx"
+    ]
+  },
+  "donut-chart": {
+    "hash": "ae31399abad6f5fa",
+    "files": [
+      "donut-chart.tsx"
+    ]
+  },
+  "heatmap-calendar": {
+    "hash": "07d03e4de9880329",
+    "files": [
+      "heatmap-calendar.tsx"
+    ]
+  },
+  "sparkline": {
+    "hash": "c78055e2ce1c1eca",
+    "files": [
+      "sparkline.tsx"
+    ]
+  },
+  "kpi-card": {
+    "hash": "5415d626044353b4",
+    "files": [
+      "kpi-card.tsx"
+    ]
+  },
+  "data-table": {
+    "hash": "92ecd05fae651a52",
+    "files": [
+      "data-table.tsx"
+    ]
+  },
   "uptime-card": {
     "hash": "4a6f79491f84c895",
     "files": [
       "uptime-card.tsx"
+    ]
+  },
+  "comparison-slider": {
+    "hash": "1bc9048e2eb982f5",
+    "files": [
+      "comparison-slider.tsx"
+    ]
+  },
+  "android-mockup": {
+    "hash": "1a01641a04ddba1c",
+    "files": [
+      "android-mockup.tsx"
+    ]
+  },
+  "iphone-mockup": {
+    "hash": "25bf80f6cb426679",
+    "files": [
+      "iphone-mockup.tsx"
+    ]
+  },
+  "laptop-mockup": {
+    "hash": "d4638bcc754534a9",
+    "files": [
+      "laptop-mockup.tsx"
+    ]
+  },
+  "safari-mockup": {
+    "hash": "5f4f996814bce21c",
+    "files": [
+      "safari-mockup.tsx"
     ]
   },
   "terminal": {
@@ -611,16 +1043,58 @@
       "terminal.tsx"
     ]
   },
+  "audio-equalizer": {
+    "hash": "e8bed4bae843714b",
+    "files": [
+      "audio-equalizer.tsx"
+    ]
+  },
+  "audio-player": {
+    "hash": "fcc3f5bc53ecb713",
+    "files": [
+      "audio-player.tsx"
+    ]
+  },
+  "video-player-ui": {
+    "hash": "3664c32441c581c5",
+    "files": [
+      "video-player-ui.tsx"
+    ]
+  },
   "candlestick-chart": {
     "hash": "da46ebf2ab5eeeda",
     "files": [
       "candlestick-chart.tsx"
     ]
   },
+  "depth-chart": {
+    "hash": "55fd4f8f2382362f",
+    "files": [
+      "depth-chart.tsx"
+    ]
+  },
+  "liquidity-heatmap": {
+    "hash": "6f48b361bc5b7040",
+    "files": [
+      "liquidity-heatmap.tsx"
+    ]
+  },
   "order-book": {
     "hash": "31d4664a4af0add4",
     "files": [
       "order-book.tsx"
+    ]
+  },
+  "prediction-market-bar": {
+    "hash": "2afe723ca11f7548",
+    "files": [
+      "prediction-market-bar.tsx"
+    ]
+  },
+  "price-target-fan": {
+    "hash": "2542dd2e71d2b34d",
+    "files": [
+      "price-target-fan.tsx"
     ]
   },
   "price-ticker": {
