@@ -1,0 +1,1 @@
+export{t as HeroTerminalInstall}from"./hero-terminal-install-Dn9p__Bo.js";

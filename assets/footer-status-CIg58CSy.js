@@ -1,0 +1,1 @@
+export{t as FooterStatus}from"./footer-status-CUeD8sga.js";

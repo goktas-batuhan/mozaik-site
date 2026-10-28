@@ -1,0 +1,1 @@
+export{t as FooterWordmark}from"./footer-wordmark-Dkx3unSQ.js";

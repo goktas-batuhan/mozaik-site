@@ -1,0 +1,1 @@
+export{t as FaqAccordion}from"./faq-accordion-KELdk970.js";

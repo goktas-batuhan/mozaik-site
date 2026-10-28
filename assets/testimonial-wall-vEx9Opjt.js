@@ -1,0 +1,1 @@
+export{t as TestimonialWall}from"./testimonial-wall-VdyP90LP.js";

@@ -1,0 +1,647 @@
+var e=[{name:`brand`,type:`ReactNode`,required:!0,description:`Logo or wordmark.`},{name:`items`,type:`{ label: string; href?: string; sections?: { title: string; links: { label: string; href: string; description?: string }[] }[]; featured?: ReactNode }[]`,required:!0,description:`Top-level entries. Entries with sections become menu buttons that open a panel.`},{name:`action`,type:`{ label: string; href: string }`,description:`Call to action at the end.`},{name:`label`,type:`string`,default:`'Main'`,description:`Accessible name of the nav landmark.`},{name:`openOnHover`,type:`boolean`,default:`true`,description:`Open panels on mouse hover as well as on click.`},{name:`duration`,type:`number`,default:`0.18`,description:`Seconds the panel takes to fade in.`},{name:`as`,type:`ElementType`,default:`'header'`,description:`Element for the root.`},{name:`className`,type:`string`,description:`Extra classes for the root element.`}],t=[{name:`navbar-mega.tsx`,lines:263,html:`<pre class="shiki shiki-themes github-light github-dark-default" style="--shiki-light:#24292e;--shiki-dark:#e6edf3;--shiki-light-bg:#fff;--shiki-dark-bg:#0d1117" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> { motion, useReducedMotion, useReducedMotionConfig } </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">from</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'motion/react'</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> { useEffect, useId, useRef, useState, </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">type</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> ElementType, </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">type</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> KeyboardEvent, </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">type</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> ReactNode } </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">from</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'react'</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> { cn } </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">from</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> '@/lib/utils'</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">/** OS setting, or forced on with &#x3C;MotionConfig reducedMotion="always">. */</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> usePrefersReducedMotion</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">() {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> os</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> useReducedMotion</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> forced</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> useReducedMotionConfig</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  return</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> Boolean</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(os </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">||</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> forced)</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> interface</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> MegaLink</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  label</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> string</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  href</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> string</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** One line under the label. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  description</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> string</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> interface</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> MegaSection</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  title</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> string</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  links</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> MegaLink</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">[]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> interface</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> MegaItem</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  label</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> string</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** A plain link when there is no panel. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  href</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> string</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Sections of the mega panel. Items with sections render a menu button. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  sections</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> MegaSection</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">[]</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Extra content on the right of the panel, e.g. a featured card. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  featured</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> ReactNode</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> interface</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> NavbarMegaProps</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  brand</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> ReactNode</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  items</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> MegaItem</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">[]</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  action</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> { </span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">label</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> string</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">; </span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">href</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> string</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> }</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Accessible name of the nav landmark. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  label</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> string</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Opens panels on mouse hover as well as on click. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  openOnHover</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> boolean</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Seconds the panel takes to fade in. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  duration</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> number</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  as</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> ElementType</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> string</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> focus</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring'</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">const</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> chevron</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">svg</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> viewBox</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"0 0 16 16"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"size-3.5"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> fill</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"none"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> stroke</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"currentColor"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> strokeWidth</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"1.75"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> strokeLinecap</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"round"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> strokeLinejoin</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"round"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> aria-hidden</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">path</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> d</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"M4 6l4 4 4-4"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">svg</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">/**</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E"> * Top bar with mega-menu panels and its own focus management: Enter/Space/ArrowDown open a panel and move into it,</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E"> * ArrowLeft/Right walk the top level, Arrow keys walk the links, Escape closes and returns to the trigger,</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E"> * and tabbing or clicking away closes it.</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E"> */</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> NavbarMega</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">({</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  brand</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  items</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  action</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  label</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'Main'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  openOnHover</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> true</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  duration</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> 0.18</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  as</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">: </span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">Tag</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'header'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  className</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">}</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> NavbarMegaProps</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> id</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> useId</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> reduced</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> usePrefersReducedMotion</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> rootRef</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> useRef</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">&#x3C;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657">HTMLElement</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">>(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">null</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> topRefs</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> useRef</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">&#x3C;(</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657">HTMLElement</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> |</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)[]>([])</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> panelRef</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> useRef</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">&#x3C;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657">HTMLDivElement</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">>(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">null</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  const</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> [</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">open</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">setOpen</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">] </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> useState</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">&#x3C;</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">number</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> |</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">>(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">null</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  // Set when a key opens the panel so focus moves in once it is mounted.</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  const</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> [</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">focusPanel</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">setFocusPanel</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">] </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> useState</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">false</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">  useEffect</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(() </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">    if</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (open </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">!==</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> null</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> &#x26;&#x26;</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> focusPanel) {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      panelRef.current?.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">querySelector</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">&#x3C;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657">HTMLElement</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">>(</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'a'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)?.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">focus</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">      setFocusPanel</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">false</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  }, [open, focusPanel])</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">  useEffect</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(() </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">    if</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (open </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">===</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">return</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">    const</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> onPointerDown</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">event</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> PointerEvent</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">      if</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">!</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">rootRef.current?.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">contains</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(event.target </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">as</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> Node</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)) </span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">setOpen</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">null</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    document.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">addEventListener</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'pointerdown'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, onPointerDown)</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">    return</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> () </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> document.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">removeEventListener</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'pointerdown'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, onPointerDown)</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  }, [open])</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  const</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> focusTop</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">index</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> number</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">    const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> count</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> items.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">length</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    topRefs.current[((index </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">%</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> count) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">+</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> count) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">%</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> count]?.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">focus</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  const</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> onTopKeyDown</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">event</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> KeyboardEvent</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">&#x3C;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657">HTMLElement</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">>, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">index</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> number</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">hasPanel</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> boolean</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">    switch</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (event.key) {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">      case</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'ArrowRight'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        event.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">preventDefault</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">        focusTop</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(index </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">+</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> 1</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">        break</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">      case</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'ArrowLeft'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        event.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">preventDefault</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">        focusTop</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(index </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">-</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> 1</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">        break</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">      case</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'Home'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        event.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">preventDefault</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">        focusTop</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">0</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">        break</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">      case</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'End'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">:</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        event.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">preventDefault</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">        focusTop</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(items.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">length</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> -</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> 1</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">        break</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">      case</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'ArrowDown'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">:</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">        if</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (hasPanel) {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          event.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">preventDefault</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">          setOpen</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(index)</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">          setFocusPanel</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">true</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        }</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">        break</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">      case</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'Escape'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">:</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">        if</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (open </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">!==</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          event.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">preventDefault</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">          setOpen</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">null</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        }</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">        break</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  const</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> onPanelKeyDown</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">event</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> KeyboardEvent</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">&#x3C;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657">HTMLDivElement</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">>) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">    const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> links</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> Array.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">from</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(event.currentTarget.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">querySelectorAll</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">&#x3C;</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657">HTMLElement</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">>(</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'a'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">))</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">    const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> at</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> links.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">indexOf</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(document.activeElement </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">as</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> HTMLElement</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">    if</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (event.key </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">===</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'Escape'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      event.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">preventDefault</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">      const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> index</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> open</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">      setOpen</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">null</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">      if</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (index </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">!==</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) topRefs.current[index]?.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">focus</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    } </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">else</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> if</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (event.key </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">===</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'ArrowDown'</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> ||</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> event.key </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">===</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'ArrowRight'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      event.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">preventDefault</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      links[(at </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">+</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> 1</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">%</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> links.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">length</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">]?.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">focus</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    } </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">else</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> if</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (event.key </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">===</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'ArrowUp'</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> ||</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> event.key </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">===</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'ArrowLeft'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      event.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">preventDefault</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">      if</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (at </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">&#x3C;=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> 0</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> &#x26;&#x26;</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> open </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">!==</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) topRefs.current[open]?.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">focus</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">      else</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> links[at </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">-</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> 1</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">]?.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">focus</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> active</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> open </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">!==</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> null</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> ?</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> items[open] </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> null</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  return</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    &#x3C;</span><span style="--shiki-light:#005CC5;--shiki-dark:#7EE787">Tag</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">      ref</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">rootRef</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">      className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">cn</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'@container relative z-40 w-full border-b border-border bg-background text-foreground'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, className)</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">      onPointerLeave</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">event</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> React</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657">PointerEvent</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">        if</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (openOnHover </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">&#x26;&#x26;</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> event.pointerType </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">===</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'mouse'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">setOpen</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">null</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      }</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">      onBlur</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">event</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> React</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657">FocusEvent</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">        if</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">!</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">rootRef.current?.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">contains</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(event.relatedTarget </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">as</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> Node</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> |</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)) </span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">setOpen</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">null</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      }</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    ></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"mx-auto flex h-16 max-w-6xl items-center gap-6 px-6"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">a</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> href</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"/"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">cn</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'rounded-sm text-lg font-semibold tracking-tight'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, focus)</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">          {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">brand</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">a</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">nav</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> aria-label</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">label</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"flex-1"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">ul</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"flex items-center gap-1"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">            {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">items.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">map</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">((</span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">item</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">index</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">              const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> hasPanel</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> Boolean</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(item.sections?.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">length</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">              const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> expanded</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> open </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">===</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> index</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">              const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> base</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> cn</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">                'flex items-center gap-1 rounded-md px-3 py-2 text-sm transition-colors'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                expanded </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'bg-muted text-foreground'</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> :</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'text-muted-foreground hover:text-foreground'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                focus,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">              )</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">              return</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">li</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">                  key</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">item.label</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">                  onPointerEnter</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">event</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">                    if</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (openOnHover </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">&#x26;&#x26;</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> event.pointerType </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">===</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'mouse'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">setOpen</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(hasPanel </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> index </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> null</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                  }</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                ></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">                  {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">hasPanel </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                    &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">button</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">                      type</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"button"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">                      ref</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">el</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                        topRefs.current[index] </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> el</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                      }</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">                      aria-expanded</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">expanded</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">                      aria-controls</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">\`\${</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">id</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">}-panel\`</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">                      className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">base</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">                      onClick</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">() </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> setOpen</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(expanded </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> null</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> :</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> index)</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">                      onKeyDown</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">event</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> onTopKeyDown</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(event, index, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">true</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                    ></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">                      {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">item.label</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">                      {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">chevron</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                    &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">button</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                  ) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                    &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">a</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">                      href</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">item.href</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">                      ref</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">el</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                        topRefs.current[index] </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> el</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                      }</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">                      className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">base</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">                      onKeyDown</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">event</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> onTopKeyDown</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(event, index, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">false</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">)</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                    ></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">                      {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">item.label</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                    &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">a</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                  )</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">li</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">              )</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            })</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">ul</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">nav</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">        {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">action </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">&#x26;&#x26;</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">a</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">            href</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">action.href</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">            className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">cn</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, focus)</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          ></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">            {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">action.label</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">a</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        )</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">      {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">active?.sections </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">&#x26;&#x26;</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        &#x3C;</span><span style="--shiki-light:#005CC5;--shiki-dark:#7EE787">motion.div</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">          key</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">open</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">          id</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">\`\${</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">id</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">}-panel\`</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">          ref</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">panelRef</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">          role</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"group"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">          aria-label</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">active.label</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">          initial</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">reduced </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> false</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> :</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> { opacity: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">0</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, y: </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">-</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">6</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> }</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">          animate</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">{ opacity: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">1</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, y: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">0</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> }</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">          transition</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">{ duration }</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">          onKeyDown</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">onPanelKeyDown</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">          className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"absolute inset-x-0 top-full border-b border-border bg-background shadow-lg shadow-foreground/5"</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        ></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"mx-auto grid max-w-6xl gap-8 px-6 py-8 @3xl:grid-cols-[1fr_1fr_minmax(0,0.9fr)]"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">            {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">active.sections.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">map</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">((</span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">section</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">              &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> key</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">section.title</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">h3</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">section.title</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">h3</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">ul</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"flex flex-col gap-1"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">                  {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">section.links.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">map</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">((</span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">link</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                    &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">li</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> key</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">link.label</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                      &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">a</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> href</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">link.href</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">cn</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'block rounded-lg p-2 transition-colors hover:bg-muted'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, focus)</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                        &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">span</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"block text-sm font-medium"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">link.label</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">span</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">                        {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">link.description </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">&#x26;&#x26;</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">span</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"block text-xs text-muted-foreground"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">link.description</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">span</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                      &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">a</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                    &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">li</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                  ))</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">ul</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">              &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            ))</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">            {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">active.featured </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">!=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> null</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> &#x26;&#x26;</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"hidden @3xl:block"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">active.featured</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        &#x3C;/</span><span style="--shiki-light:#005CC5;--shiki-dark:#7EE787">motion.div</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      )</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    &#x3C;/</span><span style="--shiki-light:#005CC5;--shiki-dark:#7EE787">Tag</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  )</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">}</span></span></code></pre>`,raw:`import { motion, useReducedMotion, useReducedMotionConfig } from 'motion/react'
+import { useEffect, useId, useRef, useState, type ElementType, type KeyboardEvent, type ReactNode } from 'react'
+import { cn } from '@/lib/utils'
+
+/** OS setting, or forced on with <MotionConfig reducedMotion="always">. */
+function usePrefersReducedMotion() {
+  const os = useReducedMotion()
+  const forced = useReducedMotionConfig()
+  return Boolean(os || forced)
+}
+
+export interface MegaLink {
+  label: string
+  href: string
+  /** One line under the label. */
+  description?: string
+}
+
+export interface MegaSection {
+  title: string
+  links: MegaLink[]
+}
+
+export interface MegaItem {
+  label: string
+  /** A plain link when there is no panel. */
+  href?: string
+  /** Sections of the mega panel. Items with sections render a menu button. */
+  sections?: MegaSection[]
+  /** Extra content on the right of the panel, e.g. a featured card. */
+  featured?: ReactNode
+}
+
+export interface NavbarMegaProps {
+  brand: ReactNode
+  items: MegaItem[]
+  action?: { label: string; href: string }
+  /** Accessible name of the nav landmark. */
+  label?: string
+  /** Opens panels on mouse hover as well as on click. */
+  openOnHover?: boolean
+  /** Seconds the panel takes to fade in. */
+  duration?: number
+  as?: ElementType
+  className?: string
+}
+
+const focus = 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring'
+const chevron = (
+  <svg viewBox="0 0 16 16" className="size-3.5" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <path d="M4 6l4 4 4-4" />
+  </svg>
+)
+
+/**
+ * Top bar with mega-menu panels and its own focus management: Enter/Space/ArrowDown open a panel and move into it,
+ * ArrowLeft/Right walk the top level, Arrow keys walk the links, Escape closes and returns to the trigger,
+ * and tabbing or clicking away closes it.
+ */
+export function NavbarMega({
+  brand,
+  items,
+  action,
+  label = 'Main',
+  openOnHover = true,
+  duration = 0.18,
+  as: Tag = 'header',
+  className,
+}: NavbarMegaProps) {
+  const id = useId()
+  const reduced = usePrefersReducedMotion()
+  const rootRef = useRef<HTMLElement>(null)
+  const topRefs = useRef<(HTMLElement | null)[]>([])
+  const panelRef = useRef<HTMLDivElement>(null)
+  const [open, setOpen] = useState<number | null>(null)
+  // Set when a key opens the panel so focus moves in once it is mounted.
+  const [focusPanel, setFocusPanel] = useState(false)
+
+  useEffect(() => {
+    if (open !== null && focusPanel) {
+      panelRef.current?.querySelector<HTMLElement>('a')?.focus()
+      setFocusPanel(false)
+    }
+  }, [open, focusPanel])
+
+  useEffect(() => {
+    if (open === null) return
+    const onPointerDown = (event: PointerEvent) => {
+      if (!rootRef.current?.contains(event.target as Node)) setOpen(null)
+    }
+    document.addEventListener('pointerdown', onPointerDown)
+    return () => document.removeEventListener('pointerdown', onPointerDown)
+  }, [open])
+
+  const focusTop = (index: number) => {
+    const count = items.length
+    topRefs.current[((index % count) + count) % count]?.focus()
+  }
+
+  const onTopKeyDown = (event: KeyboardEvent<HTMLElement>, index: number, hasPanel: boolean) => {
+    switch (event.key) {
+      case 'ArrowRight':
+        event.preventDefault()
+        focusTop(index + 1)
+        break
+      case 'ArrowLeft':
+        event.preventDefault()
+        focusTop(index - 1)
+        break
+      case 'Home':
+        event.preventDefault()
+        focusTop(0)
+        break
+      case 'End':
+        event.preventDefault()
+        focusTop(items.length - 1)
+        break
+      case 'ArrowDown':
+        if (hasPanel) {
+          event.preventDefault()
+          setOpen(index)
+          setFocusPanel(true)
+        }
+        break
+      case 'Escape':
+        if (open !== null) {
+          event.preventDefault()
+          setOpen(null)
+        }
+        break
+    }
+  }
+
+  const onPanelKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    const links = Array.from(event.currentTarget.querySelectorAll<HTMLElement>('a'))
+    const at = links.indexOf(document.activeElement as HTMLElement)
+    if (event.key === 'Escape') {
+      event.preventDefault()
+      const index = open
+      setOpen(null)
+      if (index !== null) topRefs.current[index]?.focus()
+    } else if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+      event.preventDefault()
+      links[(at + 1) % links.length]?.focus()
+    } else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+      event.preventDefault()
+      if (at <= 0 && open !== null) topRefs.current[open]?.focus()
+      else links[at - 1]?.focus()
+    }
+  }
+
+  const active = open !== null ? items[open] : null
+
+  return (
+    <Tag
+      ref={rootRef}
+      className={cn('@container relative z-40 w-full border-b border-border bg-background text-foreground', className)}
+      onPointerLeave={(event: React.PointerEvent) => {
+        if (openOnHover && event.pointerType === 'mouse') setOpen(null)
+      }}
+      onBlur={(event: React.FocusEvent) => {
+        if (!rootRef.current?.contains(event.relatedTarget as Node | null)) setOpen(null)
+      }}
+    >
+      <div className="mx-auto flex h-16 max-w-6xl items-center gap-6 px-6">
+        <a href="/" className={cn('rounded-sm text-lg font-semibold tracking-tight', focus)}>
+          {brand}
+        </a>
+        <nav aria-label={label} className="flex-1">
+          <ul className="flex items-center gap-1">
+            {items.map((item, index) => {
+              const hasPanel = Boolean(item.sections?.length)
+              const expanded = open === index
+              const base = cn(
+                'flex items-center gap-1 rounded-md px-3 py-2 text-sm transition-colors',
+                expanded ? 'bg-muted text-foreground' : 'text-muted-foreground hover:text-foreground',
+                focus,
+              )
+              return (
+                <li
+                  key={item.label}
+                  onPointerEnter={(event) => {
+                    if (openOnHover && event.pointerType === 'mouse') setOpen(hasPanel ? index : null)
+                  }}
+                >
+                  {hasPanel ? (
+                    <button
+                      type="button"
+                      ref={(el) => {
+                        topRefs.current[index] = el
+                      }}
+                      aria-expanded={expanded}
+                      aria-controls={\`\${id}-panel\`}
+                      className={base}
+                      onClick={() => setOpen(expanded ? null : index)}
+                      onKeyDown={(event) => onTopKeyDown(event, index, true)}
+                    >
+                      {item.label}
+                      {chevron}
+                    </button>
+                  ) : (
+                    <a
+                      href={item.href}
+                      ref={(el) => {
+                        topRefs.current[index] = el
+                      }}
+                      className={base}
+                      onKeyDown={(event) => onTopKeyDown(event, index, false)}
+                    >
+                      {item.label}
+                    </a>
+                  )}
+                </li>
+              )
+            })}
+          </ul>
+        </nav>
+        {action && (
+          <a
+            href={action.href}
+            className={cn('rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90', focus)}
+          >
+            {action.label}
+          </a>
+        )}
+      </div>
+      {active?.sections && (
+        <motion.div
+          key={open}
+          id={\`\${id}-panel\`}
+          ref={panelRef}
+          role="group"
+          aria-label={active.label}
+          initial={reduced ? false : { opacity: 0, y: -6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration }}
+          onKeyDown={onPanelKeyDown}
+          className="absolute inset-x-0 top-full border-b border-border bg-background shadow-lg shadow-foreground/5"
+        >
+          <div className="mx-auto grid max-w-6xl gap-8 px-6 py-8 @3xl:grid-cols-[1fr_1fr_minmax(0,0.9fr)]">
+            {active.sections.map((section) => (
+              <div key={section.title}>
+                <h3 className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">{section.title}</h3>
+                <ul className="flex flex-col gap-1">
+                  {section.links.map((link) => (
+                    <li key={link.label}>
+                      <a href={link.href} className={cn('block rounded-lg p-2 transition-colors hover:bg-muted', focus)}>
+                        <span className="block text-sm font-medium">{link.label}</span>
+                        {link.description && <span className="block text-xs text-muted-foreground">{link.description}</span>}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+            {active.featured != null && <div className="hidden @3xl:block">{active.featured}</div>}
+          </div>
+        </motion.div>
+      )}
+    </Tag>
+  )
+}
+`}],n=`<pre class="shiki shiki-themes github-light github-dark-default" style="--shiki-light:#24292e;--shiki-dark:#e6edf3;--shiki-light-bg:#fff;--shiki-dark-bg:#0d1117" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> { NavbarMega } </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">from</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> '@/components/navbar-mega'</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> default</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> NavbarMegaDemo</span><span style="--shiki-light:#24292E;--shiki-dark:#FFA657">() </span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">{</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  return</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"w-full max-w-5xl"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      &#x3C;</span><span style="--shiki-light:#005CC5;--shiki-dark:#7EE787">NavbarMega</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">        brand</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"Northwind"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">        action</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">{ label: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Get started'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, href: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'#'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> }</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">        items</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">[</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            label: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Product'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            sections: [</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">              {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                title: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Build'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                links: [</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                  { label: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Editor'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, href: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'#'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, description: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Write and review in one place.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                  { label: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Automations'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, href: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'#'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, description: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Run routine work on a schedule.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                  { label: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Integrations'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, href: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'#'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, description: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Connect the tools you already use.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                ],</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">              },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">              {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                title: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Ship'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                links: [</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                  { label: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Previews'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, href: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'#'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, description: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'A link for every change.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                  { label: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Releases'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, href: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'#'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, description: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Roll out with confidence.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                  { label: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Analytics'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, href: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'#'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, description: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'See what people use.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                ],</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">              },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            ],</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">            featured</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">: (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">              &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"flex h-full flex-col justify-end rounded-xl border border-border bg-muted/50 p-5"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">p</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"text-sm font-medium"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">>What's new&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">p</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">p</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"mt-1 text-xs text-muted-foreground"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">>Previews now work for every pull request.&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">p</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">              &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            ),</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            label: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Resources'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            sections: [</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">              {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                title: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Learn'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                links: [</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                  { label: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Docs'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, href: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'#'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, description: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Guides and reference.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                  { label: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Tutorials'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, href: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'#'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, description: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Step by step projects.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                ],</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">              },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">              {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                title: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Company'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                links: [</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                  { label: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Blog'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, href: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'#'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, description: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Notes from the team.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                  { label: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Changelog'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, href: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'#'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, description: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Everything we shipped.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                ],</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">              },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            ],</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          { label: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Pricing'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, href: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'#'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          { label: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Contact'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, href: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'#'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        ]</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  )</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">}</span></span></code></pre>`,r=`import { NavbarMega } from '@/components/navbar-mega'
+
+export default function NavbarMegaDemo() {
+  return (
+    <div className="w-full max-w-5xl">
+      <NavbarMega
+        brand="Northwind"
+        action={{ label: 'Get started', href: '#' }}
+        items={[
+          {
+            label: 'Product',
+            sections: [
+              {
+                title: 'Build',
+                links: [
+                  { label: 'Editor', href: '#', description: 'Write and review in one place.' },
+                  { label: 'Automations', href: '#', description: 'Run routine work on a schedule.' },
+                  { label: 'Integrations', href: '#', description: 'Connect the tools you already use.' },
+                ],
+              },
+              {
+                title: 'Ship',
+                links: [
+                  { label: 'Previews', href: '#', description: 'A link for every change.' },
+                  { label: 'Releases', href: '#', description: 'Roll out with confidence.' },
+                  { label: 'Analytics', href: '#', description: 'See what people use.' },
+                ],
+              },
+            ],
+            featured: (
+              <div className="flex h-full flex-col justify-end rounded-xl border border-border bg-muted/50 p-5">
+                <p className="text-sm font-medium">What's new</p>
+                <p className="mt-1 text-xs text-muted-foreground">Previews now work for every pull request.</p>
+              </div>
+            ),
+          },
+          {
+            label: 'Resources',
+            sections: [
+              {
+                title: 'Learn',
+                links: [
+                  { label: 'Docs', href: '#', description: 'Guides and reference.' },
+                  { label: 'Tutorials', href: '#', description: 'Step by step projects.' },
+                ],
+              },
+              {
+                title: 'Company',
+                links: [
+                  { label: 'Blog', href: '#', description: 'Notes from the team.' },
+                  { label: 'Changelog', href: '#', description: 'Everything we shipped.' },
+                ],
+              },
+            ],
+          },
+          { label: 'Pricing', href: '#' },
+          { label: 'Contact', href: '#' },
+        ]}
+      />
+    </div>
+  )
+}
+`,i=[],a={props:e,files:t,usage:n,usageRaw:r,variants:i};export{a as default,t as files,e as props,n as usage,r as usageRaw,i as variants};

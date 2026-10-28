@@ -1,0 +1,1 @@
+export{t as FooterColumns}from"./footer-columns-K5PW-ekP.js";

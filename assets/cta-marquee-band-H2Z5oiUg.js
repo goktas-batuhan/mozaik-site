@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BX5dh3L7.js";import{t}from"./cta-marquee-band-CDxTH0k7.js";var n=e();function r(){return(0,n.jsx)(`div`,{className:`w-full max-w-5xl`,children:(0,n.jsx)(t,{phrases:[`Design that ships`,`Motion with meaning`,`Built to be owned`],title:`Your next project deserves a good start.`,actionLabel:`Let's talk`,actionHref:`#`})})}export{r as default};

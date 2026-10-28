@@ -1,0 +1,1 @@
+export{t as FaqTwoColumn}from"./faq-two-column-CCkivpDk.js";

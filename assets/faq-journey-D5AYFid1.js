@@ -1,0 +1,1 @@
+export{t as FaqJourney}from"./faq-journey-CUlnNEx8.js";

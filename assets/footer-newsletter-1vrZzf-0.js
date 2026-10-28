@@ -1,0 +1,1 @@
+export{t as FooterNewsletter}from"./footer-newsletter-aNvltKey.js";

@@ -1,0 +1,1 @@
+export{t as TestimonialChat}from"./testimonial-chat-1zWceQn5.js";

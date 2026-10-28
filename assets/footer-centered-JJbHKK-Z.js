@@ -1,0 +1,1 @@
+export{t as FooterCentered}from"./footer-centered-ClivpHlM.js";

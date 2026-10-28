@@ -1,0 +1,1 @@
+export{t as HeroPhoneSplit}from"./hero-phone-split-ChTVlhZ3.js";

@@ -1,0 +1,1 @@
+export{t as FooterMinimal}from"./footer-minimal-D3dtO-Kv.js";

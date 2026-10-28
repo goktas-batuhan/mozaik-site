@@ -1,0 +1,1 @@
+export{t as FooterBento}from"./footer-bento-DIug2qXc.js";

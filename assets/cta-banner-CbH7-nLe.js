@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-BX5dh3L7.js";import{t}from"./cta-banner-Xk37mRYr.js";var n=e();function r(){return(0,n.jsx)(`div`,{className:`w-full max-w-4xl`,children:(0,n.jsx)(t,{title:`Start building today`,description:`Add any section to your project with a single command.`,actionLabel:`Get started`,actionHref:`#`})})}export{r as default};

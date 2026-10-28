@@ -1,0 +1,1 @@
+export{t as TestimonialSpotlight}from"./testimonial-spotlight-Do447rrJ.js";

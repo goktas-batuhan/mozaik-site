@@ -1,0 +1,1 @@
+export{t as TestimonialStack}from"./testimonial-stack-CbVuBQrG.js";

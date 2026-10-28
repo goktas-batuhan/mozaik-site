@@ -1,0 +1,1 @@
+export{t as HeroGiantType}from"./hero-giant-type-CwRFVYXz.js";

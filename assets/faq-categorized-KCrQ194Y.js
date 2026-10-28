@@ -1,0 +1,1 @@
+export{t as FaqCategorized}from"./faq-categorized-eJIAQGIY.js";

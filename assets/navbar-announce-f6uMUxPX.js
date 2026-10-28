@@ -1,0 +1,1 @@
+export{t as NavbarAnnounce}from"./navbar-announce-CHO1item.js";

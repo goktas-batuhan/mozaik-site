@@ -1,0 +1,1 @@
+export{t as TestimonialFeatured}from"./testimonial-featured-DfhhAeaI.js";

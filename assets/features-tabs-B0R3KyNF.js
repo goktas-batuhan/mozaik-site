@@ -1,0 +1,313 @@
+var e=[{name:`description`,type:`ReactNode`,description:`Copy under the headline.`},{name:`tabs`,type:`{ id: string; label: string; title: string; description: ReactNode; points?: string[]; visual?: ReactNode }[]`,required:!0,description:`One tab per feature.`},{name:`defaultValue`,type:`string`,description:`Tab selected on first render. Defaults to the first one.`},{name:`duration`,type:`number`,description:`Seconds the panel takes to switch.`},{name:`title`,type:`ReactNode`,required:!0,description:`Section headline. Labels the section for assistive tech.`},{name:`titleAs`,type:`ElementType`,default:`'h2'`,description:`Element for the headline.`},{name:`as`,type:`ElementType`,default:`'section'`,description:`Element for the root.`},{name:`disabled`,type:`boolean`,default:`false`,description:`Turns the tab animation off.`},{name:`className`,type:`string`,description:`Extra classes for the root element.`}],t=[{name:`features-tabs.tsx`,lines:100,html:`<pre class="shiki shiki-themes github-light github-dark-default" style="--shiki-light:#24292e;--shiki-dark:#e6edf3;--shiki-light-bg:#fff;--shiki-dark-bg:#0d1117" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> { useId, </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">type</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> ElementType, </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">type</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> ReactNode } </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">from</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'react'</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> { DirectionAwareTabs } </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">from</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> '@/components/direction-aware-tabs'</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> { cn } </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">from</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> '@/lib/utils'</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> interface</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> FeatureTab</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Unique id of the tab. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  id</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> string</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Label on the tab button. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  label</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> string</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Headline of the panel. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  title</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> string</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Copy of the panel. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  description</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> ReactNode</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Short bullets under the copy. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  points</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> string</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">[]</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Illustration or mock-up shown beside the copy. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  visual</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> ReactNode</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> interface</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> FeaturesTabsProps</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> {</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Section headline. Labels the section for assistive tech. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  title</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> ReactNode</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Copy under the headline. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  description</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> ReactNode</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** One tab per feature. The panel slides in from the side you move towards. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  tabs</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> FeatureTab</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">[]</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Tab selected on first render. Defaults to the first one. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  defaultValue</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> string</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Seconds the panel takes to switch. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  duration</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> number</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Element for the headline. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  titleAs</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> ElementType</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Element for the root. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  as</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> ElementType</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">  /** Turns the tab animation off. */</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  disabled</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> boolean</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">?:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> string</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> Check</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">() {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  return</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">svg</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> viewBox</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"0 0 16 16"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> fill</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"none"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> aria-hidden</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"mt-0.5 size-4 shrink-0 text-primary"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">path</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> d</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"m3.5 8.5 3 3 6-7"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> stroke</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"currentColor"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> strokeWidth</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"1.8"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> strokeLinecap</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"round"</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> strokeLinejoin</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"round"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">svg</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  )</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#8B949E">/** A centered headline over pill tabs. Each tab opens a panel with copy, bullets and a visual. Built on Direction Aware Tabs. */</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> FeaturesTabs</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">({</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  title</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  description</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  tabs</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  defaultValue</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  duration</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  titleAs</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">: </span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">Title</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'h2'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  as</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">: </span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">Tag</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'section'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  disabled</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> false</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">  className</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">}</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#FFA657"> FeaturesTabsProps</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> id</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> =</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> useId</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">()</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  return</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    &#x3C;</span><span style="--shiki-light:#005CC5;--shiki-dark:#7EE787">Tag</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> aria-labelledby</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">id</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">cn</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">(</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'@container w-full'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, className)</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"mx-auto mb-10 flex max-w-2xl flex-col items-center gap-4 text-center"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        &#x3C;</span><span style="--shiki-light:#005CC5;--shiki-dark:#7EE787">Title</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> id</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">id</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"text-3xl font-semibold tracking-tight text-balance text-foreground @xl:text-4xl"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">          {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">title</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        &#x3C;/</span><span style="--shiki-light:#005CC5;--shiki-dark:#7EE787">Title</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">        {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">description </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">!=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> null</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> &#x26;&#x26;</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">p</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"text-base leading-relaxed text-pretty text-muted-foreground"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">description</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">p</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      &#x3C;</span><span style="--shiki-light:#005CC5;--shiki-dark:#7EE787">DirectionAwareTabs</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">        defaultValue</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">defaultValue</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">        duration</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">duration</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">        disabled</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">disabled</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">        tabs</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">tabs.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">map</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">((</span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">t</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> ({</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          id: t.id,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          label: t.label,</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">          content</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">: (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"grid items-center gap-8 rounded-2xl border border-border bg-card p-6 text-card-foreground @3xl:grid-cols-2 @3xl:p-10"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">              &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"flex flex-col gap-4"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">h3</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"text-xl font-semibold tracking-tight text-foreground @xl:text-2xl"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">t.title</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">h3</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">p</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"text-sm leading-relaxed text-muted-foreground @xl:text-base"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">t.description</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">p</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">                {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">t.points </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">&#x26;&#x26;</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> t.points.</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">length</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> ></span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> 0</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> &#x26;&#x26;</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                  &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">ul</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"mt-1 flex flex-col gap-2.5 text-sm text-foreground"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">                    {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">t.points.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">map</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">((</span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">p</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                      &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">li</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> key</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">p</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"flex items-start gap-2.5"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                        &#x3C;</span><span style="--shiki-light:#005CC5;--shiki-dark:#7EE787">Check</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">                        {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">p</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                      &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">li</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                    ))</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                  &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">ul</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">                )</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">              &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">              {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">t.visual </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">!=</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> null</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> &#x26;&#x26;</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"min-w-0"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">t.visual</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          ),</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        }))</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    &#x3C;/</span><span style="--shiki-light:#005CC5;--shiki-dark:#7EE787">Tag</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  )</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">}</span></span></code></pre>`,raw:`import { useId, type ElementType, type ReactNode } from 'react'
+import { DirectionAwareTabs } from '@/components/direction-aware-tabs'
+import { cn } from '@/lib/utils'
+
+export interface FeatureTab {
+  /** Unique id of the tab. */
+  id: string
+  /** Label on the tab button. */
+  label: string
+  /** Headline of the panel. */
+  title: string
+  /** Copy of the panel. */
+  description: ReactNode
+  /** Short bullets under the copy. */
+  points?: string[]
+  /** Illustration or mock-up shown beside the copy. */
+  visual?: ReactNode
+}
+
+export interface FeaturesTabsProps {
+  /** Section headline. Labels the section for assistive tech. */
+  title: ReactNode
+  /** Copy under the headline. */
+  description?: ReactNode
+  /** One tab per feature. The panel slides in from the side you move towards. */
+  tabs: FeatureTab[]
+  /** Tab selected on first render. Defaults to the first one. */
+  defaultValue?: string
+  /** Seconds the panel takes to switch. */
+  duration?: number
+  /** Element for the headline. */
+  titleAs?: ElementType
+  /** Element for the root. */
+  as?: ElementType
+  /** Turns the tab animation off. */
+  disabled?: boolean
+  className?: string
+}
+
+function Check() {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden className="mt-0.5 size-4 shrink-0 text-primary">
+      <path d="m3.5 8.5 3 3 6-7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+/** A centered headline over pill tabs. Each tab opens a panel with copy, bullets and a visual. Built on Direction Aware Tabs. */
+export function FeaturesTabs({
+  title,
+  description,
+  tabs,
+  defaultValue,
+  duration,
+  titleAs: Title = 'h2',
+  as: Tag = 'section',
+  disabled = false,
+  className,
+}: FeaturesTabsProps) {
+  const id = useId()
+  return (
+    <Tag aria-labelledby={id} className={cn('@container w-full', className)}>
+      <div className="mx-auto mb-10 flex max-w-2xl flex-col items-center gap-4 text-center">
+        <Title id={id} className="text-3xl font-semibold tracking-tight text-balance text-foreground @xl:text-4xl">
+          {title}
+        </Title>
+        {description != null && <p className="text-base leading-relaxed text-pretty text-muted-foreground">{description}</p>}
+      </div>
+      <DirectionAwareTabs
+        defaultValue={defaultValue}
+        duration={duration}
+        disabled={disabled}
+        tabs={tabs.map((t) => ({
+          id: t.id,
+          label: t.label,
+          content: (
+            <div className="grid items-center gap-8 rounded-2xl border border-border bg-card p-6 text-card-foreground @3xl:grid-cols-2 @3xl:p-10">
+              <div className="flex flex-col gap-4">
+                <h3 className="text-xl font-semibold tracking-tight text-foreground @xl:text-2xl">{t.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground @xl:text-base">{t.description}</p>
+                {t.points && t.points.length > 0 && (
+                  <ul className="mt-1 flex flex-col gap-2.5 text-sm text-foreground">
+                    {t.points.map((p) => (
+                      <li key={p} className="flex items-start gap-2.5">
+                        <Check />
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+              {t.visual != null && <div className="min-w-0">{t.visual}</div>}
+            </div>
+          ),
+        }))}
+      />
+    </Tag>
+  )
+}
+`}],n=`<pre class="shiki shiki-themes github-light github-dark-default" style="--shiki-light:#24292e;--shiki-dark:#e6edf3;--shiki-light-bg:#fff;--shiki-dark-bg:#0d1117" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> { FeaturesTabs } </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">from</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> '@/components/features-tabs'</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> Panel</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">({ </span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">rows</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> }</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> { </span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">rows</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">:</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> number</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">[] }) {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  return</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> aria-hidden</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"overflow-hidden rounded-xl border border-border bg-background"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"flex items-center gap-1.5 border-b border-border px-3 py-2.5"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">span</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"size-2 rounded-full bg-muted-foreground/30"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">span</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"size-2 rounded-full bg-muted-foreground/30"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">span</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"size-2 rounded-full bg-muted-foreground/30"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"space-y-3 p-4"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">        {</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">rows.</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF">map</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">((</span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">w</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#E36209;--shiki-dark:#FFA657">i</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=></span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> key</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">i</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"flex items-center gap-3"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">span</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">\`size-6 shrink-0 rounded-md \${</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">i</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> ===</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF"> 0</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> ?</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'bg-primary'</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> :</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF"> 'bg-muted'}\`</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">span</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> style</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">{ width: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">\`\${</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">w</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">}%\`</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> }</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"h-2.5 rounded-full bg-muted-foreground/20"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        ))</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  )</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> default</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72"> function</span><span style="--shiki-light:#6F42C1;--shiki-dark:#D2A8FF"> FeaturesTabsDemo</span><span style="--shiki-light:#24292E;--shiki-dark:#FFA657">() </span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">{</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">  return</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> (</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> className</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"w-full max-w-4xl"</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      &#x3C;</span><span style="--shiki-light:#005CC5;--shiki-dark:#7EE787">FeaturesTabs</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">        title</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"Built for the way teams work"</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">        description</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">"Pick a workflow to see how it fits."</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF">        tabs</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">[</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            id: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'plan'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            label: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Plan'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            title: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Plan the week in minutes'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            description: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Drag work into a calm timeline and see conflicts before they happen.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            points: [</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Shared roadmaps'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Capacity at a glance'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Dependencies that stay in sync'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">],</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            visual: &#x3C;</span><span style="--shiki-light:#005CC5;--shiki-dark:#7EE787">Panel</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> rows</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">[</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">80</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">62</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">71</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">48</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">]</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> />,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            id: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'build'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            label: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Build'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            title: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Ship without the hand-offs'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            description: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Specs, code and reviews live side by side, so nothing gets lost in translation.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            points: [</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Inline review threads'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Preview links for every change'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'One-click rollbacks'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">],</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            visual: &#x3C;</span><span style="--shiki-light:#005CC5;--shiki-dark:#7EE787">Panel</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> rows</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">[</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">55</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">84</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">66</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">74</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">]</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> />,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            id: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'learn'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            label: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Learn'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            title: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Know what worked'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            description: </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Dashboards turn every release into a lesson for the next one.'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            points: [</span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Release health'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Weekly digests'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#032F62;--shiki-dark:#A5D6FF">'Exportable reports'</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">],</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">            visual: &#x3C;</span><span style="--shiki-light:#005CC5;--shiki-dark:#7EE787">Panel</span><span style="--shiki-light:#6F42C1;--shiki-dark:#79C0FF"> rows</span><span style="--shiki-light:#D73A49;--shiki-dark:#FF7B72">=</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">{</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">[</span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">68</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">44</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">90</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">, </span><span style="--shiki-light:#005CC5;--shiki-dark:#79C0FF">58</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">]</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3"> />,</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">          },</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">        ]</span><span style="--shiki-light:#24292E;--shiki-dark:#FF7B72">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">      /></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">    &#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#7EE787">div</span><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">  )</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E6EDF3">}</span></span></code></pre>`,r=`import { FeaturesTabs } from '@/components/features-tabs'
+
+function Panel({ rows }: { rows: number[] }) {
+  return (
+    <div aria-hidden className="overflow-hidden rounded-xl border border-border bg-background">
+      <div className="flex items-center gap-1.5 border-b border-border px-3 py-2.5">
+        <span className="size-2 rounded-full bg-muted-foreground/30" />
+        <span className="size-2 rounded-full bg-muted-foreground/30" />
+        <span className="size-2 rounded-full bg-muted-foreground/30" />
+      </div>
+      <div className="space-y-3 p-4">
+        {rows.map((w, i) => (
+          <div key={i} className="flex items-center gap-3">
+            <span className={\`size-6 shrink-0 rounded-md \${i === 0 ? 'bg-primary' : 'bg-muted'}\`} />
+            <span style={{ width: \`\${w}%\` }} className="h-2.5 rounded-full bg-muted-foreground/20" />
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default function FeaturesTabsDemo() {
+  return (
+    <div className="w-full max-w-4xl">
+      <FeaturesTabs
+        title="Built for the way teams work"
+        description="Pick a workflow to see how it fits."
+        tabs={[
+          {
+            id: 'plan',
+            label: 'Plan',
+            title: 'Plan the week in minutes',
+            description: 'Drag work into a calm timeline and see conflicts before they happen.',
+            points: ['Shared roadmaps', 'Capacity at a glance', 'Dependencies that stay in sync'],
+            visual: <Panel rows={[80, 62, 71, 48]} />,
+          },
+          {
+            id: 'build',
+            label: 'Build',
+            title: 'Ship without the hand-offs',
+            description: 'Specs, code and reviews live side by side, so nothing gets lost in translation.',
+            points: ['Inline review threads', 'Preview links for every change', 'One-click rollbacks'],
+            visual: <Panel rows={[55, 84, 66, 74]} />,
+          },
+          {
+            id: 'learn',
+            label: 'Learn',
+            title: 'Know what worked',
+            description: 'Dashboards turn every release into a lesson for the next one.',
+            points: ['Release health', 'Weekly digests', 'Exportable reports'],
+            visual: <Panel rows={[68, 44, 90, 58]} />,
+          },
+        ]}
+      />
+    </div>
+  )
+}
+`,i=[],a={props:e,files:t,usage:n,usageRaw:r,variants:i};export{a as default,t as files,e as props,n as usage,r as usageRaw,i as variants};

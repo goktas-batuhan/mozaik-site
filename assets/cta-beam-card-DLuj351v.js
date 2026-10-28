@@ -1,0 +1,1 @@
+export{t as CtaBeamCard}from"./cta-beam-card-503Janjv.js";

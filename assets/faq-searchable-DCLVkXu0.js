@@ -1,0 +1,1 @@
+export{t as FaqSearchable}from"./faq-searchable-CYKD-bfn.js";

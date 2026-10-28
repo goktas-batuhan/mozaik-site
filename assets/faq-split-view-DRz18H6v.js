@@ -1,0 +1,1 @@
+export{t as FaqSplitView}from"./faq-split-view-S84sBP4F.js";

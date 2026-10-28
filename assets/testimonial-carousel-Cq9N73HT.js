@@ -1,0 +1,1 @@
+export{t as TestimonialCarousel}from"./testimonial-carousel-ClEO-PxD.js";
