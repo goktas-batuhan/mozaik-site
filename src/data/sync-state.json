@@ -683,10 +683,490 @@
       "amount-stepper.tsx"
     ]
   },
+  "navbar-announce": {
+    "hash": "b301462f17b876b0",
+    "files": [
+      "navbar-announce.tsx"
+    ]
+  },
+  "navbar-fixed": {
+    "hash": "c0eee7803a4c8a7d",
+    "files": [
+      "navbar-fixed.tsx"
+    ]
+  },
+  "navbar-floating": {
+    "hash": "b0341015886d60c5",
+    "files": [
+      "navbar-floating.tsx"
+    ]
+  },
+  "navbar-mega": {
+    "hash": "50a0d09f58b77c92",
+    "files": [
+      "navbar-mega.tsx"
+    ]
+  },
+  "navbar-mobile": {
+    "hash": "5f4dde4294068fdd",
+    "files": [
+      "navbar-mobile.tsx"
+    ]
+  },
+  "hero-aurora-center": {
+    "hash": "904b7e92a18c9442",
+    "files": [
+      "hero-aurora-center.tsx"
+    ]
+  },
+  "hero-dashboard-peek": {
+    "hash": "3f3c5119cca4e185",
+    "files": [
+      "hero-dashboard-peek.tsx"
+    ]
+  },
+  "hero-email-waitlist": {
+    "hash": "8867f018e48b8836",
+    "files": [
+      "hero-email-waitlist.tsx"
+    ]
+  },
+  "hero-giant-type": {
+    "hash": "0d357ec937ac5798",
+    "files": [
+      "hero-giant-type.tsx"
+    ]
+  },
+  "hero-logo-cloud": {
+    "hash": "7fba64058e926c78",
+    "files": [
+      "hero-logo-cloud.tsx"
+    ]
+  },
+  "hero-phone-split": {
+    "hash": "9814da520f17d701",
+    "files": [
+      "hero-phone-split.tsx"
+    ]
+  },
+  "hero-prompt-card": {
+    "hash": "6bf4a30fa0da262d",
+    "files": [
+      "hero-prompt-card.tsx"
+    ]
+  },
   "hero-section": {
     "hash": "86f6bc9253e0109d",
     "files": [
       "hero-section.tsx"
+    ]
+  },
+  "hero-stat-strip": {
+    "hash": "6b378e94dcfa2821",
+    "files": [
+      "hero-stat-strip.tsx"
+    ]
+  },
+  "hero-store-badges": {
+    "hash": "4569551576991681",
+    "files": [
+      "hero-store-badges.tsx"
+    ]
+  },
+  "hero-terminal-install": {
+    "hash": "2ab41addda90da13",
+    "files": [
+      "hero-terminal-install.tsx"
+    ]
+  },
+  "logos-grid": {
+    "hash": "435309ca7a3f1d34",
+    "files": [
+      "logos-grid.tsx"
+    ]
+  },
+  "logos-marquee": {
+    "hash": "0aa03a2987e1fbf4",
+    "files": [
+      "logos-marquee.tsx"
+    ]
+  },
+  "logos-row": {
+    "hash": "e4397dc3764e0b46",
+    "files": [
+      "logos-row.tsx"
+    ]
+  },
+  "logos-split": {
+    "hash": "d1b83b54f659a715",
+    "files": [
+      "logos-split.tsx"
+    ]
+  },
+  "features-accordion-media": {
+    "hash": "3eb5fef4a40f44e0",
+    "files": [
+      "features-accordion-media.tsx"
+    ]
+  },
+  "features-alternating": {
+    "hash": "3dffa6e2feaaefd1",
+    "files": [
+      "features-alternating.tsx"
+    ]
+  },
+  "features-bento": {
+    "hash": "8d41a20ee37ac8c9",
+    "files": [
+      "features-bento.tsx"
+    ]
+  },
+  "features-checklist": {
+    "hash": "7f4ffe51b6575aa7",
+    "files": [
+      "features-checklist.tsx"
+    ]
+  },
+  "features-comparison": {
+    "hash": "45c6c9a73b56449b",
+    "files": [
+      "features-comparison.tsx"
+    ]
+  },
+  "features-hover-expand": {
+    "hash": "213e47ca9c333fa5",
+    "files": [
+      "features-hover-expand.tsx"
+    ]
+  },
+  "features-icon-grid": {
+    "hash": "ab763be46a8a1c90",
+    "files": [
+      "features-icon-grid.tsx"
+    ]
+  },
+  "features-integrations-beam": {
+    "hash": "e7e81bdf3191df18",
+    "files": [
+      "features-integrations-beam.tsx"
+    ]
+  },
+  "features-marquee": {
+    "hash": "33fd9dee3d7085c7",
+    "files": [
+      "features-marquee.tsx"
+    ]
+  },
+  "features-metrics-beam": {
+    "hash": "44709c88fd3fade8",
+    "files": [
+      "features-metrics-beam.tsx"
+    ]
+  },
+  "features-numbered": {
+    "hash": "ac880dcb83d66325",
+    "files": [
+      "features-numbered.tsx"
+    ]
+  },
+  "features-showcase": {
+    "hash": "ae5ee30bf1ed35f5",
+    "files": [
+      "features-showcase.tsx"
+    ]
+  },
+  "features-steps": {
+    "hash": "3816237781765291",
+    "files": [
+      "features-steps.tsx"
+    ]
+  },
+  "features-sticky-list": {
+    "hash": "8d01ecda13f20e2c",
+    "files": [
+      "features-sticky-list.tsx"
+    ]
+  },
+  "features-tabs": {
+    "hash": "bc9c1d5d0a8490f3",
+    "files": [
+      "features-tabs.tsx"
+    ]
+  },
+  "features-terminal": {
+    "hash": "5a923041e98974cf",
+    "files": [
+      "features-terminal.tsx"
+    ]
+  },
+  "stats-band": {
+    "hash": "602e1ce8a9afb113",
+    "files": [
+      "stats-band.tsx"
+    ]
+  },
+  "stats-editorial-list": {
+    "hash": "6f8d6c1d5475ae12",
+    "files": [
+      "stats-editorial-list.tsx"
+    ]
+  },
+  "stats-grid": {
+    "hash": "09845aad03348e5c",
+    "files": [
+      "stats-grid.tsx"
+    ]
+  },
+  "stats-progress-bars": {
+    "hash": "7981371ea9164395",
+    "files": [
+      "stats-progress-bars.tsx"
+    ]
+  },
+  "stats-sparkline-cards": {
+    "hash": "b846ba66619d329e",
+    "files": [
+      "stats-sparkline-cards.tsx"
+    ]
+  },
+  "stats-split-feature": {
+    "hash": "ce7f8997117b8278",
+    "files": [
+      "stats-split-feature.tsx"
+    ]
+  },
+  "stats-trend-cards": {
+    "hash": "996888e5f641ba91",
+    "files": [
+      "stats-trend-cards.tsx"
+    ]
+  },
+  "testimonial-carousel": {
+    "hash": "38d5b58a1062e56f",
+    "files": [
+      "testimonial-carousel.tsx"
+    ]
+  },
+  "testimonial-chat": {
+    "hash": "3354e85bd3e47962",
+    "files": [
+      "testimonial-chat.tsx"
+    ]
+  },
+  "testimonial-featured": {
+    "hash": "0d920dacfaf23d11",
+    "files": [
+      "testimonial-featured.tsx"
+    ]
+  },
+  "testimonial-marquee": {
+    "hash": "46d51a33af46c3b9",
+    "files": [
+      "testimonial-marquee.tsx"
+    ]
+  },
+  "testimonial-metrics": {
+    "hash": "cd5da46b818361b9",
+    "files": [
+      "testimonial-metrics.tsx"
+    ]
+  },
+  "testimonial-spotlight": {
+    "hash": "7da45cf256c4df2d",
+    "files": [
+      "testimonial-spotlight.tsx"
+    ]
+  },
+  "testimonial-stack": {
+    "hash": "06de1477c5716060",
+    "files": [
+      "testimonial-stack.tsx"
+    ]
+  },
+  "testimonial-vertical-marquee": {
+    "hash": "2ba2e18442268014",
+    "files": [
+      "testimonial-vertical-marquee.tsx"
+    ]
+  },
+  "testimonial-wall": {
+    "hash": "143e7f1dbabb489c",
+    "files": [
+      "testimonial-wall.tsx"
+    ]
+  },
+  "pricing-addons-builder": {
+    "hash": "b524f98eda9ef077",
+    "files": [
+      "pricing-addons-builder.tsx"
+    ]
+  },
+  "pricing-comparison-table": {
+    "hash": "7507c581d9a90186",
+    "files": [
+      "pricing-comparison-table.tsx"
+    ]
+  },
+  "pricing-credit-packs": {
+    "hash": "db729960c226c9b5",
+    "files": [
+      "pricing-credit-packs.tsx"
+    ]
+  },
+  "pricing-enterprise-split": {
+    "hash": "948747661662c87e",
+    "files": [
+      "pricing-enterprise-split.tsx"
+    ]
+  },
+  "pricing-lifetime-deal": {
+    "hash": "07ef99a072516ee4",
+    "files": [
+      "pricing-lifetime-deal.tsx"
+    ]
+  },
+  "pricing-plan-list": {
+    "hash": "703ff9b98982aa0d",
+    "files": [
+      "pricing-plan-list.tsx"
+    ]
+  },
+  "pricing-single-card": {
+    "hash": "e4dda2507268fe36",
+    "files": [
+      "pricing-single-card.tsx"
+    ]
+  },
+  "pricing-tier-cards": {
+    "hash": "75d6c7bcff854b87",
+    "files": [
+      "pricing-tier-cards.tsx"
+    ]
+  },
+  "pricing-usage-slider": {
+    "hash": "239d341e8d587695",
+    "files": [
+      "pricing-usage-slider.tsx"
+    ]
+  },
+  "faq-accordion": {
+    "hash": "de0f501984b7d9c8",
+    "files": [
+      "faq-accordion.tsx"
+    ]
+  },
+  "faq-categorized": {
+    "hash": "3abcb1d01649a9a7",
+    "files": [
+      "faq-categorized.tsx"
+    ]
+  },
+  "faq-grid": {
+    "hash": "5ec7ed8e7082f215",
+    "files": [
+      "faq-grid.tsx"
+    ]
+  },
+  "faq-journey": {
+    "hash": "0249e7fbf6d90761",
+    "files": [
+      "faq-journey.tsx"
+    ]
+  },
+  "faq-searchable": {
+    "hash": "115af99e57a4c47b",
+    "files": [
+      "faq-searchable.tsx"
+    ]
+  },
+  "faq-split-view": {
+    "hash": "dab3485f58540f33",
+    "files": [
+      "faq-split-view.tsx"
+    ]
+  },
+  "faq-two-column": {
+    "hash": "fc33022f615537a5",
+    "files": [
+      "faq-two-column.tsx"
+    ]
+  },
+  "cta-banner": {
+    "hash": "050e75ed3b9b2777",
+    "files": [
+      "cta-banner.tsx"
+    ]
+  },
+  "cta-beam-card": {
+    "hash": "fcca738176eb1abc",
+    "files": [
+      "cta-beam-card.tsx"
+    ]
+  },
+  "cta-centered": {
+    "hash": "2092f2ef703472a7",
+    "files": [
+      "cta-centered.tsx"
+    ]
+  },
+  "cta-email-inline": {
+    "hash": "70583c7494cf136f",
+    "files": [
+      "cta-email-inline.tsx"
+    ]
+  },
+  "cta-marquee-band": {
+    "hash": "b28058f560748376",
+    "files": [
+      "cta-marquee-band.tsx"
+    ]
+  },
+  "cta-split": {
+    "hash": "1395de9b4517e3e9",
+    "files": [
+      "cta-split.tsx"
+    ]
+  },
+  "footer-bento": {
+    "hash": "125234e7ad89df44",
+    "files": [
+      "footer-bento.tsx"
+    ]
+  },
+  "footer-centered": {
+    "hash": "b54d7ada7b1bd913",
+    "files": [
+      "footer-centered.tsx"
+    ]
+  },
+  "footer-columns": {
+    "hash": "adfc56ceeec01c16",
+    "files": [
+      "footer-columns.tsx"
+    ]
+  },
+  "footer-minimal": {
+    "hash": "651bd23e0e7e9824",
+    "files": [
+      "footer-minimal.tsx"
+    ]
+  },
+  "footer-newsletter": {
+    "hash": "14057c38d15534b1",
+    "files": [
+      "footer-newsletter.tsx"
+    ]
+  },
+  "footer-status": {
+    "hash": "e21c498c83c56a46",
+    "files": [
+      "footer-status.tsx"
+    ]
+  },
+  "footer-wordmark": {
+    "hash": "22a5f88edba6d6dd",
+    "files": [
+      "footer-wordmark.tsx"
     ]
   }
 }
