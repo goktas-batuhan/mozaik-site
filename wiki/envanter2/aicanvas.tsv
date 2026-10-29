@@ -1,0 +1,88 @@
+slug	tür	group/shelf	bağımlılıklar	sınıf	alma yolu	karmaşıklık	motion	Mozaik'te var mı
+polaroid-stack	bileşen	cards/surface?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/polaroid-stack/index.tsx	M	e	yok
+particle-sphere	bileşen	?/?	three	A	aicanvas-me/aicanvas:components-workspace/particle-sphere/index.tsx	M	e	yok
+text-blur-reveal	bileşen	text/effect?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/text-blur-reveal/index.tsx	M	e	yok
+glass-notification	bileşen	feedback/loaders?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/glass-notification/index.tsx	M	e	yok
+glass-music-player	bileşen	media/mockups?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/glass-music-player/index.tsx	L	e	yok
+glass-toggle	bileşen	buttons/toggle-switch?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/glass-toggle/index.tsx	M	e	yok
+glass-slider	bileşen	inputs/text-code?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/glass-slider/index.tsx	M	e	yok
+glass-dock	bileşen	navigation/dock-menus?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/glass-dock/index.tsx	M	e	yok
+glass-modal	bileşen	overlays/popover-tooltip?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/glass-modal/index.tsx	M	e	yok
+glass-card	bileşen	cards/surface?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/glass-card/index.tsx	M	e	var(glass-card)
+glass-tags	bileşen	?/?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/glass-tags/index.tsx	M	e	yok
+glass-tab-bar	bileşen	navigation/dock-menus?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/glass-tab-bar/index.tsx	M	e	yok
+glass-navbar	bileşen	navigation/dock-menus?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/glass-navbar/index.tsx	M	e	yok
+emoji-burst	bileşen	?/?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/emoji-burst/index.tsx	M	e	yok
+noise-field	bileşen	backgrounds/pattern?	-	A	aicanvas-me/aicanvas:components-workspace/noise-field/index.tsx	M	e	yok
+neon-clock	bileşen	?/?	-	A	aicanvas-me/aicanvas:components-workspace/neon-clock/index.tsx	M	h	yok
+scramble-text	bileşen	text/effect?	framer-motion,geist	A	aicanvas-me/aicanvas:components-workspace/scramble-text/index.tsx	M	e	var(scramble-text)
+particle-constellation	bileşen	?/?	-	A	aicanvas-me/aicanvas:components-workspace/particle-constellation/index.tsx	L	e	yok
+magnetic-dots	bileşen	cursor/magnetic-tilt?	-	A	aicanvas-me/aicanvas:components-workspace/magnetic-dots/index.tsx	M	e	yok
+sphere-lines	bileşen	backgrounds/pattern?	-	A	aicanvas-me/aicanvas:components-workspace/sphere-lines/index.tsx	M	e	yok
+glitch-button	bileşen	text/effect?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/glitch-button/index.tsx	M	e	yok
+flip-calendar	bileşen	cards/surface?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/flip-calendar/index.tsx	L	e	yok
+runway-loader	bileşen	feedback/loaders?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/runway-loader/index.tsx	M	e	yok
+charging-widget	bileşen	?/?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/charging-widget/index.tsx	M	e	yok
+dot-grid	bileşen	backgrounds/pattern?	-	A	aicanvas-me/aicanvas:components-workspace/dot-grid/index.tsx	M	e	var(dot-grid)
+radial-toolbar	bileşen	inputs/text-code?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/radial-toolbar/index.tsx	L	e	yok
+x-grid	bileşen	backgrounds/pattern?	-	A	aicanvas-me/aicanvas:components-workspace/x-grid/index.tsx	M	e	yok
+blind-pull-toggle	bileşen	buttons/toggle-switch?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/blind-pull-toggle/index.tsx	M	e	yok
+taga-toggle	bileşen	buttons/toggle-switch?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/taga-toggle/index.tsx	M	e	yok
+mark-toggle	bileşen	buttons/toggle-switch?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/mark-toggle/index.tsx	M	e	yok
+pill-toggle	bileşen	buttons/toggle-switch?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/pill-toggle/index.tsx	M	e	yok
+noise-bg	bileşen	backgrounds/pattern?	-	A	aicanvas-me/aicanvas:components-workspace/noise-bg/index.tsx	M	e	yok
+bubble-field	bileşen	inputs/text-code?	-	A	aicanvas-me/aicanvas:components-workspace/bubble-field/index.tsx	M	e	yok
+grid-lines	bileşen	backgrounds/pattern?	-	A	aicanvas-me/aicanvas:components-workspace/grid-lines/index.tsx	M	e	yok
+glass-user-menu	bileşen	navigation/dock-menus?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/glass-user-menu/index.tsx	M	e	yok
+glass-sidebar	bileşen	navigation/dock-menus?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/glass-sidebar/index.tsx	M	e	yok
+glass-progress	bileşen	feedback/loaders?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/glass-progress/index.tsx	M	e	yok
+glass-stepper	bileşen	layout/carousels?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/glass-stepper/index.tsx	M	e	yok
+glass-search-bar	bileşen	navigation/dock-menus?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/glass-search-bar/index.tsx	L	e	yok
+glass-toast	bileşen	feedback/loaders?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/glass-toast/index.tsx	L	e	yok
+glass-ai-compose	bileşen	ai/chat?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/glass-ai-compose/index.tsx	L	e	yok
+distortion-grid	bileşen	backgrounds/pattern?	-	A	aicanvas-me/aicanvas:components-workspace/distortion-grid/index.tsx	M	e	yok
+wave-lines	bileşen	backgrounds/pattern?	-	A	aicanvas-me/aicanvas:components-workspace/wave-lines/index.tsx	M	e	yok
+traveldeck	bileşen	?/?	?	C	(depoda yok: components-workspace/traveldeck 404; premium olabilir)	?	?	yok
+meet-the-crew	bileşen	?/?	?	C	(depoda yok: components-workspace/meet-the-crew 404; premium olabilir)	?	?	yok
+label-cards	bileşen	cards/surface?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/label-cards/index.tsx	L	e	yok
+slide-deck	bileşen	?/?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/slide-deck/index.tsx	L	e	yok
+task-cards	bileşen	cards/surface?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/task-cards/index.tsx	L	e	yok
+ai-job-cards	bileşen	ai/chat?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/ai-job-cards/index.tsx	L	e	yok
+danger-stripes	bileşen	?/?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/danger-stripes/index.tsx	M	e	yok
+peel-corner-reveal	bileşen	scroll/reveal?	framer-motion,qrcode.react	A	aicanvas-me/aicanvas:components-workspace/peel-corner-reveal/index.tsx	L	e	yok
+sticker-wall	bileşen	text/counter?	framer-motion,matter-js	A	aicanvas-me/aicanvas:components-workspace/sticker-wall/index.tsx	L	e	yok
+jar-of-emotions	bileşen	?/?	framer-motion,matter-js	A	aicanvas-me/aicanvas:components-workspace/jar-of-emotions/index.tsx	L	e	yok
+responsive-letters	bileşen	text/effect?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/responsive-letters/index.tsx	L	e	yok
+good-vibes	bileşen	?/?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/good-vibes/index.tsx	M	e	yok
+playful	bileşen	?/?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/playful/index.tsx	L	e	yok
+orbit	bileşen	ai/chat?	-	A	aicanvas-me/aicanvas:components-workspace/orbit/index.tsx	L	e	yok
+stack-tower	bileşen	cards/surface?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/stack-tower/index.tsx	L	e	yok
+halo-type	bileşen	text/effect?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/halo-type/index.tsx	L	e	yok
+ripple-type	bileşen	text/effect?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/ripple-type/index.tsx	L	e	yok
+slice-type	bileşen	text/effect?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/slice-type/index.tsx	L	e	yok
+radial-cards	bileşen	cards/surface?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/radial-cards/index.tsx	L	e	yok
+voice-chat-pill	bileşen	ai/chat?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/voice-chat-pill/index.tsx	L	e	yok
+new-project-modal	bileşen	overlays/popover-tooltip?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/new-project-modal/index.tsx	L	e	yok
+upload-progress	bileşen	inputs/text-code?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/upload-progress/index.tsx	L	e	yok
+signature-pad	bileşen	?/?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/signature-pad/index.tsx	L	e	var(signature-pad)
+curious-ai	bileşen	?/?	framer-motion,three	A	aicanvas-me/aicanvas:components-workspace/curious-ai/index.tsx	L	e	yok
+cube-carousel	bileşen	layout/carousels?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/cube-carousel/index.tsx	M	e	yok
+tilted-coverflow	bileşen	cursor/magnetic-tilt?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/tilted-coverflow/index.tsx	L	e	yok
+product-card-deck	bileşen	cards/surface?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/product-card-deck/index.tsx	L	e	yok
+interactive-card-stack	bileşen	cards/surface?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/interactive-card-stack/index.tsx	L	e	yok
+crypto-swap	bileşen	onchain/transactions?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/crypto-swap/index.tsx	L	e	yok
+mood-tracker	bileşen	?/?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/mood-tracker/index.tsx	L	e	yok
+3d-product-card	bileşen	cards/surface?	?	C	(depoda yok: components-workspace/3d-product-card 404; premium olabilir)	?	?	yok
+delete-button	bileşen	buttons/animated?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/delete-button/index.tsx	M	e	yok
+expanding-tabs	bileşen	navigation/dock-menus?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/expanding-tabs/index.tsx	S	e	yok
+filter-menu	bileşen	navigation/dock-menus?	?	C	(depoda yok: components-workspace/filter-menu 404; premium olabilir)	?	?	yok
+3d-gem-pricing-section	bileşen	?/?	?	C	(depoda yok: components-workspace/3d-gem-pricing-section 404; premium olabilir)	?	?	yok
+curved-frame-carousel	bileşen	layout/carousels?	?	C	(depoda yok: components-workspace/curved-frame-carousel 404; premium olabilir)	?	?	yok
+perspective-showcase-hero	bileşen	?/?	?	C	(depoda yok: components-workspace/perspective-showcase-hero 404; premium olabilir)	?	?	yok
+scroll-wipe-gallery	bileşen	layout/carousels?	@phosphor-icons/react,framer-motion	A	aicanvas-me/aicanvas:components-workspace/scroll-wipe-gallery/index.tsx	L	e	yok
+diamond-grid	bileşen	backgrounds/pattern?	-	A	aicanvas-me/aicanvas:components-workspace/diamond-grid/index.tsx	L	e	yok
+fluid-simulation-hero	bileşen	?/?	?	C	(depoda yok: components-workspace/fluid-simulation-hero 404; premium olabilir)	?	?	yok
+magnetic-logo-cluster	bileşen	cursor/magnetic-tilt?	framer-motion	A	aicanvas-me/aicanvas:components-workspace/magnetic-logo-cluster/index.tsx	L	e	yok
+ai-knowledge-map	bileşen	ai/chat?	?	C	(depoda yok: components-workspace/ai-knowledge-map 404; premium olabilir)	?	?	yok
+agent-cost-flow	bileşen	ai/chat?	?	C	(depoda yok: components-workspace/agent-cost-flow 404; premium olabilir)	?	?	yok
+agent-feedback-loop	bileşen	ai/chat?	?	C	(depoda yok: components-workspace/agent-feedback-loop 404; premium olabilir)	?	?	yok
