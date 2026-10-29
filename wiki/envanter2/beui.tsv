@@ -1,0 +1,186 @@
+slug	tür	group/shelf	bağımlılıklar	sınıf	alma yolu	karmaşıklık	motion	Mozaik'te var mı
+availability-scheduler	blok	blocks/marketing/features~	motion	A	starc007/ui-components:components/motion/availability-scheduler/index.tsx (registry: beui.dev/r/availability-scheduler.json)	M	e	yok
+bloom-menu	blok	blocks/marketing/navbar	lucide-react,motion	A	starc007/ui-components:components/motion/bloom-menu.tsx (registry: beui.dev/r/bloom-menu.json)	L	e	yok
+card-dealer	blok	blocks/marketing/features~	motion	A	starc007/ui-components:components/motion/card-dealer.tsx (registry: beui.dev/r/card-dealer.json)	L	e	yok
+card-folder	blok	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/card-folder.tsx (registry: beui.dev/r/card-folder.json)	L	e	yok
+command-palette	blok	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/command-palette.tsx (registry: beui.dev/r/command-palette.json)	L	e	yok
+dynamic-island	blok	blocks/marketing/features~	motion	A	starc007/ui-components:components/motion/dynamic-island.tsx (registry: beui.dev/r/dynamic-island.json)	M	e	var(aynı kaynak)
+expandable-action-bar	blok	blocks/marketing/features~	motion	A	starc007/ui-components:components/motion/expandable-action-bar.tsx (registry: beui.dev/r/expandable-action-bar.json)	L	e	yok
+expandable-tabs	blok	blocks/marketing/features~	motion	A	starc007/ui-components:components/motion/expandable-tabs.tsx (registry: beui.dev/r/expandable-tabs.json)	L	e	yok
+feedback-widget	blok	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/feedback-widget.tsx (registry: beui.dev/r/feedback-widget.json)	L	e	yok
+file-upload	blok	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/file-upload.tsx (registry: beui.dev/r/file-upload.json)	L	e	ad-çakışması:file-upload
+infinite-masonry	blok	blocks/marketing/features~	@tanstack/react-virtual,lucide-react,motion	A	starc007/ui-components:components/motion/infinite-masonry.tsx (registry: beui.dev/r/infinite-masonry.json)	L	e	yok
+knockout-bracket	blok	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/knockout-bracket.tsx (registry: beui.dev/r/knockout-bracket.json)	L	e	yok
+morphing-search	blok	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/morphing-search.tsx (registry: beui.dev/r/morphing-search.json)	L	e	yok
+morphing-tabs	blok	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/morphing-tabs.tsx (registry: beui.dev/r/morphing-tabs.json)	L	e	yok
+not-found	blok	blocks/marketing/features~	-	A	starc007/ui-components:components/motion/not-found/index.tsx (registry: beui.dev/r/not-found.json)	S	h	yok
+notification-stack	blok	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/notification-stack.tsx (registry: beui.dev/r/notification-stack.json)	L	e	ad-çakışması:notification-stack
+otp-input	blok	blocks/marketing/features~	motion	A	starc007/ui-components:components/motion/otp-input.tsx (registry: beui.dev/r/otp-input.json)	L	e	yok
+overflow-actions	blok	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/overflow-actions.tsx (registry: beui.dev/r/overflow-actions.json)	L	e	yok
+prediction-market	blok	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/prediction-market.tsx (registry: beui.dev/r/prediction-market.json)	L	e	yok
+project-folder	blok	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/project-folder.tsx (registry: beui.dev/r/project-folder.json)	L	e	yok
+signup-form	blok	blocks/marketing/contact	lucide-react,motion	A	starc007/ui-components:components/motion/signup-form.tsx (registry: beui.dev/r/signup-form.json)	L	e	yok
+swap	blok	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/swap.tsx (registry: beui.dev/r/swap.json)	M	e	var(aynı kaynak)
+swipeable-list	blok	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/swipeable-list.tsx (registry: beui.dev/r/swipeable-list.json)	L	e	yok
+wallet-card	blok	blocks/marketing/features~	lucide-react	A	starc007/ui-components:components/motion/wallet-card/index.tsx (registry: beui.dev/r/wallet-card.json)	M	e	ad-çakışması:wallet-card
+action-swap	component	onchain/amount-confirm	motion	A	starc007/ui-components:components/motion/action-swap.tsx (registry: beui.dev/r/action-swap.json)	L	e	yok
+adaptive-stepper	component	inputs/sliders-dials	lucide-react,motion	A	starc007/ui-components:components/motion/adaptive-stepper.tsx (registry: beui.dev/r/adaptive-stepper.json)	L	e	yok
+agent-activity	component	ai/agents-tools	lucide-react,motion	A	starc007/ui-components:components/agents/agent-activity/index.tsx (registry: beui.dev/r/agent-activity.json)	L	e	yok
+ai-sidebar	component	ai/chat	lucide-react,motion	A	starc007/ui-components:components/agents/ai-sidebar.tsx (registry: beui.dev/r/ai-sidebar.json)	L	e	yok
+alert	component	feedback/notifications	lucide-react,motion	A	starc007/ui-components:components/motion/alert.tsx (registry: beui.dev/r/alert.json)	M	e	ad-çakışması:alert
+animated-badge	component	feedback/status	lucide-react,motion	A	starc007/ui-components:components/motion/animated-badge.tsx (registry: beui.dev/r/animated-badge.json)	M	e	yok
+animated-sidebar	component	navigation/navbar-sidebar	lucide-react,motion	A	starc007/ui-components:components/motion/animated-sidebar.tsx (registry: beui.dev/r/animated-sidebar.json)	L	e	yok
+animated-toast-stack	component	feedback/notifications	lucide-react,motion	A	starc007/ui-components:components/motion/animated-toast-stack.tsx (registry: beui.dev/r/animated-toast-stack.json)	L	e	var(aynı kaynak)
+approval-card	component	ai/agents-tools	lucide-react,motion	A	starc007/ui-components:components/agents/approval-card/index.tsx (registry: beui.dev/r/approval-card.json)	L	e	yok
+arc-picker	component	inputs/pickers	motion	A	starc007/ui-components:components/motion/arc-picker.tsx (registry: beui.dev/r/arc-picker.json)	L	e	yok
+aspect-ratio	component	layout/lists~	motion	A	starc007/ui-components:components/motion/aspect-ratio.tsx (registry: beui.dev/r/aspect-ratio.json)	M	e	yok
+bar-chart	component	data/charts	-	A	starc007/ui-components:components/charts/bar-chart.tsx (registry: beui.dev/r/bar-chart.json)	S	h	ad-çakışması:bar-chart
+bottom-sheet	component	overlays/modal-drawer	motion	A	starc007/ui-components:components/motion/bottom-sheet.tsx (registry: beui.dev/r/bottom-sheet.json)	M	e	yok
+bounce-sidebar	component	navigation/navbar-sidebar	motion	A	starc007/ui-components:components/motion/bounce-sidebar.tsx (registry: beui.dev/r/bounce-sidebar.json)	M	e	var(aynı kaynak)
+bouncy-accordion	component	layout/accordions	lucide-react,motion	A	starc007/ui-components:components/motion/bouncy-accordion.tsx (registry: beui.dev/r/bouncy-accordion.json)	L	e	yok
+breadcrumb	component	navigation/navbar-sidebar	lucide-react,motion	A	starc007/ui-components:components/motion/breadcrumb.tsx (registry: beui.dev/r/breadcrumb.json)	L	e	ad-çakışması:breadcrumb
+bump-chart	component	data/charts	-	A	starc007/ui-components:components/charts/bump-chart.tsx (registry: beui.dev/r/bump-chart.json)	S	h	yok
+button	component	buttons/animated	-	A	starc007/ui-components:components/motion/button/index.tsx (registry: beui.dev/r/button.json)	S	h	yok
+candlestick-chart	component	data/charts	-	A	starc007/ui-components:components/charts/candlestick-chart.tsx (registry: beui.dev/r/candlestick-chart.json)	S	h	var(aynı kaynak)
+card	component	cards/surface	motion	A	starc007/ui-components:components/motion/card.tsx (registry: beui.dev/r/card.json)	M	e	yok
+center-morph-modal	component	overlays/modal-drawer	lucide-react,motion	A	starc007/ui-components:components/motion/center-morph-modal.tsx (registry: beui.dev/r/center-morph-modal.json)	L	e	yok
+chat-app	component	ai/chat	-	A	starc007/ui-components:components/agents/chat-app.tsx (registry: beui.dev/r/chat-app.json)	M	e	yok
+checkbox	component	inputs/choice	motion	A	starc007/ui-components:components/motion/checkbox.tsx (registry: beui.dev/r/checkbox.json)	M	e	yok
+citations	component	ai/agents-tools	lucide-react,motion	A	starc007/ui-components:components/agents/citations.tsx (registry: beui.dev/r/citations.json)	L	e	yok
+code-block	component	ai/agents-tools	lucide-react,motion	A	starc007/ui-components:components/agents/code-block.tsx (registry: beui.dev/r/code-block.json)	M	e	yok
+collapsible	component	layout/accordions	lucide-react,motion	A	starc007/ui-components:components/motion/collapsible.tsx (registry: beui.dev/r/collapsible.json)	L	e	yok
+color-picker	component	inputs/pickers	lucide-react,motion	A	starc007/ui-components:components/motion/color-picker.tsx (registry: beui.dev/r/color-picker.json)	L	e	yok
+color-selector	component	inputs/pickers	motion	A	starc007/ui-components:components/motion/color-selector.tsx (registry: beui.dev/r/color-selector.json)	M	e	yok
+combobox	component	inputs/pickers	-	A	starc007/ui-components:components/motion/combobox.tsx (registry: beui.dev/r/combobox.json)	S	h	yok
+composition-chart	component	data/charts	-	A	starc007/ui-components:components/charts/composition-chart.tsx (registry: beui.dev/r/composition-chart.json)	S	h	yok
+context-menu	component	navigation/dock-menus	lucide-react,motion	A	starc007/ui-components:components/motion/context-menu.tsx (registry: beui.dev/r/context-menu.json)	L	e	yok
+cylinder-carousel	component	layout/carousels	motion	A	starc007/ui-components:components/motion/cylinder-carousel.tsx (registry: beui.dev/r/cylinder-carousel.json)	L	e	yok
+date-range-picker	component	inputs/pickers	lucide-react,motion	A	starc007/ui-components:components/motion/date-range-picker.tsx (registry: beui.dev/r/date-range-picker.json)	L	e	yok
+dock	component	navigation/dock-menus	motion	A	starc007/ui-components:components/motion/dock.tsx (registry: beui.dev/r/dock.json)	M	e	ad-çakışması:dock
+donut-chart	component	data/charts	-	A	starc007/ui-components:components/charts/donut-chart.tsx (registry: beui.dev/r/donut-chart.json)	S	h	ad-çakışması:donut-chart
+drawer	component	overlays/modal-drawer	motion	A	starc007/ui-components:components/motion/drawer.tsx (registry: beui.dev/r/drawer.json)	M	e	yok
+expandable-control	component	layout/accordions	motion	A	starc007/ui-components:components/motion/expandable-control.tsx (registry: beui.dev/r/expandable-control.json)	M	e	yok
+expanding-arrow-button	component	buttons/animated	motion	A	starc007/ui-components:components/motion/expanding-arrow-button.tsx (registry: beui.dev/r/expanding-arrow-button.json)	M	e	yok
+file-diff	component	ai/agents-tools	lucide-react,motion	A	starc007/ui-components:components/agents/file-diff.tsx (registry: beui.dev/r/file-diff.json)	L	e	yok
+file-tree	component	layout/lists~	lucide-react,motion	A	starc007/ui-components:components/motion/file-tree.tsx (registry: beui.dev/r/file-tree.json)	L	e	yok
+funnel-chart	component	data/charts	motion	A	starc007/ui-components:components/charts/funnel-chart.tsx (registry: beui.dev/r/funnel-chart.json)	M	e	yok
+heat-calendar	component	data/stats-kpis	-	A	starc007/ui-components:components/charts/heat-calendar.tsx (registry: beui.dev/r/heat-calendar.json)	S	h	yok
+image-generation	component	ai/chat	lucide-react,motion	A	starc007/ui-components:components/agents/image-generation.tsx (registry: beui.dev/r/image-generation.json)	L	e	yok
+image-viewer	component	media/gallery-compare	lucide-react,motion	A	starc007/ui-components:components/motion/morphing-lightbox.tsx (registry: beui.dev/r/image-viewer.json)	L	e	yok
+input	component	inputs/text-code	motion	A	starc007/ui-components:components/motion/input.tsx (registry: beui.dev/r/input.json)	M	e	yok
+line-chart	component	data/charts	-	A	starc007/ui-components:components/charts/line-chart.tsx (registry: beui.dev/r/line-chart.json)	S	h	yok
+liquidity-heatmap	component	data/charts	motion	A	starc007/ui-components:components/charts/liquidity-heatmap.tsx (registry: beui.dev/r/liquidity-heatmap.json)	L	e	ad-çakışması:liquidity-heatmap
+loader	component	feedback/loaders	motion	A	starc007/ui-components:components/motion/loader.tsx (registry: beui.dev/r/loader.json)	L	e	yok
+loading-states	component	ai/chat	-	A	starc007/ui-components:components/agents/loading-states/index.ts (registry: beui.dev/r/loading-states.json)	S	h	yok
+marquee	component	layout/marquee	-	A	starc007/ui-components:components/motion/marquee.tsx (registry: beui.dev/r/marquee.json)	S	e	ad-çakışması:marquee
+message	component	ai/chat	motion	A	starc007/ui-components:components/agents/message.tsx (registry: beui.dev/r/message.json)	M	e	yok
+message-bubble	component	ai/chat	lucide-react,motion	A	starc007/ui-components:components/agents/message-bubble.tsx (registry: beui.dev/r/message-bubble.json)	L	e	yok
+message-scroller	component	ai/chat	motion	A	starc007/ui-components:components/agents/message-scroller.tsx (registry: beui.dev/r/message-scroller.json)	L	e	yok
+morphing-modal	component	overlays/modal-drawer	motion	A	starc007/ui-components:components/motion/morphing-modal.tsx (registry: beui.dev/r/morphing-modal.json)	M	e	yok
+multi-select	component	inputs/pickers	-	A	starc007/ui-components:components/motion/multi-select/index.tsx (registry: beui.dev/r/multi-select.json)	S	h	yok
+number	component	layout/lists~	motion	A	starc007/ui-components:components/motion/animated-number.tsx (registry: beui.dev/r/number.json)	S	e	yok
+order-book	component	data/stats-kpis	motion	A	starc007/ui-components:components/charts/order-book.tsx (registry: beui.dev/r/order-book.json)	L	e	var(aynı kaynak)
+popover	component	overlays/popover-tooltip	motion	A	starc007/ui-components:components/motion/popover.tsx (registry: beui.dev/r/popover.json)	L	e	yok
+preview-rail	component	layout/lists~	motion	A	starc007/ui-components:components/motion/preview-rail.tsx (registry: beui.dev/r/preview-rail.json)	L	e	yok
+price-target-fan	component	data/stats-kpis	-	A	starc007/ui-components:components/charts/price-target-fan.tsx (registry: beui.dev/r/price-target-fan.json)	S	h	ad-çakışması:price-target-fan
+prompt-input	component	ai/chat	lucide-react,motion	A	starc007/ui-components:components/agents/prompt-input.tsx (registry: beui.dev/r/prompt-input.json)	L	e	yok
+pull-to-refresh	component	layout/lists~	motion	A	starc007/ui-components:components/motion/pull-to-refresh.tsx (registry: beui.dev/r/pull-to-refresh.json)	L	e	yok
+radio	component	inputs/choice	motion	A	starc007/ui-components:components/motion/radio.tsx (registry: beui.dev/r/radio.json)	M	e	yok
+range-slider	component	inputs/sliders-dials	motion	A	starc007/ui-components:components/motion/range-slider.tsx (registry: beui.dev/r/range-slider.json)	M	e	yok
+returns-calendar	component	data/stats-kpis	-	A	starc007/ui-components:components/charts/returns-calendar.tsx (registry: beui.dev/r/returns-calendar.json)	S	h	yok
+sankey-chart	component	data/charts	-	A	starc007/ui-components:components/charts/sankey-chart.tsx (registry: beui.dev/r/sankey-chart.json)	M	h	yok
+scroll-animation	component	scroll/reveal	lenis,motion	A	starc007/ui-components:components/motion/smooth-scroll.tsx (registry: beui.dev/r/scroll-animation.json)	M	e	yok
+select	component	inputs/pickers	lucide-react,motion	A	starc007/ui-components:components/motion/select.tsx (registry: beui.dev/r/select.json)	L	e	yok
+shader-background	component	backgrounds/shader	@paper-design/shaders-react,motion	A	starc007/ui-components:components/motion/shader-background.tsx (registry: beui.dev/r/shader-background.json)	M	e	ad-çakışması:shader-background
+shared-layout-bg	component	layout/lists	motion	A	starc007/ui-components:components/motion/shared-layout-bg.tsx (registry: beui.dev/r/shared-layout-bg.json)	M	e	yok
+sortable-stack	component	data/tables	lucide-react,motion	A	starc007/ui-components:components/motion/sortable-list.tsx (registry: beui.dev/r/sortable-stack.json)	L	e	yok
+sparkline	component	data/charts	motion	A	starc007/ui-components:components/charts/sparkline.tsx (registry: beui.dev/r/sparkline.json)	M	e	ad-çakışması:sparkline
+status-bar	component	data/charts	-	A	starc007/ui-components:components/charts/status-bar.tsx (registry: beui.dev/r/status-bar.json)	S	h	yok
+streaming-response	component	ai/reasoning	lucide-react,motion	A	starc007/ui-components:components/agents/streaming-response.tsx (registry: beui.dev/r/streaming-response.json)	M	e	yok
+switch	component	buttons/toggle-switch	motion	A	starc007/ui-components:components/motion/switch.tsx (registry: beui.dev/r/switch.json)	S	e	yok
+table	component	data/tables	@tanstack/react-virtual,motion	A	starc007/ui-components:components/motion/table/index.tsx (registry: beui.dev/r/table.json)	L	e	yok
+tabs	component	navigation/tabs	lucide-react,motion	A	starc007/ui-components:components/motion/tabs.tsx (registry: beui.dev/r/tabs.json)	L	e	yok
+text-animation	component	text/reveal~	motion	A	starc007/ui-components:components/motion/text-reveal.tsx (registry: beui.dev/r/text-animation.json)	M	e	yok
+theme-toggle	component	buttons/toggle-switch	lucide-react,motion,next-themes	A	starc007/ui-components:components/motion/theme-toggle.tsx (registry: beui.dev/r/theme-toggle.json)	M	e	yok
+tilt-card	component	cards/hover-reveal	motion	A	starc007/ui-components:components/motion/tilt-card.tsx (registry: beui.dev/r/tilt-card.json)	S	e	var(aynı kaynak)
+timeline	component	data/charts	motion	A	starc007/ui-components:components/motion/timeline.tsx (registry: beui.dev/r/timeline.json)	L	e	yok
+todo-list	component	ai/chat	lucide-react,motion	A	starc007/ui-components:components/agents/todo-list.tsx (registry: beui.dev/r/todo-list.json)	L	e	yok
+tool-approval	component	ai/agents-tools	lucide-react,motion	A	starc007/ui-components:components/agents/tool-approval.tsx (registry: beui.dev/r/tool-approval.json)	L	e	yok
+tool-result	component	ai/agents-tools	lucide-react,motion	A	starc007/ui-components:components/agents/tool-result.tsx (registry: beui.dev/r/tool-result.json)	L	e	yok
+tooltip	component	overlays/popover-tooltip	motion	A	starc007/ui-components:components/motion/tooltip.tsx (registry: beui.dev/r/tooltip.json)	L	e	ad-çakışması:tooltip
+treemap	component	data/stats-kpis	-	A	starc007/ui-components:components/charts/treemap.tsx (registry: beui.dev/r/treemap.json)	S	h	yok
+voice-orb	component	ai/orbs-voice	motion	A	starc007/ui-components:components/agents/voice-orb.tsx (registry: beui.dev/r/voice-orb.json)	M	e	yok
+volume-profile	component	data/stats-kpis	-	A	starc007/ui-components:components/charts/volume-profile.tsx (registry: beui.dev/r/volume-profile.json)	M	h	var(aynı kaynak)
+wheel-picker	component	inputs/pickers	motion	A	starc007/ui-components:components/motion/wheel-picker.tsx (registry: beui.dev/r/wheel-picker.json)	L	e	ad-çakışması:wheel-picker
+action-swap-blur	varyant	onchain/amount-confirm	-	A	starc007/ui-components:components/motion/action-swap-blur.tsx	S	h	yok
+action-swap-cascade	varyant	onchain/amount-confirm	-	A	starc007/ui-components:components/motion/action-swap-cascade.tsx	S	h	yok
+action-swap-roll	varyant	onchain/amount-confirm	-	A	starc007/ui-components:components/motion/action-swap-roll.tsx	S	h	yok
+agent-activity:agent-trace	varyant	ai/agents-tools	lucide-react,motion	A	starc007/ui-components:components/agents/agent-activity/index.tsx	L	e	yok
+agent-activity:mixed-activity	varyant	ai/agents-tools	lucide-react,motion	A	starc007/ui-components:components/agents/agent-activity/index.tsx	L	e	yok
+agent-activity:reasoning-steps	varyant	ai/agents-tools	lucide-react,motion	A	starc007/ui-components:components/agents/agent-activity/index.tsx	L	e	yok
+agent-activity:streaming-text	varyant	ai/agents-tools	lucide-react,motion	A	starc007/ui-components:components/agents/agent-activity/index.tsx	L	e	yok
+agent-activity:tool-calls	varyant	ai/agents-tools	lucide-react,motion	A	starc007/ui-components:components/agents/agent-activity/index.tsx	L	e	yok
+agent-activity:web-search	varyant	ai/agents-tools	lucide-react,motion	A	starc007/ui-components:components/agents/agent-activity/index.tsx	L	e	yok
+agent-progress	varyant	ai/chat	motion	A	starc007/ui-components:components/agents/loading-states/agent-progress.tsx	M	e	yok
+animated-number	varyant	layout/lists~	motion	A	starc007/ui-components:components/motion/animated-number.tsx	S	e	yok
+approval-card:questions	varyant	ai/agents-tools	lucide-react,motion	A	starc007/ui-components:components/agents/approval-card/index.tsx	L	e	yok
+approval-card:review	varyant	ai/agents-tools	lucide-react,motion	A	starc007/ui-components:components/agents/approval-card/index.tsx	L	e	yok
+attachment-upload	varyant	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/attachment-upload.tsx	L	e	yok
+button-base	varyant	buttons/animated	motion	A	starc007/ui-components:components/motion/button/base.tsx	M	e	yok
+button-magnetic	varyant	buttons/animated	-	A	starc007/ui-components:components/motion/button/magnetic.tsx	S	h	yok
+button-metallic	varyant	buttons/animated	motion	A	starc007/ui-components:components/motion/button/metallic.tsx	M	e	yok
+button-stateful	varyant	buttons/animated	lucide-react,motion	A	starc007/ui-components:components/motion/button/stateful.tsx	M	e	yok
+checkbox:default	varyant	inputs/choice	motion	A	starc007/ui-components:components/motion/checkbox.tsx	M	e	yok
+checkbox:description	varyant	inputs/choice	motion	A	starc007/ui-components:components/motion/checkbox.tsx	M	e	yok
+chromatic-text-reveal	varyant	text/reveal~	motion	A	starc007/ui-components:components/motion/chromatic-text-reveal.tsx	M	e	var(aynı kaynak)
+digit-swap	varyant	layout/lists~	motion	A	starc007/ui-components:components/motion/digit-swap.tsx	M	e	yok
+expanding-arrow-button	varyant	buttons/animated	motion	A	starc007/ui-components:components/motion/expanding-arrow-button.tsx	M	e	yok
+file-upload	varyant	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/file-upload.tsx	L	e	ad-çakışması:file-upload
+hold-action-button	varyant	buttons/animated	motion	A	starc007/ui-components:components/motion/hold-action-button.tsx	L	e	var(aynı kaynak)
+knockout-bracket	varyant	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/knockout-bracket.tsx	L	e	yok
+knockout-wheel	varyant	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/knockout-wheel.tsx	L	e	yok
+message-bubble:avatars	varyant	ai/chat	lucide-react,motion	A	starc007/ui-components:components/agents/message-bubble.tsx	L	e	yok
+message-bubble:show-more	varyant	ai/chat	lucide-react,motion	A	starc007/ui-components:components/agents/message-bubble.tsx	L	e	yok
+message-bubble:surfaces	varyant	ai/chat	lucide-react,motion	A	starc007/ui-components:components/agents/message-bubble.tsx	L	e	yok
+morphing-lightbox	varyant	media/gallery-compare	lucide-react,motion	A	starc007/ui-components:components/motion/morphing-lightbox.tsx	L	e	yok
+morphing-search	varyant	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/morphing-search.tsx	L	e	yok
+morphing-search-chips	varyant	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/morphing-search-chips.tsx	L	e	yok
+not-found-glitch	varyant	blocks/marketing/features~	motion	A	starc007/ui-components:components/motion/not-found/glitch.tsx	M	e	yok
+not-found-magnetic	varyant	blocks/marketing/features~	-	A	starc007/ui-components:components/motion/not-found/magnetic.tsx	S	h	yok
+not-found-spotlight	varyant	blocks/marketing/features~	motion	A	starc007/ui-components:components/motion/not-found/spotlight.tsx	S	e	yok
+not-found-stacked	varyant	blocks/marketing/features~	motion	A	starc007/ui-components:components/motion/not-found/stacked.tsx	S	e	yok
+not-found-terminal	varyant	blocks/marketing/features~	-	A	starc007/ui-components:components/motion/not-found/terminal.tsx	S	e	yok
+number-ticker	varyant	layout/lists~	motion	A	starc007/ui-components:components/motion/number-ticker.tsx	M	e	ad-çakışması:number-ticker
+parallax	varyant	scroll/reveal	motion	A	starc007/ui-components:components/motion/parallax.tsx	S	e	yok
+popover	varyant	overlays/popover-tooltip	motion	A	starc007/ui-components:components/motion/popover.tsx	L	e	yok
+popover-morph	varyant	overlays/popover-tooltip	motion	A	starc007/ui-components:components/motion/popover-morph.tsx	L	e	yok
+prediction-market	varyant	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/prediction-market.tsx	L	e	yok
+prediction-market-card	varyant	blocks/marketing/features~	lucide-react,motion	A	starc007/ui-components:components/motion/prediction-market-card.tsx	L	e	yok
+radio:default	varyant	inputs/choice	motion	A	starc007/ui-components:components/motion/radio.tsx	M	e	yok
+radio:description	varyant	inputs/choice	motion	A	starc007/ui-components:components/motion/radio.tsx	M	e	yok
+range-slider	varyant	inputs/sliders-dials	motion	A	starc007/ui-components:components/motion/range-slider.tsx	M	e	yok
+range-slider-bubble	varyant	inputs/sliders-dials	motion	A	starc007/ui-components:components/motion/range-slider-bubble.tsx	M	e	yok
+range-slider-fluid	varyant	inputs/sliders-dials	motion	A	starc007/ui-components:components/motion/range-slider-fluid.tsx	M	e	yok
+range-slider-inline	varyant	inputs/sliders-dials	motion	A	starc007/ui-components:components/motion/range-slider-inline.tsx	L	e	yok
+range-slider-ruler	varyant	inputs/sliders-dials	motion	A	starc007/ui-components:components/motion/range-slider-ruler.tsx	M	e	yok
+range-slider-wave	varyant	inputs/sliders-dials	motion	A	starc007/ui-components:components/motion/range-slider-wave.tsx	S	e	yok
+reasoning-text	varyant	ai/chat	motion	A	starc007/ui-components:components/agents/loading-states/reasoning-text.tsx	M	e	yok
+scroll-progress	varyant	scroll/reveal	motion	A	starc007/ui-components:components/motion/scroll-progress.tsx	M	e	ad-çakışması:scroll-progress
+scroll-reveal	varyant	scroll/reveal	motion	A	starc007/ui-components:components/motion/scroll-reveal.tsx	S	e	yok
+scroll-to	varyant	scroll/reveal	-	A	starc007/ui-components:components/motion/scroll-to.tsx	S	h	yok
+select	varyant	inputs/pickers	lucide-react,motion	A	starc007/ui-components:components/motion/select.tsx	L	e	yok
+select-morph	varyant	inputs/pickers	lucide-react,motion	A	starc007/ui-components:components/motion/select-morph.tsx	L	e	yok
+slide-action-button	varyant	buttons/animated	motion	A	starc007/ui-components:components/motion/slide-action-button.tsx	M	e	yok
+smooth-scroll	varyant	scroll/reveal	lenis,motion	A	starc007/ui-components:components/motion/smooth-scroll.tsx	M	e	yok
+table	varyant	data/tables	@tanstack/react-virtual,motion	A	starc007/ui-components:components/motion/table/index.tsx	L	e	yok
+table-async	varyant	data/tables	@tanstack/react-virtual,motion	A	starc007/ui-components:components/motion/table/index.tsx	L	e	yok
+table-editable	varyant	data/tables	@tanstack/react-virtual,motion	A	starc007/ui-components:components/motion/table/index.tsx	L	e	yok
+text-cascade	varyant	text/reveal~	-	A	starc007/ui-components:components/motion/text-cascade.tsx	S	h	yok
+text-reveal	varyant	text/reveal~	motion	A	starc007/ui-components:components/motion/text-reveal.tsx	M	e	yok
+text-scramble	varyant	text/reveal~	motion	A	starc007/ui-components:components/motion/text-scramble.tsx	S	e	yok
+text-shimmer	varyant	text/reveal~	-	A	starc007/ui-components:components/motion/text-shimmer.tsx	S	h	yok
+thinking-shimmer	varyant	ai/chat	-	A	starc007/ui-components:components/agents/loading-states/thinking-shimmer.tsx	S	h	yok
+tool-result:request-result	varyant	ai/agents-tools	lucide-react,motion	A	starc007/ui-components:components/agents/tool-result.tsx	L	e	yok
+tool-result:terminal-output	varyant	ai/agents-tools	lucide-react,motion	A	starc007/ui-components:components/agents/tool-result.tsx	L	e	yok
+tooltip:default	varyant	overlays/popover-tooltip	motion	A	starc007/ui-components:components/motion/tooltip.tsx	L	e	yok
+tooltip:toolbar	varyant	overlays/popover-tooltip	motion	A	starc007/ui-components:components/motion/tooltip.tsx	L	e	yok
