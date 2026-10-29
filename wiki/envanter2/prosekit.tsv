@@ -1,0 +1,15 @@
+slug	tür	group/shelf	bağımlılıklar	sınıf	alma yolu	karmaşıklık	motion	Mozaik'te var mı
+block-handle	component	-	prosekit	A	prosekit:registry/src/react/ui/block-handle/block-handle.tsx	S	h	yok
+button	component	buttons/animated	prosekit	A	prosekit:registry/src/react/ui/button/button.tsx	S	h	yok
+code-block-view	component	inputs/text-code	prosekit	A	prosekit:registry/src/react/ui/code-block-view/code-block-view.tsx	S	h	yok
+drop-indicator	component	feedback/status	prosekit	A	prosekit:registry/src/react/ui/drop-indicator/drop-indicator.tsx	S	h	yok
+image-upload-popover	component	inputs/upload-sign	prosekit	A	prosekit:registry/src/react/ui/image-upload-popover/image-upload-popover.tsx	S	h	yok
+image-view	component	media/gallery-compare	prosekit	A	prosekit:registry/src/react/ui/image-view/image-view.tsx	S	h	yok
+inline-menu	component	navigation/dock-menus	prosekit	A	prosekit:registry/src/react/ui/inline-menu/inline-menu.tsx	S	h	yok
+search	component	navigation/command-search	prosekit	A	prosekit:registry/src/react/ui/search/search.tsx	S	h	yok
+slash-menu	component	navigation/dock-menus	prosekit	A	prosekit:registry/src/react/ui/slash-menu/slash-menu-empty.tsx	M	h	yok
+table-handle	component	data/tables	prosekit	A	prosekit:registry/src/react/ui/table-handle/table-handle.tsx	S	h	yok
+tag-menu	component	inputs/choice	prosekit	A	prosekit:registry/src/react/ui/tag-menu/tag-menu.tsx	S	h	yok
+toolbar	component	ai/agents-tools	prosekit	A	prosekit:registry/src/react/ui/toolbar/toolbar.tsx	S	h	yok
+user-menu	component	navigation/dock-menus	prosekit	A	prosekit:registry/src/react/ui/user-menu/user-menu.tsx	S	h	yok
+word-counter	component	text/effect	prosekit	A	prosekit:registry/src/react/ui/word-counter/word-counter.tsx	S	h	yok
