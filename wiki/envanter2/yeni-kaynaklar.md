@@ -8,7 +8,7 @@ Tarih: 2026-10-29. Okuma-yalnız oturum; hesap/giriş/form/ödeme/indirme yok.
 - Lisanslar ham `LICENSE` dosyasından okundu (komit kısa hash'i her kaynak .md'sinde).
 - Hariç tutulan 30 kaynak (diğer oturumlar) ve onların registry adları atlandı.
 
-## Tam sınıflanan kaynaklar (19) — TSV'li
+## Tam sınıflanan kaynaklar (23) — TSV'li
 | kaynak | sınıf | alınabilir öğe | Mozaik'te olmayan | öne çıkan bağımlılıklar |
 |---|---|---|---|---|
 | [bencho](bencho.md) | A | 44 | 35 | framer-motion (45), lucide-react (45) |
@@ -29,6 +29,10 @@ Tarih: 2026-10-29. Okuma-yalnız oturum; hesap/giriş/form/ödeme/indirme yok.
 | [prosekit](prosekit.md) | A | 14 | 14 | prosekit (14) |
 | [paceui](paceui.md) | A | 28 | 24 | radix |
 | [remocn](remocn.md) | A | 287 | 281 | remotion |
+| [kokonutui](kokonutui.md) | A | 114 | 76 | motion (62), lucide-react (55), button (7), class-variance-authority (3), textarea (2), dropdown-menu (2), card (2), drawer (1) |
+| [originui](originui.md) | A | 645 | 636 | button (210), label (205), input (74), select (42), checkbox (36), popover (34), dropdown-menu (33), badge (30) |
+| [motion-primitives](motion-primitives.md) | A | 33 | 25 | motion (33), react-use-measure (3) |
+| [jal-co-ui](jal-co-ui.md) | A | 35 | 32 | lucide-react (11), class-variance-authority (10), @chenglou/pretext (4), radix-ui (4), shiki (2), pretext (2), uqr (1), diff (1) |
 | [coss](coss.md) | B | 55 | 46 | @base-ui/react (55) |
 
 Toplam alınabilir öğe (ui/component/block/hook/item): A sınıfı 2710, B sınıfı 1270. Çoğu "yok" ama group/shelf eşlemesi anahtar-kelime tabanlı; `-` = eşleşmedi. Sayılar aynı öğenin farklı kaynaklarda tekrarını (shadcn kopyaları: button, card…) içerir; birleştirmede slug+içerik hash'iyle tekilleştirilmeli.
@@ -117,7 +121,8 @@ itemCount = shadcn dizininin ranking.itemCount alanı (registry'deki öğe sayı
 "Bekleyen" 40+ registry'nin repo adı/lisansı bu oturumda doğrulanamadı (uydurulmadı). Sonraki adım: registry host'ları allowlist'e eklenirse `registry.json` çekilip aynı hat çalıştırılır; ya da repo adları verilirse `git clone` ile.
 
 ## 2. tur (devam)
-GitHub'da tahmin+`git ls-remote` ile ~35 repo adı denendi; yeni doğrulananlar: `paceui/paceui` (= pacekit/ui, aynı 28 öğe, MIT), `remocn/remocn` (MIT, Remotion video bileşenleri), `praveenjuge/vadivam` (MIT ama ikon seti → component değil, atlandı). Kalan bekleyen registry'ler için repo adı bulunamadı. Üçüncü tur denemesinde yeni kaynak çıkmazsa durulacak.
+GitHub'da tahmin+`git ls-remote` ile ~35 repo adı denendi; yeni doğrulananlar: `paceui/paceui` (= pacekit/ui, aynı 28 öğe, MIT), `remocn/remocn` (MIT, Remotion video bileşenleri), `praveenjuge/vadivam` (MIT ama ikon seti → component değil, atlandı). Kalan bekleyen registry'ler için repo adı bulunamadı. 
+3. tur: kokonutui, originui, motion-primitives, jal-co/ui (hepsi MIT) eklendi; `pqoqubbw/icons` ikon seti, `jolbol1/ui` shadcn çatalı, `origin-space/ui-experiments` lisanssız → atlandı. Yeni bulgu kesilmediği için bir tur daha denenebilir.
 
 ## Dizinlerin kendisi
 - desengs.com — Tasarım mühendisleri için küratörlü kaynak listesi (makale/video/araç); kendi component'i yok. Link verdiği MIT repolar: `benjitaylor/liveline` (MIT, tek grafik bileşeni), `dip/cmdk`; skills repoları (`emilkowalski/skills`, `jakubkrehel/skills` MIT) component değil.
