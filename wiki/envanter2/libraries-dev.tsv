@@ -1,0 +1,10 @@
+slug	tür	group/shelf	bağımlılıklar	sınıf	alma yolu	karmaşıklık	motion	Mozaik'te var mı
+border-beam	paket (npm lib)	cards/surface	react (peer)	A	Jakubantalik/libraries.dev:packages/border-beam/src	L	e	benzer: registry/cards/surface/border-beam
+thinking-orbs	paket (npm lib)	ai/orbs-voice	react (peer)	A	Jakubantalik/libraries.dev:packages/thinking-orbs/src	L	e	benzer: registry/feedback/loaders/thinking-loader
+bot-avatars	paket (npm lib)	ai/orbs-voice	react (peer)	A	Jakubantalik/libraries.dev:packages/bot-avatars/src	L	e	h
+liquid-gooey	paket (npm lib)	buttons/animated	react (peer)	A	Jakubantalik/libraries.dev:packages/liquid-gooey/src	L	e	benzer: registry/onchain/prices-charts/liquidity-heatmap,registry/inputs/sliders-dials/liquid-slider
+voice-glow	paket (npm lib)	ai/orbs-voice	react (peer)	A	Jakubantalik/libraries.dev:packages/voice-glow/src	L	e	benzer: registry/ai/orbs-voice/ai-voice-wave
+metal-fx	paket (npm lib)	buttons/animated	react (peer)	A	Jakubantalik/libraries.dev:packages/metal-fx/src	L	e	h
+img-fx	paket (npm lib)	media/gallery-compare	react,three (peer)	A	Jakubantalik/libraries.dev:packages/img-fx/src	L	e	h
+magnetkit	paket (npm lib)	cursor/magnetic-tilt	react (peer)	A	Jakubantalik/libraries.dev:packages/magnetkit-web/src	L	e	h
+voice-ring	paket (npm lib)	ai/orbs-voice	react (peer)	A	Jakubantalik/libraries.dev:packages/voice-ring/src	L	e	benzer: registry/ai/orbs-voice/ai-voice-wave

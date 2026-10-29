@@ -1,0 +1,44 @@
+slug	tür	group/shelf	bağımlılıklar	sınıf	alma yolu	karmaşıklık	motion	Mozaik'te var mı
+card-resize	transition (css+react snippet)	cards/hover-reveal	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#card-resize (react alanı) + transitions/card-resize/index.html	S	e	h
+number-pop-in	transition (css+react snippet)	text/counter	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#number-pop-in (react alanı) + transitions/number-pop-in/index.html	M	e	h
+notification-badge	transition (css+react snippet)	feedback/status	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#notification-badge (react alanı) + transitions/notification-badge/index.html	M	e	h
+text-states-swap	transition (css+react snippet)	text/reveal	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#text-states-swap (react alanı) + transitions/text-states-swap/index.html	M	e	h
+confetti-burst	transition (css+react snippet)	feedback/status	zero-deps	C	ALINMAZ (Pro)	S	e	h
+menu-dropdown	transition (css+react snippet)	navigation/dock-menus	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#menu-dropdown (react alanı) + transitions/menu-dropdown/index.html	M	e	h
+modal-open-close	transition (css+react snippet)	overlays/modal-drawer	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#modal-open-close (react alanı) + transitions/modal-open-close/index.html	M	e	h
+panel-reveal	transition (css+react snippet)	overlays/modal-drawer	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#panel-reveal (react alanı) + transitions/panel-reveal/index.html	S	e	h
+gooey-plus-menu	transition (css+react snippet)	navigation/dock-menus	zero-deps	C	ALINMAZ (Pro)	S	e	h
+page-side-by-side	transition (css+react snippet)	layout/grids	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#page-side-by-side (react alanı) + transitions/page-side-by-side/index.html	M	e	h
+card-stack-hover	transition (css+react snippet)	cards/hover-reveal	zero-deps	C	ALINMAZ (Pro)	S	e	h
+icon-swap	transition (css+react snippet)	buttons/animated	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#icon-swap (react alanı) + transitions/icon-swap/index.html	S	e	h
+success-check	transition (css+react snippet)	feedback/status	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#success-check (react alanı) + transitions/success-check/index.html	M	e	h
+avatar-group-hover	transition (css+react snippet)	layout/lists	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#avatar-group-hover (react alanı) + transitions/avatar-group-hover/index.html	M	e	h
+error-state-shake	transition (css+react snippet)	feedback/status	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#error-state-shake (react alanı) + transitions/error-state-shake/index.html	M	e	h
+organic-shimmer	transition (css+react snippet)	text/effect	zero-deps	C	ALINMAZ (Pro)	S	e	h
+input-clear-with-dissolve	transition (css+react snippet)	inputs/text-code	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#input-clear-with-dissolve (react alanı) + transitions/input-clear-with-dissolve/index.html	L	e	h
+skeleton-loader-and-reveal	transition (css+react snippet)	feedback/skeletons	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#skeleton-loader-and-reveal (react alanı) + transitions/skeleton-loader-and-reveal/index.html	M	e	h
+texts-reveal	transition (css+react snippet)	text/reveal	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#texts-reveal (react alanı) + transitions/texts-reveal/index.html	M	e	h
+tabs-sliding	transition (css+react snippet)	navigation/tabs	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#tabs-sliding (react alanı) + transitions/tabs-sliding/index.html	M	e	h
+drag-drop-with-physics	transition (css+react snippet)	layout/lists	zero-deps	C	ALINMAZ (Pro)	S	e	h
+image-open-tilt	transition (css+react snippet)	cards/hover-reveal	zero-deps	C	ALINMAZ (Pro)	S	e	h
+shimmer-text	transition (css+react snippet)	text/effect	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#shimmer-text (react alanı) + transitions/shimmer-text/index.html	S	e	h
+tooltip-open-close	transition (css+react snippet)	overlays/popover-tooltip	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#tooltip-open-close (react alanı) + transitions/tooltip-open-close/index.html	M	e	h
+3d-tilt	transition (css+react snippet)	cards/hover-reveal	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#3d-tilt (react alanı) + transitions/3d-tilt/index.html	M	e	h
+dropdown-menu-morph	transition (css+react snippet)	navigation/dock-menus	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#dropdown-menu-morph (react alanı) + transitions/dropdown-menu-morph/index.html	M	e	h
+accordion	transition (css+react snippet)	layout/accordions	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#accordion (react alanı) + transitions/accordion/index.html	M	e	h
+toast-open-close	transition (css+react snippet)	feedback/notifications	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#toast-open-close (react alanı) + transitions/toast-open-close/index.html	S	e	h
+like-button	transition (css+react snippet)	buttons/animated	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#like-button (react alanı) + transitions/like-button/index.html	M	e	h
+learn-more-hover	transition (css+react snippet)	buttons/animated	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#learn-more-hover (react alanı) + transitions/learn-more-hover/index.html	S	e	h
+checkbox-check	transition (css+react snippet)	feedback/status	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#checkbox-check (react alanı) + transitions/checkbox-check/index.html	S	e	h
+spinner-to-check-morph	transition (css+react snippet)	feedback/loaders	zero-deps	C	ALINMAZ (Pro)	S	e	h
+spinning-counter	transition (css+react snippet)	text/counter	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#spinning-counter (react alanı) + transitions/spinning-counter/index.html	M	e	h
+toggle	transition (css+react snippet)	buttons/toggle-switch	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#toggle (react alanı) + transitions/toggle/index.html	S	e	h
+pro-gradient-text	transition (css+react snippet)	text/reveal	zero-deps	C	ALINMAZ (Pro)	S	e	h
+delete-with-smoky-dissolve	transition (css+react snippet)	feedback/status	zero-deps	C	ALINMAZ (Pro)	S	e	h
+thinking-states	transition (css+react snippet)	ai/reasoning	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#thinking-states (react alanı) + transitions/thinking-states/index.html	S	e	h
+reasoning-stream	transition (css+react snippet)	ai/reasoning	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#reasoning-stream (react alanı) + transitions/reasoning-stream/index.html	S	e	h
+streaming-text	transition (css+react snippet)	ai/chat	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#streaming-text (react alanı) + transitions/streaming-text/index.html	S	e	h
+matrix-dot-loader	transition (css+react snippet)	feedback/loaders	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#matrix-dot-loader (react alanı) + transitions/matrix-dot-loader/index.html	S	e	h
+banner-stacking	transition (css+react snippet)	feedback/notifications	zero-deps	B	Jakubantalik/transitions.dev:scripts/transitions-data.json#banner-stacking (react alanı) + transitions/banner-stacking/index.html	S	e	h
+image-generation-placeholder	transition (css+react snippet)	ai/agents-tools	zero-deps	C	ALINMAZ (Pro)	S	e	h
+get-pro-button	transition (css+react snippet)	buttons/animated	zero-deps	C	ALINMAZ (Pro)	S	e	h

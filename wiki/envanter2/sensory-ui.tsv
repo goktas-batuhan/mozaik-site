@@ -1,0 +1,26 @@
+slug	tür	group/shelf	bağımlılıklar	sınıf	alma yolu	karmaşıklık	motion	Mozaik'te var mı
+sensory-ui-core	lib (ses motoru)	-	react (Web Audio, 0 dep)	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/{config,sounds}	L	h	h
+sensory-ui-accordion	component (ses katmanı)	layout/accordions	sensory-ui-core + shadcn/radix accordion	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/accordion.tsx	S	h	h
+sensory-ui-alert-dialog	component (ses katmanı)	overlays/modal-drawer	sensory-ui-core + shadcn/radix alert-dialog	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/alert-dialog.tsx	S	h	h
+sensory-ui-button	component (ses katmanı)	buttons/animated	sensory-ui-core + shadcn/radix button	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/button.tsx	S	h	h
+sensory-ui-carousel	component (ses katmanı)	layout/carousels	sensory-ui-core + shadcn/radix carousel	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/carousel.tsx	S	h	h
+sensory-ui-checkbox	component (ses katmanı)	inputs/choice	sensory-ui-core + shadcn/radix checkbox	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/checkbox.tsx	S	h	h
+sensory-ui-collapsible	component (ses katmanı)	layout/accordions	sensory-ui-core + shadcn/radix collapsible	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/collapsible.tsx	S	h	h
+sensory-ui-command	component (ses katmanı)	navigation/command-search	sensory-ui-core + shadcn/radix command	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/command.tsx	S	h	h
+sensory-ui-context-menu	component (ses katmanı)	navigation/dock-menus	sensory-ui-core + shadcn/radix context-menu	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/context-menu.tsx	M	h	h
+sensory-ui-dialog	component (ses katmanı)	overlays/modal-drawer	sensory-ui-core + shadcn/radix dialog	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/dialog.tsx	S	h	h
+sensory-ui-drawer	component (ses katmanı)	overlays/modal-drawer	sensory-ui-core + shadcn/radix drawer	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/drawer.tsx	S	h	h
+sensory-ui-dropdown-menu	component (ses katmanı)	navigation/dock-menus	sensory-ui-core + shadcn/radix dropdown-menu	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/dropdown-menu.tsx	M	h	h
+sensory-ui-menubar	component (ses katmanı)	navigation/dock-menus	sensory-ui-core + shadcn/radix menubar	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/menubar.tsx	S	h	h
+sensory-ui-navigation-menu	component (ses katmanı)	navigation/navbar-sidebar	sensory-ui-core + shadcn/radix navigation-menu	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/navigation-menu.tsx	S	h	h
+sensory-ui-pagination	component (ses katmanı)	navigation/tabs	sensory-ui-core + shadcn/radix pagination	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/pagination.tsx	M	h	h
+sensory-ui-popover	component (ses katmanı)	overlays/popover-tooltip	sensory-ui-core + shadcn/radix popover	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/popover.tsx	S	h	h
+sensory-ui-radio-group	component (ses katmanı)	inputs/choice	sensory-ui-core + shadcn/radix radio-group	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/radio-group.tsx	S	h	h
+sensory-ui-select	component (ses katmanı)	inputs/pickers	sensory-ui-core + shadcn/radix select	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/select.tsx	S	h	h
+sensory-ui-sheet	component (ses katmanı)	overlays/modal-drawer	sensory-ui-core + shadcn/radix sheet	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/sheet.tsx	S	h	h
+sensory-ui-sidebar	component (ses katmanı)	navigation/navbar-sidebar	sensory-ui-core + shadcn/radix sidebar	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/sidebar.tsx	M	h	h
+sensory-ui-slider	component (ses katmanı)	inputs/sliders-dials	sensory-ui-core + shadcn/radix slider	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/slider.tsx	S	h	h
+sensory-ui-switch	component (ses katmanı)	buttons/toggle-switch	sensory-ui-core + shadcn/radix switch	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/switch.tsx	S	h	h
+sensory-ui-tabs	component (ses katmanı)	navigation/tabs	sensory-ui-core + shadcn/radix tabs	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/tabs.tsx	S	h	h
+sensory-ui-toggle	component (ses katmanı)	buttons/toggle-switch	sensory-ui-core + shadcn/radix toggle	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/toggle.tsx	S	h	h
+sensory-ui-toggle-group	component (ses katmanı)	buttons/toggle-switch	sensory-ui-core + shadcn/radix toggle-group	A	satyamvyas04/sensory-ui:components/ui/sensory-ui/toggle-group.tsx	S	h	h
