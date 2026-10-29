@@ -1,7 +1,7 @@
 # originui
 
 - Repo: https://github.com/origin-space/originui (commit 890a79a)
-- Site: https://originui.com (adres teyit edilmedi; repo'dan türetilmedi)
+- Site: https://originui.com
 - Lisans (ham LICENSE metninden): MIT (LICENSE: "coss.com, originally Origin UI")
 - **Sınıf: A** — Düz MIT; coss.com ile kardeş (coss ui AGPL değil bu depo MIT).
 - Alınabilir öğe (ui/component/block/hook/item): **645**; Mozaik'te olmayan: **636**

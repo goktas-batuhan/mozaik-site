@@ -1,7 +1,7 @@
 # motion-primitives
 
 - Repo: https://github.com/ibelick/motion-primitives (commit 120f64f)
-- Site: https://motion-primitives.com (adres teyit edilmedi; repo'dan türetilmedi)
+- Site: https://motion-primitives.com
 - Lisans (ham LICENSE metninden): MIT (LICENCE.md, Copyright 2024 ibelick)
 - **Sınıf: A** — Düz MIT.
 - Alınabilir öğe (ui/component/block/hook/item): **33**; Mozaik'te olmayan: **25**

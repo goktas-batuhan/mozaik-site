@@ -8,7 +8,7 @@ Tarih: 2026-10-29. Okuma-yalnız oturum; hesap/giriş/form/ödeme/indirme yok.
 - Lisanslar ham `LICENSE` dosyasından okundu (komit kısa hash'i her kaynak .md'sinde).
 - Hariç tutulan 30 kaynak (diğer oturumlar) ve onların registry adları atlandı.
 
-## Tam sınıflanan kaynaklar (23) — TSV'li
+## Tam sınıflanan kaynaklar (28) — TSV'li
 | kaynak | sınıf | alınabilir öğe | Mozaik'te olmayan | öne çıkan bağımlılıklar |
 |---|---|---|---|---|
 | [bencho](bencho.md) | A | 44 | 35 | framer-motion (45), lucide-react (45) |
@@ -33,6 +33,11 @@ Tarih: 2026-10-29. Okuma-yalnız oturum; hesap/giriş/form/ödeme/indirme yok.
 | [originui](originui.md) | A | 645 | 636 | button (210), label (205), input (74), select (42), checkbox (36), popover (34), dropdown-menu (33), badge (30) |
 | [motion-primitives](motion-primitives.md) | A | 33 | 25 | motion (33), react-use-measure (3) |
 | [jal-co-ui](jal-co-ui.md) | A | 35 | 32 | lucide-react (11), class-variance-authority (10), @chenglou/pretext (4), radix-ui (4), shiki (2), pretext (2), uqr (1), diff (1) |
+| [ui-layouts](ui-layouts.md) | A | 327 | 293 | motion (183), lucide-react (53), embla-carousel (12), embla-carousel-class-names (12), embla-carousel-react (12), embla-carousel-autoplay (12), @motionone/utils (7), three (5) |
+| [stackzero-ui](stackzero-ui.md) | A | 67 | 67 | lucide-react (87), button (38), @radix-ui/react-radio-group (20), star-rating-fractions (20), image-viewer-basic (18), @radix-ui/react-dialog (13), @radix-ui/react-toggle-group (13), price-format-sale (12) |
+| [tool-ui](tool-ui.md) | A | 27 | 25 | zod (26), lucide-react (21), button (18), separator (6), card (4), collapsible (4), tooltip (4), slider (2) |
+| [data-table-filters](data-table-filters.md) | A | 15 | 0 | data-table (14), lucide-react@^0.469.0 (7), date-fns@^4.1.0 (7), button (7), @tanstack/react-query@^5.101.4 (5), @tanstack/react-table@^9.2.3 (4), zod@^4.3.6 (4), kbd (4) |
+| [shadcn-table](shadcn-table.md) | A | 15 | 9 | @tanstack/react-table (13), button (11), command (8), popover (8), select (8), input (6), calendar (5), badge (5) |
 | [coss](coss.md) | B | 55 | 46 | @base-ui/react (55) |
 
 Toplam alınabilir öğe (ui/component/block/hook/item): A sınıfı 2710, B sınıfı 1270. Çoğu "yok" ama group/shelf eşlemesi anahtar-kelime tabanlı; `-` = eşleşmedi. Sayılar aynı öğenin farklı kaynaklarda tekrarını (shadcn kopyaları: button, card…) içerir; birleştirmede slug+içerik hash'iyle tekilleştirilmeli.
@@ -96,7 +101,7 @@ itemCount = shadcn dizininin ranking.itemCount alanı (registry'deki öğe sayı
 | @glint-ui | https://glint-ui-seven.vercel.app | 354 | healthy | component registry | registry JSON çekilemedi (host proxy'de 403); lisans doğrulanmadı |
 | @termcn | https://termcn.vercel.app | 344 | healthy | component registry | registry JSON çekilemedi (host proxy'de 403); lisans doğrulanmadı |
 | @emailcn | https://emailcn.vercel.app | 338 | unavailable | component registry | registry JSON çekilemedi (host proxy'de 403); lisans doğrulanmadı |
-| @ui-layouts | https://ui-layouts.com/ | 327 | healthy | component registry | registry JSON çekilemedi (host proxy'de 403); lisans doğrulanmadı |
+| @ui-layouts | https://ui-layouts.com/ | 327 | healthy | component registry | sınıflandı → [ui-layouts](ui-layouts.md) |
 | @stealth | https://www.stealth.pm/ui | 326 | healthy | component registry | registry JSON çekilemedi (host proxy'de 403); lisans doğrulanmadı |
 | @plate | https://platejs.org | 324 | healthy | component registry | sınıflandı → [plate](plate.md) |
 | @dashboardblocks | https://www.dashboardblocks.com | 323 | healthy | component registry | registry JSON çekilemedi (host proxy'de 403); lisans doğrulanmadı |
@@ -122,7 +127,8 @@ itemCount = shadcn dizininin ranking.itemCount alanı (registry'deki öğe sayı
 
 ## 2. tur (devam)
 GitHub'da tahmin+`git ls-remote` ile ~35 repo adı denendi; yeni doğrulananlar: `paceui/paceui` (= pacekit/ui, aynı 28 öğe, MIT), `remocn/remocn` (MIT, Remotion video bileşenleri), `praveenjuge/vadivam` (MIT ama ikon seti → component değil, atlandı). Kalan bekleyen registry'ler için repo adı bulunamadı. 
-3. tur: kokonutui, originui, motion-primitives, jal-co/ui (hepsi MIT) eklendi; `pqoqubbw/icons` ikon seti, `jolbol1/ui` shadcn çatalı, `origin-space/ui-experiments` lisanssız → atlandı. Yeni bulgu kesilmediği için bir tur daha denenebilir.
+3. tur: kokonutui, originui, motion-primitives, jal-co/ui (hepsi MIT) eklendi; `pqoqubbw/icons` ikon seti, `jolbol1/ui` shadcn çatalı, `origin-space/ui-experiments` lisanssız → atlandı. 
+4. tur: ui-layouts, stackzero-ui, tool-ui, data-table-filters, shadcn-table (hepsi MIT) eklendi. `better-auth-ui`, `frosted-ui`, `liquid-glass-react`, `shadcn-ui-expansions` registry'siz paket/kütüphane olduğundan atlandı. Her turda yeni bulgu çıktığı için durma koşulu (iki boş tur) henüz sağlanmadı.
 
 ## Dizinlerin kendisi
 - desengs.com — Tasarım mühendisleri için küratörlü kaynak listesi (makale/video/araç); kendi component'i yok. Link verdiği MIT repolar: `benjitaylor/liveline` (MIT, tek grafik bileşeni), `dip/cmdk`; skills repoları (`emilkowalski/skills`, `jakubkrehel/skills` MIT) component değil.

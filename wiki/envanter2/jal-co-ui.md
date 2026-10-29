@@ -1,7 +1,7 @@
 # jal-co-ui
 
 - Repo: https://github.com/jal-co/ui (commit decbda8)
-- Site: https://ui.justinlevine.me (adres teyit edilmedi; repo'dan türetilmedi)
+- Site: https://ui.justinlevine.me
 - Lisans (ham LICENSE metninden): MIT (LICENSE, Copyright 2026 Justin Levine)
 - **Sınıf: A** — Düz MIT.
 - Alınabilir öğe (ui/component/block/hook/item): **35**; Mozaik'te olmayan: **32**

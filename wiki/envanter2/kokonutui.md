@@ -1,7 +1,7 @@
 # kokonutui
 
 - Repo: https://github.com/kokonut-labs/kokonutui (commit 5addc31)
-- Site: https://kokonutui.com (adres teyit edilmedi; repo'dan türetilmedi)
+- Site: https://kokonutui.com
 - Lisans (ham LICENSE metninden): MIT (LICENSE)
 - **Sınıf: A** — Düz MIT.
 - Alınabilir öğe (ui/component/block/hook/item): **114**; Mozaik'te olmayan: **76**
