@@ -1,79 +1,80 @@
 slug	tür	group/shelf	bağımlılıklar	sınıf	alma yolu	karmaşıklık	motion	Mozaik'te var mı
-magic-card	bileşen	cursor/follow-trail?	motion,next-themes	A	https://magicui.design/r/magic-card.json	S	e	yok
-android	bileşen	media/mockups?	-	A	https://magicui.design/r/android.json	S	h	var(android-mockup)
-warp-background	bileşen	backgrounds/pattern?	motion	A	https://magicui.design/r/warp-background.json	S	e	yok
-line-shadow-text	bileşen	text/effect?	motion	A	https://magicui.design/r/line-shadow-text.json	S	e	var(line-shadow-text)
-aurora-text	bileşen	backgrounds/shader?	-	A	https://magicui.design/r/aurora-text.json	S	e	yok
-morphing-text	bileşen	text/effect?	-	A	https://magicui.design/r/morphing-text.json	S	e	var(morphing-text)
-scroll-progress	bileşen	scroll/reveal?	motion	A	https://magicui.design/r/scroll-progress.json	S	e	var(scroll-progress)
-lens	bileşen	overlays/popover-tooltip?	motion	A	https://magicui.design/r/lens.json	S	e	var(lens)
-pointer	bileşen	cursor/follow-trail?	motion	A	https://magicui.design/r/pointer.json	S	e	yok
-smooth-cursor	bileşen	cursor/follow-trail?	motion	A	https://magicui.design/r/smooth-cursor.json	S	e	var(smooth-cursor)
-progressive-blur	bileşen	scroll/reveal?	-	A	https://magicui.design/r/progressive-blur.json	S	h	var(progressive-blur)
-neon-gradient-card	bileşen	cards/surface?	-	A	https://magicui.design/r/neon-gradient-card.json	S	e	yok
-noise-texture	bileşen	backgrounds/pattern?	-	A	https://magicui.design/r/noise-texture.json	S	h	yok
-meteors	bileşen	backgrounds/pattern?	-	A	https://magicui.design/r/meteors.json	S	e	var(meteors)
-grid-pattern	bileşen	backgrounds/pattern?	-	A	https://magicui.design/r/grid-pattern.json	S	h	yok
-hexagon-pattern	bileşen	backgrounds/pattern?	-	A	https://magicui.design/r/hexagon-pattern.json	S	h	var(hexagon-pattern)
-striped-pattern	bileşen	backgrounds/pattern?	-	A	https://magicui.design/r/striped-pattern.json	S	h	yok
-interactive-grid-pattern	bileşen	backgrounds/pattern?	-	A	https://magicui.design/r/interactive-grid-pattern.json	S	e	yok
-dot-pattern	bileşen	backgrounds/pattern?	-	A	https://magicui.design/r/dot-pattern.json	S	e	yok
-flickering-grid	bileşen	backgrounds/pattern?	-	A	https://magicui.design/r/flickering-grid.json	S	e	var(flickering-grid)
-hero-video-dialog	bileşen	overlays/popover-tooltip?	motion	A	https://magicui.design/r/hero-video-dialog.json	S	e	yok
-code-comparison	bileşen	media/mockups?	next-themes,shiki	A	https://magicui.design/r/code-comparison.json	S	e	yok
-marquee	bileşen	text/effect?	-	A	https://magicui.design/r/marquee.json	S	e	var(marquee)
-globe	bileşen	text/effect?	cobe@^0.6.4,motion	A	https://magicui.design/r/globe.json	S	e	yok
-glyph-matrix	bileşen	backgrounds/pattern?	-	A	https://magicui.design/r/glyph-matrix.json	S	e	var(glyph-matrix)
-glare-hover	bileşen	cards/surface?	-	A	https://magicui.design/r/glare-hover.json	S	e	yok
-shimmer-button	bileşen	buttons/animated?	-	A	https://magicui.design/r/shimmer-button.json	S	e	var(shimmer-button)
-tweet-card	bileşen	cards/surface?	react-tweet	A	https://magicui.design/r/tweet-card.json	S	e	yok
-client-tweet-card	bileşen	cards/surface?	react-tweet	A	https://magicui.design/r/client-tweet-card.json	S	h	yok
-bento-grid	bileşen	backgrounds/pattern?	@radix-ui/react-icons	A	https://magicui.design/r/bento-grid.json	S	e	var(bento-grid)
-particles	bileşen	backgrounds/shader?	-	A	https://magicui.design/r/particles.json	S	e	var(particles)
-number-ticker	bileşen	text/counter?	motion	A	https://magicui.design/r/number-ticker.json	S	e	var(number-ticker)
-ripple	bileşen	buttons/animated?	-	A	https://magicui.design/r/ripple.json	S	e	yok
-retro-grid	bileşen	backgrounds/pattern?	-	A	https://magicui.design/r/retro-grid.json	S	e	var(retro-grid)
-animated-list	bileşen	layout/carousels?	motion	A	https://magicui.design/r/animated-list.json	S	e	var(animated-list)
-animated-shiny-text	bileşen	text/effect?	-	A	https://magicui.design/r/animated-shiny-text.json	S	e	yok
-animated-grid-pattern	bileşen	backgrounds/pattern?	motion	A	https://magicui.design/r/animated-grid-pattern.json	S	e	yok
-border-beam	bileşen	?/?	motion	A	https://magicui.design/r/border-beam.json	S	e	var(border-beam)
-animated-beam	bileşen	?/?	motion	A	https://magicui.design/r/animated-beam.json	S	e	var(animated-beam)
-text-reveal	bileşen	text/effect?	motion	A	https://magicui.design/r/text-reveal.json	S	e	var(scroll-text-reveal)
-dia-text-reveal	bileşen	text/effect?	motion	A	https://magicui.design/r/dia-text-reveal.json	S	e	yok
-hyper-text	bileşen	text/effect?	motion	A	https://magicui.design/r/hyper-text.json	S	e	yok
-animated-gradient-text	bileşen	backgrounds/pattern?	-	A	https://magicui.design/r/animated-gradient-text.json	S	e	yok
-orbiting-circles	bileşen	ai/chat?	-	A	https://magicui.design/r/orbiting-circles.json	S	e	var(orbiting-circles)
-dock	bileşen	navigation/dock-menus?	motion	A	https://magicui.design/r/dock.json	S	e	var(dock)
-word-rotate	bileşen	text/effect?	motion	A	https://magicui.design/r/word-rotate.json	S	e	var(word-rotate)
-avatar-circles	bileşen	media/mockups?	-	A	https://magicui.design/r/avatar-circles.json	S	h	yok
-typing-animation	bileşen	text/effect?	motion	A	https://magicui.design/r/typing-animation.json	S	e	var(typing-animation)
-sparkles-text	bileşen	backgrounds/pattern?	motion	A	https://magicui.design/r/sparkles-text.json	S	e	var(sparkles-text)
-spinning-text	bileşen	text/effect?	motion	A	https://magicui.design/r/spinning-text.json	S	e	var(spinning-text)
-comic-text	bileşen	text/effect?	motion	A	https://magicui.design/r/comic-text.json	S	e	yok
-icon-cloud	bileşen	?/?	lucide-react	A	https://magicui.design/r/icon-cloud.json	S	e	yok
-text-animate	bileşen	text/effect?	motion	A	https://magicui.design/r/text-animate.json	S	e	yok
-scroll-based-velocity	bileşen	text/effect?	motion	A	https://magicui.design/r/scroll-based-velocity.json	S	e	var(scroll-velocity-marquee)
-shiny-button	bileşen	text/effect?	motion	A	https://magicui.design/r/shiny-button.json	S	e	yok
-shine-border	bileşen	backgrounds/pattern?	-	A	https://magicui.design/r/shine-border.json	S	e	yok
-animated-circular-progress-bar	bileşen	scroll/reveal?	-	A	https://magicui.design/r/animated-circular-progress-bar.json	S	e	yok
-confetti	bileşen	?/?	@types/canvas-confetti,canvas-confetti	A	https://magicui.design/r/confetti.json	S	e	yok
-cool-mode	bileşen	buttons/animated?	-	A	https://magicui.design/r/cool-mode.json	S	e	var(cool-mode)
-pulsating-button	bileşen	buttons/animated?	-	A	https://magicui.design/r/pulsating-button.json	S	e	yok
-ripple-button	bileşen	buttons/animated?	-	A	https://magicui.design/r/ripple-button.json	S	e	yok
-file-tree	bileşen	?/?	-	A	https://magicui.design/r/file-tree.json	S	e	yok
-blur-fade	bileşen	scroll/reveal?	motion	A	https://magicui.design/r/blur-fade.json	S	e	var(blur-fade)
-safari	bileşen	media/mockups?	-	A	https://magicui.design/r/safari.json	S	h	var(safari-mockup)
-iphone	bileşen	media/mockups?	-	A	https://magicui.design/r/iphone.json	S	h	var(iphone-mockup)
-rainbow-button	bileşen	buttons/animated?	-	A	https://magicui.design/r/rainbow-button.json	S	e	yok
-interactive-hover-button	bileşen	buttons/animated?	-	A	https://magicui.design/r/interactive-hover-button.json	S	e	yok
-terminal	bileşen	media/mockups?	-	A	https://magicui.design/r/terminal.json	S	e	var(terminal)
-video-text	bileşen	backgrounds/pattern?	-	A	https://magicui.design/r/video-text.json	S	h	yok
-pixel-image	bileşen	media/mockups?	-	A	https://magicui.design/r/pixel-image.json	S	e	yok
-highlighter	bileşen	text/effect?	motion,rough-notation	A	https://magicui.design/r/highlighter.json	S	e	yok
-animated-theme-toggler	bileşen	buttons/toggle-switch?	lucide-react	A	https://magicui.design/r/animated-theme-toggler.json	S	e	yok
-light-rays	bileşen	backgrounds/shader?	motion	A	https://magicui.design/r/light-rays.json	S	e	var(light-rays)
-dotted-map	bileşen	backgrounds/pattern?	svg-dotted-map	A	https://magicui.design/r/dotted-map.json	S	e	yok
-backlight	bileşen	media/mockups?	-	A	https://magicui.design/r/backlight.json	S	h	yok
-kinetic-text	bileşen	text/effect?	-	A	https://magicui.design/r/kinetic-text.json	S	e	yok
-text-3d-flip	bileşen	text/effect?	motion	A	https://magicui.design/r/text-3d-flip.json	S	e	yok
-floating-3d-particles	bileşen	backgrounds/shader?	-	A	https://magicui.design/r/floating-3d-particles.json	S	e	yok
+android	component	media/mockups	-	A	magicuidesign/magicui:apps/www/registry/magicui/android.tsx (registry: magicui.design/r/android.json)	M	h	var(aynı kaynak)
+animated-beam	component	backgrounds/shader	motion	A	magicuidesign/magicui:apps/www/registry/magicui/animated-beam.tsx (registry: magicui.design/r/animated-beam.json)	M	e	var(aynı kaynak)
+animated-circular-progress-bar	component	feedback/loaders	-	A	magicuidesign/magicui:apps/www/registry/magicui/animated-circular-progress-bar.tsx (registry: magicui.design/r/animated-circular-progress-bar.json)	M	e	yok
+animated-gradient-text	component	text/reveal~	-	A	magicuidesign/magicui:apps/www/registry/magicui/animated-gradient-text.tsx (registry: magicui.design/r/animated-gradient-text.json)	S	e	yok
+animated-grid-pattern	component	layout/grids	motion	A	magicuidesign/magicui:apps/www/registry/magicui/animated-grid-pattern.tsx (registry: magicui.design/r/animated-grid-pattern.json)	M	e	yok
+animated-list	component	layout/lists	motion	A	magicuidesign/magicui:apps/www/registry/magicui/animated-list.tsx (registry: magicui.design/r/animated-list.json)	S	e	var(aynı kaynak)
+animated-shiny-text	component	text/reveal~	-	A	magicuidesign/magicui:apps/www/registry/magicui/animated-shiny-text.tsx (registry: magicui.design/r/animated-shiny-text.json)	S	e	yok
+animated-subscribe-button	component	buttons/animated	motion	A	magicuidesign/magicui:apps/www/registry/magicui/animated-subscribe-button.tsx (registry.json'da YOK: yalnız repo dosyası)	M	e	var(aynı kaynak)
+animated-theme-toggler	component	buttons/toggle-switch	lucide-react	A	magicuidesign/magicui:apps/www/registry/magicui/animated-theme-toggler.tsx (registry: magicui.design/r/animated-theme-toggler.json)	L	e	yok
+aurora-text	component	text/reveal~	-	A	magicuidesign/magicui:apps/www/registry/magicui/aurora-text.tsx (registry: magicui.design/r/aurora-text.json)	S	e	yok
+avatar-circles	component	media/gallery-compare	-	A	magicuidesign/magicui:apps/www/registry/magicui/avatar-circles.tsx (registry: magicui.design/r/avatar-circles.json)	S	h	yok
+backlight	component	media/gallery-compare~	-	A	magicuidesign/magicui:apps/www/registry/magicui/backlight.tsx (registry: magicui.design/r/backlight.json)	S	h	yok
+bento-grid	component	cards/surface	@radix-ui/react-icons,reg:button	A	magicuidesign/magicui:apps/www/registry/magicui/bento-grid.tsx (registry: magicui.design/r/bento-grid.json)	M	e	ad-çakışması:bento-grid
+blur-fade	component	layout/lists~	motion	A	magicuidesign/magicui:apps/www/registry/magicui/blur-fade.tsx (registry: magicui.design/r/blur-fade.json)	S	e	var(aynı kaynak)
+border-beam	component	backgrounds/shader	motion	A	magicuidesign/magicui:apps/www/registry/magicui/border-beam.tsx (registry: magicui.design/r/border-beam.json)	M	e	var(aynı kaynak)
+client-tweet-card	component	cards/surface	react-tweet	A	magicuidesign/magicui:apps/www/registry/magicui/client-tweet-card.tsx (registry: magicui.design/r/client-tweet-card.json)	S	h	yok
+code-comparison	component	media/gallery-compare	@shikijs/transformers,lucide-react,next-themes,shiki	A	magicuidesign/magicui:apps/www/registry/magicui/code-comparison.tsx (registry: magicui.design/r/code-comparison.json)	M	e	yok
+comic-text	component	text/reveal~	motion	A	magicuidesign/magicui:apps/www/registry/magicui/comic-text.tsx (registry: magicui.design/r/comic-text.json)	S	e	yok
+confetti	component	feedback/status	@types/canvas-confetti,canvas-confetti,reg:button	A	magicuidesign/magicui:apps/www/registry/magicui/confetti.tsx (registry: magicui.design/r/confetti.json)	M	e	yok
+cool-mode	component	buttons/animated~	-	A	magicuidesign/magicui:apps/www/registry/magicui/cool-mode.tsx (registry: magicui.design/r/cool-mode.json)	M	e	var(aynı kaynak)
+dia-text-reveal	component	text/reveal	motion	A	magicuidesign/magicui:apps/www/registry/magicui/dia-text-reveal.tsx (registry: magicui.design/r/dia-text-reveal.json)	M	e	yok
+dock	component	navigation/dock-menus	class-variance-authority,motion	A	magicuidesign/magicui:apps/www/registry/magicui/dock.tsx (registry: magicui.design/r/dock.json)	M	e	var(aynı kaynak)
+dot-pattern	component	backgrounds/pattern	motion	A	magicuidesign/magicui:apps/www/registry/magicui/dot-pattern.tsx (registry: magicui.design/r/dot-pattern.json)	M	e	yok
+dotted-map	component	media/gallery-compare	svg-dotted-map	A	magicuidesign/magicui:apps/www/registry/magicui/dotted-map.tsx (registry: magicui.design/r/dotted-map.json)	M	h	yok
+file-tree	component	cards/surface~	@radix-ui/react-accordion,lucide-react	A	magicuidesign/magicui:apps/www/registry/magicui/file-tree.tsx (registry: magicui.design/r/file-tree.json)	L	e	yok
+flickering-grid	component	layout/carousels	-	A	magicuidesign/magicui:apps/www/registry/magicui/flickering-grid.tsx (registry: magicui.design/r/flickering-grid.json)	M	e	var(aynı kaynak)
+floating-3d-particles	component	backgrounds/canvas	-	A	magicuidesign/magicui:apps/www/registry/magicui/floating-3d-particles.tsx (registry: magicui.design/r/floating-3d-particles.json)	L	e	yok
+glare-hover	component	cards/hover-reveal	-	A	magicuidesign/magicui:apps/www/registry/magicui/glare-hover.tsx (registry: magicui.design/r/glare-hover.json)	M	h	yok
+globe	component	media/gallery-compare	cobe,cobe@^0.6.4,motion	A	magicuidesign/magicui:apps/www/registry/magicui/globe.tsx (registry: magicui.design/r/globe.json)	M	e	yok
+glyph-matrix	component	text/reveal~	-	A	magicuidesign/magicui:apps/www/registry/magicui/glyph-matrix.tsx (registry: magicui.design/r/glyph-matrix.json)	M	e	var(aynı kaynak)
+grid-pattern	component	layout/grids	-	A	magicuidesign/magicui:apps/www/registry/magicui/grid-pattern.tsx (registry: magicui.design/r/grid-pattern.json)	S	h	yok
+hero-video-dialog	component	inputs/sliders-dials	lucide-react,motion	A	magicuidesign/magicui:apps/www/registry/magicui/hero-video-dialog.tsx (registry: magicui.design/r/hero-video-dialog.json)	M	e	yok
+hexagon-pattern	component	backgrounds/canvas	-	A	magicuidesign/magicui:apps/www/registry/magicui/hexagon-pattern.tsx (registry: magicui.design/r/hexagon-pattern.json)	L	h	var(aynı kaynak)
+highlighter	component	layout/lists~	motion,rough-notation	A	magicuidesign/magicui:apps/www/registry/magicui/highlighter.tsx (registry: magicui.design/r/highlighter.json)	S	e	yok
+hyper-text	component	text/rotate-morph~	motion	A	magicuidesign/magicui:apps/www/registry/magicui/hyper-text.tsx (registry: magicui.design/r/hyper-text.json)	M	e	yok
+icon-cloud	component	layout/lists~	lucide-react,reg:button	A	magicuidesign/magicui:apps/www/registry/magicui/icon-cloud.tsx (registry: magicui.design/r/icon-cloud.json)	L	e	yok
+interactive-grid-pattern	component	layout/grids	-	A	magicuidesign/magicui:apps/www/registry/magicui/interactive-grid-pattern.tsx (registry: magicui.design/r/interactive-grid-pattern.json)	S	e	yok
+interactive-hover-button	component	buttons/animated	lucide-react	A	magicuidesign/magicui:apps/www/registry/magicui/interactive-hover-button.tsx (registry: magicui.design/r/interactive-hover-button.json)	S	e	yok
+iphone	component	media/mockups	-	A	magicuidesign/magicui:apps/www/registry/magicui/iphone.tsx (registry: magicui.design/r/iphone.json)	M	h	var(aynı kaynak)
+kinetic-text	component	text/reveal~	-	A	magicuidesign/magicui:apps/www/registry/magicui/kinetic-text.tsx (registry: magicui.design/r/kinetic-text.json)	S	h	yok
+lens	component	overlays/lightbox-lens	motion	A	magicuidesign/magicui:apps/www/registry/magicui/lens.tsx (registry: magicui.design/r/lens.json)	M	e	var(aynı kaynak)
+light-rays	component	backgrounds/shader	motion	A	magicuidesign/magicui:apps/www/registry/magicui/light-rays.tsx (registry: magicui.design/r/light-rays.json)	M	e	var(aynı kaynak)
+line-shadow-text	component	text/reveal~	motion	A	magicuidesign/magicui:apps/www/registry/magicui/line-shadow-text.tsx (registry: magicui.design/r/line-shadow-text.json)	S	e	var(aynı kaynak)
+magic-card	component	cards/hover-reveal	motion,next-themes	A	magicuidesign/magicui:apps/www/registry/magicui/magic-card.tsx (registry: magicui.design/r/magic-card.json)	M	e	yok
+marquee	component	layout/marquee	-	A	magicuidesign/magicui:apps/www/registry/magicui/marquee.tsx (registry: magicui.design/r/marquee.json)	S	e	var(aynı kaynak)
+meteors	component	backgrounds/canvas	-	A	magicuidesign/magicui:apps/www/registry/magicui/meteors.tsx (registry: magicui.design/r/meteors.json)	S	e	var(aynı kaynak)
+morphing-text	component	text/rotate-morph	-	A	magicuidesign/magicui:apps/www/registry/magicui/morphing-text.tsx (registry: magicui.design/r/morphing-text.json)	M	e	var(aynı kaynak)
+neon-gradient-card	component	cards/surface	-	A	magicuidesign/magicui:apps/www/registry/magicui/neon-gradient-card.tsx (registry: magicui.design/r/neon-gradient-card.json)	M	e	yok
+noise-texture	component	backgrounds/shader	-	A	magicuidesign/magicui:apps/www/registry/magicui/noise-texture.tsx (registry: magicui.design/r/noise-texture.json)	S	h	yok
+number-ticker	component	layout/marquee	motion	A	magicuidesign/magicui:apps/www/registry/magicui/number-ticker.tsx (registry: magicui.design/r/number-ticker.json)	S	e	var(aynı kaynak)
+orbiting-circles	component	ai/orbs-voice	-	A	magicuidesign/magicui:apps/www/registry/magicui/orbiting-circles.tsx (registry: magicui.design/r/orbiting-circles.json)	S	e	var(aynı kaynak)
+particles	component	backgrounds/canvas	-	A	magicuidesign/magicui:apps/www/registry/magicui/particles.tsx (registry: magicui.design/r/particles.json)	L	e	var(aynı kaynak)
+pixel-image	component	media/gallery-compare	-	A	magicuidesign/magicui:apps/www/registry/magicui/pixel-image.tsx (registry: magicui.design/r/pixel-image.json)	M	e	yok
+pointer	component	cursor/follow-trail	motion	A	magicuidesign/magicui:apps/www/registry/magicui/pointer.tsx (registry: magicui.design/r/pointer.json)	M	e	yok
+progressive-blur	component	feedback/progress	-	A	magicuidesign/magicui:apps/www/registry/magicui/progressive-blur.tsx (registry: magicui.design/r/progressive-blur.json)	M	h	var(aynı kaynak)
+pulsating-button	component	buttons/animated	-	A	magicuidesign/magicui:apps/www/registry/magicui/pulsating-button.tsx (registry: magicui.design/r/pulsating-button.json)	M	e	yok
+rainbow-button	component	buttons/animated	@radix-ui/react-slot,class-variance-authority	A	magicuidesign/magicui:apps/www/registry/magicui/rainbow-button.tsx (registry: magicui.design/r/rainbow-button.json)	S	e	yok
+retro-grid	component	layout/grids	-	A	magicuidesign/magicui:apps/www/registry/magicui/retro-grid.tsx (registry: magicui.design/r/retro-grid.json)	L	e	var(aynı kaynak)
+ripple	component	backgrounds/canvas	-	A	magicuidesign/magicui:apps/www/registry/magicui/ripple.tsx (registry: magicui.design/r/ripple.json)	S	e	yok
+ripple-button	component	buttons/animated	-	A	magicuidesign/magicui:apps/www/registry/magicui/ripple-button.tsx (registry: magicui.design/r/ripple-button.json)	M	e	yok
+safari	component	media/mockups	-	A	magicuidesign/magicui:apps/www/registry/magicui/safari.tsx (registry: magicui.design/r/safari.json)	M	h	var(aynı kaynak)
+scroll-based-velocity	component	scroll/parallax-sticky	motion	A	magicuidesign/magicui:apps/www/registry/magicui/scroll-based-velocity.tsx (registry: magicui.design/r/scroll-based-velocity.json)	M	e	var(aynı kaynak)
+scroll-progress	component	scroll/progress	motion	A	magicuidesign/magicui:apps/www/registry/magicui/scroll-progress.tsx (registry: magicui.design/r/scroll-progress.json)	S	e	var(aynı kaynak)
+shimmer-button	component	buttons/animated	-	A	magicuidesign/magicui:apps/www/registry/magicui/shimmer-button.tsx (registry: magicui.design/r/shimmer-button.json)	S	e	var(aynı kaynak)
+shine-border	component	backgrounds/shader~	-	A	magicuidesign/magicui:apps/www/registry/magicui/shine-border.tsx (registry: magicui.design/r/shine-border.json)	S	e	yok
+shiny-button	component	buttons/animated	motion	A	magicuidesign/magicui:apps/www/registry/magicui/shiny-button.tsx (registry: magicui.design/r/shiny-button.json)	S	e	yok
+smooth-cursor	component	cursor/follow-trail	motion	A	magicuidesign/magicui:apps/www/registry/magicui/smooth-cursor.tsx (registry: magicui.design/r/smooth-cursor.json)	M	e	var(aynı kaynak)
+sparkles-text	component	text/reveal~	motion	A	magicuidesign/magicui:apps/www/registry/magicui/sparkles-text.tsx (registry: magicui.design/r/sparkles-text.json)	M	e	var(aynı kaynak)
+spinning-text	component	text/rotate-morph	motion	A	magicuidesign/magicui:apps/www/registry/magicui/spinning-text.tsx (registry: magicui.design/r/spinning-text.json)	M	e	var(aynı kaynak)
+striped-pattern	component	backgrounds/pattern	-	A	magicuidesign/magicui:apps/www/registry/magicui/striped-pattern.tsx (registry: magicui.design/r/striped-pattern.json)	S	h	yok
+terminal	component	media/mockups	motion	A	magicuidesign/magicui:apps/www/registry/magicui/terminal.tsx (registry: magicui.design/r/terminal.json)	L	e	var(aynı kaynak)
+text-3d-flip	component	text/rotate-morph	motion	A	magicuidesign/magicui:apps/www/registry/magicui/text-3d-flip.tsx (registry: magicui.design/r/text-3d-flip.json)	M	e	yok
+text-animate	component	text/reveal~	motion	A	magicuidesign/magicui:apps/www/registry/magicui/text-animate.tsx (registry: magicui.design/r/text-animate.json)	L	e	yok
+text-reveal	component	text/reveal	motion	A	magicuidesign/magicui:apps/www/registry/magicui/text-reveal.tsx (registry: magicui.design/r/text-reveal.json)	S	e	var(aynı kaynak)
+tweet-card	component	cards/surface	react-tweet	A	magicuidesign/magicui:apps/www/registry/magicui/tweet-card.tsx (registry: magicui.design/r/tweet-card.json)	L	e	yok
+typing-animation	component	text/reveal	motion	A	magicuidesign/magicui:apps/www/registry/magicui/typing-animation.tsx (registry: magicui.design/r/typing-animation.json)	M	e	var(aynı kaynak)
+video-text	component	text/reveal~	-	A	magicuidesign/magicui:apps/www/registry/magicui/video-text.tsx (registry: magicui.design/r/video-text.json)	M	h	yok
+warp-background	component	backgrounds/shader~	motion	A	magicuidesign/magicui:apps/www/registry/magicui/warp-background.tsx (registry: magicui.design/r/warp-background.json)	M	e	yok
+word-rotate	component	text/rotate-morph	motion	A	magicuidesign/magicui:apps/www/registry/magicui/word-rotate.tsx (registry: magicui.design/r/word-rotate.json)	S	e	var(aynı kaynak)

@@ -1,229 +1,265 @@
 slug	tür	group/shelf	bağımlılıklar	sınıf	alma yolu	karmaşıklık	motion	Mozaik'te var mı
-accordion	bileşen	layout/carousels?	-	A	educlopez/smoothui:packages/smoothui/components/accordion/index.tsx	S	h	yok
-agent-avatar	bileşen	ai/chat?	- (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/agent-avatar/index.tsx	L	e	yok
-ai-approval	bileşen	ai/chat?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/ai-approval/index.tsx	M	e	yok
-ai-artifact	bileşen	ai/chat?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/ai-artifact/index.tsx	M	e	yok
-ai-branch	bileşen	ai/chat?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/ai-branch/index.tsx	L	e	yok
-ai-citation	bileşen	ai/chat?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/ai-citation/index.tsx	M	e	yok
-ai-context-meter	bileşen	ai/chat?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/ai-context-meter/index.tsx	M	e	var(ai-context-meter)
-ai-conversation	bileşen	ai/chat?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/ai-conversation/index.tsx	M	e	yok
-ai-core	bileşen	ai/chat?	motion	A	educlopez/smoothui:packages/smoothui/components/ai-core/index.tsx	L	e	yok
-ai-diff	bileşen	ai/chat?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/ai-diff/index.tsx	M	e	yok
-ai-input	bileşen	ai/chat?	-	A	educlopez/smoothui:packages/smoothui/components/ai-input/index.tsx	S	h	yok
-ai-loader	bileşen	ai/chat?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/ai-loader/index.tsx	M	e	var(thinking-loader)
-ai-message	bileşen	ai/chat?	lucide-react (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/ai-message/index.tsx	M	e	var(ai-message)
-ai-orb-face	bileşen	ai/chat?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/ai-orb-face/index.tsx	L	e	yok
-ai-prompt-input	bileşen	ai/chat?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/ai-prompt-input/index.tsx	L	e	var(ai-prompt-input)
-ai-reasoning	bileşen	ai/chat?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/ai-reasoning/index.tsx	M	e	var(ai-reasoning)
-ai-response	bileşen	ai/chat?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/ai-response/index.tsx	M	e	yok
-ai-sources	bileşen	ai/chat?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/ai-sources/index.tsx	M	e	var(ai-sources)
-ai-suggestions	bileşen	ai/chat?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/ai-suggestions/index.tsx	M	e	var(ai-suggestions)
-ai-task-list	bileşen	ai/chat?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/ai-task-list/index.tsx	M	e	var(ai-task-list)
-ai-tool-call	bileşen	ai/chat?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/ai-tool-call/index.tsx	L	e	var(ai-tool-call)
-alert	bileşen	feedback/loaders?	- (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/alert/index.tsx	S	h	var(alert)
-animated-avatar-group	bileşen	media/mockups?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/animated-avatar-group/index.tsx	M	e	yok
-animated-file-upload	bileşen	inputs/text-code?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/animated-file-upload/index.tsx	L	e	yok
-animated-list	bileşen	layout/carousels?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/animated-list/index.tsx	M	e	var(animated-list)
-animated-stepper	bileşen	layout/carousels?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/animated-stepper/index.tsx	L	e	yok
-animated-tags	bileşen	?/?	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/animated-tags/index.tsx	M	e	yok
-aperture-blur-transition	bileşen	?/?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/aperture-blur-transition/index.tsx	L	e	yok
-app-download-stack	bileşen	cards/surface?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/app-download-stack/index.tsx	L	e	yok
-apple-invites	bileşen	?/?	lucide-react,motion,popmotion	A	educlopez/smoothui:packages/smoothui/components/apple-invites/index.tsx	L	e	yok
-arcade-pixel	bileşen	?/?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/arcade-pixel/index.tsx	L	e	yok
-ascii-render	bileşen	?/?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/ascii-render/index.tsx	L	e	yok
-aurora-curtain	bileşen	backgrounds/shader?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/aurora-curtain/index.tsx	L	e	yok
-auth-form	bileşen	inputs/text-code?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/auth-form/index.tsx	L	e	yok
-avatar	bileşen	media/mockups?	-	A	educlopez/smoothui:packages/smoothui/components/avatar/index.tsx	S	h	yok
-badge	bileşen	feedback/loaders?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/badge/index.tsx	M	e	yok
-blur-out-up	bileşen	?/?	motion	A	educlopez/smoothui:packages/smoothui/components/blur-out-up/index.tsx	S	e	yok
-book	bileşen	?/?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/book/index.tsx	L	e	yok
-border-beam	bileşen	?/?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/border-beam/index.tsx	L	e	var(border-beam)
-bottom-up-letters	bileşen	text/effect?	motion	A	educlopez/smoothui:packages/smoothui/components/bottom-up-letters/index.tsx	S	e	yok
-breadcrumb	bileşen	navigation/dock-menus?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/breadcrumb/index.tsx	M	e	var(breadcrumb)
-breakpoint-indicator	bileşen	?/?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/breakpoint-indicator/index.tsx	M	e	yok
-button-copy	bileşen	buttons/animated?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/button-copy/index.tsx	M	e	yok
-calendar	bileşen	inputs/text-code?	lucide-react,react-day-picker (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/calendar/index.tsx	M	h	yok
-card-swipe-deck	bileşen	cards/surface?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/card-swipe-deck/index.tsx	L	e	yok
-checkbox	bileşen	inputs/text-code?	-	A	educlopez/smoothui:packages/smoothui/components/checkbox/index.tsx	S	h	yok
-checkbox-group	bileşen	inputs/text-code?	-	A	educlopez/smoothui:packages/smoothui/components/checkbox-group/index.tsx	S	h	yok
-chroma-blur-transition	bileşen	?/?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/chroma-blur-transition/index.tsx	L	e	yok
-clip-corners-button	bileşen	buttons/animated?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/clip-corners-button/index.tsx	M	e	var(clip-corners-button)
-code-block	bileşen	?/?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/code-block/index.tsx	L	e	yok
-collapsible	bileşen	?/?	-	A	educlopez/smoothui:packages/smoothui/components/collapsible/index.tsx	S	h	yok
-combobox	bileşen	?/?	cmdk,lucide-react,motion,radix-ui (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/combobox/index.tsx	L	e	yok
-command	bileşen	navigation/dock-menus?	cmdk,lucide-react (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/command/index.tsx	M	h	yok
-content-skeleton	bileşen	feedback/loaders?	- (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/content-skeleton/index.tsx	S	e	var(shimmer-skeleton)
-context-menu	bileşen	text/effect?	lucide-react,motion,radix-ui (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/context-menu/index.tsx	L	e	yok
-contribution-graph	bileşen	data/charts?	motion	A	educlopez/smoothui:packages/smoothui/components/contribution-graph/index.tsx	L	e	yok
-count-badge	bileşen	text/counter?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/count-badge/index.tsx	M	e	var(count-badge)
-country-picker	bileşen	text/counter?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/country-picker/index.tsx	L	e	yok
-coverflow-carousel	bileşen	layout/carousels?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/coverflow-carousel/index.tsx	M	e	var(coverflow-carousel)
-cursor-follow	bileşen	cursor/follow-trail?	motion	A	educlopez/smoothui:packages/smoothui/components/cursor-follow/index.tsx	M	e	var(cursor-follow)
-cursor-image-trail	bileşen	cursor/follow-trail?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/cursor-image-trail/index.tsx	L	e	var(cursor-image-trail)
-depth-parallax-words	bileşen	text/effect?	motion	A	educlopez/smoothui:packages/smoothui/components/depth-parallax-words/index.tsx	S	e	yok
-dialog	bileşen	overlays/popover-tooltip?	-	A	educlopez/smoothui:packages/smoothui/components/dialog/index.tsx	S	h	yok
-digit-roll	bileşen	?/?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/digit-roll/index.tsx	L	e	yok
-dither-chart	bileşen	backgrounds/shader?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/dither-chart/index.tsx	L	e	yok
-dither-image	bileşen	backgrounds/shader?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/dither-image/index.tsx	L	e	yok
-dock	bileşen	navigation/dock-menus?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/dock/index.tsx	L	e	var(dock)
-dot-morph-button	bileşen	backgrounds/pattern?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/dot-morph-button/index.tsx	S	e	var(dot-morph-button)
-drawer	bileşen	overlays/popover-tooltip?	@base-ui/react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/drawer/index.tsx	L	e	yok
-drawing-cursor	bileşen	cursor/follow-trail?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/drawing-cursor/index.tsx	L	e	var(drawing-cursor)
-dropdown-menu	bileşen	navigation/dock-menus?	-	A	educlopez/smoothui:packages/smoothui/components/dropdown-menu/index.tsx	S	h	yok
-duration-picker	bileşen	inputs/text-code?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/duration-picker/index.tsx	L	e	var(duration-picker)
-dynamic-island	bileşen	?/?	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/dynamic-island/index.tsx	L	e	var(dynamic-island)
-emboss-surface	bileşen	?/?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/emboss-surface/index.tsx	L	e	var(emboss-surface)
-emoji-reaction	bileşen	?/?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/emoji-reaction/index.tsx	L	e	yok
-empty	bileşen	?/?	- (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/empty/index.tsx	S	h	var(empty-state)
-expandable-cards	bileşen	cards/surface?	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/expandable-cards/index.tsx	M	e	yok
-expandable-navbar	bileşen	navigation/dock-menus?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/expandable-navbar/index.tsx	L	e	yok
-exposure-slider	bileşen	inputs/text-code?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/exposure-slider/index.tsx	L	e	yok
-fade-through	bileşen	scroll/reveal?	motion	A	educlopez/smoothui:packages/smoothui/components/fade-through/index.tsx	S	e	yok
-favicon-search	bileşen	navigation/dock-menus?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/favicon-search/index.tsx	L	e	var(favicon-search)
-field	bileşen	inputs/text-code?	@base-ui/react (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/field/index.tsx	S	e	yok
-figma-comment	bileşen	?/?	@smoothui/data,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/figma-comment/index.tsx	L	e	yok
-file-tree	bileşen	?/?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/file-tree/index.tsx	L	e	yok
-float-input	bileşen	inputs/text-code?	motion	A	educlopez/smoothui:packages/smoothui/components/float-input/index.tsx	M	e	var(float-input)
-floating-navbar	bileşen	navigation/dock-menus?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/floating-navbar/index.tsx	M	e	yok
-fluid-hover-highlight	bileşen	?/?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/fluid-hover-highlight/index.tsx	M	e	var(fluid-hover-highlight)
-focus-blur-resolve	bileşen	?/?	motion	A	educlopez/smoothui:packages/smoothui/components/focus-blur-resolve/index.tsx	S	e	yok
-folder-reveal	bileşen	scroll/reveal?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/folder-reveal/index.tsx	L	e	var(folder-reveal)
-form	bileşen	inputs/text-code?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/form/index.tsx	L	e	yok
-github-stars-animation	bileşen	backgrounds/pattern?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/github-stars-animation/index.tsx	L	e	yok
-glass-card	bileşen	cards/surface?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/glass-card/index.tsx	L	e	var(glass-card)
-glow-hover-card	bileşen	cards/surface?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/glow-hover-card/index.tsx	L	e	var(glow-hover-card)
-gooey-filter	bileşen	?/?	- (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/gooey-filter/index.tsx	S	h	yok
-gooey-popover	bileşen	overlays/popover-tooltip?	gsap (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/gooey-popover/index.tsx	L	e	yok
-gravity-letters	bileşen	text/effect?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/gravity-letters/index.tsx	L	e	yok
-gravity-stars	bileşen	backgrounds/pattern?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/gravity-stars/index.tsx	L	e	yok
-grid-loader	bileşen	backgrounds/pattern?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/grid-loader/index.tsx	L	e	yok
-holographic-foil	bileşen	data/charts?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/holographic-foil/index.tsx	L	e	var(holographic-foil)
-hover-expand	bileşen	?/?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/hover-expand/index.tsx	M	e	yok
-hover-image-list	bileşen	layout/carousels?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/hover-image-list/index.tsx	L	e	var(hover-image-list)
-image-generation-panel	bileşen	media/mockups?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/image-generation-panel/index.tsx	L	e	yok
-image-metadata-preview	bileşen	media/mockups?	lucide-react,motion,react-use-measure (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/image-metadata-preview/index.tsx	M	e	yok
-infinite-slider	bileşen	inputs/text-code?	motion,react-use-measure (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/infinite-slider/index.tsx	M	e	yok
-inline-testimonials	bileşen	?/?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/inline-testimonials/index.tsx	L	e	yok
-input	bileşen	inputs/text-code?	@base-ui/react (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/input/index.tsx	S	e	yok
-input-group	bileşen	inputs/text-code?	- (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/input-group/index.tsx	S	e	yok
-interactive-image-selector	bileşen	inputs/text-code?	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/interactive-image-selector/index.tsx	L	e	yok
-job-listing-component	bileşen	layout/carousels?	motion,usehooks-ts	A	educlopez/smoothui:packages/smoothui/components/job-listing-component/index.tsx	L	e	yok
-kbd	bileşen	?/?	- (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/kbd/index.tsx	S	h	yok
-kinetic-center-build	bileşen	?/?	motion	A	educlopez/smoothui:packages/smoothui/components/kinetic-center-build/index.tsx	M	e	yok
-kinetic-type-scroll	bileşen	text/effect?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/kinetic-type-scroll/index.tsx	M	e	yok
-line-by-line-slide	bileşen	?/?	motion	A	educlopez/smoothui:packages/smoothui/components/line-by-line-slide/index.tsx	S	e	yok
-liquid-metal	bileşen	backgrounds/shader?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/liquid-metal/index.tsx	L	e	yok
-mac-terminal	bileşen	media/mockups?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/mac-terminal/index.tsx	L	e	yok
-magnetic-button	bileşen	cursor/magnetic-tilt?	@radix-ui/react-slot,class-variance-authority,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/magnetic-button/index.tsx	M	e	yok
-magnetic-field	bileşen	cursor/magnetic-tilt?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/magnetic-field/index.tsx	L	e	yok
-mask-reveal-up	bileşen	scroll/reveal?	motion	A	educlopez/smoothui:packages/smoothui/components/mask-reveal-up/index.tsx	S	e	yok
-menubar	bileşen	navigation/dock-menus?	-	A	educlopez/smoothui:packages/smoothui/components/menubar/index.tsx	S	h	yok
-meter	bileşen	?/?	-	A	educlopez/smoothui:packages/smoothui/components/meter/index.tsx	S	h	yok
-micro-scale-fade	bileşen	scroll/reveal?	motion	A	educlopez/smoothui:packages/smoothui/components/micro-scale-fade/index.tsx	S	e	yok
-morph-icon	bileşen	text/effect?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/morph-icon/index.tsx	L	e	yok
-morph-surface	bileşen	text/effect?	class-variance-authority,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/morph-surface/index.tsx	L	e	var(morph-surface)
-morph-toggle	bileşen	text/effect?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/morph-toggle/index.tsx	M	e	var(morph-toggle)
-motion-loader	bileşen	feedback/loaders?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/motion-loader/index.tsx	L	e	yok
-music-toggle	bileşen	buttons/toggle-switch?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/music-toggle/index.tsx	L	e	yok
-navigation-menu	bileşen	navigation/dock-menus?	-	A	educlopez/smoothui:packages/smoothui/components/navigation-menu/index.tsx	S	h	yok
-number-field	bileşen	text/counter?	-	A	educlopez/smoothui:packages/smoothui/components/number-field/index.tsx	S	h	yok
-number-flow	bileşen	text/counter?	lucide-react (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/number-flow/index.tsx	L	e	yok
-orb	bileşen	ai/chat?	- (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/orb/index.tsx	L	e	yok
-orbital-image-wheel	bileşen	ai/chat?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/orbital-image-wheel/index.tsx	L	e	yok
-organic-merge-transition	bileşen	?/?	-	A	educlopez/smoothui:packages/smoothui/components/organic-merge-transition/index.tsx	S	e	yok
-otp-field	bileşen	inputs/text-code?	-	A	educlopez/smoothui:packages/smoothui/components/otp-field/index.tsx	S	h	yok
-otp-slots	bileşen	text/counter?	input-otp,lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/otp-slots/index.tsx	L	e	yok
-page-preloader	bileşen	feedback/loaders?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/page-preloader/index.tsx	L	e	yok
-pagination	bileşen	navigation/dock-menus?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/pagination/index.tsx	M	e	var(pagination)
-parallax-layers	bileşen	scroll/reveal?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/parallax-layers/index.tsx	M	e	var(parallax-layers)
-per-character-rise	bileşen	?/?	motion	A	educlopez/smoothui:packages/smoothui/components/per-character-rise/index.tsx	S	e	yok
-per-word-crossfade	bileşen	text/effect?	motion	A	educlopez/smoothui:packages/smoothui/components/per-word-crossfade/index.tsx	S	e	yok
-perspective-text-3d	bileşen	text/effect?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/perspective-text-3d/index.tsx	M	e	var(perspective-text)
-photo-stack	bileşen	cards/surface?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/photo-stack/index.tsx	M	e	var(photo-stack)
-phototab	bileşen	navigation/dock-menus?	@radix-ui/react-tabs,motion	A	educlopez/smoothui:packages/smoothui/components/phototab/index.tsx	M	e	yok
-pinned-list	bileşen	layout/carousels?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/pinned-list/index.tsx	L	e	var(pinned-list)
-pixel-brush-canvas	bileşen	?/?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/pixel-brush-canvas/index.tsx	L	e	yok
-pixel-flow-field	bileşen	inputs/text-code?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/pixel-flow-field/index.tsx	L	e	yok
-popover	bileşen	overlays/popover-tooltip?	-	A	educlopez/smoothui:packages/smoothui/components/popover/index.tsx	S	h	yok
-power-off-slide	bileşen	?/?	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/power-off-slide/index.tsx	M	e	yok
-preview-card	bileşen	cards/surface?	-	A	educlopez/smoothui:packages/smoothui/components/preview-card/index.tsx	S	h	yok
-price-flow	bileşen	?/?	- (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/price-flow/index.tsx	M	e	yok
-prism-sweep-transition	bileşen	backgrounds/shader?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/prism-sweep-transition/index.tsx	L	e	yok
-product-card	bileşen	cards/surface?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/product-card/index.tsx	L	e	yok
-progress	bileşen	feedback/loaders?	-	A	educlopez/smoothui:packages/smoothui/components/progress/index.tsx	S	h	yok
-progressive-blur	bileşen	feedback/loaders?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/progressive-blur/index.tsx	M	e	var(progressive-blur)
-radial-circles-transition	bileşen	inputs/text-code?	-	A	educlopez/smoothui:packages/smoothui/components/radial-circles-transition/index.tsx	S	e	yok
-radio-group	bileşen	inputs/text-code?	-	A	educlopez/smoothui:packages/smoothui/components/radio-group/index.tsx	S	h	yok
-ransom-note	bileşen	?/?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/ransom-note/index.tsx	L	e	yok
-reveal-text	bileşen	text/effect?	motion	A	educlopez/smoothui:packages/smoothui/components/reveal-text/index.tsx	S	e	yok
-reviews-carousel	bileşen	layout/carousels?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/reviews-carousel/index.tsx	L	e	yok
-rich-popover	bileşen	overlays/popover-tooltip?	@radix-ui/react-popover,lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/rich-popover/index.tsx	M	e	yok
-rolling-text	bileşen	text/effect?	motion	A	educlopez/smoothui:packages/smoothui/components/rolling-text/index.tsx	M	e	var(rolling-text)
-scale-down-fade	bileşen	scroll/reveal?	motion	A	educlopez/smoothui:packages/smoothui/components/scale-down-fade/index.tsx	S	e	yok
-scramble-hover	bileşen	text/effect?	-	A	educlopez/smoothui:packages/smoothui/components/scramble-hover/index.tsx	M	e	yok
-scroll-area	bileşen	scroll/reveal?	-	A	educlopez/smoothui:packages/smoothui/components/scroll-area/index.tsx	S	h	yok
-scroll-image-reveal	bileşen	scroll/reveal?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/scroll-image-reveal/index.tsx	M	e	var(scroll-image-reveal)
-scroll-progress	bileşen	scroll/reveal?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/scroll-progress/index.tsx	L	e	var(scroll-progress)
-scroll-reveal-paragraph	bileşen	scroll/reveal?	motion	A	educlopez/smoothui:packages/smoothui/components/scroll-reveal-paragraph/index.tsx	S	e	var(scroll-reveal-paragraph)
-scrollable-card-stack	bileşen	cards/surface?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/scrollable-card-stack/index.tsx	L	e	yok
-scrubber	bileşen	?/?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/scrubber/index.tsx	L	e	var(scrubber)
-sdf-blob-transition	bileşen	?/?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/sdf-blob-transition/index.tsx	L	e	yok
-sdf-circle-transition	bileşen	?/?	-	A	educlopez/smoothui:packages/smoothui/components/sdf-circle-transition/index.tsx	S	e	yok
-select	bileşen	inputs/text-code?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/select/index.tsx	L	e	yok
-separator	bileşen	?/?	-	A	educlopez/smoothui:packages/smoothui/components/separator/index.tsx	S	h	yok
-shader-reveal-circle-transition	bileşen	backgrounds/shader?	-	A	educlopez/smoothui:packages/smoothui/components/shader-reveal-circle-transition/index.tsx	S	e	yok
-shader-reveal-luma-transition	bileşen	backgrounds/shader?	-	A	educlopez/smoothui:packages/smoothui/components/shader-reveal-luma-transition/index.tsx	S	e	yok
-shader-reveal-noise-transition	bileşen	backgrounds/shader?	-	A	educlopez/smoothui:packages/smoothui/components/shader-reveal-noise-transition/index.tsx	S	e	yok
-shader-reveal-planetary-transition	bileşen	backgrounds/shader?	-	A	educlopez/smoothui:packages/smoothui/components/shader-reveal-planetary-transition/index.tsx	S	e	yok
-shader-reveal-push-transition	bileşen	backgrounds/shader?	-	A	educlopez/smoothui:packages/smoothui/components/shader-reveal-push-transition/index.tsx	S	e	yok
-shader-reveal-stripes-transition	bileşen	backgrounds/shader?	-	A	educlopez/smoothui:packages/smoothui/components/shader-reveal-stripes-transition/index.tsx	S	e	yok
-shader-reveal-transition	bileşen	backgrounds/shader?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/shader-reveal-transition/index.tsx	L	e	yok
-shader-reveal-wipe-transition	bileşen	backgrounds/shader?	-	A	educlopez/smoothui:packages/smoothui/components/shader-reveal-wipe-transition/index.tsx	S	e	yok
-shader-reveal-zoom-transition	bileşen	backgrounds/shader?	-	A	educlopez/smoothui:packages/smoothui/components/shader-reveal-zoom-transition/index.tsx	S	e	yok
-shared-axis-x	bileşen	?/?	motion	A	educlopez/smoothui:packages/smoothui/components/shared-axis-x/index.tsx	S	e	yok
-shared-axis-y	bileşen	?/?	motion	A	educlopez/smoothui:packages/smoothui/components/shared-axis-y/index.tsx	S	e	yok
-shared-axis-z	bileşen	?/?	motion	A	educlopez/smoothui:packages/smoothui/components/shared-axis-z/index.tsx	S	e	yok
-shimmer-sweep	bileşen	?/?	motion	A	educlopez/smoothui:packages/smoothui/components/shimmer-sweep/index.tsx	S	e	yok
-shine-text	bileşen	text/effect?	motion	A	educlopez/smoothui:packages/smoothui/components/shine-text/index.tsx	S	e	var(shine-text)
-short-slide-down	bileşen	?/?	motion	A	educlopez/smoothui:packages/smoothui/components/short-slide-down/index.tsx	M	e	yok
-short-slide-right	bileşen	?/?	motion	A	educlopez/smoothui:packages/smoothui/components/short-slide-right/index.tsx	M	e	yok
-sidebar	bileşen	navigation/dock-menus?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/sidebar/index.tsx	L	e	var(sidebar)
-siri-orb	bileşen	ai/chat?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/siri-orb/index.tsx	L	e	yok
-skeleton	bileşen	feedback/loaders?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/skeleton/index.tsx	S	e	yok
-slider	bileşen	inputs/text-code?	-	A	educlopez/smoothui:packages/smoothui/components/slider/index.tsx	S	h	yok
-smooth-button	bileşen	buttons/animated?	-	A	educlopez/smoothui:packages/smoothui/components/smooth-button/index.tsx	S	h	yok
-social-hover-card	bileşen	cards/surface?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/social-hover-card/index.tsx	L	e	yok
-social-selector	bileşen	inputs/text-code?	motion	A	educlopez/smoothui:packages/smoothui/components/social-selector/index.tsx	M	e	yok
-soft-blur-in	bileşen	?/?	motion	A	educlopez/smoothui:packages/smoothui/components/soft-blur-in/index.tsx	S	e	yok
-spinner	bileşen	feedback/loaders?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/spinner/index.tsx	S	e	var(ring-spinner)
-spring-scale-in	bileşen	?/?	motion	A	educlopez/smoothui:packages/smoothui/components/spring-scale-in/index.tsx	S	e	yok
-squircle	bileşen	?/?	- (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/squircle/index.tsx	M	h	yok
-stagger-from-center	bileşen	?/?	motion	A	educlopez/smoothui:packages/smoothui/components/stagger-from-center/index.tsx	S	e	yok
-stagger-from-edges	bileşen	?/?	motion	A	educlopez/smoothui:packages/smoothui/components/stagger-from-edges/index.tsx	S	e	yok
-svg-clip-mask	bileşen	?/?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/svg-clip-mask/index.tsx	M	e	yok
-svg-draw-on-scroll	bileşen	scroll/reveal?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/svg-draw-on-scroll/index.tsx	M	e	var(svg-draw-on-scroll)
-swap-panel	bileşen	onchain/transactions?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/swap-panel/index.tsx	L	e	var(swap-panel)
-switch	bileşen	buttons/toggle-switch?	-	A	educlopez/smoothui:packages/smoothui/components/switch/index.tsx	S	h	yok
-switchboard-card	bileşen	buttons/toggle-switch?	- (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/switchboard-card/index.tsx	L	e	yok
-tabs	bileşen	navigation/dock-menus?	-	A	educlopez/smoothui:packages/smoothui/components/tabs/index.tsx	S	h	yok
-text-morph	bileşen	text/effect?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/text-morph/index.tsx	M	e	yok
-textarea	bileşen	text/effect?	@base-ui/react (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/textarea/index.tsx	S	e	yok
-theme-toggle	bileşen	buttons/toggle-switch?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/theme-toggle/index.tsx	L	e	yok
-tilt-card	bileşen	cursor/magnetic-tilt?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/tilt-card/index.tsx	M	e	var(tilt-card)
-time-machine-stack	bileşen	cards/surface?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/time-machine-stack/index.tsx	L	e	var(time-machine-stack)
-toast	bileşen	feedback/loaders?	@base-ui/react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/toast/index.tsx	M	e	yok
-toggle	bileşen	buttons/toggle-switch?	-	A	educlopez/smoothui:packages/smoothui/components/toggle/index.tsx	S	h	yok
-toggle-group	bileşen	buttons/toggle-switch?	-	A	educlopez/smoothui:packages/smoothui/components/toggle-group/index.tsx	S	h	yok
-toolbar	bileşen	?/?	-	A	educlopez/smoothui:packages/smoothui/components/toolbar/index.tsx	S	h	yok
-tooltip	bileşen	overlays/popover-tooltip?	-	A	educlopez/smoothui:packages/smoothui/components/tooltip/index.tsx	S	h	var(tooltip)
-top-down-letters	bileşen	text/effect?	motion	A	educlopez/smoothui:packages/smoothui/components/top-down-letters/index.tsx	S	e	yok
-tweet-card	bileşen	cards/surface?	react-tweet (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/tweet-card/index.tsx	L	e	yok
-typewriter-text	bileşen	text/effect?	-	A	educlopez/smoothui:packages/smoothui/components/typewriter-text/index.tsx	S	h	yok
-unlock-face-id	bileşen	?/?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/unlock-face-id/index.tsx	L	e	var(unlock-face-id)
-user-account-avatar	bileşen	text/counter?	@radix-ui/react-popover,lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/user-account-avatar/index.tsx	L	e	yok
-vector-editor-toolbar	bileşen	?/?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/vector-editor-toolbar/index.tsx	L	e	yok
-video-ambient	bileşen	media/mockups?	motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/video-ambient/index.tsx	L	e	yok
-video-modal	bileşen	overlays/popover-tooltip?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/video-modal/index.tsx	L	e	yok
-wallet-card	bileşen	cards/surface?	lucide-react,motion (+@repo/smoothui-utils)	A	educlopez/smoothui:packages/smoothui/components/wallet-card/index.tsx	L	e	var(wallet-card)
-warped-circle-transition	bileşen	?/?	-	A	educlopez/smoothui:packages/smoothui/components/warped-circle-transition/index.tsx	S	e	yok
-wave-text	bileşen	text/effect?	motion	A	educlopez/smoothui:packages/smoothui/components/wave-text/index.tsx	S	e	var(wave-text)
+ctas/cta-1	blok	blocks/marketing/cta	motion	A	educlopez/smoothui:packages/smoothui/blocks/ctas/cta-1/index.tsx	S	e	var(aynı kaynak)
+ctas/cta-2	blok	blocks/marketing/cta	@smoothui/data,motion	A	educlopez/smoothui:packages/smoothui/blocks/ctas/cta-2/index.tsx	S	e	var(aynı kaynak)
+ctas/cta-3	blok	blocks/marketing/cta	motion	A	educlopez/smoothui:packages/smoothui/blocks/ctas/cta-3/index.tsx	S	e	var(aynı kaynak)
+faqs/faq-1	blok	blocks/marketing/faq	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/blocks/faqs/faq-1/index.tsx	M	e	var(aynı kaynak)
+faqs/faq-2	blok	blocks/marketing/faq	motion	A	educlopez/smoothui:packages/smoothui/blocks/faqs/faq-2/index.tsx	M	e	yok
+faqs/faq-3	blok	blocks/marketing/faq	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/blocks/faqs/faq-3/index.tsx	M	e	yok
+faqs/faq-4	blok	blocks/marketing/faq	motion	A	educlopez/smoothui:packages/smoothui/blocks/faqs/faq-4/index.tsx	M	e	yok
+features/features-1	blok	blocks/marketing/features	motion	A	educlopez/smoothui:packages/smoothui/blocks/features/features-1/index.tsx	M	e	var(aynı kaynak)
+features/features-2	blok	blocks/marketing/features	motion	A	educlopez/smoothui:packages/smoothui/blocks/features/features-2/index.tsx	M	e	var(aynı kaynak)
+features/features-3	blok	blocks/marketing/features	@smoothui/data,motion	A	educlopez/smoothui:packages/smoothui/blocks/features/features-3/index.tsx	M	e	var(aynı kaynak)
+footers/footer-1	blok	blocks/marketing/footer	motion	A	educlopez/smoothui:packages/smoothui/blocks/footers/footer-1/index.tsx	L	e	yok
+footers/footer-2	blok	blocks/marketing/footer	motion	A	educlopez/smoothui:packages/smoothui/blocks/footers/footer-2/index.tsx	L	e	yok
+footers/footer-3	blok	blocks/marketing/footer	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/blocks/footers/footer-3/index.tsx	M	e	yok
+footers/footer-4	blok	blocks/marketing/footer	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/blocks/footers/footer-4/index.tsx	M	e	var(aynı kaynak)
+headers/header-1	blok	blocks/marketing/navbar	lucide-react	A	educlopez/smoothui:packages/smoothui/blocks/headers/header-1/index.tsx	M	h	yok
+headers/header-2	blok	blocks/marketing/navbar	@smoothui/data,motion	A	educlopez/smoothui:packages/smoothui/blocks/headers/header-2/index.tsx	L	e	yok
+headers/header-3	blok	blocks/marketing/navbar	@smoothui/data,lucide-react,motion	A	educlopez/smoothui:packages/smoothui/blocks/headers/header-3/index.tsx	M	e	yok
+headers/header-4	blok	blocks/marketing/navbar	lucide-react	A	educlopez/smoothui:packages/smoothui/blocks/headers/header-4/index.tsx	M	h	yok
+headers/header-5	blok	blocks/marketing/navbar	motion	A	educlopez/smoothui:packages/smoothui/blocks/headers/header-5/index.tsx	M	e	yok
+headers/header-6	blok	blocks/marketing/navbar	motion	A	educlopez/smoothui:packages/smoothui/blocks/headers/header-6/index.tsx	S	e	yok
+logos/logo-cloud-1	blok	blocks/marketing/logos	-	A	educlopez/smoothui:packages/smoothui/blocks/logos/logo-cloud-1/index.tsx	S	h	var(aynı kaynak)
+logos/logo-cloud-2	blok	blocks/marketing/logos	motion	A	educlopez/smoothui:packages/smoothui/blocks/logos/logo-cloud-2/index.tsx	M	e	yok
+logos/logo-cloud-3	blok	blocks/marketing/logos	-	A	educlopez/smoothui:packages/smoothui/blocks/logos/logo-cloud-3/index.tsx	M	e	yok
+logos/logo-cloud-4	blok	blocks/marketing/logos	motion	A	educlopez/smoothui:packages/smoothui/blocks/logos/logo-cloud-4/index.tsx	M	e	yok
+pricing/pricing-1	blok	blocks/marketing/pricing	motion	A	educlopez/smoothui:packages/smoothui/blocks/pricing/pricing-1/index.tsx	M	e	var(aynı kaynak)
+pricing/pricing-2	blok	blocks/marketing/pricing	motion	A	educlopez/smoothui:packages/smoothui/blocks/pricing/pricing-2/index.tsx	L	e	var(aynı kaynak)
+pricing/pricing-3	blok	blocks/marketing/pricing	motion	A	educlopez/smoothui:packages/smoothui/blocks/pricing/pricing-3/index.tsx	L	e	yok
+stats/stats-1	blok	blocks/marketing/stats	motion	A	educlopez/smoothui:packages/smoothui/blocks/stats/stats-1/index.tsx	M	e	var(aynı kaynak)
+stats/stats-2	blok	blocks/marketing/stats	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/blocks/stats/stats-2/index.tsx	M	e	var(aynı kaynak)
+team/team-1	blok	blocks/marketing/team	@smoothui/data,motion	A	educlopez/smoothui:packages/smoothui/blocks/team/team-1/index.tsx	M	e	yok
+team/team-2	blok	blocks/marketing/team	@smoothui/data,motion	A	educlopez/smoothui:packages/smoothui/blocks/team/team-2/index.tsx	M	e	yok
+testimonials/testimonials-1	blok	blocks/marketing/testimonials	@smoothui/data,motion	A	educlopez/smoothui:packages/smoothui/blocks/testimonials/testimonials-1/index.tsx	M	e	yok
+testimonials/testimonials-2	blok	blocks/marketing/testimonials	@smoothui/data,lucide-react,motion	A	educlopez/smoothui:packages/smoothui/blocks/testimonials/testimonials-2/index.tsx	M	e	yok
+testimonials/testimonials-3	blok	blocks/marketing/testimonials	@smoothui/data,lucide-react,motion	A	educlopez/smoothui:packages/smoothui/blocks/testimonials/testimonials-3/index.tsx	M	e	yok
+__tests__	component	layout/lists~	-	A	educlopez/smoothui:packages/smoothui/components/__tests__/index.tsx	S	h	yok
+accordion	component	layout/accordions	@base-ui/react,lucide-react,motion,radix-ui	A	educlopez/smoothui:packages/smoothui/components/accordion/index.tsx	L	e	yok
+agent-avatar	component	ai/agents-tools	-	A	educlopez/smoothui:packages/smoothui/components/agent-avatar/index.tsx	M	e	yok
+ai-approval	component	ai/agents-tools	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/ai-approval/index.tsx	M	e	yok
+ai-artifact	component	ai/chat	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/ai-artifact/index.tsx	M	e	yok
+ai-branch	component	ai/chat	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/ai-branch/index.tsx	L	e	yok
+ai-citation	component	ai/agents-tools	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/ai-citation/index.tsx	M	e	yok
+ai-context-meter	component	ai/agents-tools	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/ai-context-meter/index.tsx	M	e	var(aynı kaynak)
+ai-conversation	component	ai/chat	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/ai-conversation/index.tsx	M	e	yok
+ai-core	component	ai/chat	motion	A	educlopez/smoothui:packages/smoothui/components/ai-core/index.tsx	L	e	yok
+ai-diff	component	ai/agents-tools	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/ai-diff/index.tsx	M	e	yok
+ai-input	component	ai/chat	-	A	educlopez/smoothui:packages/smoothui/components/ai-input/index.tsx	S	h	yok
+ai-loader	component	ai/chat	motion	A	educlopez/smoothui:packages/smoothui/components/ai-loader/index.tsx	M	e	var(aynı kaynak)
+ai-message	component	ai/chat	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/ai-message/index.tsx	M	e	var(aynı kaynak)
+ai-orb-face	component	ai/orbs-voice	motion	A	educlopez/smoothui:packages/smoothui/components/ai-orb-face/index.tsx	L	e	yok
+ai-prompt-input	component	ai/chat	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/ai-prompt-input/index.tsx	L	e	ad-çakışması:ai-prompt-input
+ai-reasoning	component	ai/reasoning	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/ai-reasoning/index.tsx	M	e	var(aynı kaynak)
+ai-response	component	ai/chat	motion	A	educlopez/smoothui:packages/smoothui/components/ai-response/index.tsx	M	e	yok
+ai-sources	component	ai/chat	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/ai-sources/index.tsx	M	e	ad-çakışması:ai-sources
+ai-suggestions	component	ai/chat	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/ai-suggestions/index.tsx	M	e	var(aynı kaynak)
+ai-task-list	component	ai/agents-tools	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/ai-task-list/index.tsx	M	e	var(aynı kaynak)
+ai-tool-call	component	ai/agents-tools	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/ai-tool-call/index.tsx	L	e	var(aynı kaynak)
+alert	component	feedback/notifications	-	A	educlopez/smoothui:packages/smoothui/components/alert/index.tsx	S	h	var(aynı kaynak)
+animated-avatar-group	component	media/gallery-compare	motion	A	educlopez/smoothui:packages/smoothui/components/animated-avatar-group/index.tsx	M	e	yok
+animated-file-upload	component	inputs/upload-sign	motion	A	educlopez/smoothui:packages/smoothui/components/animated-file-upload/index.tsx	L	e	yok
+animated-list	component	layout/lists	motion	A	educlopez/smoothui:packages/smoothui/components/animated-list/index.tsx	M	e	ad-çakışması:animated-list
+animated-stepper	component	inputs/sliders-dials	motion	A	educlopez/smoothui:packages/smoothui/components/animated-stepper/index.tsx	L	e	yok
+animated-tags	component	inputs/choice~	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/animated-tags/index.tsx	M	e	yok
+aperture-blur-transition	component	onchain/amount-confirm~	motion	A	educlopez/smoothui:packages/smoothui/components/aperture-blur-transition/index.tsx	L	e	yok
+app-download-stack	component	cards/flip-stack	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/app-download-stack/index.tsx	L	e	yok
+apple-invites	component	cards/surface~	@smoothui/data,lucide-react,motion,popmotion	A	educlopez/smoothui:packages/smoothui/components/apple-invites/index.tsx	L	e	yok
+arcade-pixel	component	layout/lists~	motion	A	educlopez/smoothui:packages/smoothui/components/arcade-pixel/index.tsx	L	e	yok
+ascii-render	component	text/reveal~	motion	A	educlopez/smoothui:packages/smoothui/components/ascii-render/index.tsx	L	e	yok
+aurora-curtain	component	backgrounds/shader	motion	A	educlopez/smoothui:packages/smoothui/components/aurora-curtain/index.tsx	L	e	yok
+auth-form	component	inputs/text-code	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/auth-form/index.tsx	L	e	yok
+avatar	component	media/gallery-compare	@base-ui/react,radix-ui	A	educlopez/smoothui:packages/smoothui/components/avatar/index.tsx	L	h	yok
+badge	component	feedback/status	motion	A	educlopez/smoothui:packages/smoothui/components/badge/index.tsx	M	e	yok
+blur-out-up	component	layout/lists~	motion	A	educlopez/smoothui:packages/smoothui/components/blur-out-up/index.tsx	S	e	yok
+book	component	inputs/text-code~	motion	A	educlopez/smoothui:packages/smoothui/components/book/index.tsx	M	e	yok
+border-beam	component	backgrounds/shader	motion	A	educlopez/smoothui:packages/smoothui/components/border-beam/index.tsx	L	e	ad-çakışması:border-beam
+bottom-up-letters	component	layout/lists~	motion	A	educlopez/smoothui:packages/smoothui/components/bottom-up-letters/index.tsx	S	e	yok
+breadcrumb	component	navigation/navbar-sidebar	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/breadcrumb/index.tsx	S	e	var(aynı kaynak)
+breakpoint-indicator	component	feedback/status~	motion	A	educlopez/smoothui:packages/smoothui/components/breakpoint-indicator/index.tsx	M	e	yok
+button-copy	component	buttons/animated	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/button-copy/index.tsx	M	e	yok
+calendar	component	inputs/pickers	lucide-react,react-day-picker	A	educlopez/smoothui:packages/smoothui/components/calendar/index.tsx	M	h	yok
+card-swipe-deck	component	cards/flip-stack	motion	A	educlopez/smoothui:packages/smoothui/components/card-swipe-deck/index.tsx	L	e	yok
+checkbox	component	inputs/choice	@base-ui/react,motion,radix-ui	A	educlopez/smoothui:packages/smoothui/components/checkbox/index.tsx	L	e	yok
+checkbox-group	component	inputs/choice	@base-ui/react,motion,radix-ui	A	educlopez/smoothui:packages/smoothui/components/checkbox-group/index.tsx	L	e	yok
+chroma-blur-transition	component	onchain/amount-confirm~	motion	A	educlopez/smoothui:packages/smoothui/components/chroma-blur-transition/index.tsx	L	e	yok
+clip-corners-button	component	buttons/animated	motion	A	educlopez/smoothui:packages/smoothui/components/clip-corners-button/index.tsx	M	e	ad-çakışması:clip-corners-button
+code-block	component	media/gallery-compare	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/code-block/index.tsx	L	e	yok
+collapsible	component	layout/accordions	@base-ui/react,lucide-react,motion,radix-ui	A	educlopez/smoothui:packages/smoothui/components/collapsible/index.tsx	M	e	yok
+combobox	component	inputs/pickers	cmdk,lucide-react,motion,radix-ui	A	educlopez/smoothui:packages/smoothui/components/combobox/index.tsx	L	e	yok
+command	component	navigation/command-search	cmdk,lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/command/index.tsx	M	e	yok
+content-skeleton	component	feedback/skeletons	-	A	educlopez/smoothui:packages/smoothui/components/content-skeleton/index.tsx	S	e	var(aynı kaynak)
+context-menu	component	navigation/dock-menus	lucide-react,motion,radix-ui	A	educlopez/smoothui:packages/smoothui/components/context-menu/index.tsx	L	e	yok
+contribution-graph	component	data/charts	motion	A	educlopez/smoothui:packages/smoothui/components/contribution-graph/index.tsx	L	e	yok
+count-badge	component	feedback/status	motion	A	educlopez/smoothui:packages/smoothui/components/count-badge/index.tsx	M	e	var(aynı kaynak)
+country-picker	component	inputs/pickers	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/country-picker/index.tsx	L	e	yok
+coverflow-carousel	component	layout/carousels	motion	A	educlopez/smoothui:packages/smoothui/components/coverflow-carousel/index.tsx	M	e	var(aynı kaynak)
+cursor-follow	component	cursor/follow-trail	motion	A	educlopez/smoothui:packages/smoothui/components/cursor-follow/index.tsx	M	e	var(aynı kaynak)
+cursor-image-trail	component	cursor/follow-trail	motion	A	educlopez/smoothui:packages/smoothui/components/cursor-image-trail/index.tsx	M	e	var(aynı kaynak)
+depth-parallax-words	component	scroll/parallax-sticky	motion	A	educlopez/smoothui:packages/smoothui/components/depth-parallax-words/index.tsx	S	e	yok
+dialog	component	inputs/sliders-dials	@base-ui/react,lucide-react,motion,radix-ui	A	educlopez/smoothui:packages/smoothui/components/dialog/index.tsx	L	e	yok
+digit-roll	component	buttons/animated~	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/digit-roll/index.tsx	L	e	yok
+dither-chart	component	data/charts	motion	A	educlopez/smoothui:packages/smoothui/components/dither-chart/index.tsx	L	e	yok
+dither-image	component	media/gallery-compare	motion	A	educlopez/smoothui:packages/smoothui/components/dither-image/index.tsx	L	e	yok
+dock	component	navigation/dock-menus	motion	A	educlopez/smoothui:packages/smoothui/components/dock/index.tsx	L	e	ad-çakışması:dock
+dot-morph-button	component	buttons/animated	motion	A	educlopez/smoothui:packages/smoothui/components/dot-morph-button/index.tsx	S	e	var(aynı kaynak)
+drawer	component	overlays/modal-drawer	@base-ui/react,motion	A	educlopez/smoothui:packages/smoothui/components/drawer/index.tsx	L	e	yok
+drawing-cursor	component	cursor/follow-trail	motion	A	educlopez/smoothui:packages/smoothui/components/drawing-cursor/index.tsx	L	e	var(aynı kaynak)
+dropdown-menu	component	navigation/dock-menus	@base-ui/react,lucide-react,motion,radix-ui	A	educlopez/smoothui:packages/smoothui/components/dropdown-menu/index.tsx	L	e	yok
+duration-picker	component	inputs/pickers	motion	A	educlopez/smoothui:packages/smoothui/components/duration-picker/index.tsx	L	e	var(aynı kaynak)
+dynamic-island	component	feedback/status~	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/dynamic-island/index.tsx	L	e	ad-çakışması:dynamic-island
+emboss-surface	component	cards/surface	motion	A	educlopez/smoothui:packages/smoothui/components/emboss-surface/index.tsx	L	e	var(aynı kaynak)
+emoji-reaction	component	inputs/text-code~	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/emoji-reaction/index.tsx	L	e	yok
+empty	component	feedback/status	-	A	educlopez/smoothui:packages/smoothui/components/empty/index.tsx	S	h	var(aynı kaynak)
+expandable-cards	component	cards/hover-reveal	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/expandable-cards/index.tsx	M	e	yok
+expandable-navbar	component	navigation/navbar-sidebar	motion	A	educlopez/smoothui:packages/smoothui/components/expandable-navbar/index.tsx	M	e	yok
+exposure-slider	component	inputs/sliders-dials	motion	A	educlopez/smoothui:packages/smoothui/components/exposure-slider/index.tsx	L	e	yok
+fade-through	component	onchain/amount-confirm~	motion	A	educlopez/smoothui:packages/smoothui/components/fade-through/index.tsx	S	e	yok
+favicon-search	component	navigation/command-search	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/favicon-search/index.tsx	L	e	var(aynı kaynak)
+field	component	inputs/text-code	@base-ui/react	A	educlopez/smoothui:packages/smoothui/components/field/index.tsx	S	h	yok
+figma-comment	component	overlays/scrim-blur~	@smoothui/data,motion	A	educlopez/smoothui:packages/smoothui/components/figma-comment/index.tsx	L	e	yok
+file-tree	component	navigation/navbar-sidebar~	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/file-tree/index.tsx	L	e	yok
+float-input	component	inputs/text-code	motion	A	educlopez/smoothui:packages/smoothui/components/float-input/index.tsx	M	e	var(aynı kaynak)
+floating-navbar	component	navigation/dock-menus	motion	A	educlopez/smoothui:packages/smoothui/components/floating-navbar/index.tsx	M	e	yok
+fluid-hover-highlight	component	backgrounds/shader	motion	A	educlopez/smoothui:packages/smoothui/components/fluid-hover-highlight/index.tsx	M	e	var(aynı kaynak)
+focus-blur-resolve	component	layout/lists~	motion	A	educlopez/smoothui:packages/smoothui/components/focus-blur-resolve/index.tsx	S	e	yok
+folder-reveal	component	cards/flip-stack	motion	A	educlopez/smoothui:packages/smoothui/components/folder-reveal/index.tsx	L	e	var(aynı kaynak)
+form	component	inputs/text-code	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/form/index.tsx	L	e	yok
+github-stars-animation	component	backgrounds/canvas	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/github-stars-animation/index.tsx	L	e	yok
+glass-card	component	cards/surface	motion	A	educlopez/smoothui:packages/smoothui/components/glass-card/index.tsx	L	e	var(aynı kaynak)
+glow-hover-card	component	overlays/popover-tooltip	motion	A	educlopez/smoothui:packages/smoothui/components/glow-hover-card/index.tsx	M	e	var(aynı kaynak)
+gooey-filter	component	layout/lists~	-	A	educlopez/smoothui:packages/smoothui/components/gooey-filter/index.tsx	S	h	yok
+gooey-popover	component	overlays/popover-tooltip	gsap	A	educlopez/smoothui:packages/smoothui/components/gooey-popover/index.tsx	L	e	yok
+gravity-letters	component	layout/lists~	motion	A	educlopez/smoothui:packages/smoothui/components/gravity-letters/index.tsx	L	e	yok
+gravity-stars	component	backgrounds/canvas	motion	A	educlopez/smoothui:packages/smoothui/components/gravity-stars/index.tsx	L	e	yok
+grid-loader	component	feedback/loaders	motion	A	educlopez/smoothui:packages/smoothui/components/grid-loader/index.tsx	L	e	yok
+holographic-foil	component	data/charts	motion	A	educlopez/smoothui:packages/smoothui/components/holographic-foil/index.tsx	L	e	var(aynı kaynak)
+hover-expand	component	layout/accordions	motion	A	educlopez/smoothui:packages/smoothui/components/hover-expand/index.tsx	M	e	yok
+hover-image-list	component	media/gallery-compare	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/hover-image-list/index.tsx	L	e	var(aynı kaynak)
+image-generation-panel	component	cards/surface	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/image-generation-panel/index.tsx	L	e	yok
+image-metadata-preview	component	media/gallery-compare	lucide-react,motion,react-use-measure	A	educlopez/smoothui:packages/smoothui/components/image-metadata-preview/index.tsx	M	e	yok
+infinite-slider	component	inputs/sliders-dials	motion,react-use-measure	A	educlopez/smoothui:packages/smoothui/components/infinite-slider/index.tsx	M	e	yok
+inline-testimonials	component	overlays/scrim-blur~	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/inline-testimonials/index.tsx	L	e	yok
+input	component	inputs/text-code	@base-ui/react	A	educlopez/smoothui:packages/smoothui/components/input/index.tsx	S	h	yok
+input-group	component	inputs/text-code	-	A	educlopez/smoothui:packages/smoothui/components/input-group/index.tsx	S	h	yok
+interactive-image-selector	component	inputs/pickers	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/interactive-image-selector/index.tsx	L	e	yok
+job-listing-component	component	layout/lists	motion,usehooks-ts	A	educlopez/smoothui:packages/smoothui/components/job-listing-component/index.tsx	L	e	yok
+kbd	component	navigation/navbar-sidebar~	-	A	educlopez/smoothui:packages/smoothui/components/kbd/index.tsx	S	h	yok
+kinetic-center-build	component	layout/lists~	motion	A	educlopez/smoothui:packages/smoothui/components/kinetic-center-build/index.tsx	M	e	yok
+kinetic-type-scroll	component	text/counter	motion	A	educlopez/smoothui:packages/smoothui/components/kinetic-type-scroll/index.tsx	M	e	yok
+line-by-line-slide	component	backgrounds/canvas~	motion	A	educlopez/smoothui:packages/smoothui/components/line-by-line-slide/index.tsx	S	e	yok
+liquid-metal	component	backgrounds/shader	motion	A	educlopez/smoothui:packages/smoothui/components/liquid-metal/index.tsx	L	e	yok
+mac-terminal	component	media/mockups	motion	A	educlopez/smoothui:packages/smoothui/components/mac-terminal/index.tsx	L	e	yok
+magnetic-button	component	cursor/magnetic-tilt	@radix-ui/react-slot,class-variance-authority,motion	A	educlopez/smoothui:packages/smoothui/components/magnetic-button/index.tsx	M	e	yok
+magnetic-field	component	cursor/magnetic-tilt	motion	A	educlopez/smoothui:packages/smoothui/components/magnetic-field/index.tsx	L	e	yok
+mask-reveal-up	component	layout/lists~	motion	A	educlopez/smoothui:packages/smoothui/components/mask-reveal-up/index.tsx	S	e	yok
+menubar	component	navigation/dock-menus	@base-ui/react,radix-ui	A	educlopez/smoothui:packages/smoothui/components/menubar/index.tsx	M	h	yok
+meter	component	data/stats-kpis~	@base-ui/react,motion	A	educlopez/smoothui:packages/smoothui/components/meter/index.tsx	L	e	yok
+micro-scale-fade	component	layout/lists~	motion	A	educlopez/smoothui:packages/smoothui/components/micro-scale-fade/index.tsx	S	e	yok
+morph-icon	component	buttons/animated~	motion	A	educlopez/smoothui:packages/smoothui/components/morph-icon/index.tsx	L	e	yok
+morph-surface	component	cards/surface	class-variance-authority,motion	A	educlopez/smoothui:packages/smoothui/components/morph-surface/index.tsx	L	e	ad-çakışması:morph-surface
+morph-toggle	component	buttons/toggle-switch	motion	A	educlopez/smoothui:packages/smoothui/components/morph-toggle/index.tsx	M	e	var(aynı kaynak)
+motion-loader	component	feedback/loaders	motion	A	educlopez/smoothui:packages/smoothui/components/motion-loader/index.tsx	L	e	yok
+music-toggle	component	buttons/toggle-switch	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/music-toggle/index.tsx	L	e	yok
+navigation-menu	component	navigation/dock-menus	@base-ui/react,radix-ui	A	educlopez/smoothui:packages/smoothui/components/navigation-menu/index.tsx	L	e	yok
+number-field	component	inputs/text-code	@base-ui/react	A	educlopez/smoothui:packages/smoothui/components/number-field/index.tsx	L	h	yok
+number-flow	component	layout/lists~	lucide-react	A	educlopez/smoothui:packages/smoothui/components/number-flow/index.tsx	M	e	yok
+orb	component	ai/orbs-voice	motion	A	educlopez/smoothui:packages/smoothui/components/orb/index.tsx	L	e	yok
+orbital-image-wheel	component	ai/orbs-voice	motion	A	educlopez/smoothui:packages/smoothui/components/orbital-image-wheel/index.tsx	L	e	yok
+organic-merge-transition	component	data/stats-kpis~	-	A	educlopez/smoothui:packages/smoothui/components/organic-merge-transition/index.tsx	S	h	yok
+otp-field	component	inputs/text-code	@base-ui/react	A	educlopez/smoothui:packages/smoothui/components/otp-field/index.tsx	L	h	yok
+otp-slots	component	inputs/text-code	input-otp,lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/otp-slots/index.tsx	L	e	yok
+page-preloader	component	feedback/loaders	motion	A	educlopez/smoothui:packages/smoothui/components/page-preloader/index.tsx	L	e	yok
+pagination	component	navigation/navbar-sidebar	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/pagination/index.tsx	M	e	var(aynı kaynak)
+parallax-layers	component	scroll/parallax-sticky	motion	A	educlopez/smoothui:packages/smoothui/components/parallax-layers/index.tsx	M	e	var(aynı kaynak)
+per-character-rise	component	layout/lists~	motion	A	educlopez/smoothui:packages/smoothui/components/per-character-rise/index.tsx	S	e	yok
+per-word-crossfade	component	text/reveal	motion	A	educlopez/smoothui:packages/smoothui/components/per-word-crossfade/index.tsx	S	e	yok
+perspective-text-3d	component	text/counter~	motion	A	educlopez/smoothui:packages/smoothui/components/perspective-text-3d/index.tsx	M	e	var(aynı kaynak)
+photo-stack	component	cards/flip-stack	motion	A	educlopez/smoothui:packages/smoothui/components/photo-stack/index.tsx	M	e	var(aynı kaynak)
+phototab	component	navigation/tabs	@radix-ui/react-tabs,motion	A	educlopez/smoothui:packages/smoothui/components/phototab/index.tsx	M	e	yok
+pinned-list	component	layout/lists	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/pinned-list/index.tsx	L	e	var(aynı kaynak)
+pixel-brush-canvas	component	layout/lists~	motion	A	educlopez/smoothui:packages/smoothui/components/pixel-brush-canvas/index.tsx	L	e	yok
+pixel-flow-field	component	inputs/text-code	motion	A	educlopez/smoothui:packages/smoothui/components/pixel-flow-field/index.tsx	L	e	yok
+popover	component	overlays/popover-tooltip	@base-ui/react,motion,radix-ui	A	educlopez/smoothui:packages/smoothui/components/popover/index.tsx	L	e	yok
+power-off-slide	component	layout/lists~	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/power-off-slide/index.tsx	M	e	yok
+preview-card	component	cards/surface	@base-ui/react,motion,radix-ui	A	educlopez/smoothui:packages/smoothui/components/preview-card/index.tsx	L	e	yok
+price-flow	component	layout/lists~	-	A	educlopez/smoothui:packages/smoothui/components/price-flow/index.tsx	M	h	yok
+prism-sweep-transition	component	backgrounds/shader	motion	A	educlopez/smoothui:packages/smoothui/components/prism-sweep-transition/index.tsx	L	e	yok
+product-card	component	cards/surface	motion	A	educlopez/smoothui:packages/smoothui/components/product-card/index.tsx	L	e	yok
+progress	component	feedback/progress	@base-ui/react,motion,radix-ui	A	educlopez/smoothui:packages/smoothui/components/progress/index.tsx	L	e	yok
+progressive-blur	component	feedback/progress	motion	A	educlopez/smoothui:packages/smoothui/components/progressive-blur/index.tsx	M	e	ad-çakışması:progressive-blur
+radial-circles-transition	component	inputs/sliders-dials	-	A	educlopez/smoothui:packages/smoothui/components/radial-circles-transition/index.tsx	S	h	yok
+radio-group	component	inputs/choice	@base-ui/react,motion,radix-ui	A	educlopez/smoothui:packages/smoothui/components/radio-group/index.tsx	L	e	yok
+ransom-note	component	data/stats-kpis~	motion	A	educlopez/smoothui:packages/smoothui/components/ransom-note/index.tsx	L	e	yok
+reveal-text	component	text/reveal	motion	A	educlopez/smoothui:packages/smoothui/components/reveal-text/index.tsx	S	e	yok
+reviews-carousel	component	layout/carousels	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/reviews-carousel/index.tsx	L	e	yok
+rich-popover	component	overlays/popover-tooltip	@radix-ui/react-popover,lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/rich-popover/index.tsx	M	e	yok
+rolling-text	component	text/counter	motion	A	educlopez/smoothui:packages/smoothui/components/rolling-text/index.tsx	M	e	ad-çakışması:rolling-text
+scale-down-fade	component	layout/lists~	motion	A	educlopez/smoothui:packages/smoothui/components/scale-down-fade/index.tsx	S	e	yok
+scramble-hover	component	text/rotate-morph	-	A	educlopez/smoothui:packages/smoothui/components/scramble-hover/index.tsx	M	h	yok
+scroll-area	component	scroll/reveal	@base-ui/react,radix-ui	A	educlopez/smoothui:packages/smoothui/components/scroll-area/index.tsx	L	h	yok
+scroll-image-reveal	component	scroll/reveal	motion	A	educlopez/smoothui:packages/smoothui/components/scroll-image-reveal/index.tsx	M	e	var(aynı kaynak)
+scroll-progress	component	scroll/progress	motion	A	educlopez/smoothui:packages/smoothui/components/scroll-progress/index.tsx	L	e	ad-çakışması:scroll-progress
+scroll-reveal-paragraph	component	scroll/reveal	motion	A	educlopez/smoothui:packages/smoothui/components/scroll-reveal-paragraph/index.tsx	S	e	var(aynı kaynak)
+scrollable-card-stack	component	scroll/reveal	motion	A	educlopez/smoothui:packages/smoothui/components/scrollable-card-stack/index.tsx	L	e	yok
+scrubber	component	inputs/sliders-dials~	motion	A	educlopez/smoothui:packages/smoothui/components/scrubber/index.tsx	M	e	var(aynı kaynak)
+sdf-blob-transition	component	backgrounds/gradient	motion	A	educlopez/smoothui:packages/smoothui/components/sdf-blob-transition/index.tsx	L	e	yok
+sdf-circle-transition	component	data/stats-kpis~	-	A	educlopez/smoothui:packages/smoothui/components/sdf-circle-transition/index.tsx	S	h	yok
+select	component	inputs/pickers	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/select/index.tsx	L	e	yok
+separator	component	layout/lists~	@base-ui/react,radix-ui	A	educlopez/smoothui:packages/smoothui/components/separator/index.tsx	M	h	yok
+shader-reveal-circle-transition	component	backgrounds/shader	-	A	educlopez/smoothui:packages/smoothui/components/shader-reveal-circle-transition/index.tsx	S	h	yok
+shader-reveal-luma-transition	component	backgrounds/shader	-	A	educlopez/smoothui:packages/smoothui/components/shader-reveal-luma-transition/index.tsx	S	h	yok
+shader-reveal-noise-transition	component	backgrounds/shader	-	A	educlopez/smoothui:packages/smoothui/components/shader-reveal-noise-transition/index.tsx	S	h	yok
+shader-reveal-planetary-transition	component	backgrounds/shader	-	A	educlopez/smoothui:packages/smoothui/components/shader-reveal-planetary-transition/index.tsx	S	h	yok
+shader-reveal-push-transition	component	backgrounds/shader	-	A	educlopez/smoothui:packages/smoothui/components/shader-reveal-push-transition/index.tsx	S	h	yok
+shader-reveal-stripes-transition	component	backgrounds/shader	-	A	educlopez/smoothui:packages/smoothui/components/shader-reveal-stripes-transition/index.tsx	S	h	yok
+shader-reveal-transition	component	backgrounds/shader	motion	A	educlopez/smoothui:packages/smoothui/components/shader-reveal-transition/index.tsx	L	e	yok
+shader-reveal-wipe-transition	component	backgrounds/shader	-	A	educlopez/smoothui:packages/smoothui/components/shader-reveal-wipe-transition/index.tsx	S	h	yok
+shader-reveal-zoom-transition	component	backgrounds/shader	-	A	educlopez/smoothui:packages/smoothui/components/shader-reveal-zoom-transition/index.tsx	S	h	yok
+shared-axis-x	component	onchain/amount-confirm~	motion	A	educlopez/smoothui:packages/smoothui/components/shared-axis-x/index.tsx	S	e	yok
+shared-axis-y	component	onchain/amount-confirm~	motion	A	educlopez/smoothui:packages/smoothui/components/shared-axis-y/index.tsx	S	e	yok
+shared-axis-z	component	onchain/amount-confirm~	motion	A	educlopez/smoothui:packages/smoothui/components/shared-axis-z/index.tsx	S	e	yok
+shimmer-sweep	component	layout/lists~	motion	A	educlopez/smoothui:packages/smoothui/components/shimmer-sweep/index.tsx	S	e	yok
+shine-text	component	text/reveal~	motion	A	educlopez/smoothui:packages/smoothui/components/shine-text/index.tsx	S	e	var(aynı kaynak)
+short-slide-down	component	cards/surface~	motion	A	educlopez/smoothui:packages/smoothui/components/short-slide-down/index.tsx	M	e	yok
+short-slide-right	component	onchain/amount-confirm~	motion	A	educlopez/smoothui:packages/smoothui/components/short-slide-right/index.tsx	S	e	yok
+sidebar	component	navigation/navbar-sidebar	motion	A	educlopez/smoothui:packages/smoothui/components/sidebar/index.tsx	L	e	var(aynı kaynak)
+siri-orb	component	ai/orbs-voice	motion	A	educlopez/smoothui:packages/smoothui/components/siri-orb/index.tsx	L	e	yok
+skeleton	component	feedback/skeletons	motion	A	educlopez/smoothui:packages/smoothui/components/skeleton/index.tsx	S	e	yok
+slider	component	inputs/sliders-dials	@base-ui/react,motion,radix-ui	A	educlopez/smoothui:packages/smoothui/components/slider/index.tsx	L	e	yok
+smooth-button	component	buttons/animated	@base-ui/react,@radix-ui/react-slot,class-variance-authority,motion	A	educlopez/smoothui:packages/smoothui/components/smooth-button/index.tsx	L	e	yok
+social-hover-card	component	overlays/popover-tooltip	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/social-hover-card/index.tsx	L	e	yok
+social-selector	component	inputs/pickers	motion	A	educlopez/smoothui:packages/smoothui/components/social-selector/index.tsx	M	e	yok
+soft-blur-in	component	layout/lists~	motion	A	educlopez/smoothui:packages/smoothui/components/soft-blur-in/index.tsx	S	e	yok
+spinner	component	feedback/loaders	motion	A	educlopez/smoothui:packages/smoothui/components/spinner/index.tsx	S	e	var(aynı kaynak)
+spring-scale-in	component	layout/lists~	motion	A	educlopez/smoothui:packages/smoothui/components/spring-scale-in/index.tsx	S	e	yok
+squircle	component	layout/lists~	-	A	educlopez/smoothui:packages/smoothui/components/squircle/index.tsx	M	h	yok
+stagger-from-center	component	layout/lists~	motion	A	educlopez/smoothui:packages/smoothui/components/stagger-from-center/index.tsx	S	e	yok
+stagger-from-edges	component	layout/lists~	motion	A	educlopez/smoothui:packages/smoothui/components/stagger-from-edges/index.tsx	S	e	yok
+svg-clip-mask	component	scroll/reveal~	motion	A	educlopez/smoothui:packages/smoothui/components/svg-clip-mask/index.tsx	M	e	yok
+svg-draw-on-scroll	component	scroll/reveal	motion	A	educlopez/smoothui:packages/smoothui/components/svg-draw-on-scroll/index.tsx	M	e	var(aynı kaynak)
+swap-panel	component	onchain/amount-confirm	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/swap-panel/index.tsx	L	e	ad-çakışması:swap-panel
+switch	component	buttons/toggle-switch	@base-ui/react,motion,radix-ui	A	educlopez/smoothui:packages/smoothui/components/switch/index.tsx	M	e	yok
+switchboard-card	component	buttons/toggle-switch	-	A	educlopez/smoothui:packages/smoothui/components/switchboard-card/index.tsx	L	h	yok
+tabs	component	navigation/tabs	@base-ui/react,motion,radix-ui	A	educlopez/smoothui:packages/smoothui/components/tabs/index.tsx	L	e	yok
+text-morph	component	text/rotate-morph	motion	A	educlopez/smoothui:packages/smoothui/components/text-morph/index.tsx	M	e	yok
+textarea	component	inputs/text-code	@base-ui/react	A	educlopez/smoothui:packages/smoothui/components/textarea/index.tsx	S	h	yok
+theme-toggle	component	buttons/toggle-switch	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/theme-toggle/index.tsx	L	e	yok
+tilt-card	component	cards/hover-reveal	motion	A	educlopez/smoothui:packages/smoothui/components/tilt-card/index.tsx	M	e	ad-çakışması:tilt-card
+time-machine-stack	component	cards/flip-stack	motion	A	educlopez/smoothui:packages/smoothui/components/time-machine-stack/index.tsx	L	e	var(aynı kaynak)
+toast	component	feedback/notifications	@base-ui/react,motion	A	educlopez/smoothui:packages/smoothui/components/toast/index.tsx	M	e	yok
+toggle	component	buttons/toggle-switch	@base-ui/react,motion,radix-ui	A	educlopez/smoothui:packages/smoothui/components/toggle/index.tsx	M	e	yok
+toggle-group	component	buttons/toggle-switch	@base-ui/react,motion,radix-ui	A	educlopez/smoothui:packages/smoothui/components/toggle-group/index.tsx	M	e	yok
+toolbar	component	navigation/dock-menus	@base-ui/react,radix-ui	A	educlopez/smoothui:packages/smoothui/components/toolbar/index.tsx	L	h	yok
+tooltip	component	overlays/popover-tooltip	@base-ui/react,motion,radix-ui	A	educlopez/smoothui:packages/smoothui/components/tooltip/index.tsx	L	e	ad-çakışması:tooltip
+top-down-letters	component	layout/lists~	motion	A	educlopez/smoothui:packages/smoothui/components/top-down-letters/index.tsx	S	e	yok
+tweet-card	component	cards/surface	react-tweet	A	educlopez/smoothui:packages/smoothui/components/tweet-card/index.tsx	L	e	yok
+typewriter-text	component	text/reveal	-	A	educlopez/smoothui:packages/smoothui/components/typewriter-text/index.tsx	S	h	yok
+unlock-face-id	component	data/stats-kpis~	motion	A	educlopez/smoothui:packages/smoothui/components/unlock-face-id/index.tsx	L	e	var(aynı kaynak)
+user-account-avatar	component	media/gallery-compare	@radix-ui/react-popover,lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/user-account-avatar/index.tsx	L	e	yok
+vector-editor-toolbar	component	navigation/dock-menus	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/vector-editor-toolbar/index.tsx	L	e	yok
+video-ambient	component	media/video-audio	motion	A	educlopez/smoothui:packages/smoothui/components/video-ambient/index.tsx	L	e	yok
+video-modal	component	overlays/modal-drawer	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/video-modal/index.tsx	L	e	yok
+wallet-card	component	onchain/wallet-address	lucide-react,motion	A	educlopez/smoothui:packages/smoothui/components/wallet-card/index.tsx	L	e	var(aynı kaynak)
+warped-circle-transition	component	data/stats-kpis~	-	A	educlopez/smoothui:packages/smoothui/components/warped-circle-transition/index.tsx	S	h	yok
+wave-text	component	text/reveal~	motion	A	educlopez/smoothui:packages/smoothui/components/wave-text/index.tsx	S	e	var(aynı kaynak)
+chat-template	şablon	ai/chat	@smoothui/data,lucide-react,motion	A	educlopez/smoothui:packages/smoothui/templates/chat-template/	L	e	yok
