@@ -8,7 +8,7 @@ Tarih: 2026-10-29. Okuma-yalnız oturum; hesap/giriş/form/ödeme/indirme yok.
 - Lisanslar ham `LICENSE` dosyasından okundu (komit kısa hash'i her kaynak .md'sinde).
 - Hariç tutulan 30 kaynak (diğer oturumlar) ve onların registry adları atlandı.
 
-## Tam sınıflanan kaynaklar (17) — TSV'li
+## Tam sınıflanan kaynaklar (19) — TSV'li
 | kaynak | sınıf | alınabilir öğe | Mozaik'te olmayan | öne çıkan bağımlılıklar |
 |---|---|---|---|---|
 | [bencho](bencho.md) | A | 44 | 35 | framer-motion (45), lucide-react (45) |
@@ -27,6 +27,8 @@ Tarih: 2026-10-29. Okuma-yalnız oturum; hesap/giriş/form/ödeme/indirme yok.
 | [ai-elements](ai-elements.md) | A | 49 | 43 | ai (49), shadcn-ui (49) |
 | [diceui](diceui.md) | A | 94 | 84 | radix-ui (94) |
 | [prosekit](prosekit.md) | A | 14 | 14 | prosekit (14) |
+| [paceui](paceui.md) | A | 28 | 24 | radix |
+| [remocn](remocn.md) | A | 287 | 281 | remotion |
 | [coss](coss.md) | B | 55 | 46 | @base-ui/react (55) |
 
 Toplam alınabilir öğe (ui/component/block/hook/item): A sınıfı 2710, B sınıfı 1270. Çoğu "yok" ama group/shelf eşlemesi anahtar-kelime tabanlı; `-` = eşleşmedi. Sayılar aynı öğenin farklı kaynaklarda tekrarını (shadcn kopyaları: button, card…) içerir; birleştirmede slug+içerik hash'iyle tekilleştirilmeli.
@@ -78,7 +80,7 @@ itemCount = shadcn dizininin ranking.itemCount alanı (registry'deki öğe sayı
 | @rescript-shadcn | https://rescript-shadcn.miriad.studio | 535 | healthy | component registry | registry JSON çekilemedi (host proxy'de 403); lisans doğrulanmadı |
 | @blockus | https://blockus.lndevui.com | 500 | degraded | component registry | registry JSON çekilemedi (host proxy'de 403); lisans doğrulanmadı |
 | @lucide-animated | https://lucide-animated.com | 468 | healthy | ikon/varlık seti | registry JSON çekilemedi (host proxy'de 403); lisans doğrulanmadı |
-| @remocn | https://www.remocn.dev/ | 438 | healthy | component registry | registry JSON çekilemedi (host proxy'de 403); lisans doğrulanmadı |
+| @remocn | https://www.remocn.dev/ | 438 | healthy | component registry | sınıflandı → [remocn](remocn.md) |
 | @canvas-ui | https://canvasui.dev/ | 420 | healthy | component registry | registry JSON çekilemedi (host proxy'de 403); lisans doğrulanmadı |
 | @flx | https://ui.flexnative.com | 415 | healthy | component registry | registry JSON çekilemedi (host proxy'de 403); lisans doğrulanmadı |
 | @ai2 | https://ai2.design | 414 | healthy | component registry | registry JSON çekilemedi (host proxy'de 403); lisans doğrulanmadı |
@@ -101,7 +103,7 @@ itemCount = shadcn dizininin ranking.itemCount alanı (registry'deki öğe sayı
 | @vllnt-ui | https://ui.vllnt.com | 313 | degraded | component registry | sınıflandı → [vllnt-ui](vllnt-ui.md) |
 | @pluginui | https://pluginui.com | 308 | healthy | component registry | registry JSON çekilemedi (host proxy'de 403); lisans doğrulanmadı |
 | @hirael | https://hirael.com | 308 | healthy | component registry | registry JSON çekilemedi (host proxy'de 403); lisans doğrulanmadı |
-| @paceui | https://paceui.com | 307 | degraded | component registry | registry JSON çekilemedi (host proxy'de 403); lisans doğrulanmadı |
+| @paceui | https://paceui.com | 307 | degraded | component registry | sınıflandı → [paceui](paceui.md) |
 | @pacekit | https://ui.pacekit.dev | 307 | degraded | component registry | registry JSON çekilemedi (host proxy'de 403); lisans doğrulanmadı |
 | @cult-ui | https://www.cult-ui.com | 307 | degraded | component registry | sınıflandı → [cult-ui](cult-ui.md) |
 | @seamui | https://seamui.dev | 305 | healthy | component registry | registry JSON çekilemedi (host proxy'de 403); lisans doğrulanmadı |
@@ -113,6 +115,9 @@ itemCount = shadcn dizininin ranking.itemCount alanı (registry'deki öğe sayı
 | @atroui | https://www.atroui.com | 126 | healthy | component registry | sınıflandı → [atroui](atroui.md) |
 
 "Bekleyen" 40+ registry'nin repo adı/lisansı bu oturumda doğrulanamadı (uydurulmadı). Sonraki adım: registry host'ları allowlist'e eklenirse `registry.json` çekilip aynı hat çalıştırılır; ya da repo adları verilirse `git clone` ile.
+
+## 2. tur (devam)
+GitHub'da tahmin+`git ls-remote` ile ~35 repo adı denendi; yeni doğrulananlar: `paceui/paceui` (= pacekit/ui, aynı 28 öğe, MIT), `remocn/remocn` (MIT, Remotion video bileşenleri), `praveenjuge/vadivam` (MIT ama ikon seti → component değil, atlandı). Kalan bekleyen registry'ler için repo adı bulunamadı. Üçüncü tur denemesinde yeni kaynak çıkmazsa durulacak.
 
 ## Dizinlerin kendisi
 - desengs.com — Tasarım mühendisleri için küratörlü kaynak listesi (makale/video/araç); kendi component'i yok. Link verdiği MIT repolar: `benjitaylor/liveline` (MIT, tek grafik bileşeni), `dip/cmdk`; skills repoları (`emilkowalski/skills`, `jakubkrehel/skills` MIT) component değil.
