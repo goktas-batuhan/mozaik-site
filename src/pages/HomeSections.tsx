@@ -4,8 +4,10 @@ import { BentoCard, BentoGrid } from '@/components/mozaik/bento-grid'
 import { Marquee } from '@/components/mozaik/marquee'
 import { NumberTicker } from '@/components/mozaik/number-ticker'
 import { Spotlight } from '@/components/mozaik/spotlight'
+import { photos, videos } from '@/data/media'
 import { components, itemPath, tree } from '@/site/catalog'
 import { stats, withBase } from '@/site/data'
+import { PhotoGallery, VideoGallery } from '@/site/media'
 import { LazyDemo, Stage } from '@/site/preview'
 import { ButtonLink, SectionHeading } from '@/site/ui'
 
@@ -93,6 +95,21 @@ export function HomeSections() {
             />
           ))}
         </BentoGrid>
+      </section>
+
+      <section id="motion" aria-label="Gallery" className="mx-auto max-w-7xl scroll-mt-20 px-4 pt-32 sm:px-6">
+        <SectionHeading eyebrow="Gallery" title="See what it looks like.">
+          Stills from the library. Click one to enlarge it, then open the component to watch it move.
+        </SectionHeading>
+        <PhotoGallery photos={photos} className="mt-12" />
+        {videos.length > 0 && (
+          <>
+            <h3 id="media-heading" className="mt-16 text-2xl font-semibold tracking-tight">
+              Watch it in motion
+            </h3>
+            <VideoGallery videos={videos} className="mt-6" />
+          </>
+        )}
       </section>
 
       <section className="mx-auto grid max-w-7xl items-center gap-14 px-4 pt-32 sm:px-6 lg:grid-cols-2">

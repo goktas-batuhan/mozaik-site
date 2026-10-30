@@ -169,3 +169,18 @@ body {
     animation: none;
   }
 }
+
+/* Hero önizleme kartları: yavaş süzülme, yalnız CSS. */
+@keyframes hero-float {
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.hero-float {
+  animation: hero-float 6s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-float {
+    animation: none;
+  }
+}
